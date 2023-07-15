@@ -1,0 +1,84 @@
+@use "../partials/index" as *;
+@use "../base/index" as *;
+
+// top ads panel css
+#top-ads-panel{ margin-top: 5.2rem; 
+    .container{
+        .ads-panel-wrapping{
+           .ads-panel-large{
+            .row{
+                padding-top: $padding-max;
+            }
+           }
+           .ads-panel-small{
+            .row{
+                padding-top: $padding-max;
+            }
+           }
+        }
+    }
+}
+// top ads panel css end
+
+// listed company css start
+#listed-company{
+    .container{
+        .listed-company-wrapping{
+            .listing-heading{
+
+            }
+            .company-list{
+                .listing-left{
+                    .heading-sub-title{
+                        .dropdown{
+                            color: $text-color !important;
+                        }
+                    }
+                    .single-card{ padding-bottom: $padding-min;}
+                    .row{ 
+                        .listing-card{
+                            background-color: $bg-color; 
+                            
+                            .card-body{ padding-left: $padding-max;
+                                .listing-logo{
+                                    margin-left: -$listing-logo;
+                                    padding-right: $padding-normal;
+                                }
+                                .card-title{
+                                    i{
+                                        color: $primary-color;
+                                        font-size: $text-font-size;
+                                        padding-left: $padding-min;
+                                    }
+
+                                }
+                                .open-now{color: $primary-color;}
+                                .listing-about{
+
+                                }
+                            }
+                        }
+                    }
+                
+                }
+
+                .filter-right{
+                    .filter{
+                        .form-rang{
+                            color: $primary-color !important;
+                        
+                        }
+                    }
+                    .ads-panel-right{
+                        margin-top: 11.6rem;
+                        div{
+                            padding-bottom: 1.625rem;
+                        }
+                    }
+                }
+            }
+           
+        }
+    }
+}
+// listed company css end

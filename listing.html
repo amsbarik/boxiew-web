@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap link-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- custom css link-->
+    <link href="css/style.min.css" rel="stylesheet">
+    <!--font-awesome lik-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <title>Listing Page | Boxview</title>
+</head>
+<body>
+    <!--start nav-->
+    <nav class="navbar navbar-expand-md navbar-light shadow-sm fixed-top">
+      <div class="container">
+          <a href="index.html" class="navbar-brand"><img src="image/logo.png" width="100"></a>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_menu">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div id="main_menu" class="collapse navbar-collapse">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item"><a href="listing.html" class="nav-link">Listing</a></li>
+                  <li class="nav-item"><a href="shopping.html" class="nav-link">Shopping</a></li>
+                  <li class="nav-item"><a href="#" class="nav-link">Favorites</a></li>
+                  <li class="nav-item"><a href="#" class="nav-link">Cart</a></li>
+                  <li class="nav-item"><a href="#" class="nav-link"><img class="sign-in" src="image/icon/sign-in.png" >Sign In</a></li>
+                  <li class="nav-item "><div class="add-listing"><a href="#" class="nav-link px-4">Add Listing<img id="add-listing" class="add-listing-icon" onmouseover="add_listing" src="image/icon/add.png"></a></div></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+  <!--end nav-->
+
+   <!--start main-->
+  <main> 
+   
+    <!--top ads panel start-->
+    <section id="top-ads-panel">
+        <div class="container">
+            <div class="ads-panel-wrapping">
+                <div class="ads-panel-large">
+                    <div class="row ">
+                        <div class="col-4 "><a href="#"><img class="rounded" src="image/listing/ads-large-1.jpg" alt="..." ></a></div>
+                        <div class="col-4 "><a href="#"><img class="rounded" src="image/listing/ads-large-2.jpg" alt="..." ></a></div>
+                        <div class="col-4 "><a href="#"><img class="rounded" src="image/listing/ads-large-3.jpg" alt="..." ></a></div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-4 "><a href="#"><img class="rounded" src="image/listing/ads-large-4.jpg" alt="..." ></a></div>
+                        <div class="col-4 "><a href="#"><img class="rounded" src="image/listing/ads-large-5.jpg" alt="..." ></a></div>
+                        <div class="col-4 "><a href="#"><img class="rounded" src="image/listing/ads-large-6.jpg" alt="..." ></a></div>
+                    </div>
+
+                </div>
+
+                <div class="ads-panel-small">
+                    <div class="row">
+                        <div class="col-2 "><a href="#"><img class="rounded" src="image/listing/ads-small-1.jpg" alt="..." ></a></div>
+                        <div class="col-2 "><a href="#"><img class="rounded" src="image/listing/ads-small-2.jpg" alt="..." ></a></div>
+                        <div class="col-2 "><a href="#"><img class="rounded" src="image/listing/ads-small-3.jpg" alt="..." ></a></div>
+                        <div class="col-2 "><a href="#"><img class="rounded" src="image/listing/ads-small-4.jpg" alt="..." ></a></div>
+                        <div class="col-2 "><a href="#"><img class="rounded" src="image/listing/ads-small-5.jpg" alt="..." ></a></div>
+                        <div class="col-2 "><a href="#"><img class="rounded" src="image/listing/ads-small-6.jpg" alt="..." ></a></div>
+                    </div>
+                </div>
+            </div>
+           
+
+                    
+
+        </div>
+    </section>
+    <!--top ads panel end-->
+
+
+    <!--directory listing start-->
+    <section id="listed-company">
+        <div class="container">
+            <div class="listed-company-wrapping">
+                <div class="listing-heading ">
+                    <div class="heading-title d-flex"><h3 class="pe-4">Listed Company</h3><div class="heading-u-line "></div></div>
+                    
+                </div>
+
+                <div class="company-list d-flex justify-content-between">
+                    <div class="listing-left">
+
+                        <div class="row me-2">
+                            <div class="col-12">
+                                <div class="heading-sub-title d-flex justify-content-between">
+                                    <div class=""><h6>Top Rated & Verified Supplers in the World</h6></div>
+                                    <div>
+                                        <div class="dropdown">
+                                            <button class="btn border-0 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                              Sort By
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                              <li><a class="dropdown-item" href="#">Top Rated</a></li>
+                                              <li><a class="dropdown-item" href="#">Verified</a></li>
+                                              <li><a class="dropdown-item" href="#">Popular</a></li>
+                                              <li><a class="dropdown-item" href="#">Newest</a></li>
+                                              <li><a class="dropdown-item" href="#">Oldest</a></li>
+                                            </ul>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row single-card me-3">
+
+                            <div class="col-12">
+                                <div class="listing-card card mb-3 border-0">
+                                    <div class="row g-0">
+                                    <div class="col-md-3">
+                                        <img class="listing-cover rounded-start" src="image/listing/listing-1.jpg" class="img-fluid rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-9">
+
+                                        <div class="card-body">
+                                        
+                                            <div class="d-flex">
+                                                <div class="listing-logo"><img src="image/hatil-logo.png" width="80px"></div>
+                                                <div>
+                                                    <div><h5 class="card-title title-style">Hatil Furniture <i class="fa-solid fa-circle-check"></i></h5></div>
+                                                    <div class="card-text title-sub-style ">All Kind Of Furniture</div>
+                                                    <div class="d-flex pt-1">
+                                                        <div><small><i class="fa-regular fa-heart likes"></i>Like 87</small></div>
+                                                        <div class="ps-5"><small class="reviews pe-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></small><small>4k Reviews</small></div>
+                                                        <div class="open-now"><small><i class="fa-regular fa-clock likes ps-5"></i>Open Now</small></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                            <div class="listing-about text-style pb-3 pt-3">HATIL is considered to be the game-changer in Bangladesh furniture industry. Carefully sen raw material, environment-friendly business practice </div>
+                                            <div class="listing-info">
+                                                <div class="row pb-1">
+                                                    <div class="col-4"><a href="tel: +88 01711-xxxxxx" class="contact-link"><i class="fa-solid fa-phone"></i>+88 01711-XXXXXX</a></div>
+                                                    <div class="col-4"><a href="#" class="contact-link"><i class="fa-brands fa-facebook"></i>fb/boxiew.com</a></div>
+                                                    <div class="col-4"><a href="#" class="contact-link"><i class="fa-solid fa-globe"></i>www.boxiew.com</a></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-4"><a href="mailto:info@boxiew.com" class="contact-link"><i class="fa-solid fa-paper-plane"></i>info@boxiew.com</a></div>
+                                                    <div class="col-8"><a href="#" class="contact-link"><i class="fa-solid fa-location-dot"></i>72 Malibagh, Dhaka-1130, Bangladesh.</a></div>
+                                                </div>
+                                                
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                                
+                        </div>
+
+                        <div class="row single-card me-3">
+
+                            <div class="col-12">
+                                <div class="listing-card card mb-3 border-0">
+                                    <div class="row g-0">
+                                    <div class="col-md-3">
+                                        <img class="listing-cover rounded-start" src="image/listing/listing-2.jpg" class="img-fluid rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-9">
+
+                                        <div class="card-body">
+                                        
+                                            <div class="d-flex">
+                                                <div class="listing-logo"><img src="image/hatil-logo.png" width="80px"></div>
+                                                <div>
+                                                    <div><h5 class="card-title title-style">Hatil Furniture <i class="fa-solid fa-circle-check"></i></h5></div>
+                                                    <div class="card-text title-sub-style ">All Kind Of Furniture</div>
+                                                    <div class="d-flex pt-1">
+                                                        <div><small><i class="fa-regular fa-heart likes"></i>Like 87</small></div>
+                                                        <div class="ps-5"><small class="reviews pe-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></small><small>4k Reviews</small></div>
+                                                        <div class="open-now"><small><i class="fa-regular fa-clock likes ps-5"></i>Open Now</small></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                            <div class="listing-about text-style pb-3 pt-3">HATIL is considered to be the game-changer in Bangladesh furniture industry. Carefully sen raw material, environment-friendly business practice </div>
+                                            <div class="listing-info">
+                                                <div class="row pb-1">
+                                                    <div class="col-4"><a href="tel: +88 01711-xxxxxx" class="contact-link"><i class="fa-solid fa-phone"></i>+88 01711-XXXXXX</a></div>
+                                                    <div class="col-4"><a href="#" class="contact-link"><i class="fa-brands fa-facebook"></i>fb/boxiew.com</a></div>
+                                                    <div class="col-4"><a href="#" class="contact-link"><i class="fa-solid fa-globe"></i>www.boxiew.com</a></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-4"><a href="mailto:info@boxiew.com" class="contact-link"><i class="fa-solid fa-paper-plane"></i>info@boxiew.com</a></div>
+                                                    <div class="col-8"><a href="#" class="contact-link"><i class="fa-solid fa-location-dot"></i>72 Malibagh, Dhaka-1130, Bangladesh.</a></div>
+                                                </div>
+                                                
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        </div>
+
+                        <div class="row single-card me-3">
+
+                            <div class="col-12">
+                                <div class="listing-card card mb-3 border-0">
+                                    <div class="row g-0">
+                                    <div class="col-md-3">
+                                        <img class="listing-cover rounded-start" src="image/listing/listing-3.jpg" class="img-fluid rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-9">
+
+                                        <div class="card-body">
+                                        
+                                            <div class="d-flex">
+                                                <div class="listing-logo"><img src="image/hatil-logo.png" width="80px"></div>
+                                                <div>
+                                                    <div><h5 class="card-title title-style">Hatil Furniture <i class="fa-solid fa-circle-check"></i></h5></div>
+                                                    <div class="card-text title-sub-style ">All Kind Of Furniture</div>
+                                                    <div class="d-flex pt-1">
+                                                        <div><small><i class="fa-regular fa-heart likes"></i>Like 87</small></div>
+                                                        <div class="ps-5"><small class="reviews pe-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></small><small>4k Reviews</small></div>
+                                                        <div class="open-now"><small><i class="fa-regular fa-clock likes ps-5"></i>Open Now</small></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="listing-about text-style pb-3 pt-3">HATIL is considered to be the game-changer in Bangladesh furniture industry. Carefully sen raw material, environment-friendly business practice </div>
+                                            <div class="listing-info">
+                                                <div class="row pb-1">
+                                                    <div class="col-4"><a href="tel: +88 01711-xxxxxx" class="contact-link"><i class="fa-solid fa-phone"></i>+88 01711-XXXXXX</a></div>
+                                                    <div class="col-4"><a href="#" class="contact-link"><i class="fa-brands fa-facebook"></i>fb/boxiew.com</a></div>
+                                                    <div class="col-4"><a href="#" class="contact-link"><i class="fa-solid fa-globe"></i>www.boxiew.com</a></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-4"><a href="mailto:info@boxiew.com" class="contact-link"><i class="fa-solid fa-paper-plane"></i>info@boxiew.com</a></div>
+                                                    <div class="col-8"><a href="#" class="contact-link"><i class="fa-solid fa-location-dot"></i>72 Malibagh, Dhaka-1130, Bangladesh.</a></div>
+                                                </div>
+                                                
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        </div>
+
+                        <div class="row single-card me-3">
+
+                            <div class="col-12">
+                                <div class="listing-card card mb-3 border-0">
+                                    <div class="row g-0">
+                                    <div class="col-md-3">
+                                        <img class="listing-cover rounded-start" src="image/listing/listing-4.jpg" class="img-fluid rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-9">
+
+                                        <div class="card-body">
+                                        
+                                            <div class="d-flex">
+                                                <div class="listing-logo"><img src="image/hatil-logo.png" width="80px"></div>
+                                                <div>
+                                                    <div><h5 class="card-title title-style">Hatil Furniture <i class="fa-solid fa-circle-check"></i></h5></div>
+                                                    <div class="card-text title-sub-style ">All Kind Of Furniture</div>
+                                                    <div class="d-flex pt-1">
+                                                        <div><small><i class="fa-regular fa-heart likes"></i>Like 87</small></div>
+                                                        <div class="ps-5"><small class="reviews pe-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></small><small>4k Reviews</small></div>
+                                                        <div class="open-now"><small><i class="fa-regular fa-clock likes ps-5"></i>Open Now</small></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="listing-about text-style pb-3 pt-3">HATIL is considered to be the game-changer in Bangladesh furniture industry. Carefully sen raw material, environment-friendly business practice </div>
+                                            <div class="listing-info">
+                                                <div class="row pb-1">
+                                                    <div class="col-4"><a href="tel: +88 01711-xxxxxx" class="contact-link"><i class="fa-solid fa-phone"></i>+88 01711-XXXXXX</a></div>
+                                                    <div class="col-4"><a href="#" class="contact-link"><i class="fa-brands fa-facebook"></i>fb/boxiew.com</a></div>
+                                                    <div class="col-4"><a href="#" class="contact-link"><i class="fa-solid fa-globe"></i>www.boxiew.com</a></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-4"><a href="mailto:info@boxiew.com" class="contact-link"><i class="fa-solid fa-paper-plane"></i>info@boxiew.com</a></div>
+                                                    <div class="col-8"><a href="#" class="contact-link"><i class="fa-solid fa-location-dot"></i>72 Malibagh, Dhaka-1130, Bangladesh.</a></div>
+                                                </div>
+                                                
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        </div>
+
+                        <div class="row single-card me-3">
+
+                            <div class="col-12">
+                                <div class="listing-card card mb-3 border-0">
+                                    <div class="row g-0">
+                                    <div class="col-md-3">
+                                        <img class="listing-cover rounded-start" src="image/listing/listing-5.jpg" class="img-fluid rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-9">
+
+                                        <div class="card-body">
+                                        
+                                            <div class="d-flex">
+                                                <div class="listing-logo"><img src="image/hatil-logo.png" width="80px"></div>
+                                                <div>
+                                                    <div><h5 class="card-title title-style">Hatil Furniture <i class="fa-solid fa-circle-check"></i></h5></div>
+                                                    <div class="card-text title-sub-style ">All Kind Of Furniture</div>
+                                                    <div class="d-flex pt-1">
+                                                        <div><small><i class="fa-regular fa-heart likes"></i>Like 87</small></div>
+                                                        <div class="ps-5"><small class="reviews pe-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></small><small>4k Reviews</small></div>
+                                                        <div class="open-now"><small><i class="fa-regular fa-clock likes ps-5"></i>Open Now</small></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="listing-about text-style pb-3 pt-3">HATIL is considered to be the game-changer in Bangladesh furniture industry. Carefully sen raw material, environment-friendly business practice </div>
+                                            <div class="listing-info">
+                                                <div class="row pb-1">
+                                                    <div class="col-4"><a href="tel: +88 01711-xxxxxx" class="contact-link"><i class="fa-solid fa-phone"></i>+88 01711-XXXXXX</a></div>
+                                                    <div class="col-4"><a href="#" class="contact-link"><i class="fa-brands fa-facebook"></i>fb/boxiew.com</a></div>
+                                                    <div class="col-4"><a href="#" class="contact-link"><i class="fa-solid fa-globe"></i>www.boxiew.com</a></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-4"><a href="mailto:info@boxiew.com" class="contact-link"><i class="fa-solid fa-paper-plane"></i>info@boxiew.com</a></div>
+                                                    <div class="col-8"><a href="#" class="contact-link"><i class="fa-solid fa-location-dot"></i>72 Malibagh, Dhaka-1130, Bangladesh.</a></div>
+                                                </div>
+                                                
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row single-card me-3">
+
+                            <div class="col-12">
+                                <div class="listing-card card mb-3 border-0">
+                                    <div class="row g-0">
+                                    <div class="col-md-3">
+                                        <img class="listing-cover rounded-start" src="image/listing/listing-6.jpg" class="img-fluid rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-9">
+
+                                        <div class="card-body">
+                                        
+                                            <div class="d-flex">
+                                                <div class="listing-logo"><img src="image/hatil-logo.png" width="80px"></div>
+                                                <div>
+                                                    <div><h5 class="card-title title-style">Hatil Furniture <i class="fa-solid fa-circle-check"></i></h5></div>
+                                                    <div class="card-text title-sub-style ">All Kind Of Furniture</div>
+                                                    <div class="d-flex pt-1">
+                                                        <div><small><i class="fa-regular fa-heart likes"></i>Like 87</small></div>
+                                                        <div class="ps-5"><small class="reviews pe-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></small><small>4k Reviews</small></div>
+                                                        <div class="open-now"><small><i class="fa-regular fa-clock likes ps-5"></i>Open Now</small></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="listing-about text-style pb-3 pt-3">HATIL is considered to be the game-changer in Bangladesh furniture industry. Carefully sen raw material, environment-friendly business practice </div>
+                                            <div class="listing-info">
+                                                <div class="row pb-1">
+                                                    <div class="col-4"><a href="tel: +88 01711-xxxxxx" class="contact-link"><i class="fa-solid fa-phone"></i>+88 01711-XXXXXX</a></div>
+                                                    <div class="col-4"><a href="#" class="contact-link"><i class="fa-brands fa-facebook"></i>fb/boxiew.com</a></div>
+                                                    <div class="col-4"><a href="#" class="contact-link"><i class="fa-solid fa-globe"></i>www.boxiew.com</a></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-4"><a href="mailto:info@boxiew.com" class="contact-link"><i class="fa-solid fa-paper-plane"></i>info@boxiew.com</a></div>
+                                                    <div class="col-8"><a href="#" class="contact-link"><i class="fa-solid fa-location-dot"></i>72 Malibagh, Dhaka-1130, Bangladesh.</a></div>
+                                                </div>
+                                                
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row single-card me-3">
+
+                            <div class="col-12">
+                                <div class="listing-card card mb-3 border-0">
+                                    <div class="row g-0">
+                                    <div class="col-md-3">
+                                        <img class="listing-cover rounded-start" src="image/listing/listing-7.jpg" class="img-fluid rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-9">
+
+                                        <div class="card-body">
+                                        
+                                            <div class="d-flex">
+                                                <div class="listing-logo"><img src="image/hatil-logo.png" width="80px"></div>
+                                                <div>
+                                                    <div><h5 class="card-title title-style">Hatil Furniture <i class="fa-solid fa-circle-check"></i></h5></div>
+                                                    <div class="card-text title-sub-style ">All Kind Of Furniture</div>
+                                                    <div class="d-flex pt-1">
+                                                        <div><small><i class="fa-regular fa-heart likes"></i>Like 87</small></div>
+                                                        <div class="ps-5"><small class="reviews pe-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></small><small>4k Reviews</small></div>
+                                                        <div class="open-now"><small><i class="fa-regular fa-clock likes ps-5"></i>Open Now</small></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="listing-about text-style pb-3 pt-3">HATIL is considered to be the game-changer in Bangladesh furniture industry. Carefully sen raw material, environment-friendly business practice </div>
+                                            <div class="listing-info">
+                                                <div class="row pb-1">
+                                                    <div class="col-4"><a href="tel: +88 01711-xxxxxx" class="contact-link"><i class="fa-solid fa-phone"></i>+88 01711-XXXXXX</a></div>
+                                                    <div class="col-4"><a href="#" class="contact-link"><i class="fa-brands fa-facebook"></i>fb/boxiew.com</a></div>
+                                                    <div class="col-4"><a href="#" class="contact-link"><i class="fa-solid fa-globe"></i>www.boxiew.com</a></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-4"><a href="mailto:info@boxiew.com" class="contact-link"><i class="fa-solid fa-paper-plane"></i>info@boxiew.com</a></div>
+                                                    <div class="col-8"><a href="#" class="contact-link"><i class="fa-solid fa-location-dot"></i>72 Malibagh, Dhaka-1130, Bangladesh.</a></div>
+                                                </div>
+                                                
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="filter-right" style="width:28rem">
+                        <div class="d-flex justify-content-end heading-sub-title mt-2"><h6>Filter</h6></div>
+                        <div class="filter">
+                            
+                            <div class=" mb-3">
+                                <input type="text" class="form-control" placeholder="Relavent need search here" >
+                            </div>
+
+                            <select class="form-select mb-3" aria-label="Default select example">
+                                <option selected>All Categories</option>
+                                <option value="1">Resturent</option>
+                                <option value="2">Hospital</option>
+                                <option value="3">University</option>
+                            </select>
+
+                            <select class="form-select mb-5" aria-label="Default select example">
+                                <option selected>All City</option>
+                                <option value="1">Dhaka</option>
+                                <option value="2">Delhi</option>
+                                <option value="3">Sylhet</option>
+                            </select>
+
+                            <div><h6>27 km</h6></div>
+                            <label for="distance" class="form-label mb-3"><small>Radius Around Selected Destination</small></label>
+                            <input type="range" style="width: 100%;" class="form-rang mb-5 " id="distance">
+
+                            <div class="d-grid gap-2 mx-auto">
+                                <button class="button btn" type="button">Search</button>
+                            </div>
+
+                        </div>
+
+                        <div class="ads-panel-right">
+                            <div class=""><a href="#"><img class="rounded" src="image/listing/ads-right-1.jpg" alt="..."></a></div>
+                            <div class=""><a href="#"><img class="rounded" src="image/listing/ads-right-2.jpg" alt="..."></a></div>
+                            <div class=""><a href="#"><img class="rounded" src="image/listing/ads-right-3.jpg" alt="..."></a></div>
+                            <div class=""><a href="#"><img class="rounded" src="image/listing/ads-right-4.jpg" alt="..."></a></div>
+                            <div class=""><a href="#"><img class="rounded" src="image/listing/ads-right-5.jpg" alt="..."></a></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="page-navigation mt-4 mb-5">
+
+                    <ul class="d-flex justify-content-center ">
+                      <li class=""><a class="" href="#">1</a></li>
+                      <li class=""><a class="" href="#">2</a></li>
+                      <li class=""><a class="" href="#">3</a></li>
+                      <li class="">
+                        <a class="" href="#">
+                            <i class="fa-solid fa-circle-chevron-left pe-2"></i>
+                            <i class="fa-solid fa-circle-chevron-right"></i>
+                        </a>
+                      </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            
+        </div>
+    </section>
+    <!--directory listing end-->
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--footer start-->
+    <section id="footer">
+        <div class="container">
+          <div class="footer-wrapping ">
+              <div class="row row-cols-2 row-cols-md-4 row-cols-lg-4 gy-4 ">
+  
+                  <div class="boxiew col">
+                      <div class="logo">
+                        <img src="image/logo-light.png" alt="Boxiew logo">
+                      </div>
+          
+                      <div class="contact-info">
+                        
+                        <div class="mb-2"><a href="Tel: 123-456-7890"><i class="fa-solid fa-phone"></i>+88 01721-XXXXXX</a></div>
+                        <div class="mb-2"><a href="mailto:hello@boxiew.com"><i class="fa-solid fa-envelope"></i>hello@boxiew.com</a></div>
+                        <div><a href="#"><i class="pt-1 fa-sharp fa-solid fa-location-dot"></i>Feroza Tower, 8th Floor, DIT Road, Malibagh Chowdhurypara, Dhaka.</a> </div>
+                        
+                      </div>
+                  </div>
+          
+                  <div class="suppliers-info col">
+                      <div><h5>Suppliers Info</h5></div>
+                      <div class="info-link">
+                        <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on Boxiew</a></div>
+                        <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on Boxiew</a></div>
+                        <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on Boxiew</a></div>
+                        <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on Boxiew</a></div>
+                        <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on Boxiew</a></div>
+                        <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on Boxiew</a></div>
+                      </div>
+                  </div>
+          
+                  <div class="buyers-info col">
+                      <div><h5>Buyers Info</h5></div>
+                      <div class="info-link">
+                        <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From Boxiew</a></div>
+                        <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From Boxiew</a></div>
+                        <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From Boxiew</a></div>
+                        <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From Boxiew</a></div>
+                        <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From Boxiew</a></div>
+                        <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From Boxiew</a></div>
+                      </div>
+                  </div>
+          
+                  <div class="boxiew-link col">
+                      <div><h5>Quick Links</h5></div>
+                      <div class="info-link">
+                        <div><a href="affiliate.html"><i class="fa-solid fa-arrow-right-long"></i>Carier</a></div>
+                        <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>About Us</a></div>
+                        <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Privacy Policy</a></div>
+                        <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Terms & Conditions</a></div>
+                      </div>
+          
+                      <div class="follow-us ">
+                        <div><h5>Follow Us</h5></div>
+                        <div class="social-link">
+                          <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                          <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+                        </div>
+                      </div>
+                  </div>
+  
+              </div>
+          </div>
+          <hr>
+          <div class="copy-right d-flex justify-content-center pb-3"> <small>Copyright © 2023 Boxiew Ltd || All right reserved</small></div>
+        </div>
+  
+      </section>
+    <!--footer end-->
+
+
+  </main>
+  <!--end main-->
+
+
+
+
+    <!--custom js link-->
+    <script src="js/main.js"></script>
+
+    <!--Bootstrap cdn link-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    
+    <!-- 
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="node_modules/@popperjs/core/dist/cjs/popper.js"></script> -->
+   
+
+</body>
+</html>

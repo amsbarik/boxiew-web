@@ -1,0 +1,14 @@
+@use "../base" as *;
+
+
+
+@mixin heading-u-line{
+    width: 4.5rem;
+    height: .125rem;
+    background-color: $primary-color;
+}
+
+@mixin img-style{
+    object-fit: cover;
+    
+}

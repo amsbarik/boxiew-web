@@ -1,0 +1,147 @@
+@use "../partials/index" as *;
+@use "../base/index" as *;
+
+
+#find-category{ margin-top: 6.875rem;
+    .container{
+        .find-category-wrapping{
+            .category-left{ 
+                width: 400px;
+                margin-right: $margin-max;
+                position: relative;
+                .all-category{ 
+                position: relative;
+
+                    .category-title{
+                        background-color: $bg-primary-light;
+                        color: $title-color;
+                       
+                        i{
+                            color: $primary-color;
+                            padding-right: $padding-normal;
+                            padding-left: $padding-normal;
+                        }
+                    }
+                    .category-item{
+                        .main-category{ 
+                            margin-left: -$padding-min;
+                            position: relative;
+                            li{
+                                padding-top: $padding-min-extra;
+                                padding-bottom: $padding-min-extra;
+                                &:hover .sub-category{
+                                    display: initial;
+                                }
+
+                                &:hover{ 
+                                    color: $title-color;
+                                    background-color: $bg-color;
+                                    
+                                    i{
+                                        transform: scale(1.3);
+                                    }
+                                }
+                                a{
+                                    color: $text-color;
+                                    font-size: $text-font-size;
+                                    
+                                    
+                                    i{
+                                        color: $primary-color-light;
+                                        padding-right: $padding-min;
+                                        
+                                    }
+                                }
+                            }
+                            
+                            .sub-category{ 
+                                display: none;
+                                padding: $padding-normal;
+                                position: absolute;
+                                left: 12.5rem;
+                                width: 14rem;
+                                background-color: $body-color;
+                                li{
+                                    a{
+                                    color: $text-color;
+                                    font-size: $text-font-size;
+                                    
+                                    }
+                                }
+                            }
+                        }
+                        .see-more{
+                            // padding-left: $padding-section-title;
+                        }
+                    }
+                }
+            }
+
+            .search-right{ 
+                width: 55rem;
+                .top-cover{ height: 31rem;
+                    background: linear-gradient(0deg, rgba(29 29 29 / 70%), rgba(29 29 29 / 70%)), url(../image/boxivew-top-cover-photo.jpg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    .top-cover-wrapping{ 
+                        height: 30.25rem;
+                        .search{ 
+                        
+                            .search-title{
+                                color: $heading-color-light;
+                                // width: 57.25rem;
+                               
+            
+                            }
+                            .search-box{background-color: $body-color;
+                                        border-radius: 3rem;
+                                        width: 40rem;
+                                .search-key{ 
+                                        input{
+                                            border-radius: 3rem;
+                                            border: none;
+                                            
+                                        
+                                        }
+                                }
+                                .search-city{ 
+                                    border-left: 2px solid $line-color !important;
+                                    color: $text-color !important;
+                                    // margin-left: 12rem;
+            
+                                    
+                                }
+                                .search-category{ 
+                                    border-left: 2px solid $line-color !important;
+                                    color: $text-color !important;
+                                    // margin-left: 6rem;
+                                    
+                                }
+                                .search-btn{
+                                    button{
+                                        background-color: $primary-color !important;
+                                        color: $btn-color-light;
+                                        border-radius: 3rem;
+                                        // margin-left: 6rem;
+                                        
+            
+                                    }
+                                }
+                            }
+                        }
+            
+                    }
+        }
+            }
+        }
+    }
+}
+
+
+// Recomended products css start
+#recomended-products{
+    background-color: $bg-color;
+    padding-bottom: $padding-section;
+    
+}
+// Recomended products css end

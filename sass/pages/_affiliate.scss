@@ -1,0 +1,301 @@
+@use "../partials/index" as *;
+@use "../base/index" as *;
+
+
+// affiliate cover css start
+
+#affiliate-cover-img{ margin-top: 5rem;
+    .cover-wrap{
+        .bg-image{
+            // height: 250px
+        }
+        
+    }
+    
+}
+
+#affiliate-cover-txt{
+    .cover-text{
+        top: 24%;
+    }
+}
+
+
+// affiliate-support css start
+#affiliate-support{
+    .support-wrapping{
+            .support{
+                width: 18rem;
+                img{
+                    width: 10rem;
+                    height: 10rem;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+            }
+    }
+}
+// affiliate-support css end
+
+
+// affiliate-promote css start
+#affiliate-promote{
+    background-color: $primary-color;
+    .title-style{
+        color: $title-color-light
+    }
+    .text-style{
+        color: $text-color-light;
+    }
+    
+}
+// affiliate-promote css end
+
+// community css start
+#affiliate-community{ 
+    margin-top: $margin-section-title;
+    .community-wrapping{
+        .community-cover{
+            .card-text{
+                max-width: 23rem;
+                
+            }
+            
+        }
+        .community{
+            p{
+                // text-align: justify;
+            }
+        }
+    }
+    
+}
+// community css end
+
+
+// affiliate-position css start
+#affiliate-position{
+    margin-bottom: $margin-section-title;
+    .levels{
+        .card{
+            transition: .3s;
+            &:hover{
+                box-shadow: 1px 1px 5px #c9c7c7;
+            }
+        }
+    }
+}
+// affiliate-position css end
+
+
+
+
+
+
+// media query for responsive start
+@media (min-width: $viewport-xm) {
+    #affiliate-cover-img{
+        .bg-image{
+            height: 12.5rem;
+        }
+    }
+
+    #affiliate-cover-txt{
+        .cover-text{
+            top: 13.3%;
+            p{
+                width: 222px;
+                
+            }
+        }
+    }
+
+    #affiliate-support{
+        .support{
+          
+                img{
+                    width: 4.5rem !important;
+                    height: 4.5rem !important;
+                }
+                p{
+                    visibility: hidden;
+                }
+                .card-body{
+                    height: 5rem;
+                }
+        }
+    }
+
+    #affiliate-join, #affiliate-promote ,#affiliate-earn{
+        p{
+            text-align: justify;
+            text-align-last: left;
+        }
+    }
+
+    #affiliate-community{
+        .community-cover{
+            height: 10rem !important;
+            img{
+                height: 100% !important;
+            }
+            .sm-txt{
+                margin-top: -.5rem ;
+                color: $primary-color;
+            }
+        }
+    }
+  }
+
+@media (min-width: $viewport-sm) {
+  #affiliate-cover-txt{
+        .cover-text{
+            top: 14.3%;
+            p{
+                width: 16.25rem;
+                
+            }
+        }
+    }
+  }
+
+
+@media (min-width: $viewport-md) {
+    #affiliate-cover-img{
+        .bg-image{
+            height: 15.5rem;
+        }
+    }
+
+    #affiliate-cover-txt{
+          .cover-text{
+            top: 17.5%;
+            p{
+                  width: 21rem;
+                  
+              }
+          }
+      }
+
+    #affiliate-support{
+        .support{
+            
+                img{
+                    width: 6.5rem !important;
+                    height: 6.5rem !important;
+                }
+                p{
+                    visibility: visible !important;
+                }
+                .card-body{
+                    height: 5rem;
+                }
+        }
+        }
+
+    }
+  
+@media (min-width: $viewport-lg) {
+    #affiliate-cover-img{
+        .bg-image{
+            height: 22.5rem;
+        }
+    }
+
+    #affiliate-cover-txt{
+            .cover-text{
+            top: 23.3%;
+            p{
+                    width: 21rem;
+                    
+                }
+            }
+        }
+
+    #affiliate-community{
+        .sm-txt{
+            visibility: hidden;
+        }
+    }
+}
+    
+    
+@media (min-width: $viewport-xl) {
+    #affiliate-cover-img{
+        .bg-image{
+            height: 26.5rem;
+        }
+    }
+
+    #affiliate-cover-txt{
+            .cover-text{
+            top: 23.3%;
+            p{
+                    width: 27rem;
+                    
+                }
+            }
+        }
+    #affiliate-support{
+        .support{
+            
+                img{
+                    width: 8rem !important;
+                    height: 8rem !important;
+                }
+                p{
+                    visibility: visible !important;
+                }
+                .card-body{
+                    height: 5rem;
+                }
+        }
+        }
+
+    }
+
+
+@media (min-width: $viewport-xxl) {
+    #affiliate-cover-img{
+        .bg-image{
+            height: 34.375rem;
+        }
+    }
+
+    #affiliate-cover-txt{
+            .cover-text{
+            top: 30%;
+            p{
+                    width: 31rem;
+                }
+            }
+        }
+
+    #affiliate-support{
+        margin-top: 5rem !important;
+        .support{
+            
+                img{
+                    width: 10rem !important;
+                    height: 10rem !important;
+                }
+                p{
+                    visibility: visible !important;
+                }
+                .card-body{
+                    height: 5rem;
+                }
+        }
+    }
+
+    #affiliate-join{
+        margin-top: 5rem !important;
+    }
+
+    #affiliate-community{
+        .sm-txt{
+            visibility: visible;
+        }
+    }
+}
+    

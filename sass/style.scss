@@ -1,0 +1,483 @@
+
+
+
+// @use "./partials" as *;                //ok - best uses
+// @import "./partials/variables";        //ok
+// @use "./partials/variables" as *;        // ok
+
+
+@use "partials" as *;
+@use "pages" as *;
+@use "base" as *;
+
+
+
+
+// nav css start
+nav{ height: 5rem !important; background-color: $body-color; position: fixed; z-index: 1000;
+    div{
+        div{
+            ul{ 
+                .add-listing{
+                border: 1px solid $primary-color;
+                border-radius: 3rem; 
+                // &:hover{ background-color: $primary-color;}
+            }
+                li{ margin-left: $margin-min;
+                    a{color: $title-color !important; font-size: $title-font-size ; 
+                        &:hover{color: $primary-color !important;}
+                    }                   
+                    .sign-in{ margin-right: $margin-min;}
+                    // .add-listing-icon{ margin-left: $margin-min;}
+                    div{ 
+                        a{color: $primary-color !important;
+                            &:hover{color:white !important;}
+                        }               
+                    }
+                    img{width: 1.01rem; margin-bottom: .2rem}
+                }
+            }
+        }
+    }
+}
+// nav css end
+
+// top cover css start
+#top-cover{ height: 30.25rem;
+            margin-top: 5rem;
+            // background-color: $secondary-color;
+            background: linear-gradient(0deg, rgba(29 29 29 / 70%), rgba(29 29 29 / 70%)), url(../image/boxivew-top-cover-photo.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            .top-cover-wrapping{ height: 30.25rem;
+                .search{ 
+                
+                    .search-title{
+                        color: $heading-color-light;
+                        width: 57.25rem;
+                       
+    
+                    }
+                    .search-box{background-color: $body-color;
+                                border-radius: 3rem;
+                                width: 57.25rem;
+                        .search-key{ 
+                                input{
+                                    border-radius: 3rem;
+                                    border: none;
+                                    
+                                
+                                }
+                        }
+                        .search-city{ 
+                            border-left: 2px solid $line-color !important;
+                            color: $text-color !important;
+                            // margin-left: 12rem;
+    
+                            
+                        }
+                        .search-category{ 
+                            border-left: 2px solid $line-color !important;
+                            color: $text-color !important;
+                            // margin-left: 6rem;
+                            
+                        }
+                        .search-btn{
+                            button{
+                                background-color: $primary-color !important;
+                                color: $btn-color-light;
+                                border-radius: 3rem;
+                                // margin-left: 6rem;
+                                
+    
+                            }
+                        }
+                    }
+                }
+    
+            }
+}
+// top cover css end
+
+// top categories css start
+#top-categories{ margin-top: 5rem; 
+    .container{
+        .top-ctg-wrapping{
+            .top-ctg-heading{ color: $heading-color;
+                
+            }
+            .see-more{color: $primary-color; margin-top: $margin-normal; margin-bottom: $margin-normal;}
+            .row{
+                .card{
+                    background-color: $bg-color;
+                    border: none;
+                    img{
+                        margin-top: $padding-normal;
+                        height: 5rem;
+                        width: 5rem;
+
+                    }
+                    .category-name{
+                        color: $title-color-deep;
+                    }
+                    .card-text{
+                        background-color: $bg-color-deep;
+                        width: 2.188rem;
+                        border-radius: .5rem;
+                        // font-size: $text-font-size !important;
+                        color: $text-color;
+                        // margin-top: $margin-min;
+                        margin-bottom: $margin-min;
+                        small{ padding: .1rem}
+                    }
+                }
+            }
+        }
+    }
+}
+// top categories css end
+
+// directory-listing css start
+#directory-listing{ margin-top: $margin-section; background-color: $bg-color; padding-bottom: $padding-section-title;
+    .dir-list-wrapping{
+        .directory-list{
+            .row{
+                .directory-card{
+                    .brand-logo{
+                        width: 5rem;
+                        margin-left: $margin-normal;
+                        margin-top: -1.25rem;
+                        transition: .4s;
+                        &:hover{ margin-top: 1.25rem;}
+                    }
+                    .card-body{
+                        h5{ color: $title-color;}
+                        p{color: $title-sub-color; font-size: $text-font-size; margin-top: -.25rem;}
+                        img{width: 0.8rem ;margin-right: $margin-min-extra;}
+                        a{
+                           font-size: $text-extra-small;
+                           color: $text-color;
+                           text-decoration: none;
+                        }
+                        .location{ margin-top: -.5rem}
+                    }
+                }
+            }
+        }
+    }
+
+}
+// directory-listing css end
+
+// trending products css start
+#trend-products{ margin-bottom: $margin-section; 
+    .container{
+        .products-wrapping{
+            .products-heading{
+                .heading-title{ padding-top: $padding-section !important;}
+            }
+            .product-list{
+                .row{ padding-bottom: 1.5rem;
+                    .product-card{ 
+                        img{
+                            @include img-style;
+                            // height: 14.375rem;
+                        }
+                        .card-body{
+                            .rangking{ margin-top: -$margin-min-extra;
+                                .likes{ color: $text-color;
+                                    i{color: $primary-color; padding-right: $padding-min-extra}
+                                }
+                                .reviews{ color: $text-color;
+                                    i{color: $primary-color; font-size: $text-extra-small }
+                                }
+                            }
+                            .order-now{
+                                .price{  font-size: $text-font-size-large; font-weight: $font-medium; color: $text-color;
+                                    i{color: $primary-color ; font-size: $text-font-size-large;}
+                                    p{margin-bottom: -.2rem;}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// trending products css end
+
+
+// affiliate css start
+#affiliate{ margin-top: -$margin-normal; margin-bottom: $margin-section;
+    .affiliate-wrapping{
+        .card{
+            .card-title{color: $title-color;}
+            .card-text{ color: $title-color;}
+            .news-letter{
+                width: 19.688rem;
+                // input{ padding: $padding-medium !important}
+                i{color: $primary-color;}
+            }
+        }
+    }
+
+}
+// affiliate css end
+
+// testimonial css start
+#testimonial{ background-color: $bg-color; padding-bottom: $padding-section;
+    .container{
+        .testimonial-wrapping{
+            .heading-sub-title{padding-bottom: $padding-max}
+            .prev-next-btn{
+                margin-bottom: $margin-normal;
+               
+            }
+            .testimonial-list{
+                .row{
+                    .testimonial-card{
+                        .profile-photo{
+                            margin-top: -2.5rem;
+                            width: 7.5rem;
+                            height: 7.5rem;
+                            @include img-style;
+                            img{margin-left: 3.75rem;}
+                        }
+                        .profile-name{ margin-left: $margin-max;
+                            padding-top: $padding-medium;
+                            h6{color: $title-color;}
+                            
+                            .designation{ 
+                                margin-top: -$margin-min-extra;
+                                color: $text-color;
+                            }
+                        }
+                    }
+                    .card-body{
+                        
+                        padding: $padding-normal;
+                        
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+// testimonial css end
+
+// footer css start
+#footer{ background-color: $primary-color; padding-top: $padding-section-title;
+    .container{
+        hr{color: $text-color-light;}
+        .copy-right{
+            color: $text-color-light;
+        }
+        .footer-wrapping{
+            h5{color: $title-color-light; padding-bottom: $padding-min;}
+            
+            .boxiew{
+                .logo{
+                    padding-bottom: $padding-section-title;
+                }
+                .contact-info{
+                   a{
+                     color: $text-color-light;
+                     font-size: $text-font-size;
+                     transition: .3s;
+                     i{
+                        margin-right: $margin-min;
+                     }
+                     &:hover{
+                        color: $title-color-light;
+                     }
+                   }
+                }
+            }
+
+            .info-link{
+                a{
+                color: $text-color-light;
+                font-size: $text-font-size;
+                text-decoration: none;
+                transition: .3s;
+                &:hover{
+                    color: $title-color-light;
+                    i{
+                        transform: scale(1.3);
+                    }
+                }
+                }
+                div{padding-bottom: $padding-min;
+                    i{padding-right: $padding-min;}
+                }
+            }
+            
+            .follow-us{
+                .social-link{
+                    a{ color: $text-color-light;
+                        i{
+                            padding-right: $padding-min;
+                        font-size: $text-font-size-large;
+                        transition: .3s;
+                        &:hover{
+                            color: $title-color-light;
+                            transform: scale(1.3)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+// footer css end
+
+
+
+
+
+// media query for responsive start
+@media (min-width: $viewport-xm) {
+    body{
+        h1,h2,h3  {
+            font-size: 100%;
+        }
+        
+        h4,h5,h6{
+            font-size: 90%;
+        }
+        p{
+            font-size: 85% !important;
+        }
+        a{
+            font-size: 82%;
+        }
+
+        .button .button-light{
+            padding: .2rem 1rem;
+        }
+
+    }
+
+    #footer{
+        a{
+            font-size: 80% !important;
+        }
+    }
+
+  }
+
+  @media (min-width: $viewport-sm){
+    h4,h5,h6{
+        font-size: 95%;
+    }
+  }
+
+  @media (min-width: $viewport-md) {
+    body{
+        h1,h2,h3 {
+            font-size: 130%;
+        }
+        
+        h4,h5,h6{
+            font-size: 100%;
+        }
+        p{
+            font-size: 95% !important;
+        }
+        a{
+            font-size: 90%;
+        }
+
+        .button .button-light{
+            padding: .3rem 1.4rem;
+        }
+        
+    }
+
+  }
+
+  @media (min-width: $viewport-lg) {
+    body{
+        h1,h2 ,h3{
+            font-size: 150%;
+        }
+        p{
+            font-size: 100% !important;
+        }
+        a{
+            font-size: 92%;
+        }
+        
+    }
+
+    #footer{
+        a{
+            font-size: 85% !important;
+        }
+    }
+
+  }
+
+  @media (min-width: $viewport-xl) {
+    body{
+        h1,h2,h3 {
+            font-size: 175%;
+        }
+        p{
+            // font-size: 115% !important;
+        }
+        a{
+            font-size: 100%;
+        }
+
+        .button .button-light{
+            padding: .3rem 1.5rem;
+        }
+        
+    }
+
+    #footer{
+        a{
+            font-size: 95% !important;
+        }
+    }
+
+  }
+
+  @media (min-width: $viewport-xxl) {
+    body{
+        h1, h2,h3 {
+            font-size: 200%;
+        }
+        p{
+            // font-size: 125% !important;
+        }
+        a{
+            // font-size: 100%;
+        }
+
+        .button .button-light{
+            // padding: .3rem 2rem;
+        }
+        
+    }
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import url(../node_modules/bootstrap/dist/css/bootstrap.css);

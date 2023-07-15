@@ -1,0 +1,83 @@
+@use "../partials/index" as *;
+@use "../base/index" as *;
+
+
+//single-product css start
+#single-product{ margin-top: $margin-section; margin-bottom: $margin-max;
+    .container{
+        .single-p-wrapping{
+            .product-url{ margin-left: -$margin-normal;
+                a{
+                    color: $text-color;
+                    font-size: $text-font-size;
+                    &:hover{color: $primary-color;}
+                    
+                }
+            }
+
+            .single-product{
+                .image-view{
+
+                }
+
+                .product-supplier-info{
+                    .product-info{
+                        .product-title{
+                            color: $title-color;
+                        }
+                        .rangking{
+                            color: $text-color;
+                        }
+                        .price{
+                            color: $title-color;
+                            h5{
+                                i{color: $primary-color;}
+                            }
+                            .shop-now{
+                                a{
+                                    color: $primary-color;
+                                }
+                                transition: .3s;
+                                &:hover{
+                                    i{
+                                        transform: scale(1.2);
+                                        margin-left: $padding-min-extra;
+                                    }
+                                }
+                            }
+                        }
+                        .colors{
+                            color: $title-color;
+                        }
+                        .sizes{
+                            color: $title-color;
+                        }
+                    }
+                    .suppliers-info{
+                        color: $text-color;
+                        .supplier-title{
+                            color: $title-color;
+                        }
+                        .location{
+                            i{color: $primary-color;}
+                        }
+                        .supplier-shop{
+                            i{color: $primary-color;}
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+}
+//single-product css end
+
+
+
+//simillar products css start
+#simillar-products{
+    margin-bottom: 50px;
+}
+//simillar products css end
