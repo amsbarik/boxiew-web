@@ -5,14 +5,21 @@
 #top-ads-panel{ margin-top: 5.2rem; 
     .container{
         .ads-panel-wrapping{
+            img{
+                transition: .3s;
+                &:hover{
+                    transform: scale(1.05);
+                }
+            }
            .ads-panel-large{
+                
             .row{
-                padding-top: $padding-max;
+                // padding-top: $padding-max;
             }
            }
            .ads-panel-small{
             .row{
-                padding-top: $padding-max;
+                // padding-top: $padding-max;
             }
            }
         }
@@ -21,64 +28,261 @@
 // top ads panel css end
 
 // listed company css start
-#listed-company{
-    .container{
-        .listed-company-wrapping{
-            .listing-heading{
+#listed-company{ 
+    .listed-company-wrapping{
+        .listing-heading{
 
-            }
-            .company-list{
-                .listing-left{
-                    .heading-sub-title{
-                        .dropdown{
-                            color: $text-color !important;
-                        }
-                    }
-                    .single-card{ padding-bottom: $padding-min;}
-                    .row{ 
-                        .listing-card{
-                            background-color: $bg-color; 
-                            
-                            .card-body{ padding-left: $padding-max;
-                                .listing-logo{
-                                    margin-left: -$listing-logo;
-                                    padding-right: $padding-normal;
-                                }
-                                .card-title{
-                                    i{
-                                        color: $primary-color;
-                                        font-size: $text-font-size;
-                                        padding-left: $padding-min;
-                                    }
+        }
 
-                                }
-                                .open-now{color: $primary-color;}
-                                .listing-about{
-
-                                }
+        .company-list{
+            .listing-left{ 
+                // margin-bottom: 30rem;
+                .listing-name{ 
+                    
+                    .listing-card{
+                        background-color: $bg-color !important;
+                        transition: .3s;
+                        &:hover{
+                            @extend .box-shadow;
+                            .list-fav{
+                                visibility: visible;
                             }
                         }
-                    }
-                
-                }
-
-                .filter-right{
-                    .filter{
-                        .form-rang{
-                            color: $primary-color !important;
-                        
+                        .list-head{
+                            .fa-circle-check{color: $primary-color}
+                            // .listing-logo{
+                            //     border: .3rem solid $title-color-light;
+                            //     width: 100%;
+                            //     height: auto;
+                            // }
+                            .list-hd-info{
+                                left: 20%
+                                
+                                
+                            }
                         }
-                    }
-                    .ads-panel-right{
-                        margin-top: 11.6rem;
-                        div{
-                            padding-bottom: 1.625rem;
+
+                        .list-body{
+                            // background-color: $bg-color !important;
+                            // margin-top: 11.5%;
+                            margin-left: 27%;
+                            .listing-about{
+                                max-height: 3rem;
+                            }
+                        }
+                        .list-fav{
+                            top: 1rem;
+                            right: 1rem;
+                            visibility: hidden;
+                            color: $primary-color;
+                            background-color: $bg-color-deep;
                         }
                     }
                 }
             }
+
+            .filter-right{
+                .ads-panel-right{
+                    margin-top: 13rem !important;
+                    img{
+                        transition: .3s;
+                        &:hover{
+                            transform: scale(1.05);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// #listed-company{
+//     .container{
+//         .listed-company-wrapping{
+//             .listing-heading{
+
+//             }
+//             .company-list{
+//                 .listing-left{
+//                     .heading-sub-title{
+//                         .dropdown{
+//                             color: $text-color !important;
+//                         }
+//                     }
+//                     .single-card{
+//                         padding-bottom: $padding-min;}
+//                     .row{ 
+//                         .listing-card{
+//                             background-color: $bg-color; 
+                            
+//                             .card-body{ padding-left: $padding-max;
+//                                 .listing-logo{
+//                                     margin-left: -$listing-logo;
+//                                     padding-right: $padding-normal;
+//                                 }
+//                                 .card-title{
+//                                     i{
+//                                         color: $primary-color;
+//                                         font-size: $text-font-size;
+//                                         padding-left: $padding-min;
+//                                     }
+
+//                                 }
+//                                 .open-now{color: $primary-color;}
+//                                 .listing-about{
+
+//                                 }
+//                             }
+//                         }
+//                     }
+                
+//                 }
+
+//                 .filter-right{
+//                     .filter{
+//                         .form-rang{
+//                             color: $primary-color !important;
+                        
+//                         }
+//                     }
+//                     .ads-panel-right{
+//                         margin-top: 11.6rem;
+//                         div{
+//                             padding-bottom: 1.625rem;
+//                         }
+//                     }
+//                 }
+//             }
+           
+//         }
+//     }
+// }
+// listed company css end
+
+
+
+
+
+// media quary responsive start
+@media (min-width: $viewport-xm){
+    #listed-company{
+        .sort-btn{
+            button{
+                font-size: .85rem !important;
+                color: $text-color;
+                }  
+        }
+       
+        
+        .list-hd-info{
+            left: 10% !important;
+            margin-top: -.5rem;
+            // top: -3% ;
+        }
+
+        .list-body{
+            // margin-top: 25% !important;
+            margin-left: 0% !important;
+            .listing-about{
+                max-height: 3rem;
+            }
+        }
+        .list-ranking{
+            margin-top: -.5rem;
+        }
+        .listing-about{
+            max-height: 2.8rem !important;
+        }
+
+        small{
+            font-size: 72%;
+        }
+        .reviews{   
+            font-size: 58% !important;
+        }
+
+        .list-fav{
+            top: .5rem !important;
+            right: .6rem !important;
+        }
+
+        .listing-info{
            
         }
     }
 }
-// listed company css end
+
+@media (min-width: $viewport-md){
+    #listed-company{
+        small{
+            font-size: 82% !important;
+        }
+        .list-body{
+            // margin-top: -1rem !important;
+        }
+        .listing-about{
+            
+            p{
+                font-size: 85% !important;
+            }
+        }
+        .reviews{   
+            font-size: 68% !important;
+        }
+    }
+}
+
+@media (min-width: $viewport-lg){
+    #listed-company{
+        .sort-btn{
+            button{
+                font-size: .9rem !important;
+                }  
+        }
+        .listing-name{
+            margin-top: -2.2rem !important;
+        }
+        .list-body{
+            // top: 25%;
+            // position: absolute;
+            // background-color: $bg-color;
+            margin-top: -4.5rem;
+            .listing-about{
+                margin-left: 26%;
+                margin-bottom: 1rem;
+                // position: absolute;
+            }
+        }
+        .listing-about{
+            p{
+                font-size: 93% !important;
+            }
+        }
+        .reviews{   
+            font-size: 66% !important;
+        }
+    }
+ 
+}
+
+@media (min-width: $viewport-xxl){
+    #listed-company{
+        .list-body{
+            margin-top: -8rem !important;
+            .listing-about{
+                margin-left: 27%;
+                // margin-bottom: 1rem;
+                // position: absolute;
+            }
+            .listing-info{
+                margin-left: 26%;
+            }
+            
+            
+        }
+        .list-title{
+            margin-left: -.5rem;
+        }
+    }
+ 
+}

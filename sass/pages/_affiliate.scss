@@ -80,7 +80,7 @@
         .card{
             transition: .3s;
             &:hover{
-                box-shadow: 1px 1px 5px #c9c7c7;
+                @extend .box-shadow;
             }
         }
     }

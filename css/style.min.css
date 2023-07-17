@@ -14,14 +14,12 @@ a {
 }
 
 .heading-title {
-  padding-top: 3.125rem;
   color: #1d1d1d;
   font-weight: 500 !important;
 }
 
 .heading-sub-title {
   color: #757575;
-  padding-top: 1.25rem;
   padding-bottom: 1.25rem;
 }
 
@@ -29,7 +27,6 @@ a {
   width: 4.5rem;
   height: 0.188rem;
   background-color: #7e3ff2;
-  margin-top: 1.25rem;
 }
 
 .see-more {
@@ -53,7 +50,7 @@ a {
   font-size: 1rem;
 }
 
-.box-shadow {
+.box-shadow, #affiliate-position .levels .card:hover, #listed-company .listed-company-wrapping .company-list .listing-left .listing-name .listing-card:hover {
   box-shadow: 1px 1px 5px #c9c7c7;
 }
 
@@ -166,47 +163,126 @@ a {
 #top-ads-panel {
   margin-top: 5.2rem;
 }
-#top-ads-panel .container .ads-panel-wrapping .ads-panel-large .row {
-  padding-top: 1.875rem;
+#top-ads-panel .container .ads-panel-wrapping img {
+  transition: 0.3s;
 }
-#top-ads-panel .container .ads-panel-wrapping .ads-panel-small .row {
-  padding-top: 1.875rem;
+#top-ads-panel .container .ads-panel-wrapping img:hover {
+  transform: scale(1.05);
 }
-
-#listed-company .container .listed-company-wrapping .company-list .listing-left .heading-sub-title .dropdown {
-  color: #757575 !important;
+#listed-company .listed-company-wrapping .company-list .listing-left .listing-name .listing-card {
+  background-color: #f4f4f4 !important;
+  transition: 0.3s;
 }
-#listed-company .container .listed-company-wrapping .company-list .listing-left .single-card {
-  padding-bottom: 0.625rem;
+#listed-company .listed-company-wrapping .company-list .listing-left .listing-name .listing-card:hover .list-fav {
+  visibility: visible;
 }
-#listed-company .container .listed-company-wrapping .company-list .listing-left .row .listing-card {
-  background-color: #f4f4f4;
-}
-#listed-company .container .listed-company-wrapping .company-list .listing-left .row .listing-card .card-body {
-  padding-left: 1.875rem;
-}
-#listed-company .container .listed-company-wrapping .company-list .listing-left .row .listing-card .card-body .listing-logo {
-  margin-left: -3.375rem;
-  padding-right: 1.25rem;
-}
-#listed-company .container .listed-company-wrapping .company-list .listing-left .row .listing-card .card-body .card-title i {
-  color: #7e3ff2;
-  font-size: 1rem;
-  padding-left: 0.625rem;
-}
-#listed-company .container .listed-company-wrapping .company-list .listing-left .row .listing-card .card-body .open-now {
+#listed-company .listed-company-wrapping .company-list .listing-left .listing-name .listing-card .list-head .fa-circle-check {
   color: #7e3ff2;
 }
-#listed-company .container .listed-company-wrapping .company-list .filter-right .filter .form-rang {
-  color: #7e3ff2 !important;
+#listed-company .listed-company-wrapping .company-list .listing-left .listing-name .listing-card .list-head .list-hd-info {
+  left: 20%;
 }
-#listed-company .container .listed-company-wrapping .company-list .filter-right .ads-panel-right {
-  margin-top: 11.6rem;
+#listed-company .listed-company-wrapping .company-list .listing-left .listing-name .listing-card .list-body {
+  margin-left: 27%;
 }
-#listed-company .container .listed-company-wrapping .company-list .filter-right .ads-panel-right div {
-  padding-bottom: 1.625rem;
+#listed-company .listed-company-wrapping .company-list .listing-left .listing-name .listing-card .list-body .listing-about {
+  max-height: 3rem;
+}
+#listed-company .listed-company-wrapping .company-list .listing-left .listing-name .listing-card .list-fav {
+  top: 1rem;
+  right: 1rem;
+  visibility: hidden;
+  color: #7e3ff2;
+  background-color: #e6e5e5;
+}
+#listed-company .listed-company-wrapping .company-list .filter-right .ads-panel-right {
+  margin-top: 13rem !important;
+}
+#listed-company .listed-company-wrapping .company-list .filter-right .ads-panel-right img {
+  transition: 0.3s;
+}
+#listed-company .listed-company-wrapping .company-list .filter-right .ads-panel-right img:hover {
+  transform: scale(1.05);
 }
 
+@media (min-width: 0rem) {
+  #listed-company .sort-btn button {
+    font-size: 0.85rem !important;
+    color: #757575;
+  }
+  #listed-company .list-hd-info {
+    left: 10% !important;
+    margin-top: -0.5rem;
+  }
+  #listed-company .list-body {
+    margin-left: 0% !important;
+  }
+  #listed-company .list-body .listing-about {
+    max-height: 3rem;
+  }
+  #listed-company .list-ranking {
+    margin-top: -0.5rem;
+  }
+  #listed-company .listing-about {
+    max-height: 2.8rem !important;
+  }
+  #listed-company small {
+    font-size: 72%;
+  }
+  #listed-company .reviews {
+    font-size: 58% !important;
+  }
+  #listed-company .list-fav {
+    top: 0.5rem !important;
+    right: 0.6rem !important;
+  }
+}
+@media (min-width: 48rem) {
+  #listed-company small {
+    font-size: 82% !important;
+  }
+  #listed-company .listing-about p {
+    font-size: 85% !important;
+  }
+  #listed-company .reviews {
+    font-size: 68% !important;
+  }
+}
+@media (min-width: 62rem) {
+  #listed-company .sort-btn button {
+    font-size: 0.9rem !important;
+  }
+  #listed-company .listing-name {
+    margin-top: -2.2rem !important;
+  }
+  #listed-company .list-body {
+    margin-top: -4.5rem;
+  }
+  #listed-company .list-body .listing-about {
+    margin-left: 26%;
+    margin-bottom: 1rem;
+  }
+  #listed-company .listing-about p {
+    font-size: 93% !important;
+  }
+  #listed-company .reviews {
+    font-size: 66% !important;
+  }
+}
+@media (min-width: 87.5rem) {
+  #listed-company .list-body {
+    margin-top: -8rem !important;
+  }
+  #listed-company .list-body .listing-about {
+    margin-left: 27%;
+  }
+  #listed-company .list-body .listing-info {
+    margin-left: 26%;
+  }
+  #listed-company .list-title {
+    margin-left: -0.5rem;
+  }
+}
 #find-category {
   margin-top: 6.875rem;
 }
@@ -407,10 +483,6 @@ a {
 #affiliate-position .levels .card {
   transition: 0.3s;
 }
-#affiliate-position .levels .card:hover {
-  box-shadow: 1px 1px 5px #c9c7c7;
-}
-
 @media (min-width: 0rem) {
   #affiliate-cover-img .bg-image {
     height: 12.5rem;
@@ -846,7 +918,7 @@ nav div div ul li img {
     font-size: 85% !important;
   }
   body a {
-    font-size: 82%;
+    font-size: 82% !important;
   }
   body .button .button-light {
     padding: 0.2rem 1rem;
@@ -885,7 +957,7 @@ nav div div ul li img {
     font-size: 100% !important;
   }
   body a {
-    font-size: 92%;
+    font-size: 92% !important;
   }
   #footer a {
     font-size: 85% !important;
