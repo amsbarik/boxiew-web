@@ -83,7 +83,7 @@
 
             .filter-right{
                 .ads-panel-right{
-                    margin-top: 13rem !important;
+                    // margin-top: 13rem !important;
                     img{
                         transition: .3s;
                         &:hover{
@@ -209,6 +209,13 @@
         .listing-info{
            
         }
+        .filter-right{
+            display: none;
+        }
+
+        .ads-panel-right{
+            display: none;
+        }
     }
 }
 
@@ -229,6 +236,26 @@
         .reviews{   
             font-size: 68% !important;
         }
+        .filter-right{
+            display: block;
+        }
+        .ads-panel-right{
+            display: block;
+        }
+        .ms-auto{
+            display: none;
+        }
+
+        .listing-name{
+            .list-child:last-child{
+                display: none;
+            }
+        }
+
+        .ads-panel-right{
+            margin-top: 13rem !important;
+        }
+        
     }
 }
 
@@ -277,11 +304,19 @@
             .listing-info{
                 margin-left: 26%;
             }
-            
-            
         }
         .list-title{
             margin-left: -.5rem;
+        }
+
+        .listing-name{
+            .list-child:last-child{
+                display: block;
+            }
+        }
+
+        .ads-panel-right{
+            margin-top: 10.76rem !important;
         }
     }
  

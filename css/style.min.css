@@ -195,9 +195,6 @@ a {
   color: #7e3ff2;
   background-color: #e6e5e5;
 }
-#listed-company .listed-company-wrapping .company-list .filter-right .ads-panel-right {
-  margin-top: 13rem !important;
-}
 #listed-company .listed-company-wrapping .company-list .filter-right .ads-panel-right img {
   transition: 0.3s;
 }
@@ -236,6 +233,12 @@ a {
     top: 0.5rem !important;
     right: 0.6rem !important;
   }
+  #listed-company .filter-right {
+    display: none;
+  }
+  #listed-company .ads-panel-right {
+    display: none;
+  }
 }
 @media (min-width: 48rem) {
   #listed-company small {
@@ -246,6 +249,21 @@ a {
   }
   #listed-company .reviews {
     font-size: 68% !important;
+  }
+  #listed-company .filter-right {
+    display: block;
+  }
+  #listed-company .ads-panel-right {
+    display: block;
+  }
+  #listed-company .ms-auto {
+    display: none;
+  }
+  #listed-company .listing-name .list-child:last-child {
+    display: none;
+  }
+  #listed-company .ads-panel-right {
+    margin-top: 13rem !important;
   }
 }
 @media (min-width: 62rem) {
@@ -281,6 +299,12 @@ a {
   }
   #listed-company .list-title {
     margin-left: -0.5rem;
+  }
+  #listed-company .listing-name .list-child:last-child {
+    display: block;
+  }
+  #listed-company .ads-panel-right {
+    margin-top: 10.76rem !important;
   }
 }
 #find-category {
