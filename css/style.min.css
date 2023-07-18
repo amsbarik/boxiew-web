@@ -643,9 +643,8 @@ nav {
   position: fixed;
   z-index: 1000;
 }
-nav div div ul .add-listing {
-  border: 1px solid #7e3ff2;
-  border-radius: 3rem;
+nav div .navbar-collapse {
+  background-color: #ffffff;
 }
 nav div div ul li {
   margin-left: 0.625rem;
@@ -657,18 +656,21 @@ nav div div ul li a {
 nav div div ul li a:hover {
   color: #7e3ff2 !important;
 }
-nav div div ul li .sign-in {
-  margin-right: 0.625rem;
-}
-nav div div ul li div a {
+nav div div ul li .add-listing a {
   color: #7e3ff2 !important;
 }
-nav div div ul li div a:hover {
+nav div div ul li .add-listing a:hover {
   color: white !important;
 }
-nav div div ul li img {
-  width: 1.01rem;
-  margin-bottom: 0.2rem;
+nav div div ul li .add-listing a:hover i {
+  border-color: #ffffff !important;
+}
+nav div div ul li .add-listing a i {
+  padding: 0.1rem;
+  border-color: #7e3ff2 !important;
+}
+nav div div ul li .add-listing a i:hover {
+  border-color: #ffffff !important;
 }
 
 #top-cover {
@@ -971,6 +973,10 @@ nav div div ul li img {
   }
   body .button .button-light {
     padding: 0.3rem 1.4rem;
+  }
+  nav .navbar-collapse {
+    background-color: none !important;
+    box-shadow: none !important;
   }
 }
 @media (min-width: 62rem) {

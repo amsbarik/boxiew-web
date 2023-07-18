@@ -16,25 +16,37 @@
 // nav css start
 nav{ height: 5rem !important; background-color: $body-color; position: fixed; z-index: 1000;
     div{
+        .navbar-collapse{
+            background-color: $body-color;
+        }
         div{
             ul{ 
-                .add-listing{
-                border: 1px solid $primary-color;
-                border-radius: 3rem; 
-                // &:hover{ background-color: $primary-color;}
-            }
                 li{ margin-left: $margin-min;
                     a{color: $title-color !important; font-size: $title-font-size ; 
                         &:hover{color: $primary-color !important;}
                     }                   
-                    .sign-in{ margin-right: $margin-min;}
-                    // .add-listing-icon{ margin-left: $margin-min;}
-                    div{ 
+                    .sign-in{ 
+
+                    }
+                    
+                    .add-listing{ 
                         a{color: $primary-color !important;
-                            &:hover{color:white !important;}
+                            &:hover{color:white !important;
+                                i{
+                                    border-color: $title-color-light !important;
+                                    
+                                }
+                            }
+                            i{
+                                padding:  .1rem;
+                                border-color: $primary-color !important;
+                                &:hover{
+                                border-color: $title-color-light !important;
+                                }
+                            }
                         }               
                     }
-                    img{width: 1.01rem; margin-bottom: .2rem}
+                    
                 }
             }
         }
@@ -396,6 +408,13 @@ nav{ height: 5rem !important; background-color: $body-color; position: fixed; z-
             padding: .3rem 1.4rem;
         }
         
+    }
+
+    nav{
+        .navbar-collapse{
+            background-color: none !important;
+            box-shadow: none !important ;
+        }
     }
 
   }
