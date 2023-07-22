@@ -11,11 +11,11 @@
     <!--font-awesome lik-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-    <title>Home Page | Boxview</title>
+    <title>Home | Boxiew</title>
 </head>
 <body>
-    <!--start nav-->
-    <nav class="navbar navbar-expand-md navbar-light shadow-sm fixed-top">
+  <!--start nav-->
+  <nav class="navbar navbar-expand-md navbar-light shadow-sm fixed-top">
       <div class="container">
           <a href="index.html" class="navbar-brand"><img src="image/logo.png" width="100"></a>
           
@@ -29,7 +29,7 @@
                   <li class="nav-item mx-auto"><a href="shopping.html" class="nav-link">Shopping</a></li>
                   <li class="nav-item mx-auto"><a href="#" class="nav-link">Favorites</a></li>
                   <li class="nav-item mx-auto"><a href="#" class="nav-link">Cart</a></li>
-                  <li class="nav-item mx-auto me-2"><a href="#" class="nav-link"><i class="fa-solid fa-arrow-right-to-bracket pe-2"></i>Sign In</a></li>
+                  <li class="nav-item mx-auto "><a href="#" class="nav-link"><i class="fa-solid fa-arrow-right-to-bracket pe-2"></i>Sign In</a></li>
                   <li class="nav-item mx-auto "><div class="add-listing button-outline rounded-pill p-0"><a href="#" class="nav-link px-4">Add Listing<i class="fa-solid fa-plus ms-2 border rounded-circle "></i></a></div></li>
               </ul>
           </div>
@@ -37,69 +37,135 @@
   </nav>
   <!--end nav-->
 
-   <!--start main-->
+  <!--start main-->
   <main> 
     <!--top cover start-->
     <section id="top-cover" class="container-fluid">
         <div class="container ">
-            <div class="top-cover-wrapping d-flex justify-content-center align-items-center ">
-                <div class="search">
-                    <div class="search-title">
-                        <div class="justify-content-center d-flex"><h1>Find Genuine Products Near You!</h1></div>
-                        <div class="justify-content-center d-flex"><h4 >Explore Top Rated & Verified Suppliers and more</h4></div>
-                    </div>
-                    <div class="search-box d-flex justify-content-between flex-row p-2 mt-5">
-                        <div class="search-key ps-3">
-                            
-                            <input type="search" placeholder="search your need here -" class="form-control">
-                            
-                        </div>
-                        <div class="search-city pe-5">
-                            <div class="btn-group">
-                                <button type="button" class="btn  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">All City</button>
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown-item">
-                                        <form class="" action="...">
-                                            <input type="search" placeholder="search" class="form-control">
-                                        </form>
-                                    </li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#">Dhaka</a></li>
-                                    <li><a class="dropdown-item" href="#">India</a></li>
-                                    <li><a class="dropdown-item" href="#">Mymenshingh</a></li>
-                                    
-                                    <li><a class="dropdown-item" href="#">Sylhet</a></li>
-                                </ul>
+            <div class="top-cover-wrapping z-2 ">
+                <div class="d-flex justify-content-center ">
+                    <div class="search mt-md-4">
+                      <div class="search-title ">
+                          <div class="text-md-center fs-5"><h1>Find Genuine Products Near You!</h1></div>
+                          <div class="text-center mt-md-2"><h4>Explore Top Rated & Verified Suppliers and more</h4></div>
+                      </div>
+
+                      <div id="search-box" class="search-box rounded  p-2 mt-4 mt-md-5">
+                          <div class="row gy-2 row-cols-">
+                            <div class="search-key col-md-4  ms-md-2 ">
+                              <input type="search" placeholder="search here -" class="form-control border-md-0">
                             </div>
-                        </div>
-                        <div class="search-category"></div>
-                            <div class="btn-group">
-                                <button type="button" class="btn  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">All Category</button>
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown-item">
-                                        <form class="" action="...">
-                                            <input type="search" placeholder="search" class="form-control">
-                                        </form>
-                                    </li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#">Real State</a></li>
-                                    <li><a class="dropdown-item" href="#">Resturent</a></li>
-                                    <li><a class="dropdown-item" href="#">Hospital</a></li>
-                                    
-                                    <li><a class="dropdown-item" href="#">Park</a></li>
-                                </ul>
+                            <div class="search-city col ">
+                              <select class="form-select border" aria-label="Default select example">
+                                <option selected>All City</option>
+                                <option value="1">Dhaka</option>
+                                <option value="2">Sylhet</option>
+                                <option value="3">Delli</option>
+                              </select>
                             </div>
-                        <div class="search-btn">
-                            <button class="btn me-2 px-5">search</button>
-                            
-                        </div>
+                            <div class="search-category  col-md-3">
+                              <select class="form-select border" aria-label="Default select example">
+                                <option selected>All Category</option>
+                                <option value="1">Resturent</option>
+                                <option value="2">Hospital</option>
+                                <option value="3">Picnic Spot</option>
+                              </select>
+                            </div>
+                            <div class="search-btn col text-center ">
+                                <button onclick="closePopup()" class="button float-md-end border-0 px-md-4 px-xl-5 px-5  me-md-2">search</button>
+                              
+                          </div>
+                          </div>
+                      </div>
                     </div>
+                </div>
+
+                <div class="min-search-btn text-center mt-5">
+                  <button id="show-modal" onclick="openPopup()" class=" rounded-pill button border-0">Search Here</button>
+                </div>
+
+                <div id="listing-menu" class="listing-menu  z-3 ">
+                  <div >
+                    <ul class="list-main-menu  row g-2  row-cols-2 row-cols-md-3 z-3 ">
+                      <li class="list-btn col text-center  rounded-pill px-3 py-1"><a href="#"><i class="fa-solid fa-house pe-2"></i>Real State</a></li>
+                      <li class="list-btn col text-center  rounded-pill px-3 py-1"><a href="#"><i class="fa-solid fa-dumbbell pe-2"></i>Yoga</a></li>
+                      <li class="list-btn col text-center  rounded-pill px-3 py-1"><a href="#"><i class="fa-solid fa-heart-pulse pe-2"></i>Health Care</a>
+                        <ul class="list-sub-menu z-3 d-md-flex position-absolute justify-content-between p-3 ps-4 rounded shadow-sm" style="max-width: 1296px;">
+                          <li><a href="#"><span class="sub-menu-title"><i class="fa-solid fa-square-h"></i>Hospital</span></a>
+                            <ul class="list-menu-name p-2 rounded shadow-sm">
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Eye Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Cancer Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                            
+                          </li>
+                          <li class="pt-2"><a href="#"><span class="sub-menu-title "><i class="fa-solid fa-flask"></i>Diagnostic</span></a>
+                            <ul class="list-menu-name p-2 rounded shadow-sm">
+                              <li class=""><a href="#"><i class="fa-solid fa-minus"></i>Diagnostic 01</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Diagnostic 02</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                          </li>
+                          <li class="pt-2"><a href="#"><span class="sub-menu-title"><i class="fa-solid fa-prescription-bottle-medical"></i>Pharmecy</span></a>
+                            <ul class="list-menu-name p-2 rounded shadow-sm">
+                              <li class=""><a href="#"><i class="fa-solid fa-minus"></i>Pharmecy 01</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Pharmecy 02</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                            
+                          </li>
+                          <li class="pt-2" ><a href="#"><span class="sub-menu-title"><i class="fa-solid fa-stethoscope"></i>Accesories</span></a>
+                            <ul class="list-menu-name p-2 rounded shadow-sm">
+                              <li class=""><a href="#"><i class="fa-solid fa-minus"></i>Accesories 01</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Accesories 02</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                            
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="list-btn col text-center  rounded-pill px-3 py-1"><a href="#"><i class="fa-solid fa-utensils pe-2"></i>Resturents</a></li>
+                      <li class="list-btn col text-center  rounded-pill px-3 py-1"><a href="#"><i class="fa-solid fa-wine-glass-empty pe-2"></i>Hotel</a></li>
+                      <li class="list-btn col text-center  rounded-pill px-3 py-1"><a href="#"><i class="fa-solid fa-bicycle pe-2"></i>Cycle Shop</a></li>
+                    </ul>
+                  </div>
+    
                 </div>
             </div>
 
-            <div class="directory-menu">
-
-            </div>
+            
         </div>
 
     </section>
@@ -108,16 +174,16 @@
     <!--top categories start-->
     <section id="top-categories">
         <div class="container">
-            <div class="top-ctg-wrapping">
+            <div class="top-ctg-wrapping z-0">
                 <div class="top-ctg-heading ">
                     <div class="d-flex justify-content-center"><h3>Top Categories</h3></div>
-                    <div class="d-flex justify-content-center"><div class="heading-u-line"></div></div>
+                    <div class="d-flex justify-content-center mt-2 mt-md-3"><div class="heading-u-line"></div></div>
                 </div>
-                <div class="see-more d-flex justify-content-end"><small>See more</small></div>
-                <div class="row justify-content-between d-flex">
-                      <div class="top-ctg-card col-2">
+                <div class="see-more d-flex justify-content-end mt-3"><small>See more</small></div>
+                <div class="row g-3 row-cols-2 row-cols-md-3 row-cols-lg-6">
+                      <div class="top-ctg-card col">
                         <div class="card">
-                          <div class="d-flex justify-content-center"><img src="image/icon/central-park.png" class="card-img-top" alt="..."></div>
+                          <div class="text-center "><img src="image/icon/central-park.png" class="card-img-top img-fluid " alt="..."></div>
                           <div class="card-body ">
                             <div class="category-name d-flex justify-content-center"><h6>Central Park</h6></div>
                             <div class="d-flex justify-content-center"><div class="card-text d-flex justify-content-center align-items-center"><small>87</small></div></div>
@@ -125,9 +191,9 @@
                         </div>
                       </div>
 
-                      <div class="top-ctg-card col-2">
+                      <div class="top-ctg-card col">
                         <div class="card">
-                          <div class="d-flex justify-content-center"><img src="image/icon/resturent.png" class="card-img-top" alt="..."></div>
+                          <div class="text-center"><img src="image/icon/resturent.png" class="card-img-top" alt="..."></div>
                           <div class="card-body ">
                             <div class="category-name d-flex justify-content-center"><h6>Resturent</h6></div>
                             <div class="d-flex justify-content-center"><div class="card-text d-flex justify-content-center align-items-center"><small>87</small></div></div>
@@ -135,9 +201,9 @@
                         </div>
                       </div>
 
-                      <div class="top-ctg-card col-2">
+                      <div class="top-ctg-card col">
                         <div class="card">
-                          <div class="d-flex justify-content-center"><img src="image/icon/car.png" class="card-img-top" alt="..."></div>
+                          <div class="text-center"><img src="image/icon/car.png" class="card-img-top" alt="..."></div>
                           <div class="card-body ">
                             <div class="category-name d-flex justify-content-center"><h6>Car House</h6></div>
                             <div class="d-flex justify-content-center"><div class="card-text d-flex justify-content-center align-items-center"><small>87</small></div></div>
@@ -145,9 +211,9 @@
                         </div>
                       </div>
 
-                      <div class="top-ctg-card col-2">
+                      <div class="top-ctg-card col">
                         <div class="card">
-                          <div class="d-flex justify-content-center"><img src="image/icon/hospital.png" class="card-img-top" alt="..."></div>
+                          <div class="text-center"><img src="image/icon/hospital.png" class="card-img-top" alt="..."></div>
                           <div class="card-body ">
                             <div class="category-name d-flex justify-content-center"><h6>Hospital</h6></div>
                             <div class="d-flex justify-content-center"><div class="card-text d-flex justify-content-center align-items-center"><small>87</small></div></div>
@@ -155,9 +221,9 @@
                         </div>
                       </div>
 
-                      <div class="top-ctg-card col-2">
+                      <div class="top-ctg-card col">
                         <div class="card">
-                          <div class="d-flex justify-content-center"><img src="image/icon/lab.png" class="card-img-top" alt="..."></div>
+                          <div class="text-center"><img src="image/icon/lab.png" class="card-img-top" alt="..."></div>
                           <div class="card-body ">
                             <div class="category-name d-flex justify-content-center"><h6>Labaratory</h6></div>
                             <div class="d-flex justify-content-center"><div class="card-text d-flex justify-content-center align-items-center"><small>87</small></div></div>
@@ -165,18 +231,15 @@
                         </div>
                       </div>
 
-                      <div class="top-ctg-card col-2">
+                      <div class="top-ctg-card col">
                         <div class="card">
-                          <div class="d-flex justify-content-center"><img src="image/icon/home.png" class="card-img-top" alt="..."></div>
+                          <div class="text-center"><img src="image/icon/home.png" class="card-img-top" alt="..."></div>
                           <div class="card-body ">
                             <div class="category-name d-flex justify-content-center"><h6>Real State</h6></div>
                             <div class="d-flex justify-content-center"><div class="card-text d-flex justify-content-center align-items-center"><small>87</small></div></div>
                           </div>
                         </div>
                       </div>
-
-                    
-
                 </div>
 
             </div>
@@ -188,34 +251,33 @@
     <section id="directory-listing">
         <div class="container">
             <div class="dir-list-wrapping">
-                <div class="section-heading ">
-                    <div class="heading-title d-flex justify-content-center"><h3>Choose Your Relevents Partner</h3></div>
-                    <div class="d-flex justify-content-center"><div class="heading-u-line"></div></div>
-                    <div class="heading-sub-title d-flex justify-content-center"><h6>Top Rated & Verified Supplers in the World</h6></div>
+                <div class="section-heading pt-4">
+                    <div class="heading-title text-center"><h3>Choose Your Relevents Partner</h3></div>
+                    <div class="d-flex justify-content-center  mt-3 mt-lg-4"><div class="heading-u-line"></div></div>
+                    <div class="heading-sub-title text-center  mt-3 mt-lg-4"><h6>Top Rated & Verified Supplers in the World</h6></div>
                 </div>
-                <div class="see-more d-flex justify-content-end"><small>See more</small></div>
+                <div class="see-more text-end mt-md-3 "><small>See more</small></div>
                 <div class="directory-list">
-                    <div class="row pb-5">
-                        <div class="col-4">
-                            <div class="directory-card card mb-3 shadow-sm border-0">
+                    <div class="row gy-4 row-cols-lg-2 row-cols-xxl-3 row-cols-1">
+                        <div class="col">
+                            <div class="directory-card card mb-3 box-shadow border-0">
                                 <div class="row g-0">
-                                  <div class="col-md-3">
-                                    <img class="brand-logo" src="image/hatil-logo.png" class="img-fluid rounded-start" alt="...">
+                                  <div class="col-md-2">
+                                    <img class="brand-logo img-fluid rounded" src="image/hatil-logo.png" alt="...">
                                   </div>
-                                  <div class="col-md-9">
-                                    <div class="card-body">
+                                  <div class="col-md-10 ">
+                                    <div class="card-body ms-3 ms-md-0 ms-lg-4 ms-xxl-3">
                                       <h5 class="card-title">Hatil Furniture</h5>
-                                      <p class="card-text">All Kind Of Furniture</p>
-                                      <div class="location"><a href="#"> <img src="image/icon/map.png" alt="...">Malibagh, Dhaka, Bangladesh.</a></div>
-                                      <div>
-                                         <div class="d-flex ">
-                                            <div><a href="tel:+88 01711-XXXXXX"><img src="image/icon/call.png" alt="...">+88 01711-XXXXXX</a></div>
-                                            <div class="ms-3"><a href="mailto:webmaster@example.com"><img src="image/icon/paper-plane.png" alt="...">info@boxiew.com</a></div>
-                                         </div>
-                                         <div class="d-flex ">
-                                            <div><a href="http://facebook.com/"><img src="image/icon/facebook.png" alt="...">fb/boxiew.com</a></div>
-                                            <div class="ms-3"><a href="http://boxiew.com/"><img src="image/icon/web.png" alt="...">www.boxiew.com</a></div>
-                                         </div>
+                                      <p class="card-text">All Kind of Furniture</p>
+                                      <div class="location"><a href="#"><small><i class="fa-solid fa-location-dot me-2"></i>Malibagh, Dhaka, Bangladesh.</small></a></div>
+                                      <div class="row row-cols-2">
+                                         
+                                            <div class="col"><a href="tel:+88 01711-XXXXXX"><small><i class="fa-solid fa-phone me-2"></i>+88 01711-XXXXXX</small></a></div>
+                                            <div class="col"><a href="mailto:webmaster@example.com"><small><i class="fa-solid fa-paper-plane me-2"></i>info@boxiew.com</small></a></div>
+                                         
+                                            <div class="col"><a href="http://facebook.com/"><small><i class="fa-brands fa-square-facebook me-2"></i>fb/boxiew.com</small></a></div>
+                                            <div class="col"><a href="http://boxiew.com/"><small><i class="fa-solid fa-globe me-2"></i>www.boxiew.com</small></a></div>
+                                         
                                       </div>
                                     </div>
                                   </div>
@@ -223,146 +285,142 @@
                               </div>
                         </div>
 
-                        <div class="col-4">
-                            <div class="directory-card card mb-3 shadow-sm border-0">
-                                <div class="row g-0">
-                                  <div class="col-md-3">
-                                    <img class="brand-logo" src="image/hatil-logo.png" class="img-fluid rounded-start" alt="...">
-                                  </div>
-                                  <div class="col-md-9">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Hatil Furniture</h5>
-                                      <p class="card-text">All Kind Of Furniture</p>
-                                      <div class="location"><a href="#"> <img src="image/icon/map.png" alt="...">Malibagh, Dhaka, Bangladesh.</a></div>
-                                      <div>
-                                         <div class="d-flex ">
-                                            <div><a href="tel:+88 01711-XXXXXX"><img src="image/icon/call.png" alt="...">+88 01711-XXXXXX</a></div>
-                                            <div class="ms-3"><a href="mailto:webmaster@example.com"><img src="image/icon/paper-plane.png" alt="...">info@boxiew.com</a></div>
-                                         </div>
-                                         <div class="d-flex ">
-                                            <div><a href="http://facebook.com/"><img src="image/icon/facebook.png" alt="...">fb/boxiew.com</a></div>
-                                            <div class="ms-3"><a href="http://boxiew.com/"><img src="image/icon/web.png" alt="...">www.boxiew.com</a></div>
-                                         </div>
-                                      </div>
+                        <div class="col">
+                          <div class="directory-card card mb-3 box-shadow border-0">
+                              <div class="row g-0">
+                                <div class="col-md-2">
+                                  <img class="brand-logo img-fluid rounded" src="image/hatil-logo.png" alt="...">
+                                </div>
+                                <div class="col-md-10 ">
+                                  <div class="card-body ms-3 ms-md-0 ms-lg-4 ms-xxl-3">
+                                    <h5 class="card-title">Hatil Furniture</h5>
+                                    <p class="card-text">All Kind of Furniture</p>
+                                    <div class="location"><a href="#"><small><i class="fa-solid fa-location-dot me-2"></i>Malibagh, Dhaka, Bangladesh.</small></a></div>
+                                    <div class="row row-cols-2">
+                                       
+                                          <div class="col"><a href="tel:+88 01711-XXXXXX"><small><i class="fa-solid fa-phone me-2"></i>+88 01711-XXXXXX</small></a></div>
+                                          <div class="col"><a href="mailto:webmaster@example.com"><small><i class="fa-solid fa-paper-plane me-2"></i>info@boxiew.com</small></a></div>
+                                       
+                                       
+                                          <div class="col"><a href="http://facebook.com/"><small><i class="fa-brands fa-square-facebook me-2"></i>fb/boxiew.com</small></a></div>
+                                          <div class="col"><a href="http://boxiew.com/"><small><i class="fa-solid fa-globe me-2"></i>www.boxiew.com</small></a></div>
+                                       
                                     </div>
                                   </div>
                                 </div>
                               </div>
+                            </div>
                         </div>
 
-                        <div class="col-4">
-                            <div class="directory-card card mb-3 shadow-sm border-0">
-                                <div class="row g-0">
-                                  <div class="col-md-3">
-                                    <img class="brand-logo" src="image/hatil-logo.png" class="img-fluid rounded-start" alt="...">
-                                  </div>
-                                  <div class="col-md-9">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Hatil Furniture</h5>
-                                      <p class="card-text">All Kind Of Furniture</p>
-                                      <div class="location"><a href="#"> <img src="image/icon/map.png" alt="...">Malibagh, Dhaka, Bangladesh.</a></div>
-                                      <div>
-                                         <div class="d-flex ">
-                                            <div><a href="tel:+88 01711-XXXXXX"><img src="image/icon/call.png" alt="...">+88 01711-XXXXXX</a></div>
-                                            <div class="ms-3"><a href="mailto:webmaster@example.com"><img src="image/icon/paper-plane.png" alt="...">info@boxiew.com</a></div>
-                                         </div>
-                                         <div class="d-flex ">
-                                            <div><a href="http://facebook.com/"><img src="image/icon/facebook.png" alt="...">fb/boxiew.com</a></div>
-                                            <div class="ms-3"><a href="http://boxiew.com/"><img src="image/icon/web.png" alt="...">www.boxiew.com</a></div>
-                                         </div>
-                                      </div>
+                        <div class="col">
+                          <div class="directory-card card mb-3 box-shadow border-0">
+                              <div class="row g-0">
+                                <div class="col-md-2">
+                                  <img class="brand-logo img-fluid rounded" src="image/hatil-logo.png" alt="...">
+                                </div>
+                                <div class="col-md-10 ">
+                                  <div class="card-body ms-3 ms-md-0 ms-lg-4 ms-xxl-3">
+                                    <h5 class="card-title">Hatil Furniture</h5>
+                                    <p class="card-text">All Kind of Furniture</p>
+                                    <div class="location"><a href="#"><small><i class="fa-solid fa-location-dot me-2"></i>Malibagh, Dhaka, Bangladesh.</small></a></div>
+                                    <div class="row row-cols-2">
+                                      
+                                          <div class="col"><a href="tel:+88 01711-XXXXXX"><small><i class="fa-solid fa-phone me-2"></i>+88 01711-XXXXXX</small></a></div>
+                                          <div class="col"><a href="mailto:webmaster@example.com"><small><i class="fa-solid fa-paper-plane me-2"></i>info@boxiew.com</small></a></div>
+                                      
+                                      
+                                          <div class="col"><a href="http://facebook.com/"><small><i class="fa-brands fa-square-facebook me-2"></i>fb/boxiew.com</small></a></div>
+                                          <div class="col"><a href="http://boxiew.com/"><small><i class="fa-solid fa-globe me-2"></i>www.boxiew.com</small></a></div>
+                                      
                                     </div>
                                   </div>
                                 </div>
                               </div>
+                            </div>
                         </div>
+
+                        <div class="col">
+                          <div class="directory-card card mb-3 box-shadow border-0">
+                              <div class="row g-0">
+                                <div class="col-md-2">
+                                  <img class="brand-logo img-fluid rounded" src="image/hatil-logo.png" alt="...">
+                                </div>
+                                <div class="col-md-10 ">
+                                  <div class="card-body ms-3 ms-md-0 ms-lg-4 ms-xxl-3">
+                                    <h5 class="card-title">Hatil Furniture</h5>
+                                    <p class="card-text">All Kind of Furniture</p>
+                                    <div class="location"><a href="#"><small><i class="fa-solid fa-location-dot me-2"></i>Malibagh, Dhaka, Bangladesh.</small></a></div>
+                                    <div class="row row-cols-2">
+                                      
+                                          <div class="col"><a href="tel:+88 01711-XXXXXX"><small><i class="fa-solid fa-phone me-2"></i>+88 01711-XXXXXX</small></a></div>
+                                          <div class="col"><a href="mailto:webmaster@example.com"><small><i class="fa-solid fa-paper-plane me-2"></i>info@boxiew.com</small></a></div>
+                                      
+                                      
+                                          <div class="col"><a href="http://facebook.com/"><small><i class="fa-brands fa-square-facebook me-2"></i>fb/boxiew.com</small></a></div>
+                                          <div class="col"><a href="http://boxiew.com/"><small><i class="fa-solid fa-globe me-2"></i>www.boxiew.com</small></a></div>
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                          <div class="directory-card card mb-3 box-shadow border-0">
+                              <div class="row g-0">
+                                <div class="col-md-2">
+                                  <img class="brand-logo img-fluid rounded" src="image/hatil-logo.png" alt="...">
+                                </div>
+                                <div class="col-md-10 ">
+                                  <div class="card-body ms-3 ms-md-0 ms-lg-4 ms-xxl-3">
+                                    <h5 class="card-title">Hatil Furniture</h5>
+                                    <p class="card-text">All Kind of Furniture</p>
+                                    <div class="location"><a href="#"><small><i class="fa-solid fa-location-dot me-2"></i>Malibagh, Dhaka, Bangladesh.</small></a></div>
+                                    <div class="row row-cols-2">
+                                      
+                                          <div class="col"><a href="tel:+88 01711-XXXXXX"><small><i class="fa-solid fa-phone me-2"></i>+88 01711-XXXXXX</small></a></div>
+                                          <div class="col"><a href="mailto:webmaster@example.com"><small><i class="fa-solid fa-paper-plane me-2"></i>info@boxiew.com</small></a></div>
+                                      
+                                      
+                                          <div class="col"><a href="http://facebook.com/"><small><i class="fa-brands fa-square-facebook me-2"></i>fb/boxiew.com</small></a></div>
+                                          <div class="col"><a href="http://boxiew.com/"><small><i class="fa-solid fa-globe me-2"></i>www.boxiew.com</small></a></div>
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                          <div class="directory-card card mb-3 box-shadow border-0">
+                              <div class="row g-0">
+                                <div class="col-md-2">
+                                  <img class="brand-logo img-fluid rounded" src="image/hatil-logo.png" alt="...">
+                                </div>
+                                <div class="col-md-10 ">
+                                  <div class="card-body ms-3 ms-md-0 ms-lg-4 ms-xxl-3">
+                                    <h5 class="card-title">Hatil Furniture</h5>
+                                    <p class="card-text">All Kind of Furniture</p>
+                                    <div class="location"><a href="#"><small><i class="fa-solid fa-location-dot me-2"></i>Malibagh, Dhaka, Bangladesh.</small></a></div>
+                                    <div class="row row-cols-2">
+                                      
+                                          <div class="col"><a href="tel:+88 01711-XXXXXX"><small><i class="fa-solid fa-phone me-2"></i>+88 01711-XXXXXX</small></a></div>
+                                          <div class="col"><a href="mailto:webmaster@example.com"><small><i class="fa-solid fa-paper-plane me-2"></i>info@boxiew.com</small></a></div>
+                                      
+                                      
+                                          <div class="col"><a href="http://facebook.com/"><small><i class="fa-brands fa-square-facebook me-2"></i>fb/boxiew.com</small></a></div>
+                                          <div class="col"><a href="http://boxiew.com/"><small><i class="fa-solid fa-globe me-2"></i>www.boxiew.com</small></a></div>
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div> 
 
                     </div>
-
-                    <div class="row">
-                        <div class="col-4">
-                            <div class="directory-card card mb-3 shadow-sm border-0">
-                                <div class="row g-0">
-                                  <div class="col-md-3">
-                                    <img class="brand-logo" src="image/hatil-logo.png" class="img-fluid rounded-start" alt="...">
-                                  </div>
-                                  <div class="col-md-9">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Hatil Furniture</h5>
-                                      <p class="card-text">All Kind Of Furniture</p>
-                                      <div class="location"><a href="#"> <img src="image/icon/map.png" alt="...">Malibagh, Dhaka, Bangladesh.</a></div>
-                                      <div>
-                                         <div class="d-flex ">
-                                            <div><a href="tel:+88 01711-XXXXXX"><img src="image/icon/call.png" alt="...">+88 01711-XXXXXX</a></div>
-                                            <div class="ms-3"><a href="mailto:webmaster@example.com"><img src="image/icon/paper-plane.png" alt="...">info@boxiew.com</a></div>
-                                         </div>
-                                         <div class="d-flex ">
-                                            <div><a href="http://facebook.com/"><img src="image/icon/facebook.png" alt="...">fb/boxiew.com</a></div>
-                                            <div class="ms-3"><a href="http://boxiew.com/"><img src="image/icon/web.png" alt="...">www.boxiew.com</a></div>
-                                         </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                        </div>
-
-                        <div class="col-4">
-                            <div class="directory-card card mb-3 shadow-sm border-0">
-                                <div class="row g-0">
-                                  <div class="col-md-3">
-                                    <img class="brand-logo" src="image/hatil-logo.png" class="img-fluid rounded-start" alt="...">
-                                  </div>
-                                  <div class="col-md-9">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Hatil Furniture</h5>
-                                      <p class="card-text">All Kind Of Furniture</p>
-                                      <div class="location"><a href="#"> <img src="image/icon/map.png" alt="...">Malibagh, Dhaka, Bangladesh.</a></div>
-                                      <div>
-                                         <div class="d-flex ">
-                                            <div><a href="tel:+88 01711-XXXXXX"><img src="image/icon/call.png" alt="...">+88 01711-XXXXXX</a></div>
-                                            <div class="ms-3"><a href="mailto:webmaster@example.com"><img src="image/icon/paper-plane.png" alt="...">info@boxiew.com</a></div>
-                                         </div>
-                                         <div class="d-flex ">
-                                            <div><a href="http://facebook.com/"><img src="image/icon/facebook.png" alt="...">fb/boxiew.com</a></div>
-                                            <div class="ms-3"><a href="http://boxiew.com/"><img src="image/icon/web.png" alt="...">www.boxiew.com</a></div>
-                                         </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                        </div>
-
-                        <div class="col-4">
-                            <div class="directory-card card mb-3 shadow-sm border-0">
-                                <div class="row g-0">
-                                  <div class="col-md-3">
-                                    <img class="brand-logo" src="image/hatil-logo.png" class="img-fluid rounded-start" alt="...">
-                                  </div>
-                                  <div class="col-md-9">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Hatil Furniture</h5>
-                                      <p class="card-text">All Kind Of Furniture</p>
-                                      <div class="location"><a href="#"> <img src="image/icon/map.png" alt="...">Malibagh, Dhaka, Bangladesh.</a></div>
-                                      <div>
-                                         <div class="d-flex ">
-                                            <div><a href="tel:+88 01711-XXXXXX"><img src="image/icon/call.png" alt="...">+88 01711-XXXXXX</a></div>
-                                            <div class="ms-3"><a href="mailto:webmaster@example.com"><img src="image/icon/paper-plane.png" alt="...">info@boxiew.com</a></div>
-                                         </div>
-                                         <div class="d-flex ">
-                                            <div><a href="http://facebook.com/"><img src="image/icon/facebook.png" alt="...">fb/boxiew.com</a></div>
-                                            <div class="ms-3"><a href="http://boxiew.com/"><img src="image/icon/web.png" alt="...">www.boxiew.com</a></div>
-                                         </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                        </div>
-
-                    </div>
-
                 </div>
             </div>
         </div>
@@ -374,250 +432,252 @@
     <section id="trend-products">
       <div class="container">
           <div class="products-wrapping">
-              <div class="products-heading ">
-                  <div class="heading-title d-flex justify-content-center"><h3>Most Trending Products</h3></div>
-                  <div class="d-flex justify-content-center"><div class="heading-u-line"></div></div>
-                  <div class="heading-sub-title d-flex justify-content-center"><h6>Buy from Top Rated & Verified Supplers in the World</h6></div>
+              <div class="section-heading ">
+                  <div class="heading-title text-center"><h3>Most Trending Products</h3></div>
+                  <div class="d-flex justify-content-center mt-3 mt-lg-4"><div class="heading-u-line"></div></div>
+                  <div class="heading-sub-title text-center  mt-3 mt-lg-4"><h6>Buy from Top Rated & Verified Supplers in the World</h6></div>
               </div>
-              <div class="see-more d-flex justify-content-end"><small>See more</small></div>
+              <div class="see-more mt-md-3 text-end"><small>See more</small></div>
               <div class="product-list">
-                <div class="row ">
+                <div class="row row-cols-2 row-cols-lg-4 g-3 g-md-4">
 
-                  <div class="product-card  col-3">
+                  <div class="product-card  col">
                     <div class="card border-0 box-shadow">
                       <img src="image/products/product-1.jpg" class="card-img-top" alt="...">
-                      <div class="Favorite card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i>
-                      </div>
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
                       <div class="card-body">
                         <h5 class="card-title title-style">Women Shirt</h5>
                         <p class="card-text text-style">A exclusive red and black check women shirt</p>
-                        <div class="rangking d-flex justify-content-between">
+                        <div class="rangking d-sm-flex  justify-content-between">
                           <div class="likes"> 
                             <small><i class="fa-regular fa-heart"></i> Like 57</small>
                           </div> 
                           <div class="reviews">
-                            <small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i>&nbsp 7k Reviews</small>
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
                           </div> 
                         </div>
-                        <hr>
-                        <div class="order-now d-flex justify-content-between" >
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
                           <div class="price d-flex align-items-center">
                             <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
                           </div>
                           <div>
-                            <a href="#" class="btn button">Order Now</a>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div class="product-card  col-3">
+                  <div class="product-card  col">
                     <div class="card border-0 box-shadow">
                       <img src="image/products/product-2.jpg" class="card-img-top" alt="...">
-                      <div class="Favorite card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i>
-                      </div>
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
                       <div class="card-body">
                         <h5 class="card-title title-style">Women Shirt</h5>
                         <p class="card-text text-style">A exclusive red and black check women shirt</p>
-                        <div class="rangking d-flex justify-content-between">
+                        <div class="rangking d-sm-flex  justify-content-between">
                           <div class="likes"> 
                             <small><i class="fa-regular fa-heart"></i> Like 57</small>
                           </div> 
                           <div class="reviews">
-                            <small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i>&nbsp 7k Reviews</small>
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
                           </div> 
                         </div>
-                        <hr>
-                        <div class="order-now d-flex justify-content-between" >
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
                           <div class="price d-flex align-items-center">
                             <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
                           </div>
                           <div>
-                            <a href="#" class="btn button">Order Now</a>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div class="product-card  col-3">
+                  <div class="product-card  col">
                     <div class="card border-0 box-shadow">
                       <img src="image/products/product-3.jpg" class="card-img-top" alt="...">
-                      <div class="Favorite card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i>
-                      </div>
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
                       <div class="card-body">
                         <h5 class="card-title title-style">Women Shirt</h5>
                         <p class="card-text text-style">A exclusive red and black check women shirt</p>
-                        <div class="rangking d-flex justify-content-between">
+                        <div class="rangking d-sm-flex  justify-content-between">
                           <div class="likes"> 
                             <small><i class="fa-regular fa-heart"></i> Like 57</small>
                           </div> 
                           <div class="reviews">
-                            <small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i>&nbsp 7k Reviews</small>
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
                           </div> 
                         </div>
-                        <hr>
-                        <div class="order-now d-flex justify-content-between" >
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
                           <div class="price d-flex align-items-center">
                             <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
                           </div>
                           <div>
-                            <a href="#" class="btn button">Order Now</a>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div class="product-card  col-3">
+                  <div class="product-card  col">
                     <div class="card border-0 box-shadow">
                       <img src="image/products/product-4.jpg" class="card-img-top" alt="...">
-                      <div class="Favorite card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i>
-                      </div>
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
                       <div class="card-body">
                         <h5 class="card-title title-style">Women Shirt</h5>
                         <p class="card-text text-style">A exclusive red and black check women shirt</p>
-                        <div class="rangking d-flex justify-content-between">
+                        <div class="rangking d-sm-flex  justify-content-between">
                           <div class="likes"> 
                             <small><i class="fa-regular fa-heart"></i> Like 57</small>
                           </div> 
                           <div class="reviews">
-                            <small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i>&nbsp 7k Reviews</small>
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
                           </div> 
                         </div>
-                        <hr>
-                        <div class="order-now d-flex justify-content-between" >
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
                           <div class="price d-flex align-items-center">
                             <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
                           </div>
                           <div>
-                            <a href="#" class="btn button">Order Now</a>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                </div>
-
-                <div class="row ">
-
-                  <div class="product-card  col-3">
+                  <div class="product-card  col">
                     <div class="card border-0 box-shadow">
                       <img src="image/products/product-5.jpg" class="card-img-top" alt="...">
-                      <div class="Favorite card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i>
-                      </div>
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
                       <div class="card-body">
                         <h5 class="card-title title-style">Women Shirt</h5>
                         <p class="card-text text-style">A exclusive red and black check women shirt</p>
-                        <div class="rangking d-flex justify-content-between">
+                        <div class="rangking d-sm-flex  justify-content-between">
                           <div class="likes"> 
                             <small><i class="fa-regular fa-heart"></i> Like 57</small>
                           </div> 
                           <div class="reviews">
-                            <small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i>&nbsp 7k Reviews</small>
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
                           </div> 
                         </div>
-                        <hr>
-                        <div class="order-now d-flex justify-content-between" >
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
                           <div class="price d-flex align-items-center">
                             <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
                           </div>
                           <div>
-                            <a href="#" class="btn button">Order Now</a>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div class="product-card  col-3">
-                    <div class="card border-0 box-shadow">
-                      <img src="image/products/product-4.jpg" class="card-img-top" alt="...">
-                      <div class="Favorite card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i>
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title title-style">Women Shirt</h5>
-                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
-                        <div class="rangking d-flex justify-content-between">
-                          <div class="likes"> 
-                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
-                          </div> 
-                          <div class="reviews">
-                            <small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i>&nbsp 7k Reviews</small>
-                          </div> 
-                        </div>
-                        <hr>
-                        <div class="order-now d-flex justify-content-between" >
-                          <div class="price d-flex align-items-center">
-                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
-                          </div>
-                          <div>
-                            <a href="#" class="btn button">Order Now</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="product-card  col-3">
+                  <div class="product-card  col">
                     <div class="card border-0 box-shadow">
                       <img src="image/products/product-7.jpg" class="card-img-top" alt="...">
-                      <div class="Favorite card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i>
-                      </div>
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
                       <div class="card-body">
                         <h5 class="card-title title-style">Women Shirt</h5>
                         <p class="card-text text-style">A exclusive red and black check women shirt</p>
-                        <div class="rangking d-flex justify-content-between">
+                        <div class="rangking d-sm-flex  justify-content-between">
                           <div class="likes"> 
                             <small><i class="fa-regular fa-heart"></i> Like 57</small>
                           </div> 
                           <div class="reviews">
-                            <small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i>&nbsp 7k Reviews</small>
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
                           </div> 
                         </div>
-                        <hr>
-                        <div class="order-now d-flex justify-content-between" >
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
                           <div class="price d-flex align-items-center">
                             <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
                           </div>
                           <div>
-                            <a href="#" class="btn button">Order Now</a>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div class="product-card  col-3">
+                  <div class="product-card  col">
                     <div class="card border-0 box-shadow">
                       <img src="image/products/product-1.jpg" class="card-img-top" alt="...">
-                      <div class="Favorite card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i>
-                      </div>
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
                       <div class="card-body">
                         <h5 class="card-title title-style">Women Shirt</h5>
                         <p class="card-text text-style">A exclusive red and black check women shirt</p>
-                        <div class="rangking d-flex justify-content-between">
+                        <div class="rangking d-sm-flex  justify-content-between">
                           <div class="likes"> 
                             <small><i class="fa-regular fa-heart"></i> Like 57</small>
                           </div> 
                           <div class="reviews">
-                            <small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i>&nbsp 7k Reviews</small>
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
                           </div> 
                         </div>
-                        <hr>
-                        <div class="order-now d-flex justify-content-between" >
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
                           <div class="price d-flex align-items-center">
                             <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
                           </div>
                           <div>
-                            <a href="#" class="btn button">Order Now</a>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
+
+                  <div class="product-card  col">
+                    <div class="card border-0 box-shadow">
+                      <img src="image/products/product-4.jpg" class="card-img-top" alt="...">
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                      <div class="card-body">
+                        <h5 class="card-title title-style">Women Shirt</h5>
+                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
+                        <div class="rangking d-sm-flex  justify-content-between">
+                          <div class="likes"> 
+                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                          </div> 
+                          <div class="reviews">
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                          </div> 
+                        </div>
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
+                          <div class="price d-flex align-items-center">
+                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                          </div>
+                          <div>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  
+
+                  
+
+                  
 
                 </div>
 
@@ -631,23 +691,28 @@
     <!--affiliate banner start-->
     <section id="affiliate">
       <div class="container">
-        <div class="affiliate-wrapping">
-          <div class="card border-0 text-bg-dark">
-            <img src="image/affiliate-banner.jpg" class="card-img" alt="...">
-            <div class="card-img-overlay d-flex justify-content-around">
-              <div class="d-flex align-items-center">
-                <div><h4 class="card-title">Set Goal & Builtd Your Career with Affiliate</h4>
-                  <p class="card-text">You can join with us to reach your dream and build your secure carier.<br> Affiliate is the best way to success in life.</p>
+        <div class="affiliate-wrapping position-relative ">
+          <img src="image/affiliate-banner.jpg" class="img-fluid rounded" alt="...">
+          <div class="position-absolute affiliate-content px-3 px-md-0">
+            <div class="row  row-cols-1 row-cols-md-2">
+
+              <div class="col col-md-6 affiliate-txt">
+                <h4 class="card-title title-style">Set Goal & Builtd Your Career with Affiliate</h4>
+                <p class="card-text mt-2 mt-md-3 ">You can join with us to reach your dream and build your secure carier. Affiliate is the best way to success in life.</p>
               </div>
-              </div>
-              <div class="news-letter d-flex align-items-center">
-                <div class="input-group mb-3">
-                  <input type="text" class="form-control p-2" placeholder=" Enter your email" aria-label="news-letter" aria-describedby="news-letter">
-                  <span class="input-group-text" id="news-letter"><i class="fa-solid fa-arrow-right-long"></i></span>
+  
+              <div class="col col-md-5 ">
+                <div class="news-letter ms-md-3 mt-3 mt-md-4" style="max-width: 400px;">
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control p-2" placeholder=" Enter your email" aria-label="news-letter" aria-describedby="news-letter">
+                    <span class="input-group-text" id="news-letter"><i class="fa-solid fa-arrow-right-long"></i></span>
+                  </div>
                 </div>
               </div>
+              
             </div>
           </div>
+          
         </div>
       </div>
     </section>
@@ -658,35 +723,37 @@
       <div class="container">
           <div class="testimonial-wrapping">
               <div class="section-heading ">
-                  <div class="heading-title d-flex justify-content-center"><h3>Our Clients What Say</h3></div>
-                  <div class="d-flex justify-content-center"><div class="heading-u-line"></div></div>
-                  <div class="heading-sub-title d-flex justify-content-center"><h6>Our Honourable & Valude Partner in the World</h6></div>
+                  <div class="heading-title text-center"><h3>Our Clients What Say</h3></div>
+                  <div class="d-flex justify-content-center mt-3 mt-lg-4"><div class="heading-u-line"></div></div>
+                  <div class="heading-sub-title text-center mt-3 mt-lg-4"><h6>Our Honourable & Valude Partner in the World</h6></div>
               </div>
-              <div class="prev-next-btn d-flex justify-content-end"><i class="fa-solid fa-circle-chevron-left"></i><i class="ps-2 fa-solid fa-circle-chevron-right"></i></div>
+              <div class="prev-next-btn text-end"><i class="fa-solid fa-circle-chevron-left"></i><i class="ps-2 fa-solid fa-circle-chevron-right"></i></div>
               <div class="testimonial-list">
-                  <div class="row">
-                      <div class="col-6">
+                  <div class="row row-cols-1 row-cols-lg-2">
+                      <div class="col tsml-card">
                           <div class="testimonial-card card mb-3 box-shadow border-0">
                               <div class="row g-0">
                                 <div class="col-md-3">
                                   
-                                    <div class="profile-photo d-flex justify-content-center">
-                                      <img  src="image/profile-1.jpg" class="img-fluid rounded" alt="...">
-                                    </div>
-                                    <div class="d-flex ">
-                                      <div class="profile-name">
-                                        <h6>Mr Rahman</h6>
-                                        <div class="d-flex"><small class="designation">Director</small></div>
+                                    <div class="d-flex d-md-block">
+                                      <div class="profile-photo d-flex justify-content-center">
+                                        <img  src="image/profile-1.jpg" class="img-fluid rounded" alt="...">
+                                      </div>
+                                      <div >
+                                        <div class="profile-name ms-5 ms-md-4">
+                                          <h6>Mr Rahman</h6>
+                                          <div class="d-flex"><small class="designation">Director</small></div>
+                                        </div>
                                       </div>
                                     </div>
                                   
                                 </div>
                                 <div class="col-md-9">
-                                  <div class="card-body">
+                                  <div class="card-body ">
                                     <div class="reviews pb-2">
                                       <small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i></small>
                                     </div>
-                                    <div class="text-style d-flex pe-2">
+                                    <div class="text-style overflow-auto d-flex">
                                        <p>Lorem ipsum dolor sit amet  consectetur adipisicing elit. Id aliquid velit quaerat doloremque. itaque iusto veniam qui unde maiores explicabo minus.</p>
                                     </div>
                                   </div>
@@ -695,7 +762,7 @@
                             </div>
                       </div>
 
-                      <div class="col-6">
+                      <div class="col tsml-card">
                         <div class="testimonial-card card mb-3 box-shadow border-0">
                             <div class="row g-0">
                               <div class="col-md-3">
@@ -723,9 +790,7 @@
                               </div>
                             </div>
                           </div>
-                    </div>
-
-                     
+                      </div>
 
                   </div>
 
@@ -735,6 +800,9 @@
 
   </section>
     <!--testimonial end-->
+
+
+   
 
     <!--footer start-->
     <section id="footer">

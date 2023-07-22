@@ -29,7 +29,7 @@
                     <li class="nav-item mx-auto"><a href="shopping.html" class="nav-link">Shopping</a></li>
                     <li class="nav-item mx-auto"><a href="#" class="nav-link">Favorites</a></li>
                     <li class="nav-item mx-auto"><a href="#" class="nav-link">Cart</a></li>
-                    <li class="nav-item mx-auto me-2"><a href="#" class="nav-link"><i class="fa-solid fa-arrow-right-to-bracket pe-2"></i>Sign In</a></li>
+                    <li class="nav-item mx-auto me-md-2"><a href="#" class="nav-link"><i class="fa-solid fa-arrow-right-to-bracket pe-2"></i>Sign In</a></li>
                     <li class="nav-item mx-auto "><div class="add-listing button-outline rounded-pill p-0"><a href="#" class="nav-link px-4">Add Listing<i class="fa-solid fa-plus ms-2 border rounded-circle "></i></a></div></li>
                 </ul>
             </div>
@@ -45,9 +45,13 @@
             <div class="single-p-wrapping">
                  <div class="row pt-3 product-url">
                     <div class="col ms-2 pb-3 d-flex">
-                        <div><a href="index.html">Home/</a></div>
-                        <div><a href="shopping.html">Shopping/</a></div>
-                        <div><a href="#">exclusive-full-sleep-girl’s-shirt</a></div>
+                        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                              <li class="breadcrumb-item"><a href="shopping.html">Shopping</a></li>
+                              <li class="breadcrumb-item active" aria-current="page">exclusive-full-sleep-girls-shirt</li>
+                            </ol>
+                        </nav>
                         
                     </div>
                  </div>
@@ -56,15 +60,15 @@
                     <div class="image-view col">
                         <div class="row pb-md-1">
                             <div class="col">
-                                <img src="image/products/single-1.jpg" width="100%" class="rounded" alt="...">
+                                <img id="product-img" src="image/products/single-1.jpg" width="100%" class="rounded" alt="...">
                             </div>
                         </div>
                         <div class="row pt-3 g-3  row-cols-5">
-                            <div class="col"><img src="image/products/single-thum-1.jpg" width="100%" class="rounded" alt="..."></div>
-                            <div class="col"><img src="image/products/single-thum-1.jpg" width="100%" class="rounded" alt="..."></div>
-                            <div class="col"><img src="image/products/single-thum-1.jpg" width="100%" class="rounded" alt="..."></div>
-                            <div class="col"><img src="image/products/single-thum-1.jpg" width="100%" class="rounded" alt="..."></div>
-                            <div class="col"><img src="image/products/single-thum-1.jpg" width="100%" class="rounded" alt="..."></div>
+                            <div class="col "><img class="img-thum rounded img-fluid" src="image/products/single-1.jpg"  alt="..."></div>
+                            <div class="col "><img class="img-thum rounded img-fluid" src="image/products/img-thum-1.jpg"  alt="..."></div>
+                            <div class="col "><img class="img-thum rounded img-fluid" src="image/products/img-thum-2.jpg"  alt="..."></div>
+                            <div class="col "><img class="img-thum rounded img-fluid" src="image/products/img-thum-3.jpg"  alt="..."></div>
+                            <div class="col "><img class="img-thum rounded img-fluid" src="image/products/img-thum-4.jpg"  alt="..."></div>
                         </div>
                     </div>
                     <div class="product-supplier-info col">
@@ -113,6 +117,12 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="mt-4">Quantity</div>
+                                        <div class="mt-2"><input type="number" value="1" style="max-width: 7.9rem;"></div>
+                                    </div>
+                                </div>
         
                                 <div class="row row-cols-auto ps-2 pt-5 pb-2">
                                     <div class="col add-cart me-5 ms-1"><div>Add to Cart</div></div>
@@ -156,13 +166,16 @@
 
                  <hr>
 
-                 <div class="row row-cols-auto ps-2 pt-2">
-                    <div class="col button me-4 ms-1">Product’s Detail</div>
-                    <div class="col button-outline">Reviews</div>
-                 </div>
-
-                 <div class="row mt-4">
-                    <div class="col">
+                 <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Product's Detail</button>
+                      <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Reviews</button>
+                      <!-- <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button> -->
+                      <!-- <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false" disabled>Disabled</button> -->
+                    </div>
+                  </nav>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade mt-3 mt-md-4 show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
                         <h6>Export Quality & 100% Cotton</h6>
                         <p>labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. <br>Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
                         <ul>
@@ -175,7 +188,22 @@
                         <div class="see-more pt-4"><small>See more <i class="fa-solid fa-arrow-right-long ps-2"></i></small></div>
 
                     </div>
-                 </div>
+                    <div class="tab-pane fade mt-3 mt-md-4" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+                        <h6>Export Quality & 100% Cotton</h6>
+                        <p>labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. <br>Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing </li>
+                            <li>elipendisse ultrices gravida. Risus commodo viverra </li>
+                            <li>maecenas accumsan lacus vel facilisis. </li>
+                        </ul>
+                        <small><span class="pe-2 text-danger">Note:</span> It's very modern & exclusive!</small>
+
+                        <div class="see-more pt-4"><small>See more <i class="fa-solid fa-arrow-right-long ps-2"></i></small></div>
+
+                    </div>
+                    <!-- <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">...</div> -->
+                    <!-- <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">...</div> -->
+                  </div>
 
             </div>
         </div>
@@ -202,127 +230,133 @@
                 </div>
                 <!-- <div class="see-more d-flex justify-content-end"><small>See more</small></div> -->
                 <div class="product-list">
-                <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 gy-4 ">
-
-                    <div class="product-card  col">
-                    <div class="card border-0 box-shadow">
-                        <img src="image/products/product-1.jpg" class="card-img-top" alt="...">
-                        <div class="Favorite card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i>
-                        </div>
-                        <div class="card-body">
-                        <h5 class="card-title title-style">Women Shirt</h5>
-                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
-                        <div class="rangking d-flex justify-content-between">
-                            <div class="likes"> 
-                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
-                            </div> 
-                            <div class="reviews">
-                            <small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i>&nbsp 7k Reviews</small>
-                            </div> 
-                        </div>
-                        <hr>
-                        <div class="order-now d-flex justify-content-between" >
-                            <div class="price d-flex align-items-center">
-                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                    <div class="row row-cols-2 row-cols-lg-4 g-3 g-md-4">
+    
+                      <div class="product-card  col">
+                        <div class="card border-0 box-shadow">
+                          <img src="image/products/product-5.jpg" class="card-img-top" alt="...">
+                          <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                          <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                          <div class="card-body">
+                            <h5 class="card-title title-style">Women Shirt</h5>
+                            <!-- <p class="card-text text-style">A exclusive red and black check women shirt</p> -->
+                            <div class="rangking d-sm-flex  justify-content-between">
+                              <div class="likes"> 
+                                <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                              </div> 
+                              <div class="reviews">
+                                <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                              </div> 
                             </div>
-                            <div>
-                            <a href="#" class="button">Order Now</a>
+                            <hr class="my-2">
+                            <div class="order-now d-flex  justify-content-between" >
+                              <div class="price d-flex align-items-center">
+                                <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                              </div>
+                              <div>
+                                <a href="#" class=" button  px-md-3">Order Now</a>
+                              </div>
                             </div>
+                          </div>
                         </div>
-                        </div>
-                    </div>
-                    </div>
-
-                    <div class="product-card  col">
-                    <div class="card border-0 box-shadow">
-                        <img src="image/products/product-2.jpg" class="card-img-top" alt="...">
-                        <div class="Favorite card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i>
-                        </div>
-                        <div class="card-body">
-                        <h5 class="card-title title-style">Women Shirt</h5>
-                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
-                        <div class="rangking d-flex justify-content-between">
-                            <div class="likes"> 
-                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
-                            </div> 
-                            <div class="reviews">
-                            <small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i>&nbsp 7k Reviews</small>
-                            </div> 
-                        </div>
-                        <hr>
-                        <div class="order-now d-flex justify-content-between" >
-                            <div class="price d-flex align-items-center">
-                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                      </div>
+    
+                      <div class="product-card  col">
+                        <div class="card border-0 box-shadow">
+                          <img src="image/products/product-7.jpg" class="card-img-top" alt="...">
+                          <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                          <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                          <div class="card-body">
+                            <h5 class="card-title title-style">Women Shirt</h5>
+                            <!-- <p class="card-text text-style">A exclusive red and black check women shirt</p> -->
+                            <div class="rangking d-sm-flex  justify-content-between">
+                              <div class="likes"> 
+                                <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                              </div> 
+                              <div class="reviews">
+                                <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                              </div> 
                             </div>
-                            <div>
-                            <a href="#" class="button">Order Now</a>
+                            <hr class="my-2">
+                            <div class="order-now d-flex  justify-content-between" >
+                              <div class="price d-flex align-items-center">
+                                <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                              </div>
+                              <div>
+                                <a href="#" class=" button  px-md-3">Order Now</a>
+                              </div>
                             </div>
+                          </div>
                         </div>
-                        </div>
-                    </div>
-                    </div>
-
-                    <div class="product-card  col">
-                    <div class="card border-0 box-shadow">
-                        <img src="image/products/product-3.jpg" class="card-img-top" alt="...">
-                        <div class="Favorite card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i>
-                        </div>
-                        <div class="card-body">
-                        <h5 class="card-title title-style">Women Shirt</h5>
-                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
-                        <div class="rangking d-flex justify-content-between">
-                            <div class="likes"> 
-                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
-                            </div> 
-                            <div class="reviews">
-                            <small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i>&nbsp 7k Reviews</small>
-                            </div> 
-                        </div>
-                        <hr>
-                        <div class="order-now d-flex justify-content-between" >
-                            <div class="price d-flex align-items-center">
-                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                      </div>
+    
+                      <div class="product-card  col">
+                        <div class="card border-0 box-shadow">
+                          <img src="image/products/product-1.jpg" class="card-img-top" alt="...">
+                          <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                          <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                          <div class="card-body">
+                            <h5 class="card-title title-style">Women Shirt</h5>
+                            <!-- <p class="card-text text-style">A exclusive red and black check women shirt</p> -->
+                            <div class="rangking d-sm-flex  justify-content-between">
+                              <div class="likes"> 
+                                <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                              </div> 
+                              <div class="reviews">
+                                <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                              </div> 
                             </div>
-                            <div>
-                            <a href="#" class="button">Order Now</a>
+                            <hr class="my-2">
+                            <div class="order-now d-flex  justify-content-between" >
+                              <div class="price d-flex align-items-center">
+                                <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                              </div>
+                              <div>
+                                <a href="#" class=" button  px-md-3">Order Now</a>
+                              </div>
                             </div>
+                          </div>
                         </div>
-                        </div>
-                    </div>
-                    </div>
-
-                    <div class="product-card  col">
-                    <div class="card border-0 box-shadow">
-                        <img src="image/products/product-4.jpg" class="card-img-top" alt="...">
-                        <div class="Favorite card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i>
-                        </div>
-                        <div class="card-body">
-                        <h5 class="card-title title-style">Women Shirt</h5>
-                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
-                        <div class="rangking d-flex justify-content-between">
-                            <div class="likes"> 
-                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
-                            </div> 
-                            <div class="reviews">
-                            <small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i>&nbsp 7k Reviews</small>
-                            </div> 
-                        </div>
-                        <hr>
-                        <div class="order-now d-flex justify-content-between" >
-                            <div class="price d-flex align-items-center">
-                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                      </div>
+    
+                      <div class="product-card  col">
+                        <div class="card border-0 box-shadow">
+                          <img src="image/products/product-4.jpg" class="card-img-top" alt="...">
+                          <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                          <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                          <div class="card-body">
+                            <h5 class="card-title title-style">Women Shirt</h5>
+                            <!-- <p class="card-text text-style">A exclusive red and black check women shirt</p> -->
+                            <div class="rangking d-sm-flex  justify-content-between">
+                              <div class="likes"> 
+                                <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                              </div> 
+                              <div class="reviews">
+                                <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                              </div> 
                             </div>
-                            <div>
-                            <a href="#" class="button">Order Now</a>
+                            <hr class="my-2">
+                            <div class="order-now d-flex  justify-content-between" >
+                              <div class="price d-flex align-items-center">
+                                <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                              </div>
+                              <div>
+                                <a href="#" class=" button  px-md-3">Order Now</a>
+                              </div>
                             </div>
+                          </div>
                         </div>
-                        </div>
+                      </div>
+    
+                      
+    
+                      
+    
+                      
+    
                     </div>
-                    </div>
-
-                </div>
-
-                </div>
+    
+                  </div>
 
             </div>
         </div>
@@ -350,129 +384,139 @@
                 </div>
                 <!-- <div class="see-more d-flex justify-content-end"><small>See more</small></div> -->
                 <div class="product-list">
-                <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 gy-4 ">
-
-                    <div class="product-card  col">
-                    <div class="card border-0 box-shadow">
-                        <img src="image/products/product-1.jpg" class="card-img-top" alt="...">
-                        <div class="Favorite card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i>
-                        </div>
-                        <div class="card-body">
-                        <h5 class="card-title title-style">Women Shirt</h5>
-                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
-                        <div class="rangking d-flex justify-content-between">
-                            <div class="likes"> 
-                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
-                            </div> 
-                            <div class="reviews">
-                            <small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i>&nbsp 7k Reviews</small>
-                            </div> 
-                        </div>
-                        <hr>
-                        <div class="order-now d-flex justify-content-between" >
-                            <div class="price d-flex align-items-center">
-                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                    <div class="row row-cols-2 row-cols-lg-4 g-3 g-md-4">
+    
+                      <div class="product-card  col">
+                        <div class="card border-0 box-shadow">
+                          <img src="image/products/product-1.jpg" class="card-img-top" alt="...">
+                          <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                          <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                          <div class="card-body">
+                            <h5 class="card-title title-style">Women Shirt</h5>
+                            <!-- <p class="card-text text-style">A exclusive red and black check women shirt</p> -->
+                            <div class="rangking d-sm-flex  justify-content-between">
+                              <div class="likes"> 
+                                <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                              </div> 
+                              <div class="reviews">
+                                <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                              </div> 
                             </div>
-                            <div>
-                            <a href="#" class="button">Order Now</a>
+                            <hr class="my-2">
+                            <div class="order-now d-flex  justify-content-between" >
+                              <div class="price d-flex align-items-center">
+                                <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                              </div>
+                              <div>
+                                <a href="#" class=" button  px-md-3">Order Now</a>
+                              </div>
                             </div>
+                          </div>
                         </div>
-                        </div>
-                    </div>
-                    </div>
-
-                    <div class="product-card  col">
-                    <div class="card border-0 box-shadow">
-                        <img src="image/products/product-2.jpg" class="card-img-top" alt="...">
-                        <div class="Favorite card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i>
-                        </div>
-                        <div class="card-body">
-                        <h5 class="card-title title-style">Women Shirt</h5>
-                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
-                        <div class="rangking d-flex justify-content-between">
-                            <div class="likes"> 
-                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
-                            </div> 
-                            <div class="reviews">
-                            <small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i>&nbsp 7k Reviews</small>
-                            </div> 
-                        </div>
-                        <hr>
-                        <div class="order-now d-flex justify-content-between" >
-                            <div class="price d-flex align-items-center">
-                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                      </div>
+    
+                      <div class="product-card  col">
+                        <div class="card border-0 box-shadow">
+                          <img src="image/products/product-2.jpg" class="card-img-top" alt="...">
+                          <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                          <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                          <div class="card-body">
+                            <h5 class="card-title title-style">Women Shirt</h5>
+                            <!-- <p class="card-text text-style">A exclusive red and black check women shirt</p> -->
+                            <div class="rangking d-sm-flex  justify-content-between">
+                              <div class="likes"> 
+                                <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                              </div> 
+                              <div class="reviews">
+                                <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                              </div> 
                             </div>
-                            <div>
-                            <a href="#" class="button">Order Now</a>
+                            <hr class="my-2">
+                            <div class="order-now d-flex  justify-content-between" >
+                              <div class="price d-flex align-items-center">
+                                <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                              </div>
+                              <div>
+                                <a href="#" class=" button  px-md-3">Order Now</a>
+                              </div>
                             </div>
+                          </div>
                         </div>
-                        </div>
-                    </div>
-                    </div>
-
-                    <div class="product-card  col">
-                    <div class="card border-0 box-shadow">
-                        <img src="image/products/product-3.jpg" class="card-img-top" alt="...">
-                        <div class="Favorite card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i>
-                        </div>
-                        <div class="card-body">
-                        <h5 class="card-title title-style">Women Shirt</h5>
-                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
-                        <div class="rangking d-flex justify-content-between">
-                            <div class="likes"> 
-                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
-                            </div> 
-                            <div class="reviews">
-                            <small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i>&nbsp 7k Reviews</small>
-                            </div> 
-                        </div>
-                        <hr>
-                        <div class="order-now d-flex justify-content-between" >
-                            <div class="price d-flex align-items-center">
-                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                      </div>
+    
+                      <div class="product-card  col">
+                        <div class="card border-0 box-shadow">
+                          <img src="image/products/product-3.jpg" class="card-img-top" alt="...">
+                          <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                          <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                          <div class="card-body">
+                            <h5 class="card-title title-style">Women Shirt</h5>
+                            <!-- <p class="card-text text-style">A exclusive red and black check women shirt</p> -->
+                            <div class="rangking d-sm-flex  justify-content-between">
+                              <div class="likes"> 
+                                <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                              </div> 
+                              <div class="reviews">
+                                <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                              </div> 
                             </div>
-                            <div>
-                            <a href="#" class="button">Order Now</a>
+                            <hr class="my-2">
+                            <div class="order-now d-flex  justify-content-between" >
+                              <div class="price d-flex align-items-center">
+                                <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                              </div>
+                              <div>
+                                <a href="#" class=" button  px-md-3">Order Now</a>
+                              </div>
                             </div>
+                          </div>
                         </div>
-                        </div>
-                    </div>
-                    </div>
-
-                    <div class="product-card  col">
-                    <div class="card border-0 box-shadow">
-                        <img src="image/products/product-4.jpg" class="card-img-top" alt="...">
-                        <div class="Favorite card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i>
-                        </div>
-                        <div class="card-body">
-                        <h5 class="card-title title-style">Women Shirt</h5>
-                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
-                        <div class="rangking d-flex justify-content-between">
-                            <div class="likes"> 
-                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
-                            </div> 
-                            <div class="reviews">
-                            <small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i>&nbsp 7k Reviews</small>
-                            </div> 
-                        </div>
-                        <hr>
-                        <div class="order-now d-flex justify-content-between" >
-                            <div class="price d-flex align-items-center">
-                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                      </div>
+    
+                      <div class="product-card  col">
+                        <div class="card border-0 box-shadow">
+                          <img src="image/products/product-4.jpg" class="card-img-top" alt="...">
+                          <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                          <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                          <div class="card-body">
+                            <h5 class="card-title title-style">Women Shirt</h5>
+                            <!-- <p class="card-text text-style">A exclusive red and black check women shirt</p> -->
+                            <div class="rangking d-sm-flex  justify-content-between">
+                              <div class="likes"> 
+                                <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                              </div> 
+                              <div class="reviews">
+                                <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                              </div> 
                             </div>
-                            <div>
-                            <a href="#" class="button">Order Now</a>
+                            <hr class="my-2">
+                            <div class="order-now d-flex  justify-content-between" >
+                              <div class="price d-flex align-items-center">
+                                <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                              </div>
+                              <div>
+                                <a href="#" class=" button  px-md-3">Order Now</a>
+                              </div>
                             </div>
+                          </div>
                         </div>
-                        </div>
+                      </div>
+    
+                    
+    
+                     
+    
+                      
+                      
+                      
+    
+                      
+    
+                      
+    
                     </div>
-                    </div>
-
-                </div>
-
-                
-                </div>
-
+    
+                  </div>
                
 
             </div>

@@ -81,3 +81,17 @@
     margin-bottom: 50px;
 }
 //simillar products css end
+
+
+
+
+
+// media responsive start
+@media (min-width: $viewport-xm){
+    #single-product{
+        // margin-top: ;
+        .product-url{
+            display: none;
+        }
+    }
+}

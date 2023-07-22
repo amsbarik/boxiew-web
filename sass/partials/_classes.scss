@@ -2,6 +2,7 @@
 @use "../partials/variables" as *;
 
 
+
 .heading-title{
     // padding-top: $padding-section-title;
     color: $heading-color;
@@ -11,7 +12,7 @@
 .heading-sub-title{
     color: $title-sub-color;
     // padding-top: $padding-normal;
-    padding-bottom: $padding-normal;
+    // padding-bottom: $padding-normal;
 }
 .heading-u-line{
     width: 4.5rem;
@@ -22,7 +23,7 @@
 
 .see-more{
     color: $primary-color;
-    margin-bottom: $margin-normal;
+    margin-bottom: $space-title-md;
     &:hover{
         cursor: pointer;
     }
@@ -48,19 +49,26 @@
     box-shadow: 1px 1px 5px #c9c7c7;
 }
 
-.Favorite{
+// .Favorite{
+//     color: $primary-color;
+//     background-color: $bg-primary-light;
+//     padding: $padding-min-extra;
+//     width: 1.875rem;
+//     height: 1.875rem;
+//     // position: absolute;
+//     top: 1rem;
+//     left: 1rem;
+//     // visibility: hidden;
+    
+// }
+
+.product-fav{
+    top: .5rem;
+    right: .5rem;
+    visibility: hidden;
     color: $primary-color;
-    background-color: $bg-primary-light;
-    padding: $padding-min-extra;
-    width: 1.875rem;
-    height: 1.875rem;
-    // position: absolute;
-    top: 1rem;
-    left: 1rem;
-    // visibility: hidden;
-    &:hover{
-        visibility: visible;
-    }
+    background-color: $primary-color-light;
+    transition: .3s;
 }
 
 
@@ -72,7 +80,7 @@
 .reviews{
     color: $text-color;
     color: $primary-color;
-    font-size: $text-extra-small
+    // font-size: $text-extra-small
     }
 
 .contact-link{

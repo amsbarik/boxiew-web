@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.min.css" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 71rem;
+            margin: auto;
+        }
+        .single-product{
+            padding-top: 8rem;
+        }
+
+        .single-product h4{
+            margin: 20px 0;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .single-product select{
+            display: block;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        .single-product input{
+            width: 50px;
+            height: 40px;
+            padding-left: 10px;
+            font-size: 20px;
+            margin-right: 10px;
+            border: 1px solid #ff523b;
+            margin-top: 15px;
+        }
+        input:focus{
+            outline: none;
+        }
+
+        .small-img-row{
+            display: flex;
+            justify-content: space-between;
+        }
+        .small-img-col{
+            flex-basis: 24%;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        @media only screen and (max-width: 600px){
+            .row{
+                text-align: center;
+            }
+            .col-6{
+                flex-basis: 100%;
+                padding: 20px 0;
+            }
+            .single-product .row{
+                text-align: left;
+            }
+            .single-product h1{
+                font-size: 26px;
+                line-height: 32px;
+            }
+        }
+
+        /* 2nd part*/
+
+        .p-col{
+            flex-basis: 45%;
+            /* display: inline; */
+        }
+        .p-slider{
+            height: 80vh;
+            display: flex;
+        }
+        .product img{
+            height: 10.9vh;
+            margin-bottom: 6.5px;
+            cursor: pointer;
+            padding-right: 8px;
+        }
+        .preview img{
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="container single-product">
+        <div class="row">
+            <div class="col-6">
+                <img src="image/image-1.jpg" width="100%" id="product-img">
+
+                <div class="small-img-row">
+                    <div class="small-img-col">
+                        <img src="image/image-1.jpg" alt="..." width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="image/image-3.jpg" alt="..." width="100%" class="small-img">
+                    </div><div class="small-img-col">
+                        <img src="image/image-4.jpg" alt="..." width="100%" class="small-img">
+                    </div><div class="small-img-col">
+                        <img src="image/image-5.jpg" alt="..." width="100%" class="small-img">
+                    </div><div class="small-img-col">
+                        <img src="image/image-6.jpg" alt="..." width="100%" class="small-img">
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="col-6">
+                <p>Home / T-shirt</p>
+                <h1>Red Print T-shirt by HRX</h1>
+                <h4>$50.00</h4>
+                <select>
+                    <option>Select Size</option>
+                    <option>Small</option>
+                    <option>Medium</option>
+                    <option>Large</option>
+                    <option>Extra Large</option>
+                </select>
+                <input type="number" value="1">
+                <a href="#" class="btn bg-primary text-white"> Add to Card</a>
+
+                <h3>Product Detail</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fuga explicabo aliquam esse, voluptas molestias, doloremque, impedit velit veniam id beatae commodi. Architecto dolores accusamus explicabo temporibus blanditiis vitae nulla.</p>
+
+            </div>
+        </div>
+    </div>
+
+<hr>
+    <!--2nd part start-->
+    <div class="container">
+        <div class="row">
+            <div class="p-col">
+                <div class="p-slider">
+                    <div class="product">
+                        <img src="image/image-1.jpg" alt="...">
+                        <img src="image/image-2.jpg" alt="...">
+                        <img src="image/image-3.jpg" alt="...">
+                        <img src="image/image-4.jpg" alt="...">
+                        <img src="image/image-5.jpg" alt="...">
+                        <img src="image/image-6.jpg" alt="...">
+                    </div>
+                    <div class="preview">
+                        <img src="image/image-1.jpg" alt="...">
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="p-col">
+                <p>Home / T-shirt</p>
+                <h1>Red Print T-shirt by HRX</h1>
+                <h4>$50.00</h4>
+                <select>
+                    <option>Select Size</option>
+                    <option>Small</option>
+                    <option>Medium</option>
+                    <option>Large</option>
+                    <option>Extra Large</option>
+                </select>
+                <input type="number" value="1">
+                <a href="#" class="btn bg-primary text-white"> Add to Card</a>
+
+                <h3>Product Detail</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fuga explicabo aliquam esse, voluptas molestias, doloremque, impedit velit veniam id beatae commodi. Architecto dolores accusamus explicabo temporibus blanditiis vitae nulla.</p>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--js for -->
+    <script>
+        var ProductImg = document.getElementById("product-img");
+        var SmallImg = document.getElementsByClassName("small-img");
+
+        SmallImg[0].onclick = function(){
+            ProductImg.src = SmallImg[0].src;
+        }
+        
+        SmallImg[1].onclick = function(){
+            ProductImg.src = SmallImg[1].src;
+        }
+
+        SmallImg[2].onclick = function(){
+            ProductImg.src = SmallImg[2].src;
+        }
+
+        SmallImg[3].onclick = function(){
+            ProductImg.src = SmallImg[3].src;
+        }
+
+        SmallImg[4].onclick = function(){
+            ProductImg.src = SmallImg[4].src;
+        }
+
+    </script>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+</html>
