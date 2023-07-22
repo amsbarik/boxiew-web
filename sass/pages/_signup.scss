@@ -1,0 +1,33 @@
+@use "../partials/index" as *;
+@use "../base/index" as *;
+
+
+.navbar{
+    background-color: none !important;
+}
+
+#signup-form{
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(45deg, $primary-color, $primary-color-light   ), url(/image/signup-cover.jpg); 
+    .signup-txt{
+        height: 100vh;
+        color: $title-color-light;
+    }
+    
+    .signup-form{
+        height: 100vh;
+        background-color: $body-color;
+        .button{
+            color: $title-color-light;
+            background-color: $primary-color;
+            // padding: 1rem 50rem;
+        }
+        .else-sign{
+            span{
+                color: $primary-color;
+                // margin-left: $space-min;
+            }
+        }
+    }
+}

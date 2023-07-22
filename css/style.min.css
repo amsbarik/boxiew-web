@@ -732,6 +732,31 @@ a {
     visibility: visible;
   }
 }
+.navbar {
+  background-color: none !important;
+}
+
+#signup-form {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(45deg, #7e3ff2, rgba(126, 63, 242, 0.2)), url(/image/signup-cover.jpg);
+}
+#signup-form .signup-txt {
+  height: 100vh;
+  color: #ffffff;
+}
+#signup-form .signup-form {
+  height: 100vh;
+  background-color: #ffffff;
+}
+#signup-form .signup-form .button {
+  color: #ffffff;
+  background-color: #7e3ff2;
+}
+#signup-form .signup-form .else-sign span {
+  color: #7e3ff2;
+}
+
 nav {
   background-color: #ffffff;
   position: fixed;
