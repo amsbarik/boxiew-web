@@ -416,6 +416,12 @@ a {
 #single-product .container .single-p-wrapping .product-url a:hover {
   color: #7e3ff2;
 }
+#single-product .container .single-p-wrapping .single-product .add-cart, #single-product .container .single-p-wrapping .single-product .button, #single-product .container .single-p-wrapping .single-product .button-outline {
+  font-size: 0.85rem;
+}
+#single-product .container .single-p-wrapping .single-product .product-supplier-info .product-info .reviews i {
+  font-size: 0.75rem;
+}
 #single-product .container .single-p-wrapping .single-product .product-supplier-info .product-info .product-title {
   color: #1d1d1d;
 }
@@ -444,6 +450,12 @@ a {
 #single-product .container .single-p-wrapping .single-product .product-supplier-info .product-info .sizes {
   color: #1d1d1d;
 }
+#single-product .container .single-p-wrapping .single-product .product-supplier-info .product-info .qty {
+  color: #1d1d1d;
+}
+#single-product .container .single-p-wrapping .single-product .product-supplier-info .product-info .qty input:focus {
+  border: none !important;
+}
 #single-product .container .single-p-wrapping .single-product .product-supplier-info .suppliers-info {
   color: #757575;
 }
@@ -456,6 +468,9 @@ a {
 #single-product .container .single-p-wrapping .single-product .product-supplier-info .suppliers-info .supplier-shop i {
   color: #7e3ff2;
 }
+#single-product .container .single-p-wrapping .single-product .product-supplier-info .suppliers-info .reviews i {
+  font-size: 0.75rem;
+}
 
 #simillar-products {
   margin-bottom: 50px;
@@ -464,6 +479,86 @@ a {
 @media (min-width: 0rem) {
   #single-product .product-url {
     display: none;
+  }
+  #simillar-products .prev-next-btn, #recomended-products .prev-next-btn {
+    font-size: 0.8rem;
+  }
+  #simillar-products .product-list .text-style, #recomended-products .product-list .text-style {
+    display: none;
+  }
+  #simillar-products .product-list .rangking, #recomended-products .product-list .rangking {
+    padding-top: 0.625rem;
+    font-size: 0.85rem;
+  }
+  #simillar-products .product-list .price, #recomended-products .product-list .price {
+    font-size: 1rem !important;
+  }
+  #simillar-products .product-list .button, #recomended-products .product-list .button {
+    font-size: 0.65rem !important;
+    padding: 0.2rem 0.625rem;
+  }
+  #simillar-products .product-list .see-more, #recomended-products .product-list .see-more {
+    margin-bottom: 2rem;
+  }
+  #simillar-products {
+    margin-top: 5rem;
+  }
+  #recomended-products {
+    padding-bottom: 3rem;
+  }
+  #recomended-products .heading-title {
+    padding-top: 2rem;
+  }
+}
+@media (min-width: 62rem) {
+  .reviews i {
+    font-size: 0.85rem !important;
+  }
+  .prev-next-btn {
+    font-size: 1.4rem !important;
+  }
+  #single-product .product-url {
+    display: block;
+  }
+  #single-product .product-title {
+    font-size: 1.5rem;
+  }
+  #single-product .rangking {
+    font-size: 1.15rem !important;
+  }
+  #single-product .price h5 {
+    font-size: 1.5rem;
+  }
+  #single-product .shop-now {
+    font-size: 1.3rem;
+  }
+  #single-product .colors {
+    font-size: 1.3rem;
+  }
+  #single-product .sizes {
+    color: #1d1d1d;
+  }
+  #single-product .size-title {
+    font-size: 1.3rem;
+  }
+  #single-product .qty {
+    font-size: 1.3rem;
+  }
+  #single-product .add-cart, #single-product .button, #single-product .button-outline {
+    font-size: 1.1rem !important;
+  }
+  #single-product .suppliers-info .supplier-title h5 {
+    font-size: 1.2rem;
+  }
+  #single-product .suppliers-info .location {
+    font-size: 1.13rem;
+  }
+  #recomended-products {
+    margin-top: 6rem;
+    padding-bottom: 6rem;
+  }
+  #recomended-products .heading-title {
+    padding-top: 3rem;
   }
 }
 #affiliate-cover-img {
@@ -636,7 +731,7 @@ a {
     visibility: visible;
   }
 }
-nav .navbar {
+nav {
   background-color: #ffffff;
   position: fixed;
   z-index: 1000;
@@ -704,7 +799,6 @@ nav div div ul li .add-listing a i:hover {
 }
 #top-cover .listing-menu .list-main-menu .list-sub-menu {
   background-color: #ffffff;
-  margin-left: -14.5%;
 }
 #top-cover .listing-menu .list-main-menu .list-sub-menu .sub-menu-title {
   font-size: 1.1rem;
@@ -993,29 +1087,15 @@ nav div div ul li .add-listing a i:hover {
     text-align: left;
     width: 11rem;
     display: none;
-  }
-  #top-cover .listing-menu .list-main-menu .list-sub-menu .sub-menu-title {
-    font-size: 1rem;
-  }
-  #top-cover .listing-menu .list-main-menu .list-sub-menu .see-more {
-    margin-left: 1.8rem;
-  }
-  #top-cover .listing-menu .list-main-menu .list-sub-menu li {
-    margin-left: -0.7rem;
-    transition: 0.3s;
-  }
-  #top-cover .listing-menu .list-main-menu .list-sub-menu li:hover {
-    background-color: #f4f4f4;
-  }
-  #top-cover .listing-menu .list-main-menu .list-sub-menu li:hover .list-menu-name {
-    display: block;
+    margin-left: -5%;
+    position: absolute;
   }
   #top-cover .listing-menu .list-main-menu .list-sub-menu .list-menu-name {
     display: none;
     width: 13rem;
     position: absolute;
     background-color: #ffffff;
-    left: 90%;
+    left: 9rem;
     top: 10%;
   }
   #top-cover .listing-menu .list-main-menu .list-sub-menu .list-menu-name li {
@@ -1036,18 +1116,34 @@ nav div div ul li .add-listing a i:hover {
   #top-cover .listing-menu .list-main-menu .list-sub-menu .list-menu-name li a i {
     margin-right: 0.625rem;
   }
+  #top-cover .listing-menu .list-main-menu .list-sub-menu .sub-menu-title {
+    font-size: 1rem;
+  }
+  #top-cover .listing-menu .list-main-menu .list-sub-menu .see-more {
+    margin-left: 1.8rem;
+  }
+  #top-cover .listing-menu .list-main-menu .list-sub-menu li {
+    margin-left: -0.7rem;
+    transition: 0.3s;
+  }
+  #top-cover .listing-menu .list-main-menu .list-sub-menu li:hover {
+    background-color: #f4f4f4;
+  }
+  #top-cover .listing-menu .list-main-menu .list-sub-menu li:hover .list-menu-name {
+    display: block;
+  }
   #top-categories {
     margin-top: 1.5rem;
   }
   #top-categories .see-more {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
   #directory-listing {
     margin-top: 1.5rem;
     padding-bottom: 1.5rem;
   }
   #directory-listing .section-heading {
-    padding-top: 1.5rem;
+    padding-top: 2rem;
   }
   #directory-listing .section-heading h6 {
     font-size: 0.8rem;
@@ -1057,34 +1153,34 @@ nav div div ul li .add-listing a i:hover {
     width: 3.75rem;
   }
   #directory-listing .see-more {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
   #trend-products {
     margin-top: 1.5rem;
   }
   #trend-products .section-heading {
-    padding-top: 1.5rem;
+    padding-top: 2rem;
   }
   #trend-products .section-heading h6 {
     font-size: 0.8rem;
     font-weight: 400;
   }
-  #trend-products .text-style {
+  #trend-products .product-list .text-style {
     display: none;
   }
-  #trend-products .rangking {
+  #trend-products .product-list .rangking {
     padding-top: 0.625rem;
     font-size: 0.85rem;
   }
-  #trend-products .price {
+  #trend-products .product-list .price {
     font-size: 1rem !important;
   }
-  #trend-products .button {
+  #trend-products .product-list .button {
     font-size: 0.65rem !important;
     padding: 0.2rem 0.625rem;
   }
-  #trend-products .see-more {
-    margin-bottom: 1.5rem;
+  #trend-products .product-list .see-more {
+    margin-bottom: 2rem;
   }
   #affiliate {
     margin-top: 3rem;
@@ -1115,7 +1211,7 @@ nav div div ul li .add-listing a i:hover {
     padding-bottom: 3rem;
   }
   #testimonial .section-heading {
-    padding-top: 1.5rem;
+    padding-top: 2rem;
   }
   #testimonial .section-heading h6 {
     font-size: 0.8rem;
@@ -1188,33 +1284,33 @@ nav div div ul li .add-listing a i:hover {
     width: 43.1rem;
     display: block;
   }
-  #top-cover .listing-menu .list-main-menu .list-sub-menu .sub-menu-title {
-    font-size: 1rem;
-  }
-  #top-cover .listing-menu .list-main-menu .list-menu-name {
+  #top-cover .listing-menu .list-main-menu .list-sub-menu .list-menu-name {
     display: block !important;
     position: static;
     background-color: none;
     left: 0%;
     top: 0%;
   }
-  #top-cover .listing-menu .list-main-menu .list-menu-name li {
+  #top-cover .listing-menu .list-main-menu .list-sub-menu .list-menu-name li {
     margin-top: 0.313rem;
     margin-left: 0.5rem;
     text-align: left;
     transition: 0.3s;
   }
-  #top-cover .listing-menu .list-main-menu .list-menu-name li:hover a {
+  #top-cover .listing-menu .list-main-menu .list-sub-menu .list-menu-name li:hover a {
     color: #1d1d1d;
   }
-  #top-cover .listing-menu .list-main-menu .list-menu-name li:hover a i {
+  #top-cover .listing-menu .list-main-menu .list-sub-menu .list-menu-name li:hover a i {
     transform: scale(1.3);
   }
-  #top-cover .listing-menu .list-main-menu .list-menu-name li a {
+  #top-cover .listing-menu .list-main-menu .list-sub-menu .list-menu-name li a {
     color: #757575;
   }
-  #top-cover .listing-menu .list-main-menu .list-menu-name li a i {
+  #top-cover .listing-menu .list-main-menu .list-sub-menu .list-menu-name li a i {
     margin-right: 0.625rem;
+  }
+  #top-cover .listing-menu .list-main-menu .list-sub-menu .sub-menu-title {
+    font-size: 1rem;
   }
   #top-categories {
     margin-top: 3rem;
@@ -1313,6 +1409,43 @@ nav div div ul li .add-listing a i:hover {
   #top-cover .dir-categories {
     margin-top: 6.5rem;
   }
+  #top-cover .listing-menu {
+    margin-top: 4rem;
+  }
+  #top-cover .listing-menu .list-main-menu .list-sub-menu {
+    margin-left: -40rem;
+    width: 70rem !important;
+    display: block;
+  }
+  #top-cover .listing-menu .list-main-menu .list-sub-menu .list-menu-name {
+    display: block !important;
+    position: static;
+    background-color: none;
+    left: 0%;
+    top: 0%;
+    box-shadow: none !important;
+  }
+  #top-cover .listing-menu .list-main-menu .list-sub-menu .list-menu-name li {
+    margin-top: 0.313rem;
+    margin-left: 0rem;
+    text-align: left;
+    transition: 0.3s;
+  }
+  #top-cover .listing-menu .list-main-menu .list-sub-menu .list-menu-name li:hover a {
+    color: #1d1d1d;
+  }
+  #top-cover .listing-menu .list-main-menu .list-sub-menu .list-menu-name li:hover a i {
+    transform: scale(1.3);
+  }
+  #top-cover .listing-menu .list-main-menu .list-sub-menu .list-menu-name li a {
+    color: #757575;
+  }
+  #top-cover .listing-menu .list-main-menu .list-sub-menu .list-menu-name li a i {
+    margin-right: 0.625rem;
+  }
+  #top-cover .listing-menu .list-main-menu .list-sub-menu .sub-menu-title {
+    font-size: 1rem;
+  }
   #top-categories {
     margin-top: 4rem;
   }
@@ -1326,17 +1459,17 @@ nav div div ul li .add-listing a i:hover {
   #trend-products {
     margin-top: 4rem;
   }
-  #trend-products .text-style {
+  #trend-products .product-list .text-style {
     display: none;
   }
-  #trend-products .rangking {
+  #trend-products .product-list .rangking {
     padding-top: 0.625rem;
     font-size: 0.85rem;
   }
-  #trend-products .price {
+  #trend-products .product-list .price {
     font-size: 1rem !important;
   }
-  #trend-products .button {
+  #trend-products .product-list .button {
     font-size: 0.8rem !important;
   }
   #affiliate {

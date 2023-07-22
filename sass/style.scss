@@ -15,10 +15,10 @@
 
 // nav css start
 nav{ 
-    .navbar{
+    
         background-color: $body-color;
         position: fixed; z-index: 1000;
-        height: 5rem !important;}
+        height: 5rem !important;
     div{
         .navbar-collapse{
             background-color: $body-color;
@@ -117,7 +117,8 @@ nav{
                 .list-sub-menu{
                     // @extend .box-shadow;
                     background-color: $body-color;
-                    margin-left: -14.5%;
+                    // margin-left: -5%;
+                    // position: absolute;
                     .sub-menu-title{
                         font-size: 1.1rem;
                     }
@@ -513,6 +514,38 @@ nav{
                 text-align: left;
                 width: 11rem;
                 display: none;
+                margin-left: -5%;
+                position: absolute;
+
+                .list-menu-name{
+                    display: none;
+                    width: 13rem;
+                    position: absolute;
+                    background-color: $body-color;
+                    left: 9rem;
+                    top: 10%;
+                    li{
+                        margin-top: $margin-min-extra;
+                        margin-left: .5rem;
+                        text-align: left;
+                        transition: .3s;
+                        &:hover{
+                            a{
+                                color: $title-color ;
+                                i{
+                                    transform: scale(1.3);
+                                }
+                            }
+                        }
+                        a{
+                            color: $text-color;
+                            i{
+                                margin-right: $margin-min;
+                            }
+                            
+                        }
+                    }
+                }
 
 
                 .sub-menu-title{
@@ -546,35 +579,7 @@ nav{
                     // color: $title-color;
                     
                 }
-                .list-menu-name{
-                    display: none;
-                    width: 13rem;
-                    position: absolute;
-                    background-color: $body-color;
-                    left: 90%;
-                    top: 10%;
-                    li{
-                        margin-top: $margin-min-extra;
-                        margin-left: .5rem;
-                        text-align: left;
-                        transition: .3s;
-                        &:hover{
-                            a{
-                                color: $title-color ;
-                                i{
-                                    transform: scale(1.3);
-                                }
-                            }
-                        }
-                        a{
-                            color: $text-color;
-                            i{
-                                margin-right: $margin-min;
-                            }
-                            
-                        }
-                    }
-                }
+                
             }
         }
         }
@@ -614,29 +619,32 @@ nav{
                 font-weight: $font-regular;
             }
         }
-        .text-style{
-            display: none;
-        }
-        .rangking{
-            padding-top: $margin-min;
-            font-size: .85rem;
-            // .reviews{
-            //     .fa-star{
-            //         font-size: .8rem !important;
-            //     }
-            // }
+        .product-list{
+            .text-style{
+                display: none;
+            }
+            .rangking{
+                padding-top: $margin-min;
+                font-size: .85rem;
+                // .reviews{
+                //     .fa-star{
+                //         font-size: .8rem !important;
+                //     }
+                // }
+            }
+            
+            .price{
+                font-size: 1rem !important;
+            }
+            .button{
+                font-size: .65rem !important;
+                padding: .2rem 0.625rem;
+            }
+            .see-more{
+                margin-bottom: $space-title-xm;
+            }
         }
         
-        .price{
-            font-size: 1rem !important;
-        }
-        .button{
-            font-size: .65rem !important;
-            padding: .2rem 0.625rem;
-        }
-        .see-more{
-            margin-bottom: $space-title-xm;
-        }
     }
 
     #affiliate{
@@ -699,6 +707,8 @@ nav{
     }
 
   }
+
+
 
 
   @media (min-width: $viewport-sm){
@@ -785,6 +795,35 @@ nav{
                 width: 43.1rem;
                 display: block;
 
+                .list-menu-name{
+                    display: block !important;
+                    // width: 18rem;
+                    position: static;
+                    background-color: none;
+                    left: 0%;
+                    top: 0%;
+                    li{
+                        margin-top: $margin-min-extra;
+                        margin-left: .5rem;
+                        text-align: left;
+                        transition: .3s;
+                        &:hover{
+                            a{
+                                color: $title-color ;
+                                i{
+                                    transform: scale(1.3);
+                                }
+                            }
+                        }
+                        a{
+                            color: $text-color;
+                            i{
+                                margin-right: $margin-min;
+                            }
+                            
+                        }
+                    }
+                }
 
                 .sub-menu-title{
                     font-size: 1rem;
@@ -817,35 +856,7 @@ nav{
                     // color: $title-color;
                     
                 }
-                .list-menu-name{
-                    display: block !important;
-                    // width: 18rem;
-                    position: static;
-                    background-color: none;
-                    left: 0%;
-                    top: 0%;
-                    li{
-                        margin-top: $margin-min-extra;
-                        margin-left: .5rem;
-                        text-align: left;
-                        transition: .3s;
-                        &:hover{
-                            a{
-                                color: $title-color ;
-                                i{
-                                    transform: scale(1.3);
-                                }
-                            }
-                        }
-                        a{
-                            color: $text-color;
-                            i{
-                                margin-right: $margin-min;
-                            }
-                            
-                        }
-                    }
-                }
+                
             }
         }
         }
@@ -967,6 +978,102 @@ nav{
         .dir-categories{
             margin-top: 6.5rem;
         }
+
+        .listing-menu{
+            margin-top: 4rem;
+           
+            .list-btn{
+                // background: linear-gradient(0deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25));
+                    a{
+                        // color: $title-color-light
+                    }
+                    
+        }
+        .list-main-menu{
+            // transition: .3s;
+            // margin-left: -2rem;
+            // margin-top: 3rem;
+            // &:hover{
+            //     .list-sub-menu{
+            //         display: block;
+            //     }
+            // }
+            li{
+                // margin-right: .5rem;
+            }
+            .list-sub-menu{
+                // @extend .box-shadow;
+                // background-color: $body-color;
+                margin-left: -40rem;
+                // text-align: left;
+                width: 70rem !important;
+                display: block;
+
+                .list-menu-name{
+                    display: block !important;
+                    // width: 18rem;
+                    position: static;
+                    background-color: none;
+                    left: 0%;
+                    top: 0%;
+                    box-shadow: none !important;
+                    li{
+                        margin-top: $margin-min-extra;
+                        margin-left: 0rem;
+                        text-align: left;
+                        transition: .3s;
+                        &:hover{
+                            a{
+                                color: $title-color ;
+                                i{
+                                    transform: scale(1.3);
+                                }
+                            }
+                        }
+                        a{
+                            color: $text-color;
+                            i{
+                                margin-right: $margin-min;
+                            }
+                            
+                        }
+                    }
+                }
+
+                .sub-menu-title{
+                    font-size: 1rem;
+                }
+                .see-more{
+                    // transition: .3s;
+                    // &:hover{
+                    //     i{
+                    //         transform:translateX(.3rem)
+                    //     }
+                    // }
+                    // margin-left: 1.8rem;
+                }
+                // li{
+                //     margin-left: -.7rem;
+                //     transition: .3s;
+                //     &:hover{
+                //         background-color: $bg-color;
+                //         .list-menu-name{
+                //             display: block;
+                //         }
+                //     }
+                    
+                    // i{
+                    //     color: $primary-color;
+                    //     margin-right: $margin-min;
+                    // }
+                }
+                a{
+                    // color: $title-color;
+                    
+                }
+                
+            }
+        }
     }
 
     #top-categories{
@@ -983,24 +1090,27 @@ nav{
 
     #trend-products{
         margin-top: $space-sec-lg;
-        .text-style{
-            display: none;
+        .product-list{
+            .text-style{
+                display: none;
+            }
+            .rangking{
+                padding-top: $margin-min;
+                font-size: .85rem;
+                // .reviews{
+                //     .fa-star{
+                //         font-size: .8rem !important;
+                //     }
+                // }
+            }
+            .price{
+                font-size: 1rem !important;
+            }
+            .button{
+                font-size: .8rem !important;
+            }
         }
-        .rangking{
-            padding-top: $margin-min;
-            font-size: .85rem;
-            // .reviews{
-            //     .fa-star{
-            //         font-size: .8rem !important;
-            //     }
-            // }
-        }
-        .price{
-            font-size: 1rem !important;
-        }
-        .button{
-            font-size: .8rem !important;
-        }
+        
     }
 
     #affiliate{
