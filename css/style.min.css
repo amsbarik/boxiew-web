@@ -732,10 +732,6 @@ a {
     visibility: visible;
   }
 }
-.navbar {
-  background-color: none !important;
-}
-
 #signup-form {
   height: 100vh;
   width: 100vw;
@@ -744,19 +740,42 @@ a {
 #signup-form .signup-txt {
   height: 100vh;
   color: #ffffff;
+  margin-left: 20%;
+}
+#signup-form .signup-txt img {
+  position: absolute;
+  top: 2rem;
 }
 #signup-form .signup-form {
   height: 100vh;
   background-color: #ffffff;
 }
+#signup-form .signup-form h3 {
+  font-size: 1.5rem;
+}
 #signup-form .signup-form .button {
   color: #ffffff;
   background-color: #7e3ff2;
 }
-#signup-form .signup-form .else-sign span {
+#signup-form .signup-form .else-sign a {
   color: #7e3ff2;
+  font-size: 0.9rem !important;
 }
 
+@media (max-width: 768px) {
+  .col-left {
+    display: none;
+  }
+  #signup-form {
+    background: none;
+  }
+  .signup-form {
+    padding: 1rem;
+  }
+  .signup-form h3 {
+    font-size: 1.5rem;
+  }
+}
 nav {
   background-color: #ffffff;
   position: fixed;
