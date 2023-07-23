@@ -119,6 +119,8 @@ nav{
                     background-color: $body-color;
                     // margin-left: -5%;
                     // position: absolute;
+                    ///////////////////////////////////////////////
+                    display: none;
                     .sub-menu-title{
                         font-size: 1.1rem;
                     }
@@ -143,7 +145,8 @@ nav{
                         
                     }
                     .list-menu-name{
-                        // display: none;
+                        ///////////////////////////
+                        display: none ;
                         li{
                             margin-top: $margin-min-extra;
                             text-align: left;
@@ -488,13 +491,6 @@ nav{
         .listing-menu{
 
            
-            .list-btn{
-                // background: linear-gradient(0deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25));
-                    a{
-                        // color: $title-color-light
-                    }
-                    
-        }
         .list-main-menu{
             transition: .3s;
             margin-left: -2rem;
@@ -513,11 +509,13 @@ nav{
                 // margin-left: -14.5%;
                 text-align: left;
                 width: 11rem;
+                /////////////////////////////////
                 display: none;
                 margin-left: -5%;
                 position: absolute;
 
                 .list-menu-name{
+                    //////////////////
                     display: none;
                     width: 13rem;
                     position: absolute;
@@ -975,42 +973,29 @@ nav{
         .search-title{
             margin-top: 6.5rem;
         }
-        .dir-categories{
-            margin-top: 6.5rem;
-        }
+        // .dir-categories{
+        //     margin-top: 6.5rem;
+        // }
 
         .listing-menu{
             margin-top: 4rem;
            
-            .list-btn{
-                // background: linear-gradient(0deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25));
-                    a{
-                        // color: $title-color-light
-                    }
-                    
-        }
+            
         .list-main-menu{
-            // transition: .3s;
-            // margin-left: -2rem;
-            // margin-top: 3rem;
-            // &:hover{
-            //     .list-sub-menu{
-            //         display: block;
-            //     }
-            // }
-            li{
-                // margin-right: .5rem;
+            
+            &:hover{
+                .list-sub-menu{
+                    display: flex !important;
+                }
             }
+            
             .list-sub-menu{
-                // @extend .box-shadow;
-                // background-color: $body-color;
                 margin-left: -40rem;
-                // text-align: left;
-                width: 70rem !important;
-                display: block;
+                width: 58.2rem ;
+                display: none !important;
 
                 .list-menu-name{
-                    display: block !important;
+                    // display: none !important;
                     // width: 18rem;
                     position: static;
                     background-color: none;
@@ -1176,6 +1161,32 @@ nav{
         .search-box{
             width: 50rem;
         }
+
+        .listing-menu{
+            margin-top: 5rem;
+            
+        .list-main-menu{
+            
+            .list-sub-menu{
+                margin-left: -24.4rem;
+                width: 70rem ;
+                
+                .list-menu-name{
+                    .see-more{
+                        margin-left: 1rem;
+                    }
+                    
+                    li{
+                        margin-left: -.5rem;  
+                    }
+                }
+                .sub-menu-title{
+                    font-size: 1.1rem;
+                }
+                
+                }
+            }
+        }
     }
     #top-categories{
         margin-top: $space-sec-xl ;
@@ -1273,6 +1284,32 @@ nav{
         }
         .dir-categories{
             margin-top: 7.5rem;
+        }
+
+        .listing-menu{
+            margin-top: 5.5rem;
+            
+        .list-main-menu{
+            
+            .list-sub-menu{
+                margin-left: -28rem;
+                width: 81rem ;
+                
+                .list-menu-name{
+                    .see-more{
+                        // margin-left: 1rem;
+                    }
+                    
+                    li{
+                        // margin-left: -.5rem;  
+                    }
+                }
+                .sub-menu-title{
+                    // font-size: 1.1rem;
+                }
+                
+                }
+            }
         }
     }
 

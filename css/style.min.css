@@ -844,6 +844,7 @@ nav div div ul li .add-listing a i:hover {
 }
 #top-cover .listing-menu .list-main-menu .list-sub-menu {
   background-color: #ffffff;
+  display: none;
 }
 #top-cover .listing-menu .list-main-menu .list-sub-menu .sub-menu-title {
   font-size: 1.1rem;
@@ -863,6 +864,9 @@ nav div div ul li .add-listing a i:hover {
 }
 #top-cover .listing-menu .list-main-menu .list-sub-menu a {
   color: #1d1d1d;
+}
+#top-cover .listing-menu .list-main-menu .list-sub-menu .list-menu-name {
+  display: none;
 }
 #top-cover .listing-menu .list-main-menu .list-sub-menu .list-menu-name li {
   margin-top: 0.313rem;
@@ -1451,19 +1455,18 @@ nav div div ul li .add-listing a i:hover {
   #top-cover .search-title {
     margin-top: 6.5rem;
   }
-  #top-cover .dir-categories {
-    margin-top: 6.5rem;
-  }
   #top-cover .listing-menu {
     margin-top: 4rem;
   }
+  #top-cover .listing-menu .list-main-menu:hover .list-sub-menu {
+    display: flex !important;
+  }
   #top-cover .listing-menu .list-main-menu .list-sub-menu {
     margin-left: -40rem;
-    width: 70rem !important;
-    display: block;
+    width: 58.2rem;
+    display: none !important;
   }
   #top-cover .listing-menu .list-main-menu .list-sub-menu .list-menu-name {
-    display: block !important;
     position: static;
     background-color: none;
     left: 0%;
@@ -1563,6 +1566,22 @@ nav div div ul li .add-listing a i:hover {
   #top-cover .search-box {
     width: 50rem;
   }
+  #top-cover .listing-menu {
+    margin-top: 5rem;
+  }
+  #top-cover .listing-menu .list-main-menu .list-sub-menu {
+    margin-left: -24.4rem;
+    width: 70rem;
+  }
+  #top-cover .listing-menu .list-main-menu .list-sub-menu .list-menu-name .see-more {
+    margin-left: 1rem;
+  }
+  #top-cover .listing-menu .list-main-menu .list-sub-menu .list-menu-name li {
+    margin-left: -0.5rem;
+  }
+  #top-cover .listing-menu .list-main-menu .list-sub-menu .sub-menu-title {
+    font-size: 1.1rem;
+  }
   #top-categories {
     margin-top: 5rem;
   }
@@ -1631,6 +1650,13 @@ nav div div ul li .add-listing a i:hover {
   }
   #top-cover .dir-categories {
     margin-top: 7.5rem;
+  }
+  #top-cover .listing-menu {
+    margin-top: 5.5rem;
+  }
+  #top-cover .listing-menu .list-main-menu .list-sub-menu {
+    margin-left: -28rem;
+    width: 81rem;
   }
   #top-categories {
     margin-top: 6rem;
