@@ -11,6 +11,10 @@
     <link href="css/style.min.css" rel="stylesheet">
     <!--font-awesome lik-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!--slick css link-->
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/slick.css">
+
 
     <title>shopping | Boxview</title>
 </head>
@@ -205,82 +209,71 @@
     <!--find category end-->
 
     <!--top categories start-->
-    <section id="top-categories">
-        <div class="container">
-            <div class="top-ctg-wrapping">
-                <div class="top-ctg-heading pb-5">
-                    <div class="d-flex justify-content-center"><h3>Top Categories</h3></div>
-                    <div class="d-flex justify-content-center"><div class="heading-u-line"></div></div>
+    <section id="top-categories" class="top-categories">
+      <div class="container">
+          <div class="top-ctg-wrapping z-0">
+              <div class="top-ctg-heading ">
+                  <div class="d-flex justify-content-center"><h3>Top Categories</h3></div>
+                  <div class="d-flex justify-content-center mt-2 mt-md-3"><div class="heading-u-line"></div></div>
+              </div>
+              <div class=" d-flex justify-content-end mt-3 mb-3"><a href="#"><small class="see-more ">See more</small></a></div>
+              <div class="top-ctg-card ">
+
+                <div class="card">
+                  <div class="d-flex justify-content-center"><img src="image/icon/fashion.png" class="card-img-top" alt="..."></div>
+                  <div class="card-body ">
+                    <div class="category-name d-flex justify-content-center"><h6>Fashion</h6></div>
+                    <div class="d-flex justify-content-center"><div class="card-text d-flex justify-content-center mt-2 align-items-center px-2"><small>87</small></div></div>
+                  </div>
                 </div>
-                <!-- <div class="see-more d-flex justify-content-end"><small>See more</small></div> -->
-                <div class="row gy-4 row-cols-2 row-cols-md-3 row-cols-lg-6 justify-content-between d-flex">
-                    <div class="top-ctg-card col">
-                        <div class="card">
-                        <div class="d-flex justify-content-center"><img src="image/icon/fashion.png" class="card-img-top" alt="..."></div>
-                        <div class="card-body ">
-                            <div class="category-name d-flex justify-content-center"><h6>Fashion</h6></div>
-                            <div class="d-flex justify-content-center"><div class="card-text d-flex justify-content-center align-items-center"><small>87</small></div></div>
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="top-ctg-card col">
-                        <div class="card">
-                        <div class="d-flex justify-content-center"><img src="image/icon/beauty.png" class="card-img-top" alt="..."></div>
-                        <div class="card-body ">
-                            <div class="category-name d-flex justify-content-center"><h6>Beauty</h6></div>
-                            <div class="d-flex justify-content-center"><div class="card-text d-flex justify-content-center align-items-center"><small>87</small></div></div>
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="top-ctg-card col">
-                        <div class="card">
-                        <div class="d-flex justify-content-center"><img src="image/icon/kids-item.png" class="card-img-top" alt="..."></div>
-                        <div class="card-body ">
-                            <div class="category-name d-flex justify-content-center"><h6>Kids Item</h6></div>
-                            <div class="d-flex justify-content-center"><div class="card-text d-flex justify-content-center align-items-center"><small>87</small></div></div>
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="top-ctg-card col">
-                        <div class="card">
-                        <div class="d-flex justify-content-center"><img src="image/icon/hospital.png" class="card-img-top" alt="..."></div>
-                        <div class="card-body ">
-                            <div class="category-name d-flex justify-content-center"><h6>Health Care</h6></div>
-                            <div class="d-flex justify-content-center"><div class="card-text d-flex justify-content-center align-items-center"><small>87</small></div></div>
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="top-ctg-card col">
-                        <div class="card">
-                        <div class="d-flex justify-content-center"><img src="image/icon/electronix.png" class="card-img-top" alt="..."></div>
-                        <div class="card-body ">
-                            <div class="category-name d-flex justify-content-center"><h6>Electronix</h6></div>
-                            <div class="d-flex justify-content-center"><div class="card-text d-flex justify-content-center align-items-center"><small>87</small></div></div>
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="top-ctg-card col">
-                        <div class="card">
-                        <div class="d-flex justify-content-center"><img src="image/icon/hardware.png" class="card-img-top" alt="..."></div>
-                        <div class="card-body ">
-                            <div class="category-name d-flex justify-content-center"><h6>Hardware</h6></div>
-                            <div class="d-flex justify-content-center"><div class="card-text d-flex justify-content-center align-items-center"><small>87</small></div></div>
-                        </div>
-                        </div>
-                    </div>
-
-                    
-
+                <div class="card">
+                  <div class="d-flex justify-content-center"><img src="image/icon/beauty.png" class="card-img-top" alt="..."></div>
+                  <div class="card-body ">
+                    <div class="category-name d-flex justify-content-center"><h6>Beauty</h6></div>
+                    <div class="d-flex justify-content-center"><div class="card-text d-flex justify-content-center mt-2 align-items-center px-2"><small>87</small></div></div>
+                  </div>
                 </div>
-
-            </div>
-        </div>
+                <div class="card">
+                  <div class="d-flex justify-content-center"><img src="image/icon/kids-item.png" class="card-img-top" alt="..."></div>
+                  <div class="card-body ">
+                    <div class="category-name d-flex justify-content-center"><h6>Kids Item</h6></div>
+                    <div class="d-flex justify-content-center"><div class="card-text d-flex justify-content-center mt-2 align-items-center px-2"><small>87</small></div></div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="d-flex justify-content-center"><img src="image/icon/electronix.png" class="card-img-top" alt="..."></div>
+                  <div class="card-body ">
+                    <div class="category-name d-flex justify-content-center"><h6>Electronix</h6></div>
+                    <div class="d-flex justify-content-center"><div class="card-text d-flex justify-content-center mt-2 align-items-center px-2"><small>87</small></div></div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="d-flex justify-content-center"><img src="image/icon/hardware.png" class="card-img-top" alt="..."></div>
+                  <div class="card-body ">
+                    <div class="category-name d-flex justify-content-center"><h6>Hardware</h6></div>
+                    <div class="d-flex justify-content-center"><div class="card-text d-flex justify-content-center mt-2 align-items-center px-2"><small>87</small></div></div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="d-flex justify-content-center"><img src="image/icon/hospital.png" class="card-img-top" alt="..."></div>
+                  <div class="card-body ">
+                    <div class="category-name d-flex justify-content-center"><h6>Health Care</h6></div>
+                    <div class="d-flex justify-content-center"><div class="card-text d-flex justify-content-center mt-2 align-items-center px-2"><small>87</small></div></div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="d-flex justify-content-center"><img src="image/icon/beauty.png" class="card-img-top" alt="..."></div>
+                  <div class="card-body ">
+                    <div class="category-name d-flex justify-content-center"><h6>Beauty</h6></div>
+                    <div class="d-flex justify-content-center"><div class="card-text d-flex justify-content-center mt-2 align-items-center px-2"><small>87</small></div></div>
+                  </div>
+                </div>
+ 
+              </div>
+          </div>
+      </div>
     </section>
+
     <!--top categories end-->
 
     <!--trending products start-->
@@ -563,10 +556,10 @@
                     </div>
                 </div>
                 <!-- <div class="see-more d-flex justify-content-end"><small>See more</small></div> -->
-                <div class="product-list">
-                    <div class="row row-cols-2 row-cols-lg-4 g-3 g-md-4">
+                <div class="product-list product-slide">
+                    
     
-                      <div class="product-card  col">
+                      <div class="product-card  ">
                         <div class="card border-0 box-shadow">
                           <img src="image/products/product-1.jpg" class="card-img-top" alt="...">
                           <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
@@ -595,7 +588,7 @@
                         </div>
                       </div>
     
-                      <div class="product-card  col">
+                      <div class="product-card  ">
                         <div class="card border-0 box-shadow">
                           <img src="image/products/product-2.jpg" class="card-img-top" alt="...">
                           <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
@@ -624,7 +617,7 @@
                         </div>
                       </div>
     
-                      <div class="product-card  col">
+                      <div class="product-card  ">
                         <div class="card border-0 box-shadow">
                           <img src="image/products/product-3.jpg" class="card-img-top" alt="...">
                           <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
@@ -653,7 +646,35 @@
                         </div>
                       </div>
     
-                      <div class="product-card  col">
+                      <div class="product-card  ">
+                        <div class="card border-0 box-shadow">
+                          <img src="image/products/product-4.jpg" class="card-img-top" alt="...">
+                          <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                          <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                          <div class="card-body">
+                            <h5 class="card-title title-style">Women Shirt</h5>
+                            <p class="card-text text-style">A exclusive red and black check women shirt</p>
+                            <div class="rangking d-sm-flex  justify-content-between">
+                              <div class="likes"> 
+                                <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                              </div> 
+                              <div class="reviews">
+                                <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                              </div> 
+                            </div>
+                            <hr class="my-2">
+                            <div class="order-now d-flex  justify-content-between" >
+                              <div class="price d-flex align-items-center">
+                                <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                              </div>
+                              <div>
+                                <a href="#" class=" button  px-md-3">Order Now</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="product-card  ">
                         <div class="card border-0 box-shadow">
                           <img src="image/products/product-4.jpg" class="card-img-top" alt="...">
                           <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
@@ -682,19 +703,39 @@
                         </div>
                       </div>
     
-                      
-                      
-                      
+                      <div class="product-card  ">
+                        <div class="card border-0 box-shadow">
+                          <img src="image/products/product-4.jpg" class="card-img-top" alt="...">
+                          <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                          <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                          <div class="card-body">
+                            <h5 class="card-title title-style">Women Shirt</h5>
+                            <p class="card-text text-style">A exclusive red and black check women shirt</p>
+                            <div class="rangking d-sm-flex  justify-content-between">
+                              <div class="likes"> 
+                                <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                              </div> 
+                              <div class="reviews">
+                                <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                              </div> 
+                            </div>
+                            <hr class="my-2">
+                            <div class="order-now d-flex  justify-content-between" >
+                              <div class="price d-flex align-items-center">
+                                <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                              </div>
+                              <div>
+                                <a href="#" class=" button  px-md-3">Order Now</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
     
-                      
     
-                      
+                    
     
-                    </div>
-    
-                  </div>
-
-               
+                </div>
 
             </div>
         </div>
@@ -789,6 +830,134 @@
     
     <!-- <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script> -->
    
+    <!--slick js link-->
+    <script src="js/jquery_3.7.0_jquery.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+
+    <script>
+      $('.top-ctg-card').slick({
+        infinite: true,
+    slidesToShow: 6,
+    centerPadding: '20px',
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        centerPadding: '20px',
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 576,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 6,
+        slidesToScroll: 1
+      }
+    }
+    
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+      });
+    </script>
+
+<script>
+  $('.product-slide').slick({
+    infinite: true,
+slidesToShow: 4,
+centerPadding: '20px',
+slidesToScroll: 1,
+autoplay: true,
+autoplaySpeed: 2000,
+responsive: [
+{
+  breakpoint: 1024,
+  settings: {
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    centerPadding: '20px',
+    infinite: true,
+    dots: true
+  }
+},
+// {
+//   breakpoint: 600,
+//   settings: {
+//     slidesToShow: 1,
+//     slidesToScroll: 1
+//   }
+// },
+// {
+//   breakpoint: 576,
+//   settings: {
+//     slidesToShow: 2,
+//     slidesToScroll: 1
+//   }
+// },
+{
+  breakpoint: 768,
+  settings: {
+    slidesToShow: 2,
+    slidesToScroll: 1
+  }
+},
+{
+  breakpoint: 992,
+  settings: {
+    slidesToShow: 3,
+    slidesToScroll: 1
+  }
+},
+{
+  breakpoint: 1200,
+  settings: {
+    slidesToShow: 4,
+    slidesToScroll: 1
+  }
+}
+
+// You can unslick at a given breakpoint now by adding:
+// settings: "unslick"
+// instead of a settings object
+]
+  });
+</script>
+
 
 </body>
 </html>

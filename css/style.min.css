@@ -597,6 +597,7 @@ a {
   max-width: 23rem;
 }
 #affiliate-position {
+  margin-top: 6rem;
   margin-bottom: 3.125rem;
 }
 #affiliate-position .levels .card {
@@ -890,27 +891,24 @@ nav div div ul li .add-listing a i:hover {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
 }
-#top-categories .container .top-ctg-wrapping .row .card {
+#top-categories .container .top-ctg-wrapping .top-ctg-card .card {
   background-color: #f4f4f4;
   border: none;
 }
-#top-categories .container .top-ctg-wrapping .row .card img {
+#top-categories .container .top-ctg-wrapping .top-ctg-card .card img {
   margin-top: 1.25rem;
-  height: 5rem;
-  max-width: 5rem;
+  height: 4rem;
+  width: 4rem;
 }
-#top-categories .container .top-ctg-wrapping .row .card .category-name {
+#top-categories .container .top-ctg-wrapping .top-ctg-card .card .category-name {
   color: #757575;
 }
-#top-categories .container .top-ctg-wrapping .row .card .card-text {
+#top-categories .container .top-ctg-wrapping .top-ctg-card .card .card-text {
   background-color: #e6e5e5;
   max-width: 2.188rem;
   border-radius: 0.5rem;
   color: #757575;
   margin-bottom: 0.625rem;
-}
-#top-categories .container .top-ctg-wrapping .row .card .card-text small {
-  padding: 0.1rem;
 }
 
 #directory-listing {
@@ -946,43 +944,43 @@ nav div div ul li .add-listing a i:hover {
   margin-top: -0.5rem;
 }
 
-#trend-products .container .products-wrapping .product-list .row .product-card .card {
+#trend-products .container .products-wrapping .product-list .product-card .card {
   transition: 0.3s;
 }
-#trend-products .container .products-wrapping .product-list .row .product-card .card:hover .product-fav {
+#trend-products .container .products-wrapping .product-list .product-card .card:hover .product-fav {
   visibility: visible !important;
 }
-#trend-products .container .products-wrapping .product-list .row .product-card img {
+#trend-products .container .products-wrapping .product-list .product-card img {
   -o-object-fit: cover;
      object-fit: cover;
 }
-#trend-products .container .products-wrapping .product-list .row .product-card .card-body .rangking {
+#trend-products .container .products-wrapping .product-list .product-card .card-body .rangking {
   margin-top: -0.313rem;
 }
-#trend-products .container .products-wrapping .product-list .row .product-card .card-body .rangking .likes {
+#trend-products .container .products-wrapping .product-list .product-card .card-body .rangking .likes {
   color: #757575;
 }
-#trend-products .container .products-wrapping .product-list .row .product-card .card-body .rangking .likes i {
+#trend-products .container .products-wrapping .product-list .product-card .card-body .rangking .likes i {
   color: #7e3ff2;
   padding-right: 0.313rem;
 }
-#trend-products .container .products-wrapping .product-list .row .product-card .card-body .rangking .reviews {
+#trend-products .container .products-wrapping .product-list .product-card .card-body .rangking .reviews {
   color: #757575;
 }
-#trend-products .container .products-wrapping .product-list .row .product-card .card-body .rangking .reviews i {
+#trend-products .container .products-wrapping .product-list .product-card .card-body .rangking .reviews i {
   color: #7e3ff2;
   font-size: 0.78rem !important;
 }
-#trend-products .container .products-wrapping .product-list .row .product-card .card-body .order-now .price {
+#trend-products .container .products-wrapping .product-list .product-card .card-body .order-now .price {
   font-size: 1.1669rem;
   font-weight: 500;
   color: #757575;
 }
-#trend-products .container .products-wrapping .product-list .row .product-card .card-body .order-now .price i {
+#trend-products .container .products-wrapping .product-list .product-card .card-body .order-now .price i {
   color: #7e3ff2;
   font-size: 1.1669rem;
 }
-#trend-products .container .products-wrapping .product-list .row .product-card .card-body .order-now .price p {
+#trend-products .container .products-wrapping .product-list .product-card .card-body .order-now .price p {
   margin-bottom: -0.2rem;
 }
 
@@ -999,28 +997,31 @@ nav div div ul li .add-listing a i:hover {
 #testimonial .container .testimonial-wrapping .prev-next-btn {
   margin-bottom: 1.25rem;
 }
-#testimonial .container .testimonial-wrapping .testimonial-list .row .testimonial-card .profile-photo {
+#testimonial .container .testimonial-wrapping .testimonial-card {
+  margin-top: -3rem;
+}
+#testimonial .container .testimonial-wrapping .testimonial-card .profile-photo {
   margin-top: -2.5rem;
   width: 7.5rem;
   height: 7.5rem;
   -o-object-fit: cover;
      object-fit: cover;
 }
-#testimonial .container .testimonial-wrapping .testimonial-list .row .testimonial-card .profile-photo img {
+#testimonial .container .testimonial-wrapping .testimonial-card .profile-photo img {
   margin-left: 3.75rem;
 }
-#testimonial .container .testimonial-wrapping .testimonial-list .row .testimonial-card .profile-name {
+#testimonial .container .testimonial-wrapping .testimonial-card .profile-name {
   margin-left: 1.875rem;
   padding-top: 0.938rem;
 }
-#testimonial .container .testimonial-wrapping .testimonial-list .row .testimonial-card .profile-name h6 {
+#testimonial .container .testimonial-wrapping .testimonial-card .profile-name h6 {
   color: #1d1d1d;
 }
-#testimonial .container .testimonial-wrapping .testimonial-list .row .testimonial-card .profile-name .designation {
+#testimonial .container .testimonial-wrapping .testimonial-card .profile-name .designation {
   margin-top: -0.313rem;
   color: #757575;
 }
-#testimonial .container .testimonial-wrapping .testimonial-list .row .card-body {
+#testimonial .container .testimonial-wrapping .card-body {
   padding: 1.25rem;
 }
 
@@ -1276,6 +1277,49 @@ nav div div ul li .add-listing a i:hover {
   }
   #footer a {
     font-size: 80% !important;
+  }
+}
+.slick-slide {
+  margin: 0 10px;
+}
+
+.slick-list {
+  margin: 0 -10px;
+}
+
+.test {
+  position: relative;
+}
+
+.test .slick-prev {
+  background-color: #00A884;
+  margin-top: -20px;
+  position: absolute;
+  top: 0;
+  left: 95%;
+}
+
+.test .slick-prev:hover {
+  background-color: #00A884 !important;
+}
+
+.test .slick-next {
+  background-color: #00A884 !important;
+  margin-top: -20px;
+  position: absolute;
+  top: 0;
+}
+
+.test .slick-next:hover {
+  background-color: #00A884 !important;
+}
+
+@media (max-width: 576px) {
+  .slick-prev {
+    left: 85% !important;
+  }
+  .slick-next {
+    left: 93%;
   }
 }
 @media (min-width: 36rem) {

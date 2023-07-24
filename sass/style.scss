@@ -183,14 +183,15 @@ nav{
                 
             }
             .see-more{color: $primary-color; margin-top: $margin-normal; margin-bottom: $margin-normal;}
-            .row{
+            .top-ctg-card{
                 .card{
                     background-color: $bg-color;
                     border: none;
+                    // max-width: 300px;
                     img{
                         margin-top: $padding-normal;
-                        height: 5rem;
-                        max-width: 5rem;
+                        height: 4rem;
+                        width: 4rem;
 
                     }
                     .category-name{
@@ -204,7 +205,7 @@ nav{
                         color: $text-color;
                         // margin-top: $margin-min;
                         margin-bottom: $margin-min;
-                        small{ padding: .1rem}
+                        // small{ padding: .1rem}
                     }
                 }
             }
@@ -261,36 +262,34 @@ nav{
                 .heading-title{ }
             }
             .product-list{
-                .row{ 
-                    .product-card{ 
-                        .card{ transition: .3s;
-                                &:hover{
-                                    // transform: scale(1.02);
-                                    .product-fav{
-                                        visibility: visible !important;
-                                    }
-                            
-                            }
-                        }
-                        img{
-                            @include img-style;
-                            // height: 14.375rem;
-                        }
+                .product-card{ 
+                    .card{ transition: .3s;
+                            &:hover{
+                                // transform: scale(1.02);
+                                .product-fav{
+                                    visibility: visible !important;
+                                }
                         
-                        .card-body{
-                            .rangking{ margin-top: -$margin-min-extra;
-                                .likes{ color: $text-color;
-                                    i{color: $primary-color; padding-right: $padding-min-extra}
-                                }
-                                .reviews{ color: $text-color;
-                                    i{color: $primary-color; font-size: .78rem !important; }
-                                }
+                        }
+                    }
+                    img{
+                        @include img-style;
+                        // height: 14.375rem;
+                    }
+                    
+                    .card-body{
+                        .rangking{ margin-top: -$margin-min-extra;
+                            .likes{ color: $text-color;
+                                i{color: $primary-color; padding-right: $padding-min-extra}
                             }
-                            .order-now{
-                                .price{  font-size: $text-font-size-large; font-weight: $font-medium; color: $text-color;
-                                    i{color: $primary-color ; font-size: $text-font-size-large;}
-                                    p{margin-bottom: -.2rem;}
-                                }
+                            .reviews{ color: $text-color;
+                                i{color: $primary-color; font-size: .78rem !important; }
+                            }
+                        }
+                        .order-now{
+                            .price{  font-size: $text-font-size-large; font-weight: $font-medium; color: $text-color;
+                                i{color: $primary-color ; font-size: $text-font-size-large;}
+                                p{margin-bottom: -.2rem;}
                             }
                         }
                     }
@@ -330,34 +329,31 @@ nav{
                 margin-bottom: $margin-normal;
                
             }
-            .testimonial-list{
-                .row{
-                    .testimonial-card{
-                        .profile-photo{
-                            margin-top: -2.5rem;
-                            width: 7.5rem;
-                            height: 7.5rem;
-                            @include img-style;
-                            img{margin-left: 3.75rem;}
-                        }
-                        .profile-name{ margin-left: $margin-max;
-                            padding-top: $padding-medium;
-                            h6{color: $title-color;}
-                            
-                            .designation{ 
-                                margin-top: -$margin-min-extra;
-                                color: $text-color;
-                            }
-                        }
-                    }
-                    .card-body{
-                        
-                        padding: $padding-normal;
-                        
-                    }
+            .testimonial-card{
+                margin-top: -3rem;
+                .profile-photo{
+                    margin-top: -2.5rem;
+                    width: 7.5rem;
+                    height: 7.5rem;
+                    @include img-style;
+                    img{margin-left: 3.75rem;}
+                }
+                .profile-name{ margin-left: $margin-max;
+                    padding-top: $padding-medium;
+                    h6{color: $title-color;}
                     
+                    .designation{ 
+                        margin-top: -$margin-min-extra;
+                        color: $text-color;
+                    }
                 }
             }
+            .card-body{
+                
+                padding: $padding-normal;
+                
+            }
+            
         }
     }
 }
@@ -709,6 +705,57 @@ nav{
     }
 
   }
+
+
+
+// test
+.slick-slide {
+    margin: 0 10px;
+  }
+  
+  .slick-list {
+    margin: 0 -10px;
+  }
+  
+  .test {
+    position: relative;
+  }
+  
+  .test .slick-prev {
+    background-color: #00A884;
+    margin-top: -20px;
+    position: absolute;
+    top: 0;
+    left: 95%;
+  }
+  
+  .test .slick-prev:hover {
+    background-color: #00A884 !important;
+  }
+  
+  .test .slick-next {
+    background-color: #00A884 !important;
+    margin-top: -20px;
+    position: absolute;
+    top: 0;
+  }
+  
+  .test .slick-next:hover {
+    background-color: #00A884 !important;
+  }
+
+
+  @media (max-width: 576px) {
+    .slick-prev {
+      left: 85% !important;
+    }
+    .slick-next {
+      left: 93%;
+    }
+
+}
+///test  
+
 
 
 
