@@ -1,0 +1,342 @@
+
+// @use "./base" as *;
+// @use "./partial" as *;
+
+//variables
+
+$title-font-md: 1.5rem;
+
+$text-font-md: 1rem;
+$text-font-lg: 2rem;
+
+
+//margin & padding
+$space-top: 5rem;
+
+$space-min-extra: 0.313rem;
+$space-min: 0.625rem;
+$space-medium: 0.938rem;
+$space-normal: 1.25rem;
+$space-max: 1.875rem;
+
+$space-sec-xm: 1.5rem;
+$space-sec-sm: 1.5rem;
+$space-sec-md: 1.5rem;
+$space-sec-lg: 1.5rem;
+$space-sec-xl: 1.5rem;
+$space-sec-xxl: 6rem;
+
+$space-title-ex: 1.5rem;
+$space-title-sm: 1.5rem;
+$space-title-md: 1.5rem;
+$space-title-lg: 1.5rem;
+$space-title-xl: 1.5rem;
+$space-title-xxl: 1.5rem;
+$space-title-xxl: 3rem;
+
+
+// viewport
+$viewport-xm: 0rem;
+$viewport-sm: 36rem;
+$viewport-md: 48rem;
+$viewport-lg: 62rem;
+$viewport-xl: 75rem;
+$viewport-xxl: 87.5rem;
+
+//color
+
+$primary-color: #00A884;
+$secondary-color: #54656F;
+
+$body-color: #ffffff;
+
+$title-color: $secondary-color;
+$title-color-light: #ffffff;
+$text-color: $secondary-color;
+$text-color-deep: #dddddd;
+$text-color-light: #f3f3f3;
+
+
+
+
+
+
+
+.slick-slide {
+    margin: 0 10px;
+  }
+  .slick-list {
+    margin: 0 -10px;
+  }
+.testimonial-items{
+    position: relative;
+}
+.testimonial-items .slick-prev
+
+{
+    background-color: $primary-color;
+    margin-top:-20px;
+  
+    // margin-left:1400px;
+    position: absolute;
+    top:0;
+    left:95%;
+  
+}
+.testimonial-items .slick-prev:hover
+ {
+    background-color: $primary-color !important;
+    // color: $primary-color !important;
+   
+  
+}
+.testimonial-items .slick-next{
+    background-color: $primary-color !important;
+    
+    margin-top:-20px;
+    position: absolute;
+    top:0;
+}
+.testimonial-items .slick-next:hover{
+    background-color: $primary-color !important;
+    
+}
+//class
+.btn{
+    background-color: $primary-color;
+    color: $text-color-light;
+    border: 0;
+    &:hover{
+        background-color: #048569;
+    }
+}
+
+.see-more{
+    text-decoration: none;
+    color: $primary-color;
+}
+
+//nav css start
+nav{ height: 5rem !important; position: fixed; z-index: 1000; background-color: $body-color;
+    div{
+        .navbar-collapse{
+            // background-color: $body-color;
+        }
+        div{
+            ul{ 
+                li{ 
+                    // margin-left: $space-min;
+                    a{color: $title-color !important; font-size: $title-font-md ; 
+                        &:hover{color: $primary-color !important;}
+                    }                   
+                    .sign-in{ 
+
+                    }
+                    
+                    .add-listing{ 
+                        a{color: $primary-color !important;
+                            &:hover{color:white !important;
+                                i{
+                                    border-color: $title-color-light !important;
+                                    
+                                }
+                            }
+                            i{
+                                padding:  .1rem;
+                                border-color: $primary-color !important;
+                                &:hover{
+                                border-color: $title-color-light !important;
+                                }
+                            }
+                        }               
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+//nav css end
+
+//top cover css start
+#top-cover{
+    margin-top: $space-top;
+    background: linear-gradient(45deg, $primary-color, #05725a);
+    h1{
+        margin-top: 10rem;
+        color: $title-color-light;
+
+    }
+    p{
+        color: $text-color-light;
+    }
+    .btn{
+        color: $primary-color;
+        background-color: $body-color;
+        margin-top: 6rem;
+    }
+    
+}
+//top cover css end
+
+//Service css start
+#service{
+    margin-top: $space-sec-xxl;
+    .card{
+        transition: .3s;
+        &:hover{
+            transform: scale(1.015) ;
+        }
+    }
+}
+//Service css end
+
+//team css start
+#team{
+    margin-top: $space-sec-xxl;
+}
+//team css end
+
+//appointment-form css start
+#appointment-form{
+    background-color: #f0fffc;
+    margin-top: $space-sec-xxl;
+    .info-left{
+        i{
+            font-size: 2rem;
+            margin-top: .45rem;
+        }
+    }
+    .appoint-wrap{
+        padding-top: $space-title-xxl;
+        padding-bottom: $space-title-xxl;
+    }
+    .form-right{
+        level{
+            color: white !important;
+        }
+    }
+    .btn{
+        // background-color: $body-color; color: $primary-color;
+    }
+}
+//appointment-form css end
+
+// footer css start
+#footer{ 
+    background-color: $primary-color;
+    padding-top: $space-sec-xxl; 
+    margin-top: $space-sec-xxl;
+    .container{
+        hr{color: $text-color-light;}
+        .copy-right{
+            color: $text-color-light;
+        }
+        .footer-wrapping{
+            h5{color: $title-color-light; padding-bottom: $space-min;}
+            
+            .sarasoft{
+                .logo{
+                    padding-bottom: $space-sec-xxl;
+                }
+                .contact-info{
+                   a{
+                     color: $text-color-deep;
+                     font-size: $text-font-md;
+                     transition: .3s;
+                     text-decoration: none;
+                     i{
+                        margin-right: $space-min;
+                     }
+                     &:hover{
+                        color: $title-color-light;
+                     }
+                   }
+                }
+            }
+
+            .info-link{
+                a{
+                color: $text-color-deep;
+                font-size: $text-font-md;
+                text-decoration: none;
+                transition: .3s;
+                &:hover{
+                    color: $text-color-light;
+                    i{
+                        transform: scale(1.3);
+                    }
+                }
+                }
+                div{padding-bottom: $space-min;
+                    i{padding-right: $space-min;}
+                }
+            }
+            
+            .follow-us{
+                .social-link{
+                    a{ color: $text-color-light;
+                        i{
+                            padding-right: $space-min;
+                        font-size: $text-font-md;
+                        transition: .3s;
+                        &:hover{
+                            color: $title-color-light;
+                            transform: scale(1.3)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+// footer css end
+
+
+@media (max-width: 576px){
+    .slick-prev{
+        left: 85% !important;
+    }
+    .slick-next{
+        left: 93%;
+    }
+
+    #top-cover{
+        
+        h1{
+            margin-top: 5rem;
+            color: $title-color-light;
+    
+        }
+        .btn{
+            margin-top: 3rem;
+        }
+    }
+    #appointment-form , #service, #team{
+        margin-top: 3rem;
+    }
+
+}
+
+@media (max-width: 1200px){
+    #top-cover{
+        
+        h1{
+            margin-top: 3rem;
+            color: $title-color-light;
+    
+        }
+        .btn{
+            margin-top: 2rem;
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .navbar-nav{
+        background-color: $body-color;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;;
+    }
+}

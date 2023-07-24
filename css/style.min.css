@@ -829,12 +829,6 @@ nav div div ul li .add-listing a i:hover {
   background-color: #ffffff;
   max-width: 57.25rem;
 }
-#top-cover .top-cover-wrapping .dir-categories .dir-btn {
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25));
-}
-#top-cover .top-cover-wrapping .dir-categories .dir-btn a {
-  color: #ffffff;
-}
 #top-cover .listing-menu .list-btn {
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25));
 }
@@ -1128,7 +1122,7 @@ nav div div ul li .add-listing a i:hover {
     margin-left: -2rem;
     margin-top: 3rem;
   }
-  #top-cover .listing-menu .list-main-menu:hover .list-sub-menu {
+  #top-cover .listing-menu .list-main-menu li:hover .list-sub-menu {
     display: block;
   }
   #top-cover .listing-menu .list-main-menu .list-sub-menu {
@@ -1457,7 +1451,7 @@ nav div div ul li .add-listing a i:hover {
   #top-cover .listing-menu {
     margin-top: 4rem;
   }
-  #top-cover .listing-menu .list-main-menu:hover .list-sub-menu {
+  #top-cover .listing-menu .list-main-menu li:hover ul {
     display: flex !important;
   }
   #top-cover .listing-menu .list-main-menu .list-sub-menu {
