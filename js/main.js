@@ -17,6 +17,25 @@ function closePopup(){
 
 }
 
+//shopping page js
+let allCgt = document.getElementById("all-category");
+// let hideBtn = document.getElementById("show-modal");
+
+
+function showCtg(){
+    allCgt.classList.add("active");
+    // hideBtn.classList.add("disable");
+    
+    // ctg-cls-btn
+    
+}
+
+function ctgClose(){
+    allCgt.classList.remove("active");
+    // hideBtn.classList.remove("disable");
+    // dirBtn.classList.remove("disable");
+
+}
 
 // single products page js
     let ProductImg = document.getElementById("product-img");

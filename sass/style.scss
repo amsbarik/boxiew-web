@@ -464,9 +464,7 @@ nav{
         }
         .search-box{
             display: none;
-            
-            
-            
+
             select{
                 font-size: .95rem !important;
             }
@@ -479,11 +477,7 @@ nav{
         .disable{
             display: none;
         }
-        
-        .min-search-btn{
-            // display: none;
-        }
-    
+      
         .listing-menu{
 
            
@@ -1261,7 +1255,7 @@ nav{
     }
 
     #trend-products{
-        margin-top: $space-sec-xl;
+        margin-top: $space-sec-md;
     }
 
     #affiliate{
@@ -1386,7 +1380,7 @@ nav{
     }
 
     #trend-products{
-        margin-top: $space-sec-xxl;
+        margin-top: $space-sec-xl;
     }
 
     #affiliate{
