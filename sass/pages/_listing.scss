@@ -31,7 +31,11 @@
 #listed-company{ 
     .listed-company-wrapping{
         .listing-heading{
-
+            .filter-open{
+                font-size: 1rem;
+                color: $text-color;
+                // font-weight: 400;
+            }
         }
 
         .company-list{
@@ -95,68 +99,6 @@
         }
     }
 }
-
-// #listed-company{
-//     .container{
-//         .listed-company-wrapping{
-//             .listing-heading{
-
-//             }
-//             .company-list{
-//                 .listing-left{
-//                     .heading-sub-title{
-//                         .dropdown{
-//                             color: $text-color !important;
-//                         }
-//                     }
-//                     .single-card{
-//                         padding-bottom: $padding-min;}
-//                     .row{ 
-//                         .listing-card{
-//                             background-color: $bg-color; 
-                            
-//                             .card-body{ padding-left: $padding-max;
-//                                 .listing-logo{
-//                                     margin-left: -$listing-logo;
-//                                     padding-right: $padding-normal;
-//                                 }
-//                                 .card-title{
-//                                     i{
-//                                         color: $primary-color;
-//                                         font-size: $text-font-size;
-//                                         padding-left: $padding-min;
-//                                     }
-
-//                                 }
-//                                 .open-now{color: $primary-color;}
-//                                 .listing-about{
-
-//                                 }
-//                             }
-//                         }
-//                     }
-                
-//                 }
-
-//                 .filter-right{
-//                     .filter{
-//                         .form-rang{
-//                             color: $primary-color !important;
-                        
-//                         }
-//                     }
-//                     .ads-panel-right{
-//                         margin-top: 11.6rem;
-//                         div{
-//                             padding-bottom: 1.625rem;
-//                         }
-//                     }
-//                 }
-//             }
-           
-//         }
-//     }
-// }
 // listed company css end
 
 
@@ -210,12 +152,49 @@
            
         }
         .filter-right{
-            display: none;
+            // display: none;
         }
 
         .ads-panel-right{
             display: none;
         }
+    }
+}
+@media (max-width: 768px){
+    #listed-company{
+        .filter-right{
+            display: none;
+            // margin-top: -2.rem;
+            padding-bottom: 2rem;
+            border: 1px solid $text-color-light;
+            width: 17rem;
+            border-radius: .3rem;
+            position: absolute;
+            background-color: $body-color ;
+            z-index: 100;
+            justify-content: center !important;
+            padding: 1rem ;
+            margin-left: .77rem;
+            
+            .title{
+                .filter-close{
+                    border: 1px solid $text-color;
+                    padding: 0.2rem .4rem;
+                    // margin-top: -.3rem;
+                    margin-bottom: .1rem;
+                    border-radius: .2rem;
+                    padding-top: .15rem;
+                    color: $text-color;
+                    transition: .3s;
+                    &:hover{
+                        border: 1px solid $primary-color;
+                        color: $primary-color;
+                    }
+                }
+
+            }
+        }
+        .active{display: block !important;}
     }
 }
 
@@ -238,6 +217,9 @@
         }
         .filter-right{
             display: block;
+            .filter-close{
+                display: none;
+            }
         }
         .ads-panel-right{
             display: block;

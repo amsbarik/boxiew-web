@@ -2,10 +2,6 @@
 @use "../base/index" as *;
 
 
-
-
-
-
 #find-category{
     margin-top: 6.875rem;
 
@@ -105,8 +101,6 @@
                 .search-title{
                     color: $heading-color-light;
                     max-width: 57.25rem;
-                
-    
                 }
                 .search-box{background-color: $body-color;
                             // border-radius: 3rem;
@@ -134,32 +128,13 @@
             // display: none;
             visibility: hidden;
         }
-
-        
-
     }
-
 }
-
-
-
 
 // trend-products
 #trend-products{
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Recomended products css start
 #recomended-products{
@@ -171,18 +146,10 @@
 // Recomended products css end
 
 
-
-
-
-
-
-
-
 // media start
 
 @media (max-width: 576px){
-    
-    
+       
 }
 @media (max-width: 768px){
     #find-category{ margin-top: 3.5rem;
@@ -221,6 +188,12 @@
             display: none;
         }
       
+    }
+
+    #recomended-products{
+        .sub-title{
+            width: 18rem !important;
+        }
     }
     
 }

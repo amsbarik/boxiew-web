@@ -17,6 +17,7 @@ function closePopup(){
 
 }
 
+
 //shopping page js
 let allCgt = document.getElementById("all-category");
 // let hideBtn = document.getElementById("show-modal");
@@ -60,3 +61,38 @@ function ctgClose(){
     SmallImg[4].onclick = function(){
         ProductImg.src = SmallImg[4].src;
     }
+
+    // qty plus & minus
+    const plus = document.querySelector(".plus");
+    const minus = document.querySelector(".minus");
+    const num = document.querySelector(".num");
+
+    let x = 1;
+
+    plus.addEventListener("click", ()=>{
+        if(x < 10){
+            x++;
+            num.innerHTML = x;
+        //console.log("x");
+        }
+    })
+
+    minus.addEventListener("click", ()=>{
+        if(x > 1){
+            x--;
+            //x = (x < 10)? "0" + x : x;
+            num.innerHTML = x;
+        }
+        
+    })
+
+
+    // listing page js star
+    function openFilter(){
+    document.getElementById("filter-right").style.display = "initial";
+    }
+
+    function closeFilter(){
+    document.getElementById("filter-right").style.display = "none";
+}
+    // listing page js end
