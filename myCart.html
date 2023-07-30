@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap link-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- custom css link-->
+    <link href="css/style.min.css" rel="stylesheet">
+    <!--font-awesome lik-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!--slick css link-->
+    <!-- <link rel="stylesheet" type="text/css" href="slick/slick.css"/> -->
+    <!-- slick-theme.css- the default styling -->
+    <!-- <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/> -->
+
+    <!-- <link rel="stylesheet" type="text/css" href="css/slick-theme.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/slick.css"> -->
+
+    <title>Home | Boxiew</title>
+</head>
+<body>
+  <!--start nav-->
+  <nav class="navbar navbar-expand-md navbar-light shadow-sm fixed-top">
+      <div class="container">
+          <a href="index.html" class="navbar-brand"><img src="image/logo.png" width="100"></a>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_menu">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div id="main_menu" class="collapse rounded navbar-collapse shadow-sm pb-3 pb-lg-0">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item mx-auto"><a href="listing.html" class="nav-link"> Listing</a></li>
+                  <li class="nav-item mx-auto"><a href="shopping.html" class="nav-link">Shopping</a></li>
+                  <li class="nav-item mx-auto"><a href="#" class="nav-link">Favorites</a></li>
+                  <li class="nav-item mx-auto"><a href="#" class="nav-link">Cart</a></li>
+                  <li class="nav-item mx-auto "><a href="singin.html" class="nav-link"><i class="fa-solid fa-arrow-right-to-bracket pe-2"></i>Sign In</a></li>
+                  <li class="nav-item mx-auto "><div class="add-listing button-outline rounded-pill p-0"><a href="#" class="nav-link px-4">Add Listing<i class="fa-solid fa-plus ms-2 border rounded-circle "></i></a></div></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+  <!--end nav-->
+
+  <!--start main-->
+  <main> 
+    
+    <!--my cart card start-->
+    <section id="my-cart" class="my-cart">
+        <div class="container d-flex justify-content-center">
+            <div class="cart-wrap">
+                <div class="cart-step d-flex justify-content-around  ">
+                    <div class="">
+                        <div class="card border-0">
+                            <div class="text-center "><i class="fa-solid fa-cart-plus active"></i></div>
+                            <div class="card-body ">
+                                <h6 class="text-center">My Cart</h6>
+                                <p class="text-center"><small>01</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="card border-0">
+                            <div class="text-center"><i class="fa-solid fa-truck-arrow-right"></i></div>
+                            <div class="card-body ">
+                                <h6>Shipping Info</h6>
+                                <p class="text-center"><small>02</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="card border-0">
+                            <div class="text-center"><i class="fa-solid fa-credit-card"></i></div>
+                            <div class="card-body ">
+                                <h6>Payment</h6>
+                                <p class="text-center"><small>03</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="card border-0">
+                            <div class="text-center "><i class="fa-solid fa-square-check"></i></div>
+                            <div class="card-body ">
+                                <h6>Confirmation</h6>
+                                <p class="text-center"><small>04</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                  
+                <div class="row">
+                    <div class="col">
+                        <table class="table ">
+                            <thead class="thead">
+                              <tr>
+                                <th scope="col" class="ps-3" >SN</th>
+                                <th scope="col">Product Name</th>
+                                <th class="text-end pe-4" scope="col">Price</th>
+                                <th class="text-center" scope="col">Quantity</th>
+                                <th class="text-end pe-4" scope="col">Total</th>
+                                <th class="text-center" scope="col">Remove</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row" class="ps-3">1</th>
+                                <td class="cart-item-name">
+                                    <div class="d-flex">
+                                        <img src="image/products/product-1.jpg" class="img-fluid rounded me-3" width="60px" alt="">
+                                        <p>Exclusive Women Shirt</p>
+                                    </div>
+                                </td>
+                                <td class="text-end"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
+                                <td class="text-center">
+                                    <div class="row qty ">
+                                        <div class="col">
+                                            <form action="">
+                                              <div class="qty-layout  ">
+                                                <span class="cart-minus minus">-</span>
+                                                <span class="cart-num num border-0 px-md-3">1</span>
+                                                <span class="cart-plus plus">+</span>
+                                              </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-end total"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
+                                <td class="text-center text-danger"><i class="fa-regular fa-trash-can"></i></td>
+                              </tr>
+                              <tr>
+                                <th scope="row" class="ps-3">2</th>
+                                <td class="cart-item-name">
+                                    <div class="d-flex">
+                                        <img src="image/products/product-1.jpg" class="img-fluid rounded me-3" width="60px" alt="">
+                                        <p>Exclusive Women Shirt</p>
+                                    </div>
+                                </td>
+                                <td class="text-end"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
+                                <td class="text-center">
+                                    <div class="row qty ">
+                                        <div class="col">
+                                            <form action="">
+                                              <div class="qty-layout  ">
+                                                <span class="cart-minus minus">-</span>
+                                                <span class="cart-num num border-0 px-md-3">1</span>
+                                                <span class="cart-plus plus">+</span>
+                                              </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-end total"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
+                                <td class="text-center text-danger"><i class="fa-regular fa-trash-can"></i></td>
+                              </tr>
+                              <tr>
+                                <th scope="row" class="ps-3">3</th>
+                                <td class="cart-item-name">
+                                    <div class="d-flex">
+                                        <img src="image/products/product-1.jpg" class="img-fluid rounded me-3" width="60px" alt="">
+                                        <p>Exclusive Women Shirt</p>
+                                    </div>
+                                </td>
+                                <td class="text-end"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
+                                <td class="text-center">
+                                    <div class="row qty ">
+                                        <div class="col">
+                                            <form action="">
+                                              <div class="qty-layout  ">
+                                                <span class="cart-minus minus">-</span>
+                                                <span class="cart-num num border-0 px-md-3">1</span>
+                                                <span class="cart-plus plus">+</span>
+                                              </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-end total"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
+                                <td class="text-center text-danger"><i class="fa-regular fa-trash-can"></i></td>
+                              </tr>
+                              <tr>
+                                <th scope="row" class="ps-3"></th>
+                                <td class="cart-item-name">
+                                    
+                                </td>
+                                <td class="text-end total">Gross Total=</td>
+                                <td class="text-center total">
+                                    3
+                                </td>
+                                <td class="text-end total"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>3600.00</td>
+                                <td class="text-center text-danger"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+
+                <div class="cart-action d-flex justify-content-between">
+                    <div class="return-shop"><a href="#"><i class="fa-solid fa-arrow-left-long me-2"></i>Return to Shop</a></div>
+                    <div class="continue-ship button"><a href="#">Continue to Shipping</a></div>
+                </div>
+                  
+                 
+   
+            </div>
+        </div>
+      </section>
+    <!--my cart card end-->
+
+    <!--footer start-->
+    <section id="footer">
+      <div class="container">
+        <div class="footer-wrapping ">
+            <div class="row row-cols-2 row-cols-md-4 row-cols-lg-4 gy-4 ">
+
+                <div class="boxiew col">
+                    <div class="logo">
+                      <img src="image/logo-light.png" alt="Boxiew logo">
+                    </div>
+        
+                    <div class="contact-info">
+                      
+                      <div class="mb-2"><a href="Tel: 123-456-7890"><i class="fa-solid fa-phone"></i>+88 01721-XXXXXX</a></div>
+                      <div class="mb-2"><a href="Tel: 123-456-7890"><i class="fa-solid fa-phone"></i>+88 01721-XXXXXX</a></div>
+                      <div class="mb-2"><a href="mailto:hello@boxiew.com"><i class="fa-solid fa-envelope"></i>hello@boxiew.com</a></div>
+                      <!-- <div class="mb-2"><a href="mailto:hello@boxiew.com"><i class="fa-solid fa-envelope"></i>hello@boxiew.com</a></div> -->
+                      <!-- <div><a href="#"><i class="pt-1 fa-sharp fa-solid fa-location-dot"></i>Feroza Tower, 8th Floor, DIT Road, Malibagh Chowdhurypara, Dhaka.</a> </div> -->
+                      
+                    </div>
+                </div>
+        
+                <div class="suppliers-info col">
+                    <div><h5>Suppliers Info</h5></div>
+                    <div class="info-link">
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                      <!-- <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div> -->
+                    </div>
+                </div>
+        
+                <div class="buyers-info col">
+                    <div><h5>Buyers Info</h5></div>
+                    <div class="info-link">
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From </a></div>
+                      <!-- <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From </a></div> -->
+                    </div>
+                </div>
+        
+                <div class="boxiew-link col">
+                    <div><h5>Quick Links</h5></div>
+                    <div class="info-link">
+                      <div><a href="affiliate.html"><i class="fa-solid fa-arrow-right-long"></i>Carier</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>About Us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Privacy Policy</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Terms & Conditions</a></div>
+                    </div>
+        
+                    <div class="follow-us ">
+                      <div><h5>Follow Us</h5></div>
+                      <div class="social-link">
+                        <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <hr>
+        <div class="copy-right d-flex justify-content-center pb-3"> <small>Copyright © 2023 Boxiew Ltd || All right reserved</small></div>
+      </div>
+
+    </section>
+    <!--footer end-->
+
+
+
+  </main>
+  <!--end main-->
+
+
+
+    <!--custom js link-->
+    <script src="js/main.js"></script>
+
+    <!--Bootstrap cdn link-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    
+    <!-- <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script> -->
+
+
+    
+    <!--slick js link-->
+    <!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script> -->
+    <!-- <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
+    <!-- <script type="text/javascript" src="slick/slick.min.js"></script> -->
+      
+
+    <!-- <script src="js/jquery_3.7.0_jquery.min.js"></script> -->
+    <!-- <script type="text/javascript" src="js/slick.min.js"></script> -->
+
+    
+    <script>
+     // cart page js start
+    
+    const cart_plus = document.querySelector(".cart-plus");
+    const cart_minus = document.querySelector(".cart-minus");
+    const cart_num = document.querySelector(".cart-num");
+
+    let n = 1;
+
+    cart_plus.addEventListener("click", ()=>{
+        if(n < 10){
+            n++;
+            cart_num.innerHTML = n;
+        console.log("n");
+        }
+    })
+
+    cart_minus.addEventListener("click", ()=>{
+        if(n > 1){
+            n--;
+            //x = (n < 10)? "0" + n : n;
+            cart_num.innerHTML = n;
+        }
+        
+    })
+  // cart page js end
+    </script>
+
+    
+</body>
+</html>

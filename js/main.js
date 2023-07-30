@@ -96,3 +96,6 @@ function ctgClose(){
     document.getElementById("filter-right").style.display = "none";
 }
     // listing page js end
+
+
+ 

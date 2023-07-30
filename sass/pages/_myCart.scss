@@ -1,0 +1,83 @@
+@use "../partials/index" as *;
+@use "../base/index" as *;
+
+
+#my-cart{
+    padding-top: 10rem;
+    padding-bottom: 8rem;
+    background-color:  $bg-color;
+    .cart-wrap{
+        max-width: 1100px;
+        .cart-step{
+            i{
+                color: #949494;
+            }
+            .active{
+                color: $primary-color !important;
+            }
+            .card{
+                background-color: $bg-color;
+                i{
+                    font-size: 2rem;
+                }
+            }
+        }
+
+        .row{
+            .table{
+                font-size: 1rem;
+                width: 1100px;
+                .thead{ font-size: .9rem;}
+                .cart-item-name{
+                    width: 480px;
+                }
+                .total{font-weight: 600; color: $primary-color;}
+                .qty-layout{
+                    span{
+                        // border: 1px solid $text-color ;
+                        background-color: $bg-color;
+                        padding: .255rem .6rem;
+                        border-radius: 50%;
+                        // font-size: .9rem;
+                        // font-weight: 600;
+                        cursor: pointer;
+                        // margin-right: .5rem;
+                    }
+                    .num{
+                        background-color: $body-color !important;
+                        border: 1px solid $bg-color-deep;
+                    }
+                    .plus , .minus{
+                        transition: .3s;
+                        &:hover{
+                            color: $title-color-light;
+                            background-color: $primary-color;
+                        }
+                    }
+                    
+                }
+
+            }
+        }
+        .cart-action{
+            transition: .3s;
+            &:hover{
+                a{
+                    
+                    i{transform: scale(1.2) !important;}
+                }
+            }
+            .return-shop{
+                a{color: $primary-color;
+                
+                }
+            }
+            .continue-ship{
+                a{
+                    color: $title-color-light !important;
+                }
+            }
+        }
+        
+    }
+}
