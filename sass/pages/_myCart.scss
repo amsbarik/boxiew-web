@@ -2,12 +2,51 @@
 @use "../base/index" as *;
 
 
-#my-cart{
+.return-shop{
+    transition: .3s;
+    &:hover{
+        i{transform: scale(1.2) !important;}
+    }
+    a{color: $primary-color;
+
+    
+    }
+}
+.continue{
+    a{
+        color: $title-color-light !important;
+    }
+}
+
+.cart-action{
+    transition: .3s;
+    &:hover{
+        a{
+            
+            i{transform: scale(1.2) !important;}
+        }
+    }
+    
+}
+
+.terms-link{
+    color: $primary-color;
+    transition: .3s;
+    &:hover{
+        text-decoration: underline;
+        i{
+            transform: scale(1.1);
+        }
+    }
+}
+// my cart start
+
+.my-cart{
     padding-top: 10rem;
-    padding-bottom: 8rem;
+    // padding-bottom: 8rem;
     background-color:  $bg-color;
     .cart-wrap{
-        max-width: 1100px;
+        width: 52rem;
         .cart-step{
             i{
                 color: #949494;
@@ -22,8 +61,18 @@
                 }
             }
         }
+        
+        
+    }
+}
 
-        .row{
+.cart-table{
+    background-color: $bg-color;
+    padding-bottom: 8rem;
+    .cart-tbl-wrap{
+        
+        .table-layout{
+            background-color: $body-color;
             .table{
                 font-size: 1rem;
                 width: 1100px;
@@ -31,7 +80,7 @@
                 .cart-item-name{
                     width: 480px;
                 }
-                .total{font-weight: 600; color: $primary-color;}
+                .total{font-weight: 600; color: $title-color;}
                 .qty-layout{
                     span{
                         // border: 1px solid $text-color ;
@@ -57,27 +106,142 @@
                     
                 }
 
+    
             }
         }
-        .cart-action{
-            transition: .3s;
-            &:hover{
-                a{
+        }
+        
+}
+
+
+
+// shipping page css start
+.shipping{
+    background-color: $bg-color;
+    padding-bottom: 8rem;
+    .shipping-form{
+        background-color: $body-color;
+        // padding: 1rem;
+        
+    }
+}
+// shipping page css end
+
+
+
+// payment page css start
+.payment{
+    background-color: $bg-color;
+    padding-bottom: 8rem;
+    .pay-wrap{ 
+        width: 31rem;
+        
+        .pay-layout{
+            background-color: $body-color;
+            .tab-content{
+                .save-card{
+                    .card-layout{
+                        background-color: $bg-color;
+                        .card-img{
+                            width: 3.5rem;
+                        }
+                    }
+                    .card-form{
+                        .card-design{
+                            .form-check{
+                                margin-right: .5rem;
+                            }
+                            input:checked + .card-label .card-layout{
+                                background-color: $bg-color;
+                                color: $primary-color;
+                                cursor: pointer;
+                                box-shadow: 0 0 0 1px $body-color, 0 0 0 2px $primary-color;
+                            }
+                            .card-label{
+                                border-radius: .2rem;
+                                border: none;
+                                color: $text-color;
+                                width: 28rem;
+                                height: 4.6rem;
+                                align-items: center !important;
+                                margin-left: -1.51rem;
+                                text-align: center;
+                                transition: .3s;
+                                &:hover{
+                                    color: $primary-color;
+                                }
+                                .card-layout{
+                                    margin-top: -.01rem !important;
+                                    width: 99.85% ;
+                                }
+                            }
+                            input{
+                                display: none;
+                            }
+                        }
+                    }
                     
-                    i{transform: scale(1.2) !important;}
                 }
-            }
-            .return-shop{
-                a{color: $primary-color;
-                
-                }
-            }
-            .continue-ship{
-                a{
-                    color: $title-color-light !important;
+    
+                .add-card{
+                    .add-btn{
+                        border: 1px solid $primary-color !important;
+                    }
                 }
             }
         }
         
     }
 }
+// payment page css end
+
+
+// order confirm css start
+.order-confirm{
+    background-color: $bg-color;
+    padding-bottom: 8rem;
+    .order-tbl-wrap{
+        
+        .table-layout{
+            background-color: $body-color;
+            .table{
+                font-size: 1rem;
+                width: 68rem;
+                .thead{ font-size: .9rem;}
+                .cart-item-name{
+                    width: 480px;
+                }
+                .total{font-weight: 600; color: $title-color;}
+                .qty-layout{
+                    span{
+                        // border: 1px solid $text-color ;
+                        background-color: $bg-color;
+                        padding: .255rem .6rem;
+                        border-radius: 50%;
+                        // font-size: .9rem;
+                        // font-weight: 600;
+                        cursor: pointer;
+                        // margin-right: .5rem;
+                    }
+                    .num{
+                        background-color: $body-color !important;
+                        border: 1px solid $bg-color-deep;
+                    }
+                    .plus , .minus{
+                        transition: .3s;
+                        &:hover{
+                            color: $title-color-light;
+                            background-color: $primary-color;
+                        }
+                    }
+                    
+                }
+
+    
+            }
+        }
+        }
+        
+}
+
+// order confirm css end

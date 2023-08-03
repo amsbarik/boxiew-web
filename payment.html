@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap link-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- custom css link-->
+    <link href="css/style.min.css" rel="stylesheet">
+    <!--font-awesome lik-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!--slick css link-->
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <!-- slick-theme.css- the default styling -->
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/slick.css">
+
+    <title>Payment | Boxiew</title>
+</head>
+<body>
+  <!--start nav-->
+  <nav class="navbar navbar-expand-md navbar-light shadow-sm fixed-top">
+      <div class="container">
+          <a href="index.html" class="navbar-brand"><img src="image/logo.png" width="100"></a>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_menu">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div id="main_menu" class="collapse rounded navbar-collapse shadow-sm pb-3 pb-lg-0">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item mx-auto"><a href="listing.html" class="nav-link"> Listing</a></li>
+                  <li class="nav-item mx-auto"><a href="shopping.html" class="nav-link">Shopping</a></li>
+                  <li class="nav-item mx-auto"><a href="#" class="nav-link">Favorites</a></li>
+                  <li class="nav-item mx-auto"><a href="#" class="nav-link">Cart</a></li>
+                  <li class="nav-item mx-auto "><a href="singin.html" class="nav-link"><i class="fa-solid fa-arrow-right-to-bracket pe-2"></i>Sign In</a></li>
+                  <li class="nav-item mx-auto "><div class="add-listing button-outline rounded-pill p-0"><a href="#" class="nav-link px-4">Add Listing<i class="fa-solid fa-plus ms-2 border rounded-circle "></i></a></div></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+  <!--end nav-->
+
+  <!--start main-->
+  <main> 
+    <!--cart step card start-->
+    <section id="my-cart" class="my-cart">
+        <div class="container d-flex justify-content-center">
+            <div class="cart-wrap">
+                <div class="cart-step d-flex justify-content-around  ">
+                    <div class="">
+                        <div class="card border-0">
+                            <div class="text-center "><i class="fa-solid fa-cart-plus "></i></div>
+                            <div class="card-body ">
+                                <h6 class="text-center">My Cart</h6>
+                                <p class="text-center"><small>01</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="card border-0">
+                            <div class="text-center"><i class="fa-solid fa-truck-arrow-right "></i></div>
+                            <div class="card-body ">
+                                <h6>Shipping Info</h6>
+                                <p class="text-center"><small>02</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="card border-0">
+                            <div class="text-center"><i class="fa-solid fa-credit-card active"></i></div>
+                            <div class="card-body ">
+                                <h6>Payment</h6>
+                                <p class="text-center"><small>03</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="card border-0">
+                            <div class="text-center "><i class="fa-solid fa-square-check"></i></div>
+                            <div class="card-body ">
+                                <h6>Confirmation</h6>
+                                <p class="text-center"><small>04</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+    <!--cart step card end-->
+
+    <!--payment start-->
+    <section id="payment" class="payment">
+        <div class="container d-flex justify-content-center">
+            <div class="pay-wrap  ">
+
+                <div class="pay-layout rounded px-4 py-3">
+                    <ul class="nav nav-underline mb-3 justify-content-around" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link active" id="pills-card-tab" data-bs-toggle="pill" data-bs-target="#pills-card" type="button" role="tab" aria-controls="pills-card" aria-selected="true">Card</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="pills-mobile-banking-tab" data-bs-toggle="pill" data-bs-target="#pills-mobile-banking" type="button" role="tab" aria-controls="pills-mobile-banking" aria-selected="false">Mobile Banking</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="pills-cash-tab" data-bs-toggle="pill" data-bs-target="#pills-cash" type="button" role="tab" aria-controls="pills-cash" aria-selected="false">Cash On Delivery</button>
+                        </li>
+                        
+                      </ul>
+                      <div class="tab-content mt-5" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-card" role="tabpanel" aria-labelledby="pills-card-tab" tabindex="0">
+                            <div class="save-card ">
+                                <form action="">
+                                    <div class="card-form">
+                                      <h6>Save Card</h6>
+                                      <div class="card-design mt-4 ">
+                                        <div class="form-check ">
+                                          <input class="form-check-input" name="card" type="checkbox" value="card-1" id="card-1">
+                                          <label class="form-check-label d-flex align-items-center card-label" for="card-1">
+                                            <div class="d-flex mt-4 card-layout rounded px-4 py-2 align-items-center">
+                                                <div class="card-img me-4"><img class="img-fluid"  src="image/myCart/master-card.png" alt=""></div>
+                                                <div>**** **** **** 2457</div>
+                                                <div class="ms-auto" type="submit">Remove Card</div>
+                                            </div>
+                                          </label>
+                                        </div>
+                                        <div class="form-check mt-3">
+                                          <input class="form-check-input" name="card" type="checkbox" value="card-2" id="card-2">
+                                          <label class="form-check-label card-label" for="card-2">
+                                            <div class="d-flex mt-3 card-layout rounded px-4 py-2 align-items-center">
+                                                <div class="card-img me-4"><img class="img-fluid"  src="image/myCart/visa-card.png" alt=""></div>
+                                                <div>**** **** **** 2457</div>
+                                                <div class="ms-auto" type="submit">Remove Card</div>
+                                            </div>
+                                          </label>
+                                        </div>
+                                        
+    
+                                      </div>
+                                    </div>
+                                  </form>
+    
+                            </div>
+    
+                            <div class="add-card mt-4">
+                                <h6>Add New Card</h6>
+                                <div class="mt-3">
+                                    <form>
+                                        <div class="mb-3">
+                                          <label for="card-holder" class="form-label">Card Holder Name<span class="required text-danger">*</span></label>
+                                          <input type="text" class="form-control" id="card-holder"  required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="card-num" class="form-label">Card Number<span class="required text-danger">*</span></label>
+                                            <input type="number" class="form-control" id="card-num"  aria-describedby="cNumHelp" required>
+                                          </div>
+                                        <div class="mb-3 row ">
+                                            <div class="col">
+                                              <label for="ex-date" class="form-label">Expire Date<span class="required text-danger">*</span></label>
+                                              <input type="date" class="form-control" id="ex-date" placeholder="Expire date" aria-describedby="dateHelp" required>
+                                            </div>
+                                            <div class="col">
+                                                <label for="cvc" class="form-label">CVC<span class="required text-danger">*</span></label>
+                                                <input type="number" class="form-control" id="cvc"  aria-describedby="cvcHelp" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 mt-3 form-check d-flex justify-content-between">
+                                          <div><input type="checkbox" class="form-check-input" id="read-agr" required>
+                                            <label class="form-check-label" for="read-agr"><small>Yes, Read & Agree.</small></label>
+                                            </div>
+                                          <span><a href="#" class="terms-link">Terms & Conditions<small><i class="fa-solid fa-arrow-up-right-from-square ms-2"></i></small></a></span>
+                                        </div>
+    
+                                        <div class=" d-flex justify-content-center mt-5 mb-3"><button class="continue button-outline border-0 rounded-pill px-5  text-center add-btn d-flex " type="submit">Add Card</button></div>
+                                        
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="cart-action d-flex justify-content-between mt-5 mb-3">
+                              <div class="return-shop"><a href="shipping.html"><i class="fa-solid fa-arrow-left-long me-2"></i>Return to Shipping</a></div>
+                              <div ><a href="orderConfirm.html"><button class="continue button border-0" type="submit">Procced to Payment</button></a></div>
+                           </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="pills-mobile-banking" role="tabpanel" aria-labelledby="pills-mobile-banking-tab" tabindex="0">
+                          <form>
+                            <div class="mb-3 row ">
+                              <div class="col">
+                                <label for="mobile-number" class="form-label">Mobile Number<span class="required text-danger">*</span></label>
+                                <input type="number" class="form-control" id="mobile-number" placeholder="Banking mobile number" aria-describedby="numHelp" required>
+                              </div>
+                            </div>
+
+                            <div class="mb-3 row ">
+                                <div class="col">
+                                  <label for="trans-id" class="form-label">Transaction ID<span class="required text-danger">*</span></label>
+                                  <input type="number" class="form-control" id="trans-id" placeholder="Transaction ID" aria-describedby="idHelp" required>
+                                </div>
+                            </div>
+                            <div class="mb-3 form-check d-flex justify-content-between">
+                              <div><input type="checkbox" class="form-check-input" id="read-agr" required>
+                                <label class="form-check-label" for="read-agr"><small>Yes, Read & Agree.</small></label>
+                                </div>
+                              <span><a href="#" class="terms-link">Terms & Conditions<small><i class="fa-solid fa-arrow-up-right-from-square ms-2"></i></small></a></span>
+                            </div>
+
+                            <div class="cart-action d-flex justify-content-between mt-5 mb-3">
+                              <div class="return-shop"><a href="shipping.html"><i class="fa-solid fa-arrow-left-long me-2"></i>Return to Shipping</a></div>
+                              <div ><a href="payment.html"><button class="continue button border-0" type="submit">Procced to Payment</button></a></div>
+                            </div>
+                            
+                        </form>
+                        </div>
+                        <div class="tab-pane fade" id="pills-cash" role="tabpanel" aria-labelledby="pills-cash-tab" tabindex="0">
+                          <form action="">
+                            <h5>Cash On Delivery?</h5>
+                            <div class="mb-3 mt-3 form-check d-flex justify-content-between">
+                              <div><input type="checkbox" class="form-check-input" id="read-agr" required>
+                                <label class="form-check-label" for="read-agr"><small>Yes, Read & Agree.</small></label>
+                                </div>
+                              <span><a href="#" class="terms-link">Terms & Conditions<small><i class="fa-solid fa-arrow-up-right-from-square ms-2"></i></small></a></span>
+                            </div>
+
+                            <div class="cart-action d-flex justify-content-between mt-5 mb-3">
+                              <div class="return-shop"><a href="shipping.html"><i class="fa-solid fa-arrow-left-long me-2"></i>Return to Shipping</a></div>
+                              <div ><button class="continue button border-0" type="submit">Continue</button></div>
+                            </div>
+                          </form>
+                        </div>
+                        
+                      </div>
+                </div>
+
+                  <!-- <div class="cart-action d-flex justify-content-between mt-4">
+                    <div class="return-shop"><a href="shipping.html"><i class="fa-solid fa-arrow-left-long me-2"></i>Return to Shipping</a></div>
+                    <div class="continue button" type="submit"><a href="#">Procced to Payment</a></div>
+                  </div> -->
+
+            </div>
+        </div>
+    </section>
+    <!--payment end-->
+
+    <!--footer start-->
+    <section id="footer">
+      <div class="container">
+        <div class="footer-wrapping ">
+            <div class="row row-cols-2 row-cols-md-4 row-cols-lg-4 gy-4 ">
+
+                <div class="boxiew col">
+                    <div class="logo">
+                      <img src="image/logo-light.png" alt="Boxiew logo">
+                    </div>
+        
+                    <div class="banking-info">
+                      
+                      <div class="mb-2"><a href="Tel: 123-456-7890"><i class="fa-solid fa-phone"></i>+88 01721-XXXXXX</a></div>
+                      <div class="mb-2"><a href="Tel: 123-456-7890"><i class="fa-solid fa-phone"></i>+88 01721-XXXXXX</a></div>
+                      <div class="mb-2"><a href="mailto:hello@boxiew.com"><i class="fa-solid fa-envelope"></i>hello@boxiew.com</a></div>
+                      <!-- <div class="mb-2"><a href="mailto:hello@boxiew.com"><i class="fa-solid fa-envelope"></i>hello@boxiew.com</a></div> -->
+                      <!-- <div><a href="#"><i class="pt-1 fa-sharp fa-solid fa-location-dot"></i>Feroza Tower, 8th Floor, DIT Road, Malibagh Chowdhurypara, Dhaka.</a> </div> -->
+                      
+                    </div>
+                </div>
+        
+                <div class="suppliers-info col">
+                    <div><h5>Suppliers Info</h5></div>
+                    <div class="info-link">
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                      <!-- <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div> -->
+                    </div>
+                </div>
+        
+                <div class="buyers-info col">
+                    <div><h5>Buyers Info</h5></div>
+                    <div class="info-link">
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From </a></div>
+                      <!-- <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From </a></div> -->
+                    </div>
+                </div>
+        
+                <div class="boxiew-link col">
+                    <div><h5>Quick Links</h5></div>
+                    <div class="info-link">
+                      <div><a href="affiliate.html"><i class="fa-solid fa-arrow-right-long"></i>Carier</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>About Us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Privacy Policy</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Terms & Conditions</a></div>
+                    </div>
+        
+                    <div class="follow-us ">
+                      <div><h5>Follow Us</h5></div>
+                      <div class="social-link">
+                        <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <hr>
+        <div class="copy-right d-flex justify-content-center pb-3"> <small>Copyright © 2023 Boxiew Ltd || All right reserved</small></div>
+      </div>
+
+    </section>
+    <!--footer end-->
+  </main>
+  <!--end main-->
+
+
+    <!--custom js link-->
+    <script src="js/main.js"></script>
+
+    <!--Bootstrap cdn link-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    
+    <!-- <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script> -->
+
+
+    
+    <!--slick js link-->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+      
+
+    <script src="js/jquery_3.7.0_jquery.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+
+    
+    
+</body>
+</html>
