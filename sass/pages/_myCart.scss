@@ -116,6 +116,13 @@
 
 
 // shipping page css start
+.login-form{
+    background-color: $bg-color;
+    .login-form-wrap{
+        width: 33.5rem;
+        background-color: $body-color;
+    }
+}
 .shipping{
     background-color: $bg-color;
     padding-bottom: 8rem;
