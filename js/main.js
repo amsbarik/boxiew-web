@@ -87,15 +87,17 @@ function ctgClose(){
     })
 
 
-    // listing page js star
+    // listing page js start
     function openFilter(){
     document.getElementById("filter-right").style.display = "initial";
     }
 
     function closeFilter(){
     document.getElementById("filter-right").style.display = "none";
-}
+    }
     // listing page js end
 
 
  
+
+    
