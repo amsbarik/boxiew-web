@@ -51,12 +51,12 @@
     <section id="my-cart" class="my-cart">
       <div class="container d-flex justify-content-center">
           <div class="cart-wrap">
-              <div class="cart-step d-flex justify-content-around  ">
+              <div class="cart-step d-flex  justify-content-around  ">
                   <div class="">
                       <div class="card border-0">
                           <div class="text-center "><i class="fa-solid fa-cart-plus "></i></div>
                           <div class="card-body ">
-                              <h6 class="text-center">My Cart</h6>
+                              <h6 class="text-center"><span>My </span>Cart</h6>
                               <p class="text-center"><small>01</small></p>
                           </div>
                       </div>
@@ -65,7 +65,7 @@
                       <div class="card border-0">
                           <div class="text-center"><i class="fa-solid fa-truck-arrow-right "></i></div>
                           <div class="card-body ">
-                              <h6>Shipping Info</h6>
+                              <h6>Shipping</h6>
                               <p class="text-center"><small>02</small></p>
                           </div>
                       </div>
@@ -83,7 +83,7 @@
                       <div class="card border-0">
                           <div class="text-center "><i class="fa-solid fa-square-check active"></i></div>
                           <div class="card-body ">
-                              <h6>Confirmation</h6>
+                              <h6>Confirm</h6>
                               <p class="text-center"><small>04</small></p>
                           </div>
                       </div>
@@ -93,104 +93,110 @@
       </div>
     </section>
 
-    <section id="order-confirm" class="order-confirm">
-        <div class="container d-flex justify-content-center">
-            <div class="order-tbl-wrap ">
-                <div class="row table-layout rounded  ">
-                    <div class="col">
-                        <h4 class="text-center mt-3 pb-3 fs-5 order-num rounded pt-3">Order No: BOX23-85577-0208</h4>
-                        <table class="table table-borderless">
-                            <thead class="thead">
-                              <tr>
-                                <th scope="col" class="ps-3" >SN</th>
-                                <th scope="col">Product Name</th>
-                                <th class="text-end pe-4" scope="col">Price</th>
-                                <th class="text-center" scope="col">Quantity</th>
-                                <th class="text-end " scope="col">Total Price</th>
-                                
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <th scope="row" class="ps-3 border-top">1</th>
-                                <td class="cart-item-name border-top">
-                                    <div class="d-flex">
-                                        <img src="image/products/product-1.jpg" class="img-fluid rounded me-3" width="60px" alt="">
-                                        <p>Exclusive Women Shirt</p>
+    <section id="confirm-list" class="confirm-list">
+      <div class="container overflow-x-auto">
+          <div class="list-wrap mx-auto " >
+              <div class=" list-layout pt-1 rounded p-3 pb-1">
+                <h4 class="text-center mt-3 pb-3  order-num rounded pt-3">Order No: BOX23-85577-0208</h4>
+                  <table class="table  table-borderless" >
+                      <thead>
+                        <tr>
+                          <th scope="col">SN</th>
+                          <th colspan="" scope="col">Product Name</th>
+                          <th class="text-center" scope="col">Price</th>
+                          <th class="text-center" scope="col">Quantity</th>
+                          <th class="text-end" scope="col">Total Price</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="border-top">1</td>
+                          <td colspan="" class="border-top">
+                            <div class="d-flex">
+                              <img src="image/products/product-1.jpg" class="img-fluid rounded object-fit-cover me-3" width="60px" alt="">
+                              <span>Exclusive Women Shirt</span>
+                          </div>
+                          </td>
+                          <td class="border-top text-center"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
+                          <td class="border-top text-center">
+                            <div class="row qty ">
+                              <div class="col">
+                                  <form action="">
+                                    <div class="qty-layout  ">
+                                      <span class="cart-minus-1 minus">-</span>
+                                      <span class="cart-num-1 num border-0 px-md-3">1</span>
+                                      <span class="cart-plus-1 plus">+</span>
                                     </div>
-                                </td>
-                                <td class="text-end border-top"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
-                                <td class="text-center border-top">1</td>
-                                <td class="text-end border-top"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
-                                
-                              </tr>
-                              <tr>
-                                <th scope="row" class="ps-3 border-top">2</th>
-                                <td class="cart-item-name border-top">
-                                    <div class="d-flex">
-                                        <img src="image/products/product-1.jpg" class="img-fluid rounded me-3" width="60px" alt="">
-                                        <p>Exclusive Women Shirt</p>
+                                  </form>
+                              </div>
+                          </div>
+                          </td>
+                          <td class="border-top text-end"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
+                        </tr>
+    
+                        <tr>
+                          <td class="border-top">1</td>
+                          <td colspan="" class="border-top">
+                            <div class="d-flex">
+                              <img src="image/products/product-1.jpg" class="img-fluid rounded object-fit-cover me-3" width="60px" alt="">
+                              <span>Exclusive Women Shirt</span>
+                          </div>
+                          </td>
+                          <td class="border-top text-center"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
+                          <td class="border-top text-center">
+                            <div class="row qty ">
+                              <div class="col">
+                                  <form action="">
+                                    <div class="qty-layout  ">
+                                      <span class="cart-minus-2 minus">-</span>
+                                      <span class="cart-num-2 num border-0 px-md-3">1</span>
+                                      <span class="cart-plus-2 plus">+</span>
                                     </div>
-                                </td>
-                                <td class="text-end border-top"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
-                                <td class="text-center border-top">1</td>
-                                <td class="text-end border-top"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
-                              </tr>
-                              <tr>
-                                <th scope="row" class="ps-3 border-top">3</th>
-                                <td class="cart-item-name border-top">
-                                    <div class="d-flex">
-                                        <img src="image/products/product-1.jpg" class="img-fluid rounded me-3" width="60px" alt="">
-                                        <p>Exclusive Women Shirt</p>
-                                    </div>
-                                </td>
-                                <td class="text-end border-top"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
-                                <td class="text-center border-top">1</td>
-                                <td class="text-end border-top"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
-                              </tr>
-                              <tr class="row-total">
-                                <td colspan="4" class="text-end  border-top">Subtotal</td><td class="text-end border-top"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>3600.00</td>
-                                <td class="text-center text-danger"></td>
-                              </tr>
-                              <tr class="row-total">
-                                <td colspan="4" class="text-end  ">Shipping</td><td class="text-end "><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>100.00</td>
-                                <td class="text-center text-danger"></td>
-                              </tr>
-                              <tr class="row-total">
-                                <td colspan="4" class="text-end  ">Tax</td><td class="text-end "><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>00.00</td>
-                                <td class="text-center text-danger"></td>
-                              </tr>
-                              <tr class="row-total">
-                                <td colspan="4" class="text-end  ">Discount</td><td class="text-end "><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>00.00</td>
-                                <td class="text-center text-danger"></td>
-                              </tr>
-                              <tr class="row-total">
-                                <td colspan="4" class="text-end border-top  total">Gross Total</td><td class="text-end border-top total"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>3700.00</td>
-                                <td class="text-center text-danger"></td>
-                              </tr>
-                              <tr class="row-total">
-                                <td colspan="4" class="text-end  total">Advanced</td><td class="text-end total"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>700.00</td>
-                                <td class="text-center text-danger"></td>
-                              </tr>
-                              <tr class="row-total">
-                                <td colspan="4" class="text-end  total">Due</td><td class="text-end total"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>3000.00</td>
-                                <td class="text-center text-danger"></td>
-                              </tr>
-                            </tbody>
-                          </table>
-                    </div>
-                </div>
-
-                <div class="cart-action d-flex justify-content-between mt-3">
-                    <div class="return-shop"><a href="shopping.html"><i class="fa-solid fa-arrow-left-long me-2"></i>Return to Shop</a></div>
-                    <div ><button class="continue button border-0" type="submit">Place Order</button></div>
-                </div>
-                  
-                 
-   
-            </div>
-        </div>
-      </section>
+                                  </form>
+                              </div>
+                          </div>
+                          </td>
+                          <td class="border-top text-end"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
+                        </tr>
+                        <tr>
+                          <td colspan="4" class="border-top text-end">Subtotal</td>
+                          <td class="text-end border-top"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>2400.00</td>
+                        </tr>
+                        <tr>
+                          <td colspan="4" class=" text-end">Shipping</td>
+                          <td class=" text-end"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>100.00</td>
+                        </tr>
+                        <tr>
+                          <td colspan="4" class=" text-end">Tax</td>
+                          <td class=" text-end"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>0.00</td>
+                        </tr>
+                        <tr>
+                          <td colspan="4" class=" text-end">Discount</td>
+                          <td class=" text-end"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>0.00</td>
+                        </tr>
+                        <tr>
+                          <td colspan="4" class="border-top total text-end">Gross Total</td>
+                          <td class="border-top text-end total"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>2500.00</td>
+                        </tr>
+                        <tr>
+                          <td colspan="4" class="total text-end">Advanced</td>
+                          <td class=" text-end total"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>0.00</td>
+                        </tr>
+                        <tr>
+                          <td colspan="4" class="total text-end">Due</td>
+                          <td class=" text-end total"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>2500.00</td>
+                        </tr>
+                       
+                      </tbody>
+                    </table>
+              </div>
+              <div class="cart-action d-flex justify-content-between pb-3 mt-3">
+                  <div class="return-shop"><a href="shopping.html"><i class="fa-solid fa-arrow-left-long me-2"></i>Return to Shop</a></div>
+                  <div class="continue button"><a href="shipping.html">Place Order</a></div>
+               </div>
+          </div>
+      </div>
+   </section>
     <!--my cart card end-->
 
     <!--footer start-->

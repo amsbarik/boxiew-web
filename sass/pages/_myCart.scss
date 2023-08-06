@@ -63,7 +63,7 @@
             .card{
                 background-color: $bg-color;
                 i{
-                    font-size: 2rem;
+                    font-size: 1.75rem;
                 }
             }
         }
@@ -72,16 +72,17 @@
     }
 }
 
-.cart-table{
+.cart-list{
     background-color: $bg-color;
-    padding-bottom: 8rem;
-    .cart-tbl-wrap{
-        
-        .table-layout{
+    padding-bottom: 7rem;
+    .list-wrap{
+        width: 64rem;
+        .list-layout{
             background-color: $body-color;
+            width: 100%;
             .table{
-                font-size: 1rem;
-                width: 64rem;
+                font-size: .9rem;
+                width: 100%;
                 .thead{ font-size: .9rem;}
                 .cart-item-name{
                     max-width: 480px;
@@ -89,14 +90,10 @@
                 
                 .qty-layout{
                     span{
-                        // border: 1px solid $text-color ;
                         background-color: $bg-color;
                         padding: .2rem .6rem;
                         border-radius: 50%;
-                        // font-size: .9rem;
-                        // font-weight: 600;
                         cursor: pointer;
-                        // margin-right: .5rem;
                     }
                     .num{
                         background-color: $body-color !important;
@@ -111,15 +108,13 @@
                     }
                     
                 }
-
+    
     
             }
         }
-        }
-        
+    }
+    
 }
-
-
 
 // shipping page css start
 .login-form{
@@ -237,34 +232,32 @@
 
 
 // order confirm css start
-.order-confirm{
+.confirm-list{
     background-color: $bg-color;
-    padding-bottom: 8rem;
-    .order-tbl-wrap{
-        
-        .table-layout{
+    padding-bottom: 7rem;
+    .list-wrap{
+        width: 64rem;
+        .list-layout{
             background-color: $body-color;
+            width: 100%;
             .order-num{
-                background-color: $primary-color-light;
-            }
+                     background-color: $primary-color-light;
+                     font-size: 1.2rem;
+                   }
             .table{
-                font-size: 1rem;
-                width: 64rem;
+                font-size: .9rem;
+                width: 100%;
                 .thead{ font-size: .9rem;}
                 .cart-item-name{
                     max-width: 480px;
                 }
-                .total{font-weight: 600; color: $title-color;}
+                
                 .qty-layout{
                     span{
-                        // border: 1px solid $text-color ;
                         background-color: $bg-color;
-                        padding: .255rem .6rem;
+                        padding: .2rem .6rem;
                         border-radius: 50%;
-                        // font-size: .9rem;
-                        // font-weight: 600;
                         cursor: pointer;
-                        // margin-right: .5rem;
                     }
                     .num{
                         background-color: $body-color !important;
@@ -279,12 +272,12 @@
                     }
                     
                 }
-
+    
     
             }
         }
-        }
-        
+    }
+    
 }
 
 // order confirm css end
@@ -297,20 +290,46 @@
         .card{
             background-color: $bg-color;
             text-align: center;
+            h6{
+                font-size: .87rem !important;
+                margin-top: -.5rem;
+                span{
+                    display: none;
+                }
+            }
             i{
-                font-size: 1.5rem !important;
+                font-size: 1.1rem !important;
+            }
+            p{
+                margin-top: -.1rem;
             }
         }
     }
 
-    .cart-table{
-        .table{
-            font-size: .75rem !important;
-            width: 40rem !important;
-            overflow-x: auto;
+    .cart-list, .confirm-list{
+        padding-bottom: 3rem;
+        .list-wrap{
+            width: 40rem;
+            .table{
+                font-size: .78rem !important;
+                .qty-layout{
+                    span{
+                        padding: .2rem .45rem !important;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+    .confirm-list{
+        .order-num{
+            font-size: 1rem !important;
         }
     }
 
+    .shipping{
+        padding-bottom: 3.5rem;
+    }
     .shipping , .login-form{
         font-size: .85rem !important;
         // padding-bottom: 5rem;
@@ -329,6 +348,7 @@
     }
 
     .payment{
+        padding-bottom: 3rem;
         .pay-layout, .coupon-form, .order-sum{
             font-size: .85rem;
             h6{font-size: .9rem;}
@@ -345,4 +365,30 @@
         }
     }
     
+}
+
+@media (max-width: 1200px){
+    .my-cart{
+        .card{
+            h6{
+                margin-top: -.25rem;
+            }
+        }
+    }
+
+    .cart-list, .confirm-list{
+        padding-bottom: 3rem;
+        .list-wrap{
+            width: 54rem;
+            .table{
+                font-size: .89rem;
+                .qty-layout{
+                    span{
+                        padding: .16rem .47rem !important;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
 }

@@ -48,49 +48,49 @@
   <main> 
     <!--cart step card start-->
     <section id="my-cart" class="my-cart">
-        <div class="container d-flex justify-content-center">
-            <div class="cart-wrap">
-                <div class="cart-step d-flex justify-content-around  ">
-                    <div class="">
-                        <div class="card border-0">
-                            <div class="text-center "><i class="fa-solid fa-cart-plus "></i></div>
-                            <div class="card-body ">
-                                <h6 class="text-center">My Cart</h6>
-                                <p class="text-center"><small>01</small></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="">
-                        <div class="card border-0">
-                            <div class="text-center"><i class="fa-solid fa-truck-arrow-right "></i></div>
-                            <div class="card-body ">
-                                <h6>Shipping Info</h6>
-                                <p class="text-center"><small>02</small></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="">
-                        <div class="card border-0">
-                            <div class="text-center"><i class="fa-solid fa-credit-card active"></i></div>
-                            <div class="card-body ">
-                                <h6>Payment</h6>
-                                <p class="text-center"><small>03</small></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="">
-                        <div class="card border-0">
-                            <div class="text-center "><i class="fa-solid fa-square-check"></i></div>
-                            <div class="card-body ">
-                                <h6>Confirmation</h6>
-                                <p class="text-center"><small>04</small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </section>
+      <div class="container d-flex justify-content-center">
+          <div class="cart-wrap">
+              <div class="cart-step d-flex  justify-content-around  ">
+                  <div class="">
+                      <div class="card border-0">
+                          <div class="text-center "><i class="fa-solid fa-cart-plus "></i></div>
+                          <div class="card-body ">
+                              <h6 class="text-center"><span>My </span>Cart</h6>
+                              <p class="text-center"><small>01</small></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="">
+                      <div class="card border-0">
+                          <div class="text-center"><i class="fa-solid fa-truck-arrow-right "></i></div>
+                          <div class="card-body ">
+                              <h6>Shipping</h6>
+                              <p class="text-center"><small>02</small></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="">
+                      <div class="card border-0">
+                          <div class="text-center"><i class="fa-solid fa-credit-card active"></i></div>
+                          <div class="card-body ">
+                              <h6>Payment</h6>
+                              <p class="text-center"><small>03</small></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="">
+                      <div class="card border-0">
+                          <div class="text-center "><i class="fa-solid fa-square-check"></i></div>
+                          <div class="card-body ">
+                              <h6>Confirm</h6>
+                              <p class="text-center"><small>04</small></p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
     <!--cart step card end-->
 
     <!--payment start-->
@@ -183,15 +183,17 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-mobile-banking" role="tabpanel" aria-labelledby="pills-mobile-banking-tab" tabindex="0">
+                          
                           <form>
                             <div class="d-flex">
                               <!-- <label style="width: 250px !important;" for="payable-num " class="form-label ">Mobile Banking<span class="required text-danger" >*</span></label> -->
-                              <select class="form-select mb-3" aria-label="Default select" id="payable-num" >
+                              <select  class="form-select mb-3" aria-label="Default select" id="payable-num" >
                                   <option selected required>Select Mobile Banking</option>
-                                  <option class="pay-rv-option" onclick="showPayNum()" value="1">bKash</option>
+                                  <option class="pay-rv-option" onclick="showPayNum()"  value="1">bKash</option>
                                   <option class="pay-rv-option" onclick="showPayNum()" value="2">Rocket</option>
-                                  <option class="pay-rv-option" onclick="showPayNum()" value="3">Nagat</option>
+                                  <option class="pay-rv-option" onclick="showPayNum()" type="button" value="3">Nagat</option>
                               </select>
+                              <!-- <div class="test" onclick="showPayNum()" type="button">test</div> -->
                             </div>
                             
                             <div class="mb-3 row pay-rv-num" id="pay-rv-num">
@@ -363,7 +365,7 @@
 
                     <div class="cart-action d-flex justify-content-between mt-4 mb-3">
                       <div class="return-shop"><a href="shipping.html"><i class="fa-solid fa-arrow-left-long me-2"></i>Return to Shipping</a></div>
-                      <div ><a href="orderConfirm.html"><button class="continue button border-0" type="submit">Procced to Payment</button></a></div>
+                      <div ><a href="orderConfirm.html"><button class="continue button border-0" type="submit">Payment</button></a></div>
                    </div>
 
                   </div>
@@ -470,9 +472,17 @@
 
 
       <script>
+        // function showPayNum(){
+        // document.getElementsByClassName("pay-rv-num").style.display = "initial";
+        // }
+
         function showPayNum(){
-        document.getElementsByClassName("pay-rv-num").style.display = "initial";
-        }
+    document.getElementById("pay-rv-num").style.display = "initial";
+    }
+
+    // function closeFilter(){
+    // document.getElementById("filter-right").style.display = "none";
+    // }
   
       </script>
     

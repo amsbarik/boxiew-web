@@ -48,15 +48,15 @@
   <main> 
     
     <!--my cart card start-->
-    <section id="my-cart" class="my-cart ">
+    <section id="my-cart" class="my-cart">
       <div class="container d-flex justify-content-center">
           <div class="cart-wrap">
-              <div class="cart-step d-flex justify-content-around  ">
+              <div class="cart-step d-flex  justify-content-around  ">
                   <div class="">
                       <div class="card border-0">
                           <div class="text-center "><i class="fa-solid fa-cart-plus active"></i></div>
                           <div class="card-body ">
-                              <h6 class="text-center">My Cart</h6>
+                              <h6 class="text-center"><span>My </span>Cart</h6>
                               <p class="text-center"><small>01</small></p>
                           </div>
                       </div>
@@ -65,7 +65,7 @@
                       <div class="card border-0">
                           <div class="text-center"><i class="fa-solid fa-truck-arrow-right "></i></div>
                           <div class="card-body ">
-                              <h6>Shipping Info</h6>
+                              <h6>Shipping</h6>
                               <p class="text-center"><small>02</small></p>
                           </div>
                       </div>
@@ -83,7 +83,7 @@
                       <div class="card border-0">
                           <div class="text-center "><i class="fa-solid fa-square-check"></i></div>
                           <div class="card-body ">
-                              <h6>Confirmation</h6>
+                              <h6>Confirm</h6>
                               <p class="text-center"><small>04</small></p>
                           </div>
                       </div>
@@ -93,96 +93,94 @@
       </div>
     </section>
 
-    <section id="cart-table" class="cart-table">
-        <div class="container d-flex justify-content-center">
-            <div class="cart-tbl-wrap ">
-                <div class="row table-layout rounded  pt-2">
-                    <div class="col">
-                        <table class="table overflow-x-auto table-borderless">
-                            <thead class="thead">
-                              <tr>
-                                <th scope="col" class="ps-3 " >SN</th>
-                                <th scope="col ">Product Name</th>
-                                <th class="text-end pe-4" scope="col">Price</th>
-                                <th class="text-center" scope="col">Quantity</th>
-                                <th class="text-end pe-4" scope="col">Total</th>
-                                <th class="text-center" scope="col">Remove</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <th scope="row" class="ps-3 border-top">1</th>
-                                <td class="cart-item-name border-top">
-                                    <div class="d-flex">
-                                        <img src="image/products/product-1.jpg" class="img-fluid rounded me-3" width="60px" alt="">
-                                        <p>Exclusive Women Shirt</p>
-                                    </div>
-                                </td>
-                                <td class="text-end border-top"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
-                                <td class="text-center border-top">
-                                    <div class="row qty ">
-                                        <div class="col">
-                                            <form action="">
-                                              <div class="qty-layout  ">
-                                                <span class="cart-minus-1 minus">-</span>
-                                                <span class="cart-num-1 num border-0 px-md-3">1</span>
-                                                <span class="cart-plus-1 plus">+</span>
-                                              </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="text-end border-top total"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
-                                <td class="text-center border-top text-danger"><i class="fa-regular fa-trash-can"></i></td>
-                              </tr>
-                              <tr>
-                                <th scope="row" class="ps-3 border-top">2</th>
-                                <td class="cart-item-name border-top">
-                                    <div class="d-flex">
-                                        <img src="image/products/product-1.jpg" class="img-fluid rounded me-3" width="60px" alt="">
-                                        <p>Exclusive Women Shirt</p>
-                                    </div>
-                                </td>
-                                <td class="text-end border-top"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
-                                <td class="text-center border-top">
-                                    <div class="row qty ">
-                                        <div class="col">
-                                            <form action="">
-                                              <div class="qty-layout  ">
-                                                <span class="cart-minus-2 minus">-</span>
-                                                <span class="cart-num-2 num border-0 px-md-3">1</span>
-                                                <span class="cart-plus-2 plus">+</span>
-                                              </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="text-end total border-top"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
-                                <td class="text-center border-top text-danger"><i class="fa-regular fa-trash-can"></i></td>
-                              </tr>
-                              
-                              <tr class="row-total">
-                                
-                                <td colspan="3" class="text-end total border-top">Gross Total=</td>
-                                <td class="text-center total border-top">2</td>
-                                <td class="text-end total border-top"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>3600.00</td>
-                                <td class="text-center text-danger border-top"></td>
-                              </tr>
-                            </tbody>
-                        </table>
-                    </div>
+    <section id="cart-list" class="cart-list">
+        <div class="container overflow-x-auto">
+            <div class="list-wrap mx-auto " >
+                <div class=" list-layout  rounded p-3 pb-1">
+                    <table class="table  table-borderless" >
+                        <thead>
+                          <tr>
+                            <th scope="col">SN</th>
+                            <th colspan="" scope="col">Product Name</th>
+                            <th class="text-center" scope="col">Price</th>
+                            <th class="text-center" scope="col">Quantity</th>
+                            <th class="text-center" scope="col">Total</th>
+                            <th class="text-center" scope="col">Remove</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="border-top">1</td>
+                            <td colspan="" class="border-top">
+                              <div class="d-flex">
+                                <img src="image/products/product-1.jpg" class="img-fluid rounded object-fit-cover me-3" width="60px" alt="">
+                                <span>Exclusive Women Shirt</span>
+                            </div>
+                            </td>
+                            <td class="border-top text-center"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
+                            <td class="border-top text-center">
+                              <div class="row qty ">
+                                <div class="col">
+                                    <form action="">
+                                      <div class="qty-layout  ">
+                                        <span class="cart-minus-1 minus">-</span>
+                                        <span class="cart-num-1 num border-0 px-md-3">1</span>
+                                        <span class="cart-plus-1 plus">+</span>
+                                      </div>
+                                    </form>
+                                </div>
+                            </div>
+                            </td>
+                            <td class="border-top text-center"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
+                            <td class="border-top text-danger text-center"><i class="fa-regular fa-trash-can"></i></td>
+                          </tr>
+      
+                          <tr>
+                            <td class="border-top">1</td>
+                            <td colspan="" class="border-top">
+                              <div class="d-flex">
+                                <img src="image/products/product-1.jpg" class="img-fluid rounded object-fit-cover me-3" width="60px" alt="">
+                                <span>Exclusive Women Shirt</span>
+                            </div>
+                            </td>
+                            <td class="border-top text-center"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
+                            <td class="border-top text-center">
+                              <div class="row qty ">
+                                <div class="col">
+                                    <form action="">
+                                      <div class="qty-layout  ">
+                                        <span class="cart-minus-2 minus">-</span>
+                                        <span class="cart-num-2 num border-0 px-md-3">1</span>
+                                        <span class="cart-plus-2 plus">+</span>
+                                      </div>
+                                    </form>
+                                </div>
+                            </div>
+                            </td>
+                            <td class="border-top text-center"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
+                            <td class="border-top text-danger text-center"><i class="fa-regular fa-trash-can"></i></td>
+                          </tr>
+        
+                          
+        
+                          <tr>
+                            <td colspan="3" class="border-top total text-end">Gross Total</td>
+                            <td class="border-top text-center total">2</td>
+                            <td class="border-top text-center total"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>3600.00</td>
+                            <td class="border-top"></td>
+                          </tr>
+                         
+                        </tbody>
+                      </table>
                 </div>
-
-                <div class="cart-action d-flex justify-content-between mt-3">
+                <div class="cart-action d-flex justify-content-between pb-3 mt-3">
                     <div class="return-shop"><a href="shopping.html"><i class="fa-solid fa-arrow-left-long me-2"></i>Return to Shop</a></div>
-                    <div class="continue button"><a href="shipping.html">Continue to Shipping</a></div>
-                </div>
-                  
-                 
-   
+                    <div class="continue button"><a href="shipping.html">Chekout</a></div>
+                 </div>
             </div>
         </div>
-      </section>
+     </section>
+
     <!--my cart card end-->
 
     <!--footer start-->
