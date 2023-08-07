@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap link-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- custom css link-->
+    <link href="css/style.min.css" rel="stylesheet">
+    <!--font-awesome lik-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!--slick css link-->
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <!-- slick-theme.css- the default styling -->
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/slick.css">
+
+    <title>Add Listing | Boxiew</title>
+</head>
+<body>
+  <!--start nav-->
+  <nav class="navbar navbar-expand-md navbar-light shadow-sm fixed-top">
+      <div class="container">
+          <a href="index.html" class="navbar-brand"><img src="image/logo.png" width="100"></a>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_menu">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div id="main_menu" class="collapse rounded navbar-collapse shadow-sm pb-3 pb-lg-0">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item mx-auto"><a href="listing.html" class="nav-link"> Listing</a></li>
+                  <li class="nav-item mx-auto"><a href="shopping.html" class="nav-link">Shopping</a></li>
+                  <li class="nav-item mx-auto"><a href="#" class="nav-link">Favorites</a></li>
+                  <li class="nav-item mx-auto"><a href="#" class="nav-link">Cart</a></li>
+                  <li class="nav-item mx-auto "><a href="singin.html" class="nav-link"><i class="fa-solid fa-arrow-right-to-bracket pe-2"></i>Sign In</a></li>
+                  <li class="nav-item mx-auto "><div class="add-listing button-outline rounded-pill p-0"><a href="#" class="nav-link px-4">Add Listing<i class="fa-solid fa-plus ms-2 border rounded-circle "></i></a></div></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+  <!--end nav-->
+
+  <!--start main-->
+  <main> 
+    <!--my cart card start-->
+    <section id="listing-form" class="listing-form">
+        <div class="container">
+            <div class="lst-form-wrap px-3">
+              <div class="row">
+                <div class="col"><h2><i class="fa-solid fa-plus me-2"></i>Add Listing</h2></div>
+                <div class="col"><i class="fa-solid fa-headset me-2"></i>Need Help?</div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <h3><i class="fa-solid fa-people-robbery me-2"></i>Welcome to Boxiew</h3>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, provident impedit. Obcaecati quam veniam consequatur?</p>
+                </div>
+              </div>
+              <form action="">
+                <div class="row g-5">
+                  <div class="col">
+                    <h5>Business Info</h5>
+                    <!-- <form> -->
+                        <div class="mb-3 row ">
+                          <div class="col">
+                            <label for="business-name" class="form-label">Business Name<span class="required text-danger">*</span></label>
+                            <input type="text" class="form-control" id="business-name" placeholder="Business name" aria-describedby="nameHelp" required>
+                          </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                          <div class="col">
+                            <label for="slogan" class="form-label">Slogan</label>
+                            <input type="text" class="form-control" id="slogan" placeholder="Business slogan" aria-describedby="nameHelp">
+                          </div>
+                        </div>
+
+                        <div class="mb-3 row ">
+                          <div class="col">
+                            <label for="busns-logo" class="form-label">Business Logo</label>
+                            <input type="file" class="form-control" id="busns-logo" placeholder="Mobile number" aria-describedby="mobileHelp">
+                          </div>
+                        </div>
+
+                        <div class="mb-3 row ">
+                          <div class="col">
+                            <label for="busns-cover" class="form-label">Cover Photo</label>
+                            <input type="file" class="form-control" id="busns-cover" placeholder="Mobile number" aria-describedby="mobileHelp">
+                          </div>
+                        </div>
+
+                        <div class="mb-3 row ">
+                          <div class="col">
+                            <label for="busn-main-ctg" class="form-label">Category<span class="required text-danger">*</span></label>
+                            <select class="form-select" aria-label="Default select" id="busn-main-ctg" required>
+                                <option selected>Select</option>
+                                <option value="1">Health Care</option>
+                                <option value="2">Real State</option>
+                                <option value="3">Hotel</option>
+                            </select>
+                          </div>
+                          <div class="col">
+                              <label for="busn-sub-ctg" class="form-label" >Business Type<span class="required text-danger">*</span></label>
+                              <select class="form-select" aria-label="Default select" id="busn-sub-ctg" >
+                                  <option selected >Select</option>
+                                  <option value="2">Diagnostic</option>
+                                  <option value="1">Pharmecy</option>
+                                  <option value="1">Hospital</option>
+                              </select>
+                          </div>
+                      </div>
+
+                        <div class="mb-3 row ">
+                          <div class="col">
+                            <label for="short-des" class="form-label">Short Description</label>
+                            <textarea class="form-control" id="short-des" placeholder="Descrip your business in short" aria-label="With textarea"></textarea>
+                          </div>
+                        </div>
+
+                        <div class="mb-3 row ">
+                            <div class="col">
+                              <label for="busn-num" class="form-label">Mobile<span class="required text-danger">*</span></label>
+                              <input type="number" class="form-control" id="busn-num" placeholder="Mobile number" aria-describedby="mobileHelp" required>
+                            </div>
+                            <div class="col">
+                              <label for="busn-mail" class="form-label">Email<span class="required text-danger">*</span></label>
+                              <input type="email" class="form-control" id="busn-mail" placeholder="Email address" aria-describedby="emailHelp" required>
+                            </div>
+                        </div>
+                        <div class="mb-3 row ">
+                            <div class="col">
+                              <label for="busn-fb" class="form-label">Facebook</label>
+                              <input type="text" class="form-control" id="busn-fb" placeholder="Page link" aria-describedby="passHelp">
+                            </div>
+                            <div class="col">
+                              <label for="busn-web" class="form-label">Website</label>
+                              <input type="text" class="form-control" id="busn-web" placeholder="Website URL" aria-describedby="nameHelp">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                          <label for="busn-adds" class="form-label">Location<span class="required text-danger">*</span></label>
+                          <input type="text" class="form-control" id="busn-adds" placeholder="Business location">
+                        </div>
+                        <div class="mb-3 row ">
+                            <div class="col">
+                              <label for="busn-city" class="form-label">City<span class="required text-danger">*</span></label>
+                              <select class="form-select" aria-label="Default select" id="busn-city" required>
+                                  <option selected>Select</option>
+                                  <option value="1">Dhaka</option>
+                                  <option value="2">New Delhi</option>
+                                  <option value="3">Chattogram</option>
+                              </select>
+                            </div>
+                            <div class="col">
+                                <label for="busn-country" class="form-label">Country</label>
+                                <select class="form-select" aria-label="Default select" id="busn-country">
+                                    <option selected>Select</option>
+                                    <option value="2">India</option>
+                                    <option value="1">Bangladesh</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                    <!-- </form> -->
+                  </div>
+
+                  <div class="col">
+                    <h5>Business Represent</h5>
+                    <!-- <form> -->
+                        <div class="mb-3 row ">
+                          <div class="col">
+                            <label for="rept-name" class="form-label">Name<span class="required text-danger">*</span></label>
+                            <input type="text" class="form-control" id="rept-name" placeholder="Business name" aria-describedby="nameHelp" required>
+                          </div>
+                        </div>
+
+                        <div class="mb-3 row ">
+                          <div class="col">
+                            <label for="rept-role" class="form-label">Role<span class="required text-danger">*</span></label>
+                            <input type="text" class="form-control" id="rept-role" placeholder="Business role" aria-describedby="nameHelp" required>
+                          </div>
+                        </div>
+
+                        <div class="mb-3 row ">
+                            <div class="col">
+                              <label for="busn-own-num" class="form-label">Mobile<span class="required text-danger">*</span></label>
+                              <input type="number" class="form-control" id="busn-own-num" placeholder="Mobile number" aria-describedby="mobileHelp" required>
+                            </div>
+                            <div class="col">
+                              <label for="busn-own-mail" class="form-label">Email</label>
+                              <input type="email" class="form-control" id="busn-own-mail" placeholder="Email address" aria-describedby="emailHelp" >
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="rept-adds" class="form-label">Address</label>
+                          <input type="text" class="form-control" id="rept-adds" placeholder="Address">
+                        </div>
+
+                        <div class="mb-3 form-check d-flex justify-content-between">
+                          <div><input type="checkbox" class="form-check-input" id="new-acnt" required>
+                            <label class="form-check-label" for="new-acnt"><small>Create New Account</small></label>
+                            </div>
+                          <span><a href="#" class="terms-link">Terms & Conditions<small><i class="fa-solid fa-arrow-up-right-from-square ms-2"></i></small></a></span>
+                        </div>
+
+                        <div class="cart-action d-flex justify-content-between mt-5 mb-4">
+                          <div class="return-shop"><a href="myCart.html"><i class="fa-solid fa-arrow-left-long me-2"></i>Return to MyCart</a></div>
+                          <div ><a href="payment.html"><button class="continue button border-0" type="submit">Continue</button></a></div>
+                      </div>
+                        
+                    <!-- </form> -->
+                  </div>
+                  
+                </div>
+              </form>
+
+                
+                  
+                 
+   
+            </div>
+        </div>
+    </section>
+    <!--my cart card end-->
+
+    <!--footer start-->
+    <section id="footer">
+      <div class="container">
+        <div class="footer-wrapping ">
+            <div class="row row-cols-2 row-cols-md-4 row-cols-lg-4 gy-4 ">
+
+                <div class="boxiew col">
+                    <div class="logo">
+                      <img src="image/logo-light.png" alt="Boxiew logo">
+                    </div>
+        
+                    <div class="contact-info">
+                      
+                      <div class="mb-2"><a href="Tel: 123-456-7890"><i class="fa-solid fa-phone"></i>+88 01721-XXXXXX</a></div>
+                      <div class="mb-2"><a href="Tel: 123-456-7890"><i class="fa-solid fa-phone"></i>+88 01721-XXXXXX</a></div>
+                      <div class="mb-2"><a href="mailto:hello@boxiew.com"><i class="fa-solid fa-envelope"></i>hello@boxiew.com</a></div>
+                      <!-- <div class="mb-2"><a href="mailto:hello@boxiew.com"><i class="fa-solid fa-envelope"></i>hello@boxiew.com</a></div> -->
+                      <!-- <div><a href="#"><i class="pt-1 fa-sharp fa-solid fa-location-dot"></i>Feroza Tower, 8th Floor, DIT Road, Malibagh Chowdhurypara, Dhaka.</a> </div> -->
+                      
+                    </div>
+                </div>
+        
+                <div class="suppliers-info col">
+                    <div><h5>Suppliers Info</h5></div>
+                    <div class="info-link">
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                      <!-- <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div> -->
+                    </div>
+                </div>
+        
+                <div class="buyers-info col">
+                    <div><h5>Buyers Info</h5></div>
+                    <div class="info-link">
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From </a></div>
+                      <!-- <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From </a></div> -->
+                    </div>
+                </div>
+        
+                <div class="boxiew-link col">
+                    <div><h5>Quick Links</h5></div>
+                    <div class="info-link">
+                      <div><a href="affiliate.html"><i class="fa-solid fa-arrow-right-long"></i>Carier</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>About Us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Privacy Policy</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Terms & Conditions</a></div>
+                    </div>
+        
+                    <div class="follow-us ">
+                      <div><h5>Follow Us</h5></div>
+                      <div class="social-link">
+                        <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <hr>
+        <div class="copy-right d-flex justify-content-center pb-3"> <small>Copyright © 2023 Boxiew Ltd || All right reserved</small></div>
+      </div>
+
+    </section>
+    <!--footer end-->
+  </main>
+  <!--end main-->
+
+
+    <!--custom js link-->
+    <script src="js/main.js"></script>
+
+    <!--Bootstrap cdn link-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    
+    <!-- <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script> -->
+
+
+    
+    <!--slick js link-->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+      
+
+    <script src="js/jquery_3.7.0_jquery.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+
+    
+    
+</body>
+</html>
