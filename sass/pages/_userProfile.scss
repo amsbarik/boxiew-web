@@ -3,108 +3,74 @@
 
 body{
     background-color: $bg-color;
-}
-.user-profile{
-    .user-nav{
-        background-color: lighten($color: $primary-color, $amount: 30);
-        position: absolute;
-        right: 0;
-        top: 6rem;
-        display: none;
-    }
-    
-    .nav{
-        padding-top: 7rem;
-        margin-left: -1rem;
-        width: 17.5rem;
-        background-color: $primary-color;
-        // background-color: lighten($secondary-color, 10);
-        height: 100vh;
-        button{
-            color: $light-color ;
-            padding-left: 3rem;
-        }
-        .active{
-            background-color: lighten($primary-color, 5)
-        }
-        .nav-link{
-            &:hover{
-                background-color: lighten($primary-color, 5)
-            }
-        }
-        .user-photo{
-            width: 10rem;
-            height: 10rem;
-            color: $light-color;
-            img{
-                border: 5px solid $light-color;
-            }
-        }
-    }
-
-    .tab-content{
-        margin-top: 8rem;
-        width: 100%;
-        padding-bottom: 5rem;
-        .dashboard{
-            .in-cart{
-                background-color: blueviolet;
-            }
-        }
-
-        .cart-list{
-            .btn{
-                background-color: lighten($primary-color, 30);
-                transition: .3s;
-                &:hover{
-                    background-color: $primary-color;
-                    color: $light-color;
-                }
-            }
-        }
-
-        .profile-detail{
-            h5{
-                padding: 1rem;
-                background-color: lighten($color: $primary-color, $amount: 30);
-            }
-        }
-
-        .product-list{
-            .product-card{
-                .card{
-                    .remove-btn{
-                        color: $primary-color;
-                        background-color: lighten($color: $primary-color, $amount: 30);
-                        i{padding: .5rem}
-                        right: .5rem;
-                        top: .5rem;
-                        display: none !important;
-                        transition: .3s;
-                        &:hover{
-                            color: $light-color;
-                            background-color: $primary-color;
-                        }
-                    }
+    .user-profile{
+        margin-top: 8.5rem;
+        //order history page css
+        .order-history{
+            .cart-list{
+                .btn{
+                    background-color: lighten($primary-color, 30);
                     transition: .3s;
                     &:hover{
-                        .remove-btn{
-                            display: initial !important;
-                        }
+                        background-color: $primary-color;
+                        color: $light-color;
                     }
                 }
             }
         }
         
+        // wishlist page css
+        .wishlist{
+            .product-list{
+                .product-card{
+                    .card{
+                        .remove-btn{
+                            color: $primary-color;
+                            background-color: lighten($color: $primary-color, $amount: 30);
+                            i{padding: .5rem}
+                            right: .5rem;
+                            top: .5rem;
+                            display: none !important;
+                            transition: .3s;
+                            &:hover{
+                                color: $light-color;
+                                background-color: $primary-color;
+                            }
+                        }
+                        transition: .3s;
+                        &:hover{
+                            .remove-btn{
+                                display: initial !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // profile setting page css
+        .user-setting{
+            .profile-detail{
+                h5{
+                    padding: 1rem;
+                    background-color: lighten($color: $primary-color, $amount: 30);
+                }
+            }
+        }
+        
     }
+
+    
+    
 }
 
 .order-detail{
     background-color: $bg-color;
-    height: 100vh;
-    width: 100vw;
     position: absolute;
     top: 0;
+    // left: 120px;
+    width: 100vw;
+    height: 100vh;
+
     display: none;
     .active{
         display: block;
@@ -117,83 +83,109 @@ body{
 }
 
 
-
 // media start
+
 @media (max-width: 596px){
+    .sidebar{
+        width: 180px !important;
+        .user-photo{
+            img{
+                width: 5rem;
+                height: 5rem ;
+                border: 3px solid $light-color !important;
+            }
+            hr{
+                // margin-top: -6rem !important;
+            }
+        }
+        .nav-item{
+            padding-left: 1rem !important;
+            font-size: .75rem !important;
+        }
+    }
     .user-profile{
-        .user-nav{
-            display: initial;
-        }
-        .nav{
-            display: none;
-        }
-
-        .tab-content{
-            margin-top: 7rem;
-            margin-left: 0rem !important;
-            .table{
-                font-size: .8rem;
-            }
-
-            .user-setting{
-                label, input, select, button{
-                    font-size: .8rem;
-                }
-            }
-        }
-        .order-detail{
-            margin-left: -1rem;
-            .order-sum{
-                .list-wrap{
-                    width: 38rem;
-                }
-                
+        .wishlist{
+            .button{
+                font-size: .75rem !important;
             }
         }
     }
 }
-
 
 
 
 @media (max-width: 1200px){
-    .user-profile{
-        .nav{
-            width: 13rem;
-            margin-left: -.3rem;
-            .nav-link{
-                font-size: .85rem;
-                padding-left: 2rem;
-            }
-            .user-photo{
-                width: 8rem;
-                height: 8rem;
-                img{
-                    border: 3.5px solid $light-color;
-                }
-            }
-        }
-
-        .tab-content{
-            margin-left: 8.5rem;
-            .order-filter{
-                label, input, button {
-                    font-size: .85rem;
-                }
-            }
-            .wishlist{
-
-            }
-            .user-setting{
-                img{
-                    // width: 15rem !important;
-                    // height: 15rem !important;
-                }
-            }
+    .sidebar{
+        .nav-item{
+            // font-size: .85rem !important;
         }
     }
+    
+}
 
-    .order-detail{
-        margin-left: 8.5rem;
+@media (max-width: 1400px){
+    
+    .user-profile{
+        .wishlist{
+            .button{
+                font-size: .85rem;
+            }
+        }
     }
 }
+
+
+///////////////////////////////////
+
+  @media (min-width: 991.98px) {
+    main {
+      padding-left: 240px;
+    }
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 58px 0  0; /* Height of navbar */
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+    width: 240px;
+    z-index: 600;
+    height: 100vh !important;
+    background-color: $primary-color !important;
+    .user-photo{
+        width: 10rem;
+        height: 10rem;
+        color: $light-color;
+        img{
+            border: 5px solid $light-color;
+        }
+    }
+    .nav-item{
+        color: $light-color;
+        padding-left: 2rem;
+        transition: .3s;
+        margin-top: .3rem;
+        &:hover{
+            background-color: lighten($color: $primary-color, $amount: 5);
+        }
+    }
+  }
+  
+ 
+  .sidebar .active {
+    // border-radius: 5px;
+    background-color: lighten($color: $primary-color, $amount: 5);
+    // box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+  }
+  
+  .sidebar-sticky {
+    // position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: 0.5rem;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  }

@@ -22,7 +22,7 @@
     <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
     <link rel="stylesheet" type="text/css" href="css/slick.css">
 
-    <title>My Profile | Boxiew</title>
+    <title>Sign In | Boxiew</title>
 </head>
 <body>
     <!--Main Navigation-->
@@ -64,11 +64,11 @@
                       </div>
                       <hr class="text-light m-0 mt-4 p-0">
 
-                    <a href="userProfile.html" class="nav-item  py-2 mt-3 active"><i class="fa-solid fa-chart-line   me-3"></i><span>Dashboard</span></a>
+                    <a href="userProfile.html" class="nav-item  py-2 mt-3 "><i class="fa-solid fa-chart-line   me-3"></i><span>Dashboard</span></a>
                     <a href="myOrders.html" class=" nav-item  py-2 "><i class="fa-solid fa-clock-rotate-left me-3"></i><span>My Orders</span></a>
                     <a href="myWishlist.html" class=" nav-item  py-2 "><i class="fa-regular fa-heart me-3"></i><span>My Wishlist</span></a>
                     <a href="profileSetting.html" class=" nav-item  py-2 "><i class="fa-regular fa-circle-user me-3"></i><span>My Setting</span></a>
-                    <a href="logout.html" class=" nav-item  py-2 "><i class="fa-solid fa-power-off me-3"></i><span>Logout</span></a>
+                    <a href="logout.html" class=" nav-item  py-2 active"><i class="fa-solid fa-power-off me-3"></i><span>Logout</span></a>
                 </div>
             </div>
         </nav>
@@ -83,87 +83,39 @@
         <section class="user-profile">
             <div class="container">
                 <div class="profile-wrap">
-                    <div class="dashboard " >
-                        <h1>Good Morning! Jhon</h1>
-                        <div class="row g-3 row-cols-2 row-cols-lg-4 mt-2 mt-lg-5">
-                            <div class="col">
-                                <div class="card border-0 text-bg-dark">
-                                    <img src="image/dash-1.jpg" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                      <h3 class="card-title">0 Produts</h3>
-                                      <p class="card-text">In MyCart</p>
-                                    </div>
-                                  </div>
-                            </div>
+                    <div class="logout" >
+                        <div class="row">
+                          <div class="col ">
+                            <div class="signup-form d-flex justify-content-center align-items-center">
+                                <div>
+                                    <h3 class="text-center ">Sign In</h3>
 
-                            <div class="col">
-                                <div class="card border-0 text-bg-dark">
-                                    <img src="image/dash-2.jpg" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                      <h3 class="card-title">0 Produts</h3>
-                                      <p class="card-text">In Wishlist</p>
-                                    </div>
-                                  </div>
-                            </div>
-
-                            <div class="col">
-                                <div class="card border-0 text-bg-dark">
-                                    <img src="image/dash-3.jpg" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                      <h3 class="card-title">0 Produts</h3>
-                                      <p class="card-text">Progressing</p>
-                                    </div>
-                                  </div>
-                            </div>
-
-                            <div class="col">
-                                <div class="card border-0 text-bg-dark">
-                                    <img src="image/dash-4.jpg" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                      <h3 class="card-title">0 Produts</h3>
-                                      <p class="card-text">Total Order</p>
-                                    </div>
-                                  </div>
-                            </div>
-                        </div>
-                        <div class="row mt-5">
-                            <div class="col">
-                                <h5>Default Shipping Address</h5>
-                                <hr>
-                                <div class=" rounded bg-white" style="width: 100%;">
-                                  <table class="table p-2 table-borderless mt-4" style="width: 22rem;">
-                                    
-                                    <tbody >
-                                      <tr>
-                                        <th scope="row">Name</th>
-                                        <td>Mr. Jhon</td>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">Mobile</th>
-                                        <td>+88 01711-XXXXXX</td>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">Email</th>
-                                        <td >hello@gmail.com</td>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">Location</th>
-                                        <td >72 Malibgh</td>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">City</th>
-                                        <td >Dhaka</td>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">Country</th>
-                                        <td >Banladesh</td>
-                                      </tr>
-                                    </tbody>
-                                </table>
+                                    <form class="mt-5">
+                                        
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Email </label>
+                                            <input type="email" class="form-control" id="email" placeholder="Enter Your Email" aria-describedby="emailHelp">
+                                            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                                        </div>
+                                        <div class="mb-3">
+                                        <label for="password" class="form-label">Password</label>
+                                        <input type="password" class="form-control" placeholder="Enter Your Password" id="password">
+                                        </div>
+                                        <div class="mb-3 form-check d-flex">
+                                            <div class="me-3">
+                                                <input type="checkbox" class="form-check-input" id="checkbox">
+                                                <label class="form-check-label" for="checkbox"><small>Remember Me!</small></label>
+                                            </div>
+                                            <a href="#" class="ms-5 ps-2"><small>Forgot Password?</small></a>
+                                        </div>
+                                        <div class="text-center"><div type="submit" role="button" class="button  py-2 rounded-pill mt-5">Sign In</div></div>
+                                        <p class="mt-3 text-center else-sign"><small>Don't have an account? <a href="signup.html" class="ms-1">Sign Up!</a></small></p>
+                                    </form>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        </div>
+                      </div>
                 </div>
             </div>
         </section>

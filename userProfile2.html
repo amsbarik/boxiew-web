@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap link-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- custom css link-->
+    <link href="css/style.min.css" rel="stylesheet">
+    <!--font-awesome lik-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!--slick css link-->
+    <!-- <link rel="stylesheet" type="text/css" href="slick/slick.css"/> -->
+    <!-- slick-theme.css- the default styling -->
+    <!-- <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/> -->
+
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/slick.css">
+
+    <title>My Profile 2 | Boxiew</title>
+</head>
+<body>
+  <!--start nav-->
+  <nav class="navbar navbar-expand-md navbar-light shadow-sm fixed-top">
+      <div class="container">
+          <a href="index.html" class="navbar-brand"><img src="image/logo.png" width="100"></a>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_menu">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div id="main_menu" class="collapse rounded navbar-collapse shadow-sm pb-3 pb-lg-0">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item mx-auto"><a href="listing.html" class="nav-link"> Listing</a></li>
+                  <li class="nav-item mx-auto"><a href="shopping.html" class="nav-link">Shopping</a></li>
+                  <li class="nav-item mx-auto"><a href="#" class="nav-link">Favorites</a></li>
+                  <li class="nav-item mx-auto"><a href="#" class="nav-link">Cart</a></li>
+                  <li class="nav-item mx-auto "><a href="singin.html" class="nav-link"><i class="fa-solid fa-arrow-right-to-bracket pe-2"></i>Sign In</a></li>
+                  <li class="nav-item mx-auto "><div class="add-listing button-outline rounded-pill p-0"><a href="#" class="nav-link px-4">Add Listing<i class="fa-solid fa-plus ms-2 border rounded-circle "></i></a></div></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+  <!--end nav-->
+
+  <!--start main-->
+  <main> 
+    <section class="user-profile ">
+        <div class="container">
+            <div class="user-profile-wrap">
+              <div onclick="showProfile()" class="user-nav z-3 position-fixed rounded-start p-2" role="button">
+                 Profile<i class="fa-solid fa-ellipsis-vertical me-1 ms-2 "></i>
+              </div>
+                <div class="d-flex align-items-start">
+                    <div id="profile-nav" class="nav z-1 flex-column nav-pills fixed-top " id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                      <div>
+                        <div class="user-photo mx-auto  mb-5 p-3">
+                          <img src="image/profile-1.jpg" class="img-fluid rounded-circle object-fit-cover" alt="">
+                          <h5 class="text-center mt-3">Mr Jhon</h5>
+                          <p class="text-center"><small>hello@gmail.com</small></p>
+                          
+                        </div>
+                      </div>
+                      <hr class="text-light m-0 mt-4 p-0">
+                      <button onclick="hideProfile()" class="nav-link rounded-0 mt-4 active text-start" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-dashboard" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true"><i class="fa-solid fa-chart-line me-2"></i>Dashboard</button>
+                      <button onclick="hideProfile()" class="nav-link rounded-0  text-start" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-order" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false"><i class="fa-solid fa-clock-rotate-left me-2"></i>My Orders</button>
+                      <button onclick="hideProfile()" class="nav-link rounded-0 text-start" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-wishlist" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true"><i class="fa-regular fa-heart me-2"></i>My Wishlist</button>
+                      <button onclick="hideProfile()" class="nav-link rounded-0 text-start" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false"></button>
+                      <button onclick="hideProfile()" class="nav-link rounded-0 text-start" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-logout" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fa-solid fa-power-off me-2"></i>Logout</button>
+                    </div>
+                    <div class="tab-content " id="v-pills-tabContent">
+                      <div class="tab-pane dashboard fade show active" id="v-pills-dashboard" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
+                        <h1>Good Morning! Jhon</h1>
+                        <div class="row g-3 row-cols-2 row-cols-lg-4 mt-2 mt-lg-5">
+                            <div class="col">
+                                <div class="card border-0 text-bg-dark">
+                                    <img src="image/dash-1.jpg" class="card-img" alt="...">
+                                    <div class="card-img-overlay">
+                                      <h3 class="card-title">0 Produts</h3>
+                                      <p class="card-text">In MyCart</p>
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card border-0 text-bg-dark">
+                                    <img src="image/dash-2.jpg" class="card-img" alt="...">
+                                    <div class="card-img-overlay">
+                                      <h3 class="card-title">0 Produts</h3>
+                                      <p class="card-text">In Wishlist</p>
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card border-0 text-bg-dark">
+                                    <img src="image/dash-3.jpg" class="card-img" alt="...">
+                                    <div class="card-img-overlay">
+                                      <h3 class="card-title">0 Produts</h3>
+                                      <p class="card-text">Progressing</p>
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card border-0 text-bg-dark">
+                                    <img src="image/dash-4.jpg" class="card-img" alt="...">
+                                    <div class="card-img-overlay">
+                                      <h3 class="card-title">0 Produts</h3>
+                                      <p class="card-text">Total Order</p>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col">
+                                <h5>Default Shipping Address</h5>
+                                <hr>
+                                <div class=" rounded bg-white" style="width: 100%;">
+                                  <table class="table p-2 table-borderless mt-4" style="width: 22rem;">
+                                    
+                                    <tbody >
+                                      <tr>
+                                        <th scope="row">Name</th>
+                                        <td>Mr. Jhon</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Mobile</th>
+                                        <td>+88 01711-XXXXXX</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Email</th>
+                                        <td >hello@gmail.com</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Location</th>
+                                        <td >72 Malibgh</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">City</th>
+                                        <td >Dhaka</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Country</th>
+                                        <td >Banladesh</td>
+                                      </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="v-pills-order" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">
+                        <h3>Order History</h3>
+                        <div class="row mt-5">
+                            <div class="col">
+                                <form action="">
+                                    <div class="row g-3 order-filter align-items-center">
+                                        <div class="col-auto">
+                                          <label for="order-no" class="col-form-label">Order ID</label>
+                                        </div>
+                                        <div class="col-auto">
+                                          <input type="text" id="order-no" class="form-control" aria-describedby="orderHelpInline">
+                                        </div>
+                                        <div class="col-3 col-md-auto">
+                                            <label for="from-date" class="col-form-label">From</label>
+                                          </div>
+                                          <div class="col-8 col-md-auto">
+                                            <input type="date" id="from-date" class="form-control" aria-describedby="fromdHelpInline">
+                                        </div>
+
+                                        <div class=" col-auto">
+                                            <label for="to-date" class="col-form-label">To</label>
+                                          </div>
+                                          <div class="col-auto">
+                                            <input type="date" id="to-date" class="form-control" aria-describedby="todHelpInline">
+                                        </div>
+
+                                        <div class="col-auto">
+                                            <button type="submit" class="button border-0 ms-xl-5">Filter</button>
+                                        </div>
+                                        
+                                      </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="cart-list mt-5 overflow-x-auto">
+                            <div class="list-wrap  " >
+                                <div class=" list-layout  rounded p-3 pb-1">
+                                    <table class="table  table-borderless" >
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">Order ID</th>
+                                            <th colspan="" scope="col">Order Date</th>
+                                            <th class="text-center" scope="col">Billing Name</th>
+                                            <th class="text-center" scope="col">Qty</th>
+                                            <th class="text-center" scope="col">Total Price</th>
+                                            <th class="text-center" scope="col">Action</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <td class="border-top">BOX-2023-4477-0009</td>
+                                            <td colspan="" class="border-top">14 Aug 2023</td>
+                                            <td class="border-top text-center">Mr Jhon</td>
+                                            <td class="border-top text-center">3</td>
+                                            <td class="border-top text-center"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>12000.00</td>
+                                            <td class="border-top  text-center"><button onclick="showDetail()" class="btn"><i class="fa-regular fa-eye me-2"></i>Details</button></td>
+                                          </tr>
+                                          
+                                          <tr>
+                                            <td class="border-top">BOX-2023-4477-0009</td>
+                                            <td colspan="" class="border-top">14 Aug 2023</td>
+                                            <td class="border-top text-center">Mr Jhon</td>
+                                            <td class="border-top text-center">3</td>
+                                            <td class="border-top text-center"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>12000.00</td>
+                                            <td class="border-top  text-center"><button onclick="showDetail()" class="btn"><i class="fa-regular fa-eye me-2"></i>Details</button></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="border-top">BOX-2023-4477-0009</td>
+                                            <td colspan="" class="border-top">14 Aug 2023</td>
+                                            <td class="border-top text-center">Mr Jhon</td>
+                                            <td class="border-top text-center">3</td>
+                                            <td class="border-top text-center"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>12000.00</td>
+                                            <td class="border-top  text-center"><button onclick="showDetail()" class="btn"><i class="fa-regular fa-eye me-2"></i>Details</button></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="border-top">BOX-2023-4477-0009</td>
+                                            <td colspan="" class="border-top">14 Aug 2023</td>
+                                            <td class="border-top text-center">Mr Jhon</td>
+                                            <td class="border-top text-center">3</td>
+                                            <td class="border-top text-center"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>12000.00</td>
+                                            <td class="border-top  text-center"><button onclick="showDetail()" class="btn"><i class="fa-regular fa-eye me-2"></i>Details</button></td>
+                                          </tr>
+                                         
+                                        </tbody>
+                                      </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                      </div>
+                      <div class="tab-pane wishlist fade" id="v-pills-wishlist" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabindex="0">
+                        <h3>My Wishlist</h3>
+                        <div class="products-wrapping" >
+                          <div class="products-heading pb-4 pt-4">
+                              <div class="heading-sub-title d-flex justify-content-between">
+                                  <div class="sub-title"><h6>My Favorite Products</h6></div>
+                                  <!-- <div class="heading-u-line mt-3 mt-lg-3"></div> -->
+                                  <!-- <div class="prev-next-btn">
+                                      <i class="fa-solid fa-circle-chevron-left pe-2"></i>
+                                      <i class="fa-solid fa-circle-chevron-right"></i>
+                                  </div> -->
+                              </div>
+                          </div>
+                          <!-- <div class="see-more d-flex justify-content-end"><small>See more</small></div> -->
+                          <div class="product-list  ">
+                                <div class="row g-3 row-cols-1 row-cols-lg-3 row-cols-xl-4">
+                                  <div class="col">
+                                    <div class="product-card  ">
+                                      <div class="card border-0 box-shadow m-1">
+                                        <img src="image/products/product-1.jpg" class="card-img-top" alt="...">
+                                        <div role="button" class="position-absolute remove-btn mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 "><i class="fa-regular fa-trash-can"></i></div>
+                                        <div class="card-body">
+                                          <h5 class="card-title title-style">Women Shirt</h5>
+                                          <!-- <p class="card-text text-style">A exclusive red and black check women shirt</p> -->
+                                          <div class="rangking d-sm-flex  justify-content-between">
+                                            <div class="likes"> 
+                                              <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                                            </div> 
+                                            <div class="reviews">
+                                              <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                                            </div> 
+                                          </div>
+                                          <hr class="my-2">
+                                          <div class="order-now d-flex  justify-content-between" >
+                                            <div class="price d-flex align-items-center">
+                                              <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                                            </div>
+                                            <div >
+                                              <button class="button border-0">Add to Cart</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="col">
+                                    <div class="product-card  ">
+                                      <div class="card border-0 box-shadow m-1">
+                                        <img src="image/products/product-1.jpg" class="card-img-top" alt="...">
+                                        <div role="button" class="position-absolute remove-btn mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 "><i class="fa-regular fa-trash-can"></i></div>
+                                        <div class="card-body">
+                                          <h5 class="card-title title-style">Women Shirt</h5>
+                                          <!-- <p class="card-text text-style">A exclusive red and black check women shirt</p> -->
+                                          <div class="rangking d-sm-flex  justify-content-between">
+                                            <div class="likes"> 
+                                              <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                                            </div> 
+                                            <div class="reviews">
+                                              <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                                            </div> 
+                                          </div>
+                                          <hr class="my-2">
+                                          <div class="order-now d-flex  justify-content-between" >
+                                            <div class="price d-flex align-items-center">
+                                              <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                                            </div>
+                                            <div >
+                                              <button class="button border-0">Add to Cart</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="col">
+                                    <div class="product-card  ">
+                                      <div class="card border-0 box-shadow m-1">
+                                        <img src="image/products/product-1.jpg" class="card-img-top" alt="...">
+                                        <div role="button" class="position-absolute remove-btn mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 "><i class="fa-regular fa-trash-can"></i></div>
+                                        <div class="card-body">
+                                          <h5 class="card-title title-style">Women Shirt</h5>
+                                          <!-- <p class="card-text text-style">A exclusive red and black check women shirt</p> -->
+                                          <div class="rangking d-sm-flex  justify-content-between">
+                                            <div class="likes"> 
+                                              <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                                            </div> 
+                                            <div class="reviews">
+                                              <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                                            </div> 
+                                          </div>
+                                          <hr class="my-2">
+                                          <div class="order-now d-flex  justify-content-between" >
+                                            <div class="price d-flex align-items-center">
+                                              <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                                            </div>
+                                            <div >
+                                              <button class="button border-0">Add to Cart</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="col">
+                                    <div class="product-card  ">
+                                      <div class="card border-0 box-shadow m-1">
+                                        <img src="image/products/product-1.jpg" class="card-img-top" alt="...">
+                                        <div role="button" class="position-absolute remove-btn mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 "><i class="fa-regular fa-trash-can"></i></div>
+                                        <div class="card-body">
+                                          <h5 class="card-title title-style">Women Shirt</h5>
+                                          <!-- <p class="card-text text-style">A exclusive red and black check women shirt</p> -->
+                                          <div class="rangking d-sm-flex  justify-content-between">
+                                            <div class="likes"> 
+                                              <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                                            </div> 
+                                            <div class="reviews">
+                                              <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                                            </div> 
+                                          </div>
+                                          <hr class="my-2">
+                                          <div class="order-now d-flex  justify-content-between" >
+                                            <div class="price d-flex align-items-center">
+                                              <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                                            </div>
+                                            <div >
+                                              <button class="button border-0">Add to Cart</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+              
+                          </div>
+                        </div>
+
+                        <!-- Favorite listing  -->
+                        <div class="listed-company-wrapping mt-lg-5">
+          
+                          <div class="company-list row  ">
+                              <!--listing-->
+                              <div class="listing-left col">
+          
+                                  <div class="row mt-2">
+                                      <div class="col">
+                                          <div class="heading-sub-title d-flex justify-content-between">
+                                              <div class="mb-3"><p>My Favorite Suppliers</p></div>
+                                              <div class="sort-btn">
+                                                  <div class="dropdown">
+                                                      <button class="btn border-0 dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        Sort By
+                                                      </button>
+                                                      <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">Top Rated</a></li>
+                                                        <li><a class="dropdown-item" href="#">Verified</a></li>
+                                                        <li><a class="dropdown-item" href="#">Popular</a></li>
+                                                        <li><a class="dropdown-item" href="#">Newest</a></li>
+                                                        <li><a class="dropdown-item" href="#">Oldest</a></li>
+                                                      </ul>
+                                                    </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+          
+                                  <div class="row row-cols-1 gy-3 gy-lg-4 listing-name ">
+                                      
+                                          
+                                  </div>
+                              </div>
+          
+                          </div>
+          
+                          <!-- <div class="row page-navigation mt-4 mt-lg-5 mb-5">
+                              <div class="col fs-5">
+                                  <ul class="d-flex justify-content-center ">
+                                      <li class=""><a class="" href="#">1</a></li>
+                                      <li class=""><a class="" href="#">2</a></li>
+                                      <li class=""><a class="" href="#">3</a></li>
+                                      <li class="">
+                                        <a class="" href="#">
+                                            <i class="fa-solid fa-circle-chevron-left pe-2"></i>
+                                            <i class="fa-solid fa-circle-chevron-right"></i>
+                                        </a>
+                                      </li>
+                                    </ul>
+                              </div>
+                          </div> -->
+          
+                        </div>
+
+                      </div>
+                      <div class="tab-pane user-setting fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">
+                        <h3>My Profile</h3>
+                        <div class="profile-detail">
+                          <div class="row gx-5 g-4 mt-5">
+                            <div class="col">
+                              <h5 class="rounded">Profile Detail</h5>
+                              <div class="mt-3">
+                                <form action="">
+                                  <img src="image/profile-1.jpg" class="img-fluid rounded object-fit-cover" alt="" style="width: 18rem; height: 18rem;">
+                                  <div class="mb-3 row ">
+                                    <div class="col">
+                                      <label for="upload" class="form-label bg-white text-center py-2 mt-3 rounded" style="width: 18rem;"><i class="fa-solid fa-upload me-3"></i>Upload Photo</label>
+                                      <input style="display: none;" type="file" class="form-control" id="upload" placeholder="" aria-describedby="uploadHelp">
+                                    </div>
+                                  </div>
+  
+                                  <div class="mb-3 row ">
+                                    <div class="col">
+                                      <label for="your-name" class="form-label">Your Name<span class="required text-danger">*</span></label>
+                                      <input type="text" class="form-control" id="your-name" placeholder="Your name" aria-describedby="nameHelp" required>
+                                    </div>
+                                  </div>
+  
+                                  <div class="mb-3 row">
+                                    <div class="col">
+                                      <label for="y-mobile" class="form-label">Mobile<span class="required text-danger">*</span></label>
+                                      <input type="number" class="form-control" id="y-mobile" placeholder="Mobile Number" aria-describedby="mobileHelp" required>
+                                    </div>
+                                  </div>
+      
+                                  <div class="mb-3 row">
+                                    <div class="col">
+                                      <label for="y-mail" class="form-label">Email</label>
+                                      <input type="email" class="form-control" id="y-mail" placeholder="Mail Address" aria-describedby="mailHelp">
+                                    </div>
+                                  </div>
+      
+                                  <div class="mb-3 row">
+                                    <div class="col">
+                                      <label for="y-address" class="form-label">Address</label>
+                                      <input type="text" class="form-control" id="y-address" placeholder="Your Address" aria-describedby="addressHelp">
+                                    </div>
+                                  </div>
+  
+                                  <div class="mb-3 row ">
+                                    <div class="col">
+                                      <label for="your-city" class="form-label">City</label>
+                                      <select class="form-select" aria-label="Default select" id="your-city" >
+                                          <option selected>Select</option>
+                                          <option value="1">Dhaka</option>
+                                          <option value="2">New Delhi</option>
+                                          <option value="3">Chattogram</option>
+                                      </select>
+                                    </div>
+                                    <div class="col">
+                                        <label for="your-country" class="form-label">Country</label>
+                                        <select class="form-select" aria-label="Default select" id="your-country">
+                                            <option selected>Select</option>
+                                            <option value="2">India</option>
+                                            <option value="1">Bangladesh</option>
+                                        </select>
+                                    </div>
+                                </div>
+  
+                                <button type="submit" class="button border-0">Save</button>
+  
+                                </form>
+                              </div>
+                            </div>
+  
+                            <div class="col">
+                              <h5 class="rounded">Change Password</h5>
+                              <form action="">
+                                <div class="mb-3 row">
+                                  <div class="col">
+                                    <label for="current-pass" class="form-label">Current Password<span class="required text-danger">*</span></label>
+                                    <input type="password" class="form-control" id="current-pass"  aria-describedby="passHelp" required>
+                                  </div>
+                                </div>
+  
+                                <div class="mb-3 row">
+                                  <div class="col">
+                                    <label for="new-pass" class="form-label">New Password<span class="required text-danger">*</span></label>
+                                    <input type="password" class="form-control" id="new-pass"  aria-describedby="passHelp" required>
+                                  </div>
+                                </div>
+  
+                                <div class="mb-3 row">
+                                  <div class="col">
+                                    <label for="confirm-pass" class="form-label">Confirm New Password<span class="required text-danger">*</span></label>
+                                    <input type="password" class="form-control" id="confirm-pass"  aria-describedby="passHelp" required>
+                                  </div>
+                                </div>
+  
+                                <button type="submit" class="button border-0">Submit</button>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+
+                      <div class="tab-pane fade" id="v-pills-logout" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabindex="0">
+                        <div class="row">
+                          <div class="col ">
+                            <div class="signup-form d-flex justify-content-center align-items-center">
+                                <div>
+                                    <h3 class="text-center ">Sign In</h3>
+
+                                    <form class="mt-5">
+                                        
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Email </label>
+                                            <input type="email" class="form-control" id="email" placeholder="Enter Your Email" aria-describedby="emailHelp">
+                                            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                                        </div>
+                                        <div class="mb-3">
+                                        <label for="password" class="form-label">Password</label>
+                                        <input type="password" class="form-control" placeholder="Enter Your Password" id="password">
+                                        </div>
+                                        <div class="mb-3 form-check d-flex">
+                                            <div class="me-3">
+                                                <input type="checkbox" class="form-check-input" id="checkbox">
+                                                <label class="form-check-label" for="checkbox"><small>Remember Me!</small></label>
+                                            </div>
+                                            <a href="#" class="ms-5 ps-2"><small>Forgot Password?</small></a>
+                                        </div>
+                                        <div class="text-center"><div type="submit" role="button" class="button  py-2 rounded-pill mt-5">Sign In</div></div>
+                                        <p class="mt-3 text-center else-sign"><small>Don't have an account? <a href="signup.html" class="ms-1">Sign Up!</a></small></p>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+            </div>
+
+          <!-- popup  -->
+          <div id="show-detail" class="order-detail">
+              <div class="order-sum confirm-list mx-auto">
+                  <div class="container overflow-x-auto">
+                      <div class="list-wrap  " >
+                          <div class=" list-layout pt-1 rounded p-3 pb-1">
+                            <h4 class="text-center mt-3 pb-3  order-num rounded pt-3">Order ID: BOX23-85577-0208</h4>
+                              <table class="table  table-borderless" >
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">SN</th>
+                                      <th colspan="" scope="col">Product Name</th>
+                                      <th class="text-center" scope="col">Price</th>
+                                      <th class="text-center" scope="col">Quantity</th>
+                                      <th class="text-end" scope="col">Total Price</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td class="border-top">1</td>
+                                      <td colspan="" class="border-top">
+                                        <div class="d-flex">
+                                          <img src="image/products/product-1.jpg" class="img-fluid rounded object-fit-cover me-3" width="60px" alt="">
+                                          <span>Exclusive Women Shirt</span>
+                                      </div>
+                                      </td>
+                                      <td class="border-top text-center"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
+                                      <td class="border-top text-center">1</td>
+                                      <td class="border-top text-end"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
+                                    </tr>
+                
+                                    <tr>
+                                      <td class="border-top">1</td>
+                                      <td colspan="" class="border-top">
+                                        <div class="d-flex">
+                                          <img src="image/products/product-1.jpg" class="img-fluid rounded object-fit-cover me-3" width="60px" alt="">
+                                          <span>Exclusive Women Shirt</span>
+                                      </div>
+                                      </td>
+                                      <td class="border-top text-center"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
+                                      <td class="border-top text-center">1</td>
+                                      <td class="border-top text-end"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>1200.00</td>
+                                    </tr>
+                                    <tr>
+                                      <td colspan="4" class="border-top text-end">Subtotal</td>
+                                      <td class="text-end border-top"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>2400.00</td>
+                                    </tr>
+                                    <tr>
+                                      <td colspan="4" class=" text-end">Shipping</td>
+                                      <td class=" text-end"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>100.00</td>
+                                    </tr>
+                                    <tr>
+                                      <td colspan="4" class=" text-end">Tax</td>
+                                      <td class=" text-end"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>0.00</td>
+                                    </tr>
+                                    <tr>
+                                      <td colspan="4" class=" text-end">Discount</td>
+                                      <td class=" text-end"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>0.00</td>
+                                    </tr>
+                                    <tr>
+                                      <td colspan="4" class="border-top total text-end">Gross Total</td>
+                                      <td class="border-top text-end total"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>2500.00</td>
+                                    </tr>
+                                    <tr>
+                                      <td colspan="4" class="total text-end">Advanced</td>
+                                      <td class=" text-end total"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>0.00</td>
+                                    </tr>
+                                    <tr>
+                                      <td colspan="4" class="total text-end">Due</td>
+                                      <td class=" text-end total"><i class="fa-solid fa-bangladeshi-taka-sign me-1"></i>2500.00</td>
+                                    </tr>
+                                  
+                                  </tbody>
+                                </table>
+                          </div>
+                          <div class="cart-action d-flex justify-content-between pb-3 mt-3">
+                              <div></div>
+                              <div onclick="closeDetail()"  class="continue button" type="button">Close</div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+        
+
+    </section>
+  </main>
+  <!--end main-->
+
+
+
+    <!--custom js link-->
+    <script src="js/main.js"></script>
+
+    <!--Bootstrap cdn link-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    
+    <!-- <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script> -->
+
+
+    
+    <!--slick js link-->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+      
+
+    <script src="js/jquery_3.7.0_jquery.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+
+    
+
+    <script>
+      $('.product-slide').slick({
+        infinite: true,
+    slidesToShow: 4,
+    centerPadding: '20px',
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        centerPadding: '20px',
+        infinite: true,
+        dots: true
+      }
+    },
+    // {
+    //   breakpoint: 600,
+    //   settings: {
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1
+    //   }
+    // },
+    // {
+    //   breakpoint: 576,
+    //   settings: {
+    //     slidesToShow: 2,
+    //     slidesToScroll: 1
+    //   }
+    // },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1
+      }
+    }
+    
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+    ]
+      });
+    </script>
+    
+    
+</body>
+</html>
