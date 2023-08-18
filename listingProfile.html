@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap link-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- custom css link-->
+    <link href="css/style.min.css" rel="stylesheet">
+    <!--font-awesome lik-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!--slick css link-->
+    <!-- <link rel="stylesheet" type="text/css" href="slick/slick.css"/> -->
+    <!-- slick-theme.css- the default styling -->
+    <!-- <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/> -->
+
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/slick.css">
+
+    <title>Home | Boxiew</title>
+</head>
+<body>
+  <!--start nav-->
+  <nav class="navbar navbar-expand-md navbar-light shadow-sm fixed-top">
+      <div class="container">
+          <a href="index.html" class="navbar-brand"><img src="image/logo.png" width="100"></a>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_menu">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div id="main_menu" class="collapse rounded navbar-collapse shadow-sm pb-3 pb-lg-0">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item mx-auto"><a href="listing.html" class="nav-link"> Listing</a></li>
+                  <li class="nav-item mx-auto"><a href="shopping.html" class="nav-link">Shopping</a></li>
+                  <li class="nav-item mx-auto"><a href="#" class="nav-link">Favorites</a></li>
+                  <li class="nav-item mx-auto"><a href="#" class="nav-link">Cart</a></li>
+                  <li class="nav-item mx-auto "><a href="singin.html" class="nav-link"><i class="fa-solid fa-arrow-right-to-bracket pe-2"></i>Sign In</a></li>
+                  <li class="nav-item mx-auto "><div class="add-listing button-outline rounded-pill p-0"><a href="#" class="nav-link px-4">Add Listing<i class="fa-solid fa-plus ms-2 border rounded-circle "></i></a></div></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+  <!--end nav-->
+
+  <!--start main-->
+  <main> 
+    <!--top cover start-->
+    <section id="top-cover" class="container-fluid">
+        <div class="container ">
+            <div class="top-cover-wrapping z-2 ">
+                <div class="d-flex justify-content-center ">
+                    <div class="search mt-md-3">
+                      <div class="search-title ">
+                          <div class="text-md-center fs-5"><h1>Find Genuine Products Near You!</h1></div>
+                          <div class="text-center mt-md-3"><h4>Explore Top Rated & Verified Suppliers and more</h4></div>
+                      </div>
+
+                      <div id="search-box" class="search-box rounded  p-2 mt-4 mt-md-5">
+                          <div class="row gy-2 row-cols-">
+                            <div class="search-key col-md-4  ms-md-2 ">
+                              <input type="search" placeholder="search here -" class="form-control border-md-0">
+                            </div>
+                            <div class="search-city col ">
+                              <select class="form-select rounded-0 border" aria-label="Default select example">
+                                <option selected>All City</option>
+                                <option value="1">Dhaka</option>
+                                <option value="2">Sylhet</option>
+                                <option value="3">Delli</option>
+                              </select>
+                            </div>
+                            <div class="search-category  col-md-3">
+                              <select class="form-select rounded-0 border" aria-label="Default select example">
+                                <option selected>All Category</option>
+                                <option value="1">Resturent</option>
+                                <option value="2">Hospital</option>
+                                <option value="3">Picnic Spot</option>
+                              </select>
+                            </div>
+                            <div class="search-btn col text-center ">
+                                <button onclick="closePopup()" class="button float-md-end border-0 px-md-4 px-xl-5 px-5  me-md-2">search</button>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="min-search-btn text-center mt-5">
+                  <button id="show-modal" onclick="openPopup()" class=" rounded-pill button border-0">Search Here</button>
+                </div>
+
+                <div id="listing-menu" class="listing-menu   ">
+                  
+                    <ul class="list-main-menu z-1 row g-2  row-cols-2 row-cols-md-3 row-cols-xl-6 z-3 ">
+                      <li class="list-btn col text-center  rounded-pill px-3 py-1"><a href="#"><i class="fa-solid fa-house pe-2"></i>Real State</a>
+                        <ul class="list-sub-menu sub-1st z-2 d-md-flex  justify-content-between align-items-center p-3 ps-4 rounded shadow-sm" >
+                          <li><a href="#"><span class="sub-menu-title"><i class="fa-solid fa-square-h"></i>Real State 1</span></a>
+                            <ul class="list-menu-name z-3 p-2 rounded shadow-sm">
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Real State Name 1</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Real State Name 1</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                            
+                          </li>
+                          <li class="pt-2"><a href="#"><span class="sub-menu-title "><i class="fa-solid fa-flask"></i>Real State 2</span></a>
+                            <ul class="list-menu-name z-3 p-2 rounded shadow-sm">
+                              <li class=""><a href="#"><i class="fa-solid fa-minus"></i>Real State Name 2</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Real State Name 2</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                          </li>
+                          <li class="pt-2"><a href="#"><span class="sub-menu-title"><i class="fa-solid fa-prescription-bottle-medical"></i>Real State 3</span></a>
+                            <ul class="list-menu-name z-3 p-2 rounded shadow-sm">
+                              <li class=""><a href="#"><i class="fa-solid fa-minus"></i>Real State Name 3</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Real State Name 3</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                            
+                          </li>
+                          <li class="pt-2 " ><a href="#"><span class="sub-menu-title"><i class="fa-solid fa-stethoscope"></i>Real State 4</span></a>
+                            <ul class="list-menu-name z-3 p-2 rounded shadow-sm">
+                              <li class=""><a href="#"><i class="fa-solid fa-minus"></i>Real State Name 4</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Real State Name 4</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                            
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="list-btn col text-center  rounded-pill px-3 py-1"><a href="#"><i class="fa-solid fa-dumbbell pe-2"></i>Yoga</a>
+                        <ul class="list-sub-menu sub-2nd z-2 d-md-flex  justify-content-between align-items-center p-3 ps-4 rounded shadow-sm" >
+                          <li><a href="#"><span class="sub-menu-title"><i class="fa-solid fa-square-h"></i>Yoga Sub 01</span></a>
+                            <ul class="list-menu-name z-3 p-2 rounded shadow-sm">
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Yoga 01</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Yoga 01</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                            
+                          </li>
+                          <li class="pt-2"><a href="#"><span class="sub-menu-title "><i class="fa-solid fa-flask"></i>Yoga Sub 02</span></a>
+                            <ul class="list-menu-name z-3 p-2 rounded shadow-sm">
+                              <li class=""><a href="#"><i class="fa-solid fa-minus"></i>Yoga 02</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Yoga 02</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                          </li>
+                          <li class="pt-2"><a href="#"><span class="sub-menu-title"><i class="fa-solid fa-prescription-bottle-medical"></i>Yoga Sub 03</span></a>
+                            <ul class="list-menu-name z-3 p-2 rounded shadow-sm">
+                              <li class=""><a href="#"><i class="fa-solid fa-minus"></i>Yoga 03</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Yoga 03</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                            
+                          </li>
+                          <li class="pt-2 " ><a href="#"><span class="sub-menu-title"><i class="fa-solid fa-stethoscope"></i>Yoga Sub 04</span></a>
+                            <ul class="list-menu-name z-3 p-2 rounded shadow-sm">
+                              <li class=""><a href="#"><i class="fa-solid fa-minus"></i>Yoga 04</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Yoga 04</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                            
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="list-btn col text-center  rounded-pill px-3 py-1"><a href="#"><i class="fa-solid fa-heart-pulse pe-2"></i>Health Care</a>
+                        <ul class="list-sub-menu 3rd z-2 d-md-flex  justify-content-between align-items-center p-3 ps-4 rounded shadow-sm" >
+                          <li><a href="#"><span class="sub-menu-title"><i class="fa-solid fa-square-h"></i>Hospital</span></a>
+                            <ul class="list-menu-name z-3 p-2 rounded shadow-sm">
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Eye Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Cancer Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                            
+                          </li>
+                          <li class="pt-2"><a href="#"><span class="sub-menu-title "><i class="fa-solid fa-flask"></i>Diagnostic</span></a>
+                            <ul class="list-menu-name z-3 p-2 rounded shadow-sm">
+                              <li class=""><a href="#"><i class="fa-solid fa-minus"></i>Diagnostic 01</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Diagnostic 02</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                          </li>
+                          <li class="pt-2"><a href="#"><span class="sub-menu-title"><i class="fa-solid fa-prescription-bottle-medical"></i>Pharmecy</span></a>
+                            <ul class="list-menu-name z-3 p-2 rounded shadow-sm">
+                              <li class=""><a href="#"><i class="fa-solid fa-minus"></i>Pharmecy 01</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Pharmecy 02</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                            
+                          </li>
+                          <li class="pt-2 " ><a href="#"><span class="sub-menu-title"><i class="fa-solid fa-stethoscope"></i>Accesories</span></a>
+                            <ul class="list-menu-name z-3 p-2 rounded shadow-sm">
+                              <li class=""><a href="#"><i class="fa-solid fa-minus"></i>Accesories 01</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Accesories 02</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                            
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="list-btn col text-center  rounded-pill px-3 py-1"><a href="#"><i class="fa-solid fa-utensils pe-2"></i>Resturents</a>
+                        <ul class="list-sub-menu sub-4th z-2 d-md-flex  justify-content-between align-items-center p-3 ps-4 rounded shadow-sm" >
+                          <li><a href="#"><span class="sub-menu-title"><i class="fa-solid fa-square-h"></i>Resturents sub</span></a>
+                            <ul class="list-menu-name z-3 p-2 rounded shadow-sm">
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Eye Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Cancer Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                            
+                          </li>
+                          <li class="pt-2"><a href="#"><span class="sub-menu-title "><i class="fa-solid fa-flask"></i>Resturents sub</span></a>
+                            <ul class="list-menu-name z-3 p-2 rounded shadow-sm">
+                              <li class=""><a href="#"><i class="fa-solid fa-minus"></i>Diagnostic 01</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Diagnostic 02</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                          </li>
+                          <li class="pt-2"><a href="#"><span class="sub-menu-title"><i class="fa-solid fa-prescription-bottle-medical"></i>Resturents sub</span></a>
+                            <ul class="list-menu-name z-3 p-2 rounded shadow-sm">
+                              <li class=""><a href="#"><i class="fa-solid fa-minus"></i>Pharmecy 01</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Pharmecy 02</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                            
+                          </li>
+                          <li class="pt-2 " ><a href="#"><span class="sub-menu-title"><i class="fa-solid fa-stethoscope"></i>Resturents sub</span></a>
+                            <ul class="list-menu-name z-3 p-2 rounded shadow-sm">
+                              <li class=""><a href="#"><i class="fa-solid fa-minus"></i>Accesories 01</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Accesories 02</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                            
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="list-btn col text-center  rounded-pill px-3 py-1"><a href="#"><i class="fa-solid fa-wine-glass-empty pe-2"></i>Hotel</a>
+                        <ul class="list-sub-menu sub-5th z-2 d-md-flex  justify-content-between align-items-center p-3 ps-4 rounded shadow-sm" >
+                          <li><a href="#"><span class="sub-menu-title"><i class="fa-solid fa-square-h"></i>Hospital</span></a>
+                            <ul class="list-menu-name z-3 p-2 rounded shadow-sm">
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Eye Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Cancer Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                            
+                          </li>
+                          <li class="pt-2"><a href="#"><span class="sub-menu-title "><i class="fa-solid fa-flask"></i>Diagnostic</span></a>
+                            <ul class="list-menu-name z-3 p-2 rounded shadow-sm">
+                              <li class=""><a href="#"><i class="fa-solid fa-minus"></i>Diagnostic 01</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Diagnostic 02</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                          </li>
+                          <li class="pt-2"><a href="#"><span class="sub-menu-title"><i class="fa-solid fa-prescription-bottle-medical"></i>Pharmecy</span></a>
+                            <ul class="list-menu-name z-3 p-2 rounded shadow-sm">
+                              <li class=""><a href="#"><i class="fa-solid fa-minus"></i>Pharmecy 01</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Pharmecy 02</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                            
+                          </li>
+                          <li class="pt-2 " ><a href="#"><span class="sub-menu-title"><i class="fa-solid fa-stethoscope"></i>Accesories</span></a>
+                            <ul class="list-menu-name z-3 p-2 rounded shadow-sm">
+                              <li class=""><a href="#"><i class="fa-solid fa-minus"></i>Accesories 01</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Accesories 02</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                            
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="list-btn col text-center  rounded-pill px-3 py-1"><a href="#"><i class="fa-solid fa-bicycle pe-2"></i>Cycle Shop</a>
+                        <ul class="list-sub-menu sub-6th z-2 d-md-flex  justify-content-between align-items-center p-3 ps-4 rounded shadow-sm" >
+                          <li><a href="#"><span class="sub-menu-title"><i class="fa-solid fa-square-h"></i>Hospital</span></a>
+                            <ul class="list-menu-name z-3 p-2 rounded shadow-sm">
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Eye Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Cancer Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                            
+                          </li>
+                          <li class="pt-2"><a href="#"><span class="sub-menu-title "><i class="fa-solid fa-flask"></i>Diagnostic</span></a>
+                            <ul class="list-menu-name z-3 p-2 rounded shadow-sm">
+                              <li class=""><a href="#"><i class="fa-solid fa-minus"></i>Diagnostic 01</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Diagnostic 02</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                          </li>
+                          <li class="pt-2"><a href="#"><span class="sub-menu-title"><i class="fa-solid fa-prescription-bottle-medical"></i>Pharmecy</span></a>
+                            <ul class="list-menu-name z-3 p-2 rounded shadow-sm">
+                              <li class=""><a href="#"><i class="fa-solid fa-minus"></i>Pharmecy 01</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Pharmecy 02</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                            
+                          </li>
+                          <li class="pt-2 " ><a href="#"><span class="sub-menu-title"><i class="fa-solid fa-stethoscope"></i>Accesories</span></a>
+                            <ul class="list-menu-name z-3 p-2 rounded shadow-sm">
+                              <li class=""><a href="#"><i class="fa-solid fa-minus"></i>Accesories 01</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Accesories 02</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Kidney Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Heart Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Appolo Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Dhaka Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Sylhet Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>IBN Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Reno Hospital</a></li>
+                              <li><a href="#"><i class="fa-solid fa-minus"></i>Hasina Hospital</a></li>
+                              <div class="see-more mb-0 mt-2 "><a href="#"><small>See More <i class="fa-solid fa-arrow-right-long ms-2"></i></small></a></div>
+                            </ul>
+                            
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <!--top cover end-->
+
+    <!--top categories start-->
+    <section id="top-categories" class="top-categories">
+      <div class="container">
+          <div class="top-ctg-wrapping z-0">
+              <div class="top-ctg-heading ">
+                  <div class="d-flex justify-content-center"><h3>Top Categories</h3></div>
+                  <div class="d-flex justify-content-center mt-2 mt-md-3"><div class="heading-u-line"></div></div>
+              </div>
+              <div class=" d-flex justify-content-end mt-3 mb-3"><a href="#"><small class="see-more ">See more</small></a></div>
+              <div class="top-ctg-card ">
+
+                <div class="card">
+                  <div class="d-flex justify-content-center"><img src="image/icon/central-park.png" class="card-img-top" alt="..."></div>
+                  <div class="card-body ">
+                    <div class="category-name d-flex justify-content-center"><h6>Cental Park</h6></div>
+                    <div class="d-flex justify-content-center"><div class="card-text d-flex justify-content-center mt-2 align-items-center px-2"><small>87</small></div></div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="d-flex justify-content-center"><img src="image/icon/beauty.png" class="card-img-top" alt="..."></div>
+                  <div class="card-body ">
+                    <div class="category-name d-flex justify-content-center"><h6>Beauty</h6></div>
+                    <div class="d-flex justify-content-center"><div class="card-text d-flex justify-content-center mt-2 align-items-center px-2"><small>87</small></div></div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="d-flex justify-content-center"><img src="image/icon/car.png" class="card-img-top" alt="..."></div>
+                  <div class="card-body ">
+                    <div class="category-name d-flex justify-content-center"><h6>Car Shop</h6></div>
+                    <div class="d-flex justify-content-center"><div class="card-text d-flex justify-content-center mt-2 align-items-center px-2"><small>87</small></div></div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="d-flex justify-content-center"><img src="image/icon/electronix.png" class="card-img-top" alt="..."></div>
+                  <div class="card-body ">
+                    <div class="category-name d-flex justify-content-center"><h6>Electronix</h6></div>
+                    <div class="d-flex justify-content-center"><div class="card-text d-flex justify-content-center mt-2 align-items-center px-2"><small>87</small></div></div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="d-flex justify-content-center"><img src="image/icon/hardware.png" class="card-img-top" alt="..."></div>
+                  <div class="card-body ">
+                    <div class="category-name d-flex justify-content-center"><h6>Hardware</h6></div>
+                    <div class="d-flex justify-content-center"><div class="card-text d-flex justify-content-center mt-2 align-items-center px-2"><small>87</small></div></div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="d-flex justify-content-center"><img src="image/icon/lab.png" class="card-img-top" alt="..."></div>
+                  <div class="card-body ">
+                    <div class="category-name d-flex justify-content-center"><h6>Labaratory</h6></div>
+                    <div class="d-flex justify-content-center"><div class="card-text d-flex justify-content-center mt-2 align-items-center px-2"><small>87</small></div></div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="d-flex justify-content-center"><img src="image/icon/lab.png" class="card-img-top" alt="..."></div>
+                  <div class="card-body ">
+                    <div class="category-name d-flex justify-content-center"><h6>Labaratory</h6></div>
+                    <div class="d-flex justify-content-center"><div class="card-text d-flex justify-content-center mt-2 align-items-center px-2"><small>87</small></div></div>
+                  </div>
+                </div>
+ 
+              </div>
+          </div>
+      </div>
+    </section>
+
+    <!--top categories end-->
+
+    <!--directory listing start-->
+    <section id="directory-listing">
+        <div class="container">
+            <div class="dir-list-wrapping">
+                <div class="section-heading pt-4">
+                    <div class="heading-title text-center"><h3>Choose Your Relevents Partner</h3></div>
+                    <div class="d-flex justify-content-center  mt-3 mt-lg-4"><div class="heading-u-line"></div></div>
+                    <div class="heading-sub-title text-center  mt-3 mt-lg-4"><h6>Top Rated & Verified Supplers in the World</h6></div>
+                </div>
+                <div class="see-more text-end mt-md-3 "><a href="#"><small class="see-more ">See more</small></a></div>
+                <div class="directory-list">
+                    <div class="row gy-4 row-cols-lg-2 row-cols-xxl-3 row-cols-1">
+                        <div class="col">
+                            <div class="directory-card card mb-3 box-shadow border-0">
+                                <div class="row g-0">
+                                  <div class="col-md-2">
+                                    <img class="brand-logo img-fluid rounded" src="image/hatil-logo.png" alt="...">
+                                  </div>
+                                  <div class="col-md-10 ">
+                                    <div class="card-body ms-3 ms-md-0 ms-lg-4 ms-xxl-3">
+                                      <h5 class="card-title">Hatil Furniture</h5>
+                                      <p class="card-text">All Kind of Furniture</p>
+                                      <div class="location"><a href="#"><small><i class="fa-solid fa-location-dot me-2"></i>Malibagh, Dhaka, Bangladesh.</small></a></div>
+                                      <div class="row row-cols-2">
+                                         
+                                            <div class="col"><a href="tel:+88 01711-XXXXXX"><small><i class="fa-solid fa-phone me-2"></i>+88 01711-XXXXXX</small></a></div>
+                                            <div class="col"><a href="mailto:webmaster@example.com"><small><i class="fa-solid fa-paper-plane me-2"></i>info@boxiew.com</small></a></div>
+                                         
+                                            <div class="col"><a href="http://facebook.com/"><small><i class="fa-brands fa-square-facebook me-2"></i>fb/boxiew.com</small></a></div>
+                                            <div class="col"><a href="http://boxiew.com/"><small><i class="fa-solid fa-globe me-2"></i>www.boxiew.com</small></a></div>
+                                         
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+
+                        <div class="col">
+                          <div class="directory-card card mb-3 box-shadow border-0">
+                              <div class="row g-0">
+                                <div class="col-md-2">
+                                  <img class="brand-logo img-fluid rounded" src="image/hatil-logo.png" alt="...">
+                                </div>
+                                <div class="col-md-10 ">
+                                  <div class="card-body ms-3 ms-md-0 ms-lg-4 ms-xxl-3">
+                                    <h5 class="card-title">Hatil Furniture</h5>
+                                    <p class="card-text">All Kind of Furniture</p>
+                                    <div class="location"><a href="#"><small><i class="fa-solid fa-location-dot me-2"></i>Malibagh, Dhaka, Bangladesh.</small></a></div>
+                                    <div class="row row-cols-2">
+                                       
+                                          <div class="col"><a href="tel:+88 01711-XXXXXX"><small><i class="fa-solid fa-phone me-2"></i>+88 01711-XXXXXX</small></a></div>
+                                          <div class="col"><a href="mailto:webmaster@example.com"><small><i class="fa-solid fa-paper-plane me-2"></i>info@boxiew.com</small></a></div>
+                                       
+                                       
+                                          <div class="col"><a href="http://facebook.com/"><small><i class="fa-brands fa-square-facebook me-2"></i>fb/boxiew.com</small></a></div>
+                                          <div class="col"><a href="http://boxiew.com/"><small><i class="fa-solid fa-globe me-2"></i>www.boxiew.com</small></a></div>
+                                       
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                          <div class="directory-card card mb-3 box-shadow border-0">
+                              <div class="row g-0">
+                                <div class="col-md-2">
+                                  <img class="brand-logo img-fluid rounded" src="image/hatil-logo.png" alt="...">
+                                </div>
+                                <div class="col-md-10 ">
+                                  <div class="card-body ms-3 ms-md-0 ms-lg-4 ms-xxl-3">
+                                    <h5 class="card-title">Hatil Furniture</h5>
+                                    <p class="card-text">All Kind of Furniture</p>
+                                    <div class="location"><a href="#"><small><i class="fa-solid fa-location-dot me-2"></i>Malibagh, Dhaka, Bangladesh.</small></a></div>
+                                    <div class="row row-cols-2">
+                                      
+                                          <div class="col"><a href="tel:+88 01711-XXXXXX"><small><i class="fa-solid fa-phone me-2"></i>+88 01711-XXXXXX</small></a></div>
+                                          <div class="col"><a href="mailto:webmaster@example.com"><small><i class="fa-solid fa-paper-plane me-2"></i>info@boxiew.com</small></a></div>
+                                      
+                                      
+                                          <div class="col"><a href="http://facebook.com/"><small><i class="fa-brands fa-square-facebook me-2"></i>fb/boxiew.com</small></a></div>
+                                          <div class="col"><a href="http://boxiew.com/"><small><i class="fa-solid fa-globe me-2"></i>www.boxiew.com</small></a></div>
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                          <div class="directory-card card mb-3 box-shadow border-0">
+                              <div class="row g-0">
+                                <div class="col-md-2">
+                                  <img class="brand-logo img-fluid rounded" src="image/hatil-logo.png" alt="...">
+                                </div>
+                                <div class="col-md-10 ">
+                                  <div class="card-body ms-3 ms-md-0 ms-lg-4 ms-xxl-3">
+                                    <h5 class="card-title">Hatil Furniture</h5>
+                                    <p class="card-text">All Kind of Furniture</p>
+                                    <div class="location"><a href="#"><small><i class="fa-solid fa-location-dot me-2"></i>Malibagh, Dhaka, Bangladesh.</small></a></div>
+                                    <div class="row row-cols-2">
+                                      
+                                          <div class="col"><a href="tel:+88 01711-XXXXXX"><small><i class="fa-solid fa-phone me-2"></i>+88 01711-XXXXXX</small></a></div>
+                                          <div class="col"><a href="mailto:webmaster@example.com"><small><i class="fa-solid fa-paper-plane me-2"></i>info@boxiew.com</small></a></div>
+                                      
+                                      
+                                          <div class="col"><a href="http://facebook.com/"><small><i class="fa-brands fa-square-facebook me-2"></i>fb/boxiew.com</small></a></div>
+                                          <div class="col"><a href="http://boxiew.com/"><small><i class="fa-solid fa-globe me-2"></i>www.boxiew.com</small></a></div>
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                          <div class="directory-card card mb-3 box-shadow border-0">
+                              <div class="row g-0">
+                                <div class="col-md-2">
+                                  <img class="brand-logo img-fluid rounded" src="image/hatil-logo.png" alt="...">
+                                </div>
+                                <div class="col-md-10 ">
+                                  <div class="card-body ms-3 ms-md-0 ms-lg-4 ms-xxl-3">
+                                    <h5 class="card-title">Hatil Furniture</h5>
+                                    <p class="card-text">All Kind of Furniture</p>
+                                    <div class="location"><a href="#"><small><i class="fa-solid fa-location-dot me-2"></i>Malibagh, Dhaka, Bangladesh.</small></a></div>
+                                    <div class="row row-cols-2">
+                                      
+                                          <div class="col"><a href="tel:+88 01711-XXXXXX"><small><i class="fa-solid fa-phone me-2"></i>+88 01711-XXXXXX</small></a></div>
+                                          <div class="col"><a href="mailto:webmaster@example.com"><small><i class="fa-solid fa-paper-plane me-2"></i>info@boxiew.com</small></a></div>
+                                      
+                                      
+                                          <div class="col"><a href="http://facebook.com/"><small><i class="fa-brands fa-square-facebook me-2"></i>fb/boxiew.com</small></a></div>
+                                          <div class="col"><a href="http://boxiew.com/"><small><i class="fa-solid fa-globe me-2"></i>www.boxiew.com</small></a></div>
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                          <div class="directory-card card mb-3 box-shadow border-0">
+                              <div class="row g-0">
+                                <div class="col-md-2">
+                                  <img class="brand-logo img-fluid rounded" src="image/hatil-logo.png" alt="...">
+                                </div>
+                                <div class="col-md-10 ">
+                                  <div class="card-body ms-3 ms-md-0 ms-lg-4 ms-xxl-3">
+                                    <h5 class="card-title">Hatil Furniture</h5>
+                                    <p class="card-text">All Kind of Furniture</p>
+                                    <div class="location"><a href="#"><small><i class="fa-solid fa-location-dot me-2"></i>Malibagh, Dhaka, Bangladesh.</small></a></div>
+                                    <div class="row row-cols-2">
+                                      
+                                          <div class="col"><a href="tel:+88 01711-XXXXXX"><small><i class="fa-solid fa-phone me-2"></i>+88 01711-XXXXXX</small></a></div>
+                                          <div class="col"><a href="mailto:webmaster@example.com"><small><i class="fa-solid fa-paper-plane me-2"></i>info@boxiew.com</small></a></div>
+                                      
+                                      
+                                          <div class="col"><a href="http://facebook.com/"><small><i class="fa-brands fa-square-facebook me-2"></i>fb/boxiew.com</small></a></div>
+                                          <div class="col"><a href="http://boxiew.com/"><small><i class="fa-solid fa-globe me-2"></i>www.boxiew.com</small></a></div>
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div> 
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--directory listing end-->
+    
+    <!--trending products start-->
+    <section id="trend-products">
+      <div class="container">
+          <div class="products-wrapping">
+              <div class="section-heading ">
+                  <div class="heading-title text-center"><h3>Most Trending Products</h3></div>
+                  <div class="d-flex justify-content-center mt-3 mt-lg-4"><div class="heading-u-line"></div></div>
+                  <div class="heading-sub-title text-center  mt-3 mt-lg-4"><h6>Buy from Top Rated & Verified Supplers in the World</h6></div>
+              </div>
+              <div class=" mb-3 mt-md-3 text-end"><a href="#"><small class="see-more">See more</small></a></div>
+              <div class="product-list">
+                <div class="row row-cols-2 row-cols-lg-4 g-3 g-md-4">
+
+                  <div class="product-card  col">
+                    <div class="card border-0 box-shadow">
+                      <img src="image/products/product-1.jpg" class="card-img-top" alt="...">
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                      <div class="card-body">
+                        <h5 class="card-title title-style">Women Shirt</h5>
+                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
+                        <div class="rangking d-sm-flex  justify-content-between">
+                          <div class="likes"> 
+                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                          </div> 
+                          <div class="reviews">
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                          </div> 
+                        </div>
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
+                          <div class="price d-flex align-items-center">
+                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                          </div>
+                          <div>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card  col">
+                    <div class="card border-0 box-shadow">
+                      <img src="image/products/product-2.jpg" class="card-img-top" alt="...">
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                      <div class="card-body">
+                        <h5 class="card-title title-style">Women Shirt</h5>
+                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
+                        <div class="rangking d-sm-flex  justify-content-between">
+                          <div class="likes"> 
+                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                          </div> 
+                          <div class="reviews">
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                          </div> 
+                        </div>
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
+                          <div class="price d-flex align-items-center">
+                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                          </div>
+                          <div>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card  col">
+                    <div class="card border-0 box-shadow">
+                      <img src="image/products/product-3.jpg" class="card-img-top" alt="...">
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                      <div class="card-body">
+                        <h5 class="card-title title-style">Women Shirt</h5>
+                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
+                        <div class="rangking d-sm-flex  justify-content-between">
+                          <div class="likes"> 
+                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                          </div> 
+                          <div class="reviews">
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                          </div> 
+                        </div>
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
+                          <div class="price d-flex align-items-center">
+                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                          </div>
+                          <div>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card  col">
+                    <div class="card border-0 box-shadow">
+                      <img src="image/products/product-4.jpg" class="card-img-top" alt="...">
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                      <div class="card-body">
+                        <h5 class="card-title title-style">Women Shirt</h5>
+                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
+                        <div class="rangking d-sm-flex  justify-content-between">
+                          <div class="likes"> 
+                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                          </div> 
+                          <div class="reviews">
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                          </div> 
+                        </div>
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
+                          <div class="price d-flex align-items-center">
+                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                          </div>
+                          <div>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card  col">
+                    <div class="card border-0 box-shadow">
+                      <img src="image/products/product-5.jpg" class="card-img-top" alt="...">
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                      <div class="card-body">
+                        <h5 class="card-title title-style">Women Shirt</h5>
+                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
+                        <div class="rangking d-sm-flex  justify-content-between">
+                          <div class="likes"> 
+                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                          </div> 
+                          <div class="reviews">
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                          </div> 
+                        </div>
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
+                          <div class="price d-flex align-items-center">
+                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                          </div>
+                          <div>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card  col">
+                    <div class="card border-0 box-shadow">
+                      <img src="image/products/product-7.jpg" class="card-img-top" alt="...">
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                      <div class="card-body">
+                        <h5 class="card-title title-style">Women Shirt</h5>
+                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
+                        <div class="rangking d-sm-flex  justify-content-between">
+                          <div class="likes"> 
+                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                          </div> 
+                          <div class="reviews">
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                          </div> 
+                        </div>
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
+                          <div class="price d-flex align-items-center">
+                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                          </div>
+                          <div>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card  col">
+                    <div class="card border-0 box-shadow">
+                      <img src="image/products/product-1.jpg" class="card-img-top" alt="...">
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                      <div class="card-body">
+                        <h5 class="card-title title-style">Women Shirt</h5>
+                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
+                        <div class="rangking d-sm-flex  justify-content-between">
+                          <div class="likes"> 
+                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                          </div> 
+                          <div class="reviews">
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                          </div> 
+                        </div>
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
+                          <div class="price d-flex align-items-center">
+                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                          </div>
+                          <div>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card  col">
+                    <div class="card border-0 box-shadow">
+                      <img src="image/products/product-4.jpg" class="card-img-top" alt="...">
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                      <div class="card-body">
+                        <h5 class="card-title title-style">Women Shirt</h5>
+                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
+                        <div class="rangking d-sm-flex  justify-content-between">
+                          <div class="likes"> 
+                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                          </div> 
+                          <div class="reviews">
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                          </div> 
+                        </div>
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
+                          <div class="price d-flex align-items-center">
+                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                          </div>
+                          <div>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+          </div>
+      </div>
+
+    </section>
+    <!--directory listing end-->
+
+    <!--affiliate banner start-->
+    <section id="affiliate">
+      <div class="container">
+        <div class="affiliate-wrapping position-relative ">
+          <img src="image/affiliate-banner.jpg" class="img-fluid rounded" alt="...">
+          <div class="position-absolute affiliate-content px-3 px-md-0">
+            <div class="row  row-cols-1 row-cols-md-2">
+
+              <div class="col col-md-6 affiliate-txt">
+                <h4 class="card-title title-style">Set Goal & Builtd Your Career with Affiliate</h4>
+                <p class="card-text mt-2 mt-md-3 ">You can join with us to reach your dream and build your secure carier. Affiliate is the best way to success in life.</p>
+              </div>
+  
+              <div class="col col-md-5 col-xxl-4 ms-xxl-5 ">
+                <div class="news-letter ms-md-3 mt-3 mt-md-4" style="max-width: 400px;">
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control p-2" placeholder=" Enter your email" aria-label="news-letter" aria-describedby="news-letter">
+                    <span class="input-group-text" id="news-letter"><i class="fa-solid fa-arrow-right-long"></i></span>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    <!--affiliate banner end-->
+
+    <!--testimonial start-->
+    
+    <section id="testimonial">
+      <div class="container">
+          <div class="testimonial-wrapping">
+              <div class="section-heading ">
+                  <div class="heading-title text-center"><h3>Our Clients What Say</h3></div>
+                  <div class="d-flex justify-content-center mt-3 mt-lg-4"><div class="heading-u-line"></div></div>
+                  <div class="heading-sub-title text-center mt-3 mt-lg-4"><h6>Our Honourable & Valude Partner in the World</h6></div>
+              </div>
+              <div class="prev-next-btn text-end"><i class="fa-solid fa-circle-chevron-left"></i><i class="ps-2 fa-solid fa-circle-chevron-right"></i></div>
+              <div class="testimonial-card">
+
+                  <div class=" card mb-3 mt-5 box-shadow border-0">
+                    <div class="row g-0">
+                      <div class="col-md-3">
+                        
+                          <div class="d-flex d-md-block">
+                            <div class="profile-photo d-flex justify-content-center">
+                              <img  src="image/profile-1.jpg" class="img-fluid rounded" alt="...">
+                            </div>
+                            <div >
+                              <div class="profile-name ms-5 ms-md-4">
+                                <h6 >Mr Rahman</h6>
+                                <div class="d-flex"><small class="designation">Director</small></div>
+                              </div>
+                            </div>
+                          </div>
+                        
+                      </div>
+                      <div class="col-md-9">
+                        <div class="card-body ">
+                          <div class="reviews pb-2">
+                            <small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i></small>
+                          </div>
+                          <div class="text-style overflow-auto d-flex">
+                            <p>Lorem ipsum dolor sit amet  consectetur adipisicing elit. Id aliquid velit quaerat doloremque. itaque iusto veniam qui unde maiores explicabo minus.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class=" card mb-3 mt-5 box-shadow border-0">
+                    <div class="row g-0">
+                      <div class="col-md-3">
+                        
+                          <div class="d-flex d-md-block">
+                            <div class="profile-photo d-flex justify-content-center">
+                              <img  src="image/profile-2.jpg" class="img-fluid rounded" alt="...">
+                            </div>
+                            <div >
+                              <div class="profile-name ms-5 ms-md-4">
+                                <h6 >Mr Helena</h6>
+                                <div class="d-flex"><small class="designation">Director</small></div>
+                              </div>
+                            </div>
+                          </div>
+                        
+                      </div>
+                      <div class="col-md-9">
+                        <div class="card-body ">
+                          <div class="reviews pb-2">
+                            <small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i></small>
+                          </div>
+                          <div class="text-style overflow-auto d-flex">
+                            <p>Lorem ipsum dolor sit amet  consectetur adipisicing elit. Id aliquid velit quaerat doloremque. itaque iusto veniam qui unde maiores explicabo minus.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class=" card mb-3 mt-5 box-shadow border-0">
+                    <div class="row g-0">
+                      <div class="col-md-3">
+                        
+                          <div class="d-flex d-md-block">
+                            <div class="profile-photo d-flex justify-content-center">
+                              <img  src="image/profile-1.jpg" class="img-fluid rounded" alt="...">
+                            </div>
+                            <div >
+                              <div class="profile-name ms-5 ms-md-4">
+                                <h6 >Mr Rahman</h6>
+                                <div class="d-flex"><small class="designation">Director</small></div>
+                              </div>
+                            </div>
+                          </div>
+                        
+                      </div>
+                      <div class="col-md-9">
+                        <div class="card-body ">
+                          <div class="reviews pb-2">
+                            <small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i></small>
+                          </div>
+                          <div class="text-style overflow-auto d-flex">
+                            <p>Lorem ipsum dolor sit amet  consectetur adipisicing elit. Id aliquid velit quaerat doloremque. itaque iusto veniam qui unde maiores explicabo minus.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+
+    </section>
+    
+    <!--testimonial end-->
+
+
+    <!--footer start-->
+    <section id="footer">
+      <div class="container">
+        <div class="footer-wrapping ">
+            <div class="row row-cols-2 row-cols-md-4 row-cols-lg-4 gy-4 ">
+
+                <div class="boxiew col">
+                    <div class="logo">
+                      <img src="image/logo-light.png" alt="Boxiew logo">
+                    </div>
+        
+                    <div class="contact-info">
+                      
+                      <div class="mb-2"><a href="Tel: 123-456-7890"><i class="fa-solid fa-phone"></i>+88 01721-XXXXXX</a></div>
+                      <div class="mb-2"><a href="Tel: 123-456-7890"><i class="fa-solid fa-phone"></i>+88 01721-XXXXXX</a></div>
+                      <div class="mb-2"><a href="mailto:hello@boxiew.com"><i class="fa-solid fa-envelope"></i>hello@boxiew.com</a></div>
+                      <!-- <div class="mb-2"><a href="mailto:hello@boxiew.com"><i class="fa-solid fa-envelope"></i>hello@boxiew.com</a></div> -->
+                      <!-- <div><a href="#"><i class="pt-1 fa-sharp fa-solid fa-location-dot"></i>Feroza Tower, 8th Floor, DIT Road, Malibagh Chowdhurypara, Dhaka.</a> </div> -->
+                      
+                    </div>
+                </div>
+        
+                <div class="suppliers-info col">
+                    <div><h5>Suppliers Info</h5></div>
+                    <div class="info-link">
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                      <!-- <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div> -->
+                    </div>
+                </div>
+        
+                <div class="buyers-info col">
+                    <div><h5>Buyers Info</h5></div>
+                    <div class="info-link">
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From </a></div>
+                      <!-- <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From </a></div> -->
+                    </div>
+                </div>
+        
+                <div class="boxiew-link col">
+                    <div><h5>Quick Links</h5></div>
+                    <div class="info-link">
+                      <div><a href="affiliate.html"><i class="fa-solid fa-arrow-right-long"></i>Carier</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>About Us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Privacy Policy</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Terms & Conditions</a></div>
+                    </div>
+        
+                    <div class="follow-us ">
+                      <div><h5>Follow Us</h5></div>
+                      <div class="social-link">
+                        <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <hr>
+        <div class="copy-right d-flex justify-content-center pb-3"> <small>Copyright © 2023 Boxiew Ltd || All right reserved</small></div>
+      </div>
+
+    </section>
+    <!--footer end-->
+
+
+
+  </main>
+  <!--end main-->
+
+
+
+    <!--custom js link-->
+    <script src="js/main.js"></script>
+
+    <!--Bootstrap cdn link-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    
+    <!-- <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script> -->
+
+
+    
+    <!--slick js link-->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+      
+
+    <script src="js/jquery_3.7.0_jquery.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+
+
+    <script>
+      $('.top-ctg-card').slick({
+        infinite: true,
+    slidesToShow: 6,
+    centerPadding: '20px',
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        centerPadding: '20px',
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 576,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 5,
+        slidesToScroll: 1
+      }
+    }
+    
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+      });
+    </script>
+
+    <script>
+      $('.testimonial-card').slick({
+        infinite: true,
+    slidesToShow: 2,
+    centerPadding: '20px',
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        centerPadding: '20px',
+        infinite: true,
+        dots: true
+      }
+    },
+    // {
+    //   breakpoint: 600,
+    //   settings: {
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1
+    //   }
+    // },
+    // {
+    //   breakpoint: 576,
+    //   settings: {
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1
+    //   }
+    // },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+    
+    
+
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+    ]
+      });
+    </script>
+
+    
+</body>
+</html>

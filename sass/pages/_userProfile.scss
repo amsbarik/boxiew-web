@@ -1,10 +1,15 @@
 @use "../partials/index" as *;
 @use "../base/index" as *;
 
+
+
 body{
-    background-color: $bg-color;
+    // background-color: $bg-color;
     .user-profile{
-        margin-top: 8.5rem;
+        padding-top: 8.5rem;
+        padding-bottom: 5rem;
+        background-color: $bg-color;
+        height:100vh;
         //order history page css
         .order-history{
             .cart-list{
@@ -63,6 +68,11 @@ body{
     
 }
 
+.profile-setting{
+    height: fit-content !important;
+    background-color: $bg-color;
+}
+
 .order-detail{
     background-color: $bg-color;
     position: absolute;
@@ -93,9 +103,6 @@ body{
                 width: 5rem;
                 height: 5rem ;
                 border: 3px solid $light-color !important;
-            }
-            hr{
-                // margin-top: -6rem !important;
             }
         }
         .nav-item{
@@ -138,7 +145,7 @@ body{
 ///////////////////////////////////
 
   @media (min-width: 991.98px) {
-    main {
+    .user-profile, .order-detail {
       padding-left: 240px;
     }
   }
