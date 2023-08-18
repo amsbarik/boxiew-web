@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap link-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- custom css link-->
+    <link href="css/style.min.css" rel="stylesheet">
+    <!--font-awesome lik-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!--slick css link-->
+    <!-- <link rel="stylesheet" type="text/css" href="slick/slick.css"/> -->
+    <!-- slick-theme.css- the default styling -->
+    <!-- <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/> -->
+
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/slick.css">
+
+    <title>Supplier | Boxiew</title>
+</head>
+<body>
+  <!--Main Navigation-->
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-light shadow-sm fixed-top">
+        <div class="container">
+            <a href="index.html" class="navbar-brand"><img src="image/logo.png" width="100"></a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div id="main_menu" class="collapse rounded navbar-collapse shadow-sm pb-3 pb-lg-0">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-auto"><a href="listing.html" class="nav-link"> Listing</a></li>
+                    <li class="nav-item mx-auto"><a href="shopping.html" class="nav-link">Shopping</a></li>
+                    <li class="nav-item mx-auto"><a href="#" class="nav-link">Favorites</a></li>
+                    <li class="nav-item mx-auto"><a href="#" class="nav-link">Cart</a></li>
+                    <li class="nav-item mx-auto " type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"><a href="singin.html" class="nav-link"><i class="fa-solid fa-arrow-right-to-bracket pe-2"></i>Sign In</a></li>
+                    <li class="nav-item mx-auto "><div class="add-listing button-outline rounded-pill p-0"><a href="#" class="nav-link px-4">Add Listing<i class="fa-solid fa-plus ms-2 border rounded-circle "></i></a></div></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar -->
+  </header>
+  <!--Main Navigation-->
+
+
+  <!-- main layout start-->
+  <main> 
+    <!-- supplier cover start  -->
+    <section class="supplier-profile">
+        <div class="container">
+            <div class="sup-wrap">
+                <img src="image/supplier-cover.jpg" class="img-fluid rounded sup-cover object-fit-cover" alt="">
+                <div class="row g-4 mt-3 mt-md-5">
+                    <div class="col-12 col-md-9">
+                        <div class="supplier-detail ">
+                            <div class="supplier-heading d-flex justify-content-between">
+                                <div class="supplier-brand d-flex">
+                                    <div class="sup-logo rounded-circle overflow-hidden me-3 me-md-4">
+                                        <img src="image/sup-logo-1.jpg" class="img-fluid object-fit-cover rounded-circle p-1" alt="">
+                                    </div>
+                                    <div>
+                                        <div class="supplier-title d-flex">
+                                            <h3 class="title-style">Hotel Serina <span ><i class="fa-solid fa-circle-check ms-4"></i></span></h3>
+                                        </div>
+                                        <p class="supplier-slogan text-style">Enjoy Your Holidays</p>
+                                        <div class=" list-ranking">
+                                            <!-- <div class="col-5 col-lg-3"><small><i class="fa-regular fa-heart likes"></i>Like 87</small></div> -->
+                                            <div class=""><small class="reviews pe-2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></small><small>4k Reviews</small></div>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+        
+                            <div class="supplier-about mt-4 mt-md-5">
+                                <ul class="nav  nav-pills mb-3" id="pills-tab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                      <button class="nav-link rounded-pill active" id="pills-overview-tab" data-bs-toggle="pill" data-bs-target="#pills-overview" type="button" role="tab" aria-controls="pills-overview" aria-selected="true">Overview</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link rounded-pill " id="pills-about-tab" data-bs-toggle="pill" data-bs-target="#pills-about" type="button" role="tab" aria-controls="pills-about" aria-selected="true">About</button>
+                                      </li>
+                                    <li class="nav-item" role="presentation">
+                                      <button class="nav-link rounded-pill" id="pills-rerviews-tab" data-bs-toggle="pill" data-bs-target="#pills-rerviews" type="button" role="tab" aria-controls="pills-rerviews" aria-selected="false">Rerviews</button>
+                                    </li>
+                                  </ul>
+                                  <hr>
+                                  <div class="tab-content" id="pills-tabContent">
+                                    <div class="tab-pane fade show active" id="pills-overview" role="tabpanel" aria-labelledby="pills-overview-tab" tabindex="0">
+                                        
+                                        <div class="supplier-intro">
+                                            <h5 class="title-style">Intro</h5>
+                                            <p class="text-style">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi sunt libero tempora suscipit atque inventore voluptates laudantium ipsam praesentium et!</p>
+                                            <h5 class="text-style"><span class="me-3 title-style">Category :</span>Hotel & Resturent</h5>
+                                            <div class=" row  g-3 row-cols-2 listing-info mt-2 mt-xl-3 mt-xxl-0">
+                                                <div class="col"><a href="tel: +88 01711-xxxxxx" class="contact-link"><i class="fa-solid fa-phone"></i>+88 01711-XXXXXX</a></div>
+                                                <div class="col"><a href="mailto:info@boxiew.com" class="contact-link"><i class="fa-solid fa-paper-plane"></i>info@boxiew.com</a></div>
+                                                <div class="col"><a href="#" class="contact-link"><i class="fa-brands fa-facebook"></i>fb/boxiew.com</a></div>
+                                                <div class="col"><a href="#" class="contact-link"><i class="fa-solid fa-globe"></i>www.boxiew.com</a></div>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="col"><a href="#" class="contact-link"><i class="fa-solid fa-location-dot"></i>72 Malibagh, Dhaka-1130, Bangladesh.</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade " id="pills-about" role="tabpanel" aria-labelledby="pills-about-tab" tabindex="0">
+                                        <p class="text-style ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id maiores nisi debitis et, expedita libero harum! Placeat repudiandae quasi architecto incidunt quod, ea suscipit! Repellat sequi, consectetur voluptatum nemo facilis assumenda eaque, quia similique quasi, officia nihil iste! Recusandae voluptate non sequi cum eaque at doloremque consequatur, labore eveniet in.</p>
+
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-rerviews" role="tabpanel" aria-labelledby="pills-rerviews-tab" tabindex="0">
+                                        <div class="reviews-info">
+                                            <div class="rev-heading d-flex justify-content-between">
+                                                <div class="reviewer d-flex">
+                                                    <img src="image/profile-1.jpg" class="img-fluid rounded-pill object-fit-cover me-4" alt="">
+                                                    <div class="rev-name mt-2">
+                                                        <h6 class="title-style">Mr Jhon</h6>
+                                                        <p class="text-style"><small>18 June 2023</small></p>
+                                                    </div>
+                                                </div>
+                                                <div class="rev-rate mt-2">
+                                                    <div class=""><small class="reviews pe-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></small></div>
+                                                </div>
+                                            </div>
+                                            <div class="rev-content mt-3">
+                                                <p class="text-style">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, perferendis doloribus? At magni id nulla.</p>
+                                                <div class="row mt-3">
+                                                    <div class="col-auto">
+                                                        <img src="image/rev-1.jpg" class="img-fluid rounded object-fit-cover" alt="">
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <img src="image/rev-2.jpg" class="img-fluid rounded object-fit-cover" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                        </div>
+
+                                        <div class="reviews-info">
+                                            <div class="rev-heading d-flex justify-content-between">
+                                                <div class="reviewer d-flex">
+                                                    <img src="image/profile-1.jpg" class="img-fluid rounded-pill object-fit-cover me-4" alt="">
+                                                    <div class="rev-name mt-2">
+                                                        <h6 class="title-style">Mr Jhon</h6>
+                                                        <p class="text-style"><small>18 June 2023</small></p>
+                                                    </div>
+                                                </div>
+                                                <div class="rev-rate mt-2">
+                                                    <div class=""><small class="reviews pe-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></small></div>
+                                                </div>
+                                            </div>
+                                            <div class="rev-content mt-3">
+                                                <p class="text-style">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, perferendis doloribus? At magni id nulla.</p>
+                                                <div class="row mt-3">
+                                                    <div class="col-auto">
+                                                        <img src="image/rev-1.jpg" class="img-fluid rounded object-fit-cover" alt="">
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <img src="image/rev-2.jpg" class="img-fluid rounded object-fit-cover" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                        </div>
+
+                                        <div class="reviews-info">
+                                            <div class="rev-heading d-flex justify-content-between">
+                                                <div class="reviewer d-flex">
+                                                    <img src="image/profile-1.jpg" class="img-fluid rounded-pill object-fit-cover me-4" alt="">
+                                                    <div class="rev-name mt-2">
+                                                        <h6 class="title-style">Mr Jhon</h6>
+                                                        <p class="text-style"><small>18 June 2023</small></p>
+                                                    </div>
+                                                </div>
+                                                <div class="rev-rate mt-2">
+                                                    <div class=""><small class="reviews pe-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></small></div>
+                                                </div>
+                                            </div>
+                                            <div class="rev-content mt-3">
+                                                <p class="text-style">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, perferendis doloribus? At magni id nulla.</p>
+                                                <div class="row mt-3">
+                                                    <div class="col-auto">
+                                                        <img src="image/rev-1.jpg" class="img-fluid rounded object-fit-cover" alt="">
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <img src="image/rev-2.jpg" class="img-fluid rounded object-fit-cover" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                        </div>
+
+                                        <div aria-label="Page  navigation rev-nav " >
+                                            <ul class="pagination mt-5">
+                                              <li class="page-item">
+                                                <a class="page-link" href="#" aria-label="Previous">
+                                                  <span aria-hidden="true"><i class="fa-solid fa-angles-left"></i></span>
+                                                </a>
+                                              </li>
+                                              <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                              <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                              <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                              <li class="page-item">
+                                                <a class="page-link" href="#" aria-label="Next">
+                                                  <span aria-hidden="true"><i class="fa-solid fa-angles-right"></i></span>
+                                                </a>
+                                              </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                  </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <div class="supplier-contact ">
+                            <div class="gx-3 row row-cols-2 row-cols-md-1">
+                                <div class="open-now button  col text-center"><i class="fa-regular fa-clock  me-3"></i>Open Now</div>
+                                <div class="book-now button-outline col mt-md-4 text-center">Booking Now</div>
+                            </div>
+                        </div>
+                        <div class="offer-ads mt-5">
+                            <a href="#">
+                                <img src="image/sup-ads.jpg" class="img-fluid object-fit-cover rounded" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <hr class="mt-4">
+            </div>
+        </div>
+    </section>
+    <!-- supplier cover end -->
+    
+    <!--supplier products start-->
+    <section id="trend-products" class="best-sell">
+      <div class="container">
+          <div class="products-wrapping pb-5">
+              <div class="section-heading ">
+                  <div class="d-flex">
+                    <div class="heading-title text-center"><h3>Best Selling Products</h3></div>
+                    <div class="d-flex align-items-center ms-3 mb-2"><div class="heading-u-line"></div></div>
+                  </div>
+                  <div class="heading-sub-title  mt-2 mt-lg-4"><h6>Our Most Trendding & Popular Products!</h6></div>
+              </div>
+              <div class="product-list">
+                <div class="row row-cols-2 row-cols-lg-4 g-3 g-md-4 mt-4">
+
+                  <div class="product-card  col">
+                    <div class="card border-0 box-shadow">
+                      <img src="image/products/product-1.jpg" class="card-img-top" alt="...">
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                      <div class="card-body">
+                        <h5 class="card-title title-style">Women Shirt</h5>
+                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
+                        <div class="rangking d-sm-flex  justify-content-between">
+                          <div class="likes"> 
+                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                          </div> 
+                          <div class="reviews">
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                          </div> 
+                        </div>
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
+                          <div class="price d-flex align-items-center">
+                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                          </div>
+                          <div>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card  col">
+                    <div class="card border-0 box-shadow">
+                      <img src="image/products/product-2.jpg" class="card-img-top" alt="...">
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                      <div class="card-body">
+                        <h5 class="card-title title-style">Women Shirt</h5>
+                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
+                        <div class="rangking d-sm-flex  justify-content-between">
+                          <div class="likes"> 
+                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                          </div> 
+                          <div class="reviews">
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                          </div> 
+                        </div>
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
+                          <div class="price d-flex align-items-center">
+                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                          </div>
+                          <div>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card  col">
+                    <div class="card border-0 box-shadow">
+                      <img src="image/products/product-3.jpg" class="card-img-top" alt="...">
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                      <div class="card-body">
+                        <h5 class="card-title title-style">Women Shirt</h5>
+                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
+                        <div class="rangking d-sm-flex  justify-content-between">
+                          <div class="likes"> 
+                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                          </div> 
+                          <div class="reviews">
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                          </div> 
+                        </div>
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
+                          <div class="price d-flex align-items-center">
+                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                          </div>
+                          <div>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card  col">
+                    <div class="card border-0 box-shadow">
+                      <img src="image/products/product-4.jpg" class="card-img-top" alt="...">
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                      <div class="card-body">
+                        <h5 class="card-title title-style">Women Shirt</h5>
+                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
+                        <div class="rangking d-sm-flex  justify-content-between">
+                          <div class="likes"> 
+                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                          </div> 
+                          <div class="reviews">
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                          </div> 
+                        </div>
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
+                          <div class="price d-flex align-items-center">
+                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                          </div>
+                          <div>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card  col">
+                    <div class="card border-0 box-shadow">
+                      <img src="image/products/product-5.jpg" class="card-img-top" alt="...">
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                      <div class="card-body">
+                        <h5 class="card-title title-style">Women Shirt</h5>
+                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
+                        <div class="rangking d-sm-flex  justify-content-between">
+                          <div class="likes"> 
+                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                          </div> 
+                          <div class="reviews">
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                          </div> 
+                        </div>
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
+                          <div class="price d-flex align-items-center">
+                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                          </div>
+                          <div>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card  col">
+                    <div class="card border-0 box-shadow">
+                      <img src="image/products/product-5.jpg" class="card-img-top" alt="...">
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                      <div class="card-body">
+                        <h5 class="card-title title-style">Women Shirt</h5>
+                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
+                        <div class="rangking d-sm-flex  justify-content-between">
+                          <div class="likes"> 
+                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                          </div> 
+                          <div class="reviews">
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                          </div> 
+                        </div>
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
+                          <div class="price d-flex align-items-center">
+                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                          </div>
+                          <div>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card  col">
+                    <div class="card border-0 box-shadow">
+                      <img src="image/products/product-5.jpg" class="card-img-top" alt="...">
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                      <div class="card-body">
+                        <h5 class="card-title title-style">Women Shirt</h5>
+                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
+                        <div class="rangking d-sm-flex  justify-content-between">
+                          <div class="likes"> 
+                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                          </div> 
+                          <div class="reviews">
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                          </div> 
+                        </div>
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
+                          <div class="price d-flex align-items-center">
+                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                          </div>
+                          <div>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card  col">
+                    <div class="card border-0 box-shadow">
+                      <img src="image/products/product-5.jpg" class="card-img-top" alt="...">
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                      <div class="card-body">
+                        <h5 class="card-title title-style">Women Shirt</h5>
+                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
+                        <div class="rangking d-sm-flex  justify-content-between">
+                          <div class="likes"> 
+                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                          </div> 
+                          <div class="reviews">
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                          </div> 
+                        </div>
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
+                          <div class="price d-flex align-items-center">
+                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                          </div>
+                          <div>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card  col">
+                    <div class="card border-0 box-shadow">
+                      <img src="image/products/product-5.jpg" class="card-img-top" alt="...">
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                      <div class="card-body">
+                        <h5 class="card-title title-style">Women Shirt</h5>
+                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
+                        <div class="rangking d-sm-flex  justify-content-between">
+                          <div class="likes"> 
+                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                          </div> 
+                          <div class="reviews">
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                          </div> 
+                        </div>
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
+                          <div class="price d-flex align-items-center">
+                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                          </div>
+                          <div>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-card  col">
+                    <div class="card border-0 box-shadow">
+                      <img src="image/products/product-7.jpg" class="card-img-top" alt="...">
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                      <div class="card-body">
+                        <h5 class="card-title title-style">Women Shirt</h5>
+                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
+                        <div class="rangking d-sm-flex  justify-content-between">
+                          <div class="likes"> 
+                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                          </div> 
+                          <div class="reviews">
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                          </div> 
+                        </div>
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
+                          <div class="price d-flex align-items-center">
+                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                          </div>
+                          <div>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card  col">
+                    <div class="card border-0 box-shadow">
+                      <img src="image/products/product-1.jpg" class="card-img-top" alt="...">
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                      <div class="card-body">
+                        <h5 class="card-title title-style">Women Shirt</h5>
+                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
+                        <div class="rangking d-sm-flex  justify-content-between">
+                          <div class="likes"> 
+                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                          </div> 
+                          <div class="reviews">
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                          </div> 
+                        </div>
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
+                          <div class="price d-flex align-items-center">
+                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                          </div>
+                          <div>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card  col">
+                    <div class="card border-0 box-shadow">
+                      <img src="image/products/product-4.jpg" class="card-img-top" alt="...">
+                      <!-- <div class=" card-img-overlay d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart"></i></div> -->
+                      <div class="position-absolute product-fav mt-lg-1 me-lg-1 mt-xxl-2 me-xxl-2 d-flex rounded-1 p-1"><i class="fa-regular fa-heart"></i></div>
+                      <div class="card-body">
+                        <h5 class="card-title title-style">Women Shirt</h5>
+                        <p class="card-text text-style">A exclusive red and black check women shirt</p>
+                        <div class="rangking d-sm-flex  justify-content-between">
+                          <div class="likes"> 
+                            <small><i class="fa-regular fa-heart"></i> Like 57</small>
+                          </div> 
+                          <div class="reviews">
+                            <small ><i class="fa-regular fa-star"></i>&nbsp 7k Reviews</small>
+                          </div> 
+                        </div>
+                        <hr class="my-2">
+                        <div class="order-now d-flex  justify-content-between" >
+                          <div class="price d-flex align-items-center">
+                            <div><p><i class="fa-solid fa-bangladeshi-taka-sign"></i> 2790</p></div>
+                          </div>
+                          <div>
+                            <a href="#" class=" button  px-md-3">Order Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="d-flex justify-content-center">
+                <div aria-label="Page  navigation rev-product-nav " >
+                    <ul class="pagination mt-5">
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                          <span aria-hidden="true"><i class="fa-solid fa-angles-left"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                          <span aria-hidden="true"><i class="fa-solid fa-angles-right"></i></span>
+                        </a>
+                      </li>
+                    </ul>
+                    </div>
+              </div>
+          </div>
+      </div>
+
+    </section>
+    <!--supplier products end-->
+
+    <!--footer start-->
+    <section id="footer">
+      <div class="container">
+        <div class="footer-wrapping ">
+            <div class="row row-cols-2 row-cols-md-4 row-cols-lg-4 gy-4 ">
+
+                <div class="boxiew col">
+                    <div class="logo">
+                      <img src="image/logo-light.png" alt="Boxiew logo">
+                    </div>
+        
+                    <div class="contact-info">
+                      
+                      <div class="mb-2"><a href="Tel: 123-456-7890"><i class="fa-solid fa-phone"></i>+88 01721-XXXXXX</a></div>
+                      <div class="mb-2"><a href="Tel: 123-456-7890"><i class="fa-solid fa-phone"></i>+88 01721-XXXXXX</a></div>
+                      <div class="mb-2"><a href="mailto:hello@boxiew.com"><i class="fa-solid fa-envelope"></i>hello@boxiew.com</a></div>
+                      <!-- <div class="mb-2"><a href="mailto:hello@boxiew.com"><i class="fa-solid fa-envelope"></i>hello@boxiew.com</a></div> -->
+                      <!-- <div><a href="#"><i class="pt-1 fa-sharp fa-solid fa-location-dot"></i>Feroza Tower, 8th Floor, DIT Road, Malibagh Chowdhurypara, Dhaka.</a> </div> -->
+                      
+                    </div>
+                </div>
+        
+                <div class="suppliers-info col">
+                    <div><h5>Suppliers Info</h5></div>
+                    <div class="info-link">
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                      <!-- <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div> -->
+                    </div>
+                </div>
+        
+                <div class="buyers-info col">
+                    <div><h5>Buyers Info</h5></div>
+                    <div class="info-link">
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From </a></div>
+                      <!-- <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From </a></div> -->
+                    </div>
+                </div>
+        
+                <div class="boxiew-link col">
+                    <div><h5>Quick Links</h5></div>
+                    <div class="info-link">
+                      <div><a href="affiliate.html"><i class="fa-solid fa-arrow-right-long"></i>Carier</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>About Us</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Privacy Policy</a></div>
+                      <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Terms & Conditions</a></div>
+                    </div>
+        
+                    <div class="follow-us ">
+                      <div><h5>Follow Us</h5></div>
+                      <div class="social-link">
+                        <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <hr>
+        <div class="copy-right d-flex justify-content-center pb-3"> <small>Copyright © 2023 Boxiew Ltd || All right reserved</small></div>
+      </div>
+
+    </section>
+    <!--footer end-->
+
+  </main>
+  <!--main layout end-->
+
+
+
+    <!--custom js link-->
+    <script src="js/main.js"></script>
+
+    <!--Bootstrap cdn link-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    
+    <!-- <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script> -->
+
+
+    
+    <!--slick js link-->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+      
+
+    <script src="js/jquery_3.7.0_jquery.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+
+
+    <script>
+      $('.top-ctg-card').slick({
+        infinite: true,
+    slidesToShow: 6,
+    centerPadding: '20px',
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        centerPadding: '20px',
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 576,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 5,
+        slidesToScroll: 1
+      }
+    }
+    
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+      });
+    </script>
+
+    <script>
+      $('.testimonial-card').slick({
+        infinite: true,
+    slidesToShow: 2,
+    centerPadding: '20px',
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        centerPadding: '20px',
+        infinite: true,
+        dots: true
+      }
+    },
+    // {
+    //   breakpoint: 600,
+    //   settings: {
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1
+    //   }
+    // },
+    // {
+    //   breakpoint: 576,
+    //   settings: {
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1
+    //   }
+    // },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+    
+    
+
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+    ]
+      });
+    </script>
+
+    
+</body>
+</html>

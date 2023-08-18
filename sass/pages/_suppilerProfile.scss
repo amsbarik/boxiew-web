@@ -1,0 +1,118 @@
+@use "../partials/index" as *;
+@use "../base/index" as *;
+
+
+.supplier-profile{
+    margin-top: 7rem;
+    .sup-wrap{
+        .supplier-detail{
+            .supplier-heading{
+                .sup-logo{
+                    img{
+                        width: 7rem;
+                        height: 7rem;
+                    }
+                }
+                .supplier-title{
+                    span{
+                        color: $primary-color;
+                        // font-size: 1.5rem;
+                    }
+                    
+                }
+
+                .supplier-contact{
+                    .open-now{
+                    }
+                }
+                .list-ranking{
+                    margin-top: -.7rem !important;
+                }
+            }
+            .supplier-about{
+                .nav{
+                    button{color: $title-color !important;}
+                    .active{
+                        background-color: $primary-color;
+                        color: $light-color !important;
+                    }
+                }
+
+                .reviews-info{
+                    .rev-heading{
+                        img{
+                            width: 4.5rem;
+                            height: 4.5rem;
+                        }
+                    }
+                    .rev-content{
+                        img{
+                            width: 8rem;
+                        }
+                    }
+                }
+                .rev-nav{
+                    ul{
+                        li{
+                            a {
+                                box-shadow: none;
+                                outline: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.best-sell{
+    margin-top: -.3rem !important;
+}
+
+
+
+// media
+@media (max-width: 596px){
+    .supplier-profile{
+        margin-top: 5.75rem;
+        .sup-cover{
+            // height: 7rem;
+        }
+        .sup-logo{
+            img{
+                width: 5rem !important;
+                height: 5rem !important;
+            }
+        }
+        .supplier-contact{
+            .open-now, .book-now{
+                font-size: .8rem;
+            }
+        }
+    }
+
+    .supplier-about{
+        .nav-link{
+            font-size: .75rem;
+            padding: 0.3rem 1rem;
+        }
+        .reviews-info{
+            .reviewer{
+                img{
+                    width: 3.5rem !important;
+                    height: 3.5rem !important;
+                }
+            }
+            .reviews{
+                font-size: .72rem;
+            }
+            .rev-content{
+                img{
+                    width: 5.5rem !important;
+                    // height: 3.5rem !important;
+                }
+            }
+        }
+    }
+}
