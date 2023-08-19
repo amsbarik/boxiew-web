@@ -12,10 +12,56 @@
 
 
 
-
 // nav css start
+// nav top
+.navbar{
+    background-color: $body-color !important;
+    .navbar-toggler:focus {
+        outline: none !important;
+        box-shadow: none !important;
+    }
+    .offcanvas{
+        width: 250px !important;
+        .search{
+          width: 400px;
+          margin-left: 10%;
+          input:focus{
+            box-shadow: none;
+            border: 1px solid $primary-color;
+          }
+        }
+        
+    }
+}
+
+// nav bottom
+.nav-bottom{
+    border-top: 1px solid $bg-color;
+    height: 2.8rem !important;
+    margin-left: -2.5rem ;
+    .active{
+        border-top: 2px solid $primary-color;
+        padding: .6rem 0rem;
+        font-weight: 500;
+        margin-top: -.75rem;
+        color: $primary-color !important;
+    }
+    ul{
+        margin-top: .75rem;
+        .nav-item{
+            width: 3.5rem;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .nav-bottom{
+        display: none;
+    }
+}
+
+
 nav{ 
-    
         background-color: $body-color;
         position: fixed; z-index: 1000;
         height: 5rem !important;

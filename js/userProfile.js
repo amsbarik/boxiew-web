@@ -1,12 +1,3 @@
-$(document).ready(function(){ 
-
-    $('.nav-item').on("click", function(){
-
-    $('.nav-item').removeClass('active');
-
-    $(this).addClass('active');
-    });
-});
 
 
 // user profile js start

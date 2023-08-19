@@ -1,3 +1,15 @@
+// nav bottom
+$(document).ready(function(){ 
+
+    $('.nav-link-sm').on("click", function(){
+
+    $('.nav-link-sm').removeClass('active');
+
+    $(this).addClass('active');
+    });
+});
+
+
 // home page search box js
 let popup = document.getElementById("search-box");
 let hideBtn = document.getElementById("show-modal");

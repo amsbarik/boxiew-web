@@ -1,0 +1,49 @@
+@use "../partials/index" as *;
+@use "../base/index" as *;
+
+
+.wishlist{
+    margin-top: 8.5rem;
+    .product-list{
+        .product-card{
+            .card{
+                .remove-btn{
+                    color: $primary-color;
+                    background-color: lighten($color: $primary-color, $amount: 30);
+                    i{padding: .5rem}
+                    right: .5rem;
+                    top: .5rem;
+                    display: none !important;
+                    transition: .3s;
+                    &:hover{
+                        color: $light-color;
+                        background-color: $primary-color;
+                    }
+                }
+                transition: .3s;
+                &:hover{
+                    .remove-btn{
+                        display: initial !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 596px) {
+    .wishlist{
+        .button{
+            font-size: .75rem !important;
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+    .wishlist{
+        .button{
+            font-size: .85rem !important;
+        }
+    }
+}
