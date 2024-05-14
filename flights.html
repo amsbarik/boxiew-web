@@ -1,0 +1,2024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Flights</title>
+
+    <!-- root css  -->
+    <style>
+        :root {
+            --primary-color: #7e3ff2;
+            --primary-color-light: #efe5fd;
+            --secondary-color: #FDDB55;
+            --secondary-color-light: #ffe478;
+            --title-color: #1d1d1d;
+            --text-color: #757575;
+            --bg-color: #f6f7fa;
+            --bg-color-deep: #e6e5e5;
+            --light-color: white;
+
+            --box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+
+
+            }
+    </style>
+
+
+
+    <!-- start here  -->
+<!-- @extends('frontend.layouts.master')
+@section('title')
+    <title>Flights</title>
+@endsection
+@section('css') -->
+
+<!--  filter css start  -->
+    <style>
+        
+        .flights-filter-bg{
+            /* background: #f6f7fa; */
+            background: #fff;
+        }
+        .filter{
+            font-size: 18px;
+        }
+        
+        .reset-btn{
+            color: red;
+            font-size: 14px;
+        }
+        .reset-btn:hover{
+            color: red;
+        }
+        .filter-wrap hr{
+            opacity: 12% !important;
+        }
+        .filter-box {
+            height: 178px;
+            overflow: hidden;
+        }
+        .filter-box h5 {
+            font-size: 14px;
+        }
+        .filter-box label, span {
+            font-size: 13px;
+            margin-top: 3px;
+            color: #1d1d1d;
+            transition: .3s;
+        }
+        .filter-box label:hover {
+            color: var(--primary-color);
+        }
+
+        .filter-box.show {
+            height: auto;
+        }
+
+        .filter-items {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .readmore {
+            position: absolute;
+            width: 100%;
+            top: 130px;
+            left: 0;
+            background: #fff;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        .readmore::before {
+            content: attr(data-more)
+        }
+
+        .filter-box.show .readmore {
+            position: relative;
+            top: auto;
+            display: block;
+        }
+
+        .filter-box.show .readmore::before {
+            content: attr(data-less)
+        }
+
+        input:checked{
+        background-color: var(--primary-color) !important;
+        border:0;
+        }
+
+        /* price-range start*/
+        .price-range, .search-property h5{
+            font-size: 14px;
+        }
+        .search-property input{
+            font-size: 13px;
+            border-radius: 5px 0px 0px 5px;
+
+        }
+        .search-property input:focus{
+            border: 1px solid #b794f6;
+        }
+        .search-property .btn{
+            border: 1px solid #ddd;
+            border-radius: 0px 5px 5px 0px;
+            border-left: 0px;
+            transition: .3s;
+            color: #9965f4;
+        }
+        .search-property .btn:hover{
+            border: 1px solid #9965f4;
+        }
+        .price-input-container { 
+            width: 100%; 
+        } 
+
+        .price-input .price-field { 
+            display: flex; 
+            margin-bottom: 22px; 
+        } 
+
+        .price-field label { 
+            margin-right: 10px; 
+            margin-top: 6px; 
+            font-size: 13px;
+            color: #1d1d1d;
+        } 
+
+        .price-field input { 
+            flex: 1; 
+            font-size: 13px;
+            color: #1d1d1d;
+            border-radius: 4px;
+            text-align: center;  
+            border: 1px solid #ddd; 
+            width: 92px;
+            /* background: #e4e4e4;  */
+        } 
+        .price-field input:focus{
+            border: 1px solid #b794f6;
+            outline: none;
+
+        }
+
+        .price-input { 
+            width: 100%; 
+            font-size: 19px; 
+            color: var(--primary-color); 
+        } 
+
+        /* Remove Arrows/Spinners */
+        input::-webkit-outer-spin-button, 
+        input::-webkit-inner-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        } 
+
+        .slider-container { 
+            width: 100%; 
+        } 
+
+        .slider-container { 
+            height: 2px; 
+            position: relative; 
+            background: #e4e4e4; 
+            border-radius: 5px; 
+        } 
+
+        .slider-container .price-slider { 
+            height: 100%; 
+            left: 0%; 
+            right: 15%; 
+            position: absolute; 
+            border-radius: 5px; 
+            background: #9965f4; 
+        } 
+
+        .range-input { 
+            position: relative; 
+        } 
+
+        .range-input input { 
+            position: absolute; 
+            width: 100%; 
+            height: 4px; 
+            background: none; 
+            top: -4px; 
+            pointer-events: none; 
+            cursor: pointer; 
+            -webkit-appearance: none; 
+        } 
+
+        /* Styles for the range thumb in WebKit browsers */
+        input[type="range"]::-webkit-slider-thumb { 
+            height: 16px; 
+            width: 16px; 
+            border-radius: 70%; 
+            background: #f6f7fa; 
+            border: 2px  solid #9965f4;
+            pointer-events: auto; 
+            -webkit-appearance: none; 
+        } 
+        input[type="range"]::-webkit-slider-thumb:hover { 
+            height: 22px; 
+            width: 22px; 
+        } 
+
+        @media screen and (max-width: 768px) { 
+            .main { 
+                width: 80%; 
+                margin-right: 5px; 
+            } 
+
+            .custom-wrapper { 
+                width: 100%; 
+                left: 0; 
+                padding: 0 10px; 
+            } 
+
+            .projtitle { 
+                width: 100%; 
+                position: relative; 
+                right: 26px; 
+            } 
+
+            .price-input { 
+                flex-direction: column; 
+                align-items: center; 
+            } 
+
+            .price-field { 
+                margin-bottom: 10px; 
+            } 
+        }
+        /* price-range end*/
+    </style>
+
+    <!-- flights card css  -->
+    <style>
+        .flight-ticket-wrap .card .flight-logo{
+            width: 100%;
+            height: 100%;
+        }
+        .flight-ticket-wrap .card .price-tag{
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            padding: 2px 8px 4px 8px;
+            border-radius: 3px;
+        }
+
+        .flight-ticket-wrap .card .card-title{
+            font-size: 17px;
+            color: var(--title-color);
+            height: 24px; 
+            /* line-height: 20px; */
+        }
+        .flight-ticket-wrap i{
+            color: var(--primary-color);
+        }
+        .flight-ticket-wrap strong{
+            font-weight: 600;
+        }
+        .flight-ticket-wrap .card .runway{
+            min-width: 164px;
+            height: 2px;
+            background-color: #DADFE6;
+            position: relative;
+        }
+        .flight-ticket-wrap .card .runway i{
+            position: absolute;
+            color: #DADFE6;
+            left: 10%;
+            top: -14px;
+        }
+        .flight-ticket-wrap .card .runway::before{
+            content: " ";
+            width: 6px;
+            height: 6px;
+            position: absolute;
+            background-color: #DADFE6;
+            top: -2px;
+            left: 0;
+        }
+        .flight-ticket-wrap .card .runway::after{
+            content: " ";
+            width: 6px;
+            height: 6px;
+            position: absolute;
+            background-color: #DADFE6;
+            top: -2px;
+            right: 0;
+        }
+        .flight-ticket-wrap .card .card-body::after{
+            content: "";
+            height: 107%;
+            border: 1px dotted #DADFE6;
+            position: absolute;
+            right: 24%;
+            top: -10px;
+        }
+        .flight-ticket-wrap .card .seats-left{
+            margin-right: 124px; 
+            font-weight: 500; 
+            /* background-color: var(--primary-color-light); */
+            border: 1px dotted var(--primary-color);
+            padding: 6px 16px;
+            margin-top: 10px;
+        }
+
+        .flight-ticket-wrap .round{
+            background-color: #7e3ff218;
+            padding: 1px 6px 3px 6px ;
+            border-radius: 3px;
+        }
+        .flight-ticket-wrap .class-card{
+            background-color: var(--bg-color);
+        }
+        .flight-ticket-wrap .class-card button{
+            border: none;
+            background-color: var(--primary-color);
+            padding: 5px 24px 7px 24px;
+            border-radius: 6px;
+            color: var(--light-color);
+            /* font-weight: 500; */
+        }
+        .flight-ticket-wrap .class-card button:hover{
+            background-color: #6002EE;
+        }
+        .flight-ticket-wrap .class-card .seats-left{
+            /* margin-right: 124px;  */
+            font-weight: 500; 
+            background: #ffe47890;
+            padding: 8px 16px;
+        }
+    </style>
+
+    
+
+    <!-- flights ticket show css  -->
+    <style>
+        .flight-ticket-wrap {
+            height: 132px;
+            overflow: hidden;
+            background: #fff;
+            
+        }
+        .flight-ticket-wrap:hover {
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px !important;
+            /* border: none !important; */
+        }
+
+        .flight-ticket-wrap.ticket-show {
+            height: auto;
+        }
+
+        .ticket-body {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .see-ticket {
+            position: absolute;
+            width: 110px;
+            top: 75px;
+            right: 16px;
+            background: var(--secondary-color);
+            color: var(--title-color);
+            cursor: pointer;
+            text-align: center;
+            border-radius: 6px;
+            padding: 7px 0 7px 0;
+            font-size: 15px;
+        }
+        .see-ticket:hover {
+            background: var(--secondary-color-light);
+        }
+
+        .see-ticket::before {
+            content: attr(data-more)
+        }
+
+        .flight-ticket-wrap.ticket-show .see-ticket {
+            top: 75px;
+            right: 16px;
+            background: #ffe47890;
+            width: 200px;
+        }
+
+        .flight-ticket-wrap.ticket-show .see-ticket::before {
+            content: attr(data-less);
+            z-index: 1000;
+        }
+
+        .flight-ticket-wrap.ticket-show .ticket-price-info {
+            visibility: hidden;
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- flights info popup css  -->
+    <style>
+        .flights-popup-wrap{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+            visibility: hidden;
+            background: #1d1d1d70;
+        }
+        .overlay{
+            visibility: visible;
+        }
+        .flights-info-popup{
+            width: 740px;
+            height: 640px;
+            background: var(--light-color);
+            color: var(--title-color);
+            top: 53%;
+            left: 50%;
+            transform: translate(-53%, -50%);
+            position: absolute;
+            cursor: pointer;
+            /* border: 1px solid var(--text-color); */
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+        }
+        .flights-info-popup .nav-item {
+            border-bottom: 1px dotted #75757560;
+        }
+        .flights-info-popup .nav-link {
+            color: var(--title-color);
+            font-weight: 500;
+        }
+        .flights-info-popup .nav-item .active{
+            background: #fff;
+            border-bottom: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 0px;
+        }
+        .flights-info-popup .tab-content .item{
+            font-size: 15px;
+            color: var(--title-color);
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .flights-info-popup .tab-content .item i{
+            color: var(--primary-color);
+        }
+        .flights-info-popup .tab-content .policy-body{
+            height: 520px;
+        }
+        .flights-info-popup .tab-content .policy-title{
+            color: var(--title-color);
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .flights-info-popup .tab-content .policy-text{
+            color: var(--title-color);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 24px;
+        }
+    </style>
+
+<!-- @endsection -->
+
+<!-- end here  -->
+
+
+    
+</head>
+<body>
+
+
+
+<!-- @section('content') -->
+
+<main style="background: var(--bg-color);">
+<!-- flights search form  -->
+<section class="flights-form pt-5" style="margin-top: 5rem; ">
+    <div class="container">
+        <div class="flights-form-wrap">
+            <h3>Flights Form</h3>
+        </div>
+    </div>
+</section>
+
+<!-- flights list start -->
+<section class="flights-list">
+    <div class="container">
+        <div class="flights-list-wrap">
+            <div class="row ">
+                <!-- filter left side col start  -->
+                <div class="col-3 ">
+                    
+                    <div class="filter-wrap shadow-sm flights-filter-bg rounded mb-5 pb-3">
+                        <div class="d-flex px-3 pt-3 pb-2 justify-content-between ">
+                            <h5 class="filter ">Filters</h5>
+                            <button type="reset" class="btn reset-btn  p-0">Clear</button>
+                        </div>
+                        <hr class="m-0 ">
+
+                        <!-- search property -->
+                        <div class="search-property px-3 mt-3">
+                            <h5 class="mb-2">Search flights</h5>
+                            <form class="d-flex  " role="search">
+                                <input class="form-control " type="search" placeholder="Airlines Name" aria-label="Search">
+                                <button class="btn " type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            </form>
+                        </div>
+
+                        <!-- operators filtrs  -->
+                        <div class="filter-box mt-3 px-3">
+                            <h5 class="mb-2">Top Choises</h5>
+                            <div class="filter-items">
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="swimming-pool" type="checkbox" value="" id="swimming-pool">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="swimming-pool">Non-stop</label>
+                                    <span class="">10</span>
+                                </div>
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="swimming-pool" type="checkbox" value="" id="swimming-pool">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="swimming-pool">One-stop</label>
+                                    <span class="">10</span>
+                                </div>
+
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="breakfast-included" type="checkbox" value="" id="breakfast-included">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="breakfast-included">Free Checked Baggase Included </label>
+                                    <span class="">14</span>
+                                </div>
+
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="air-onditioning" type="checkbox" value="" id="air-onditioning">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="air-onditioning">Carry-on Baggage Included</label>
+                                    <span class="">18</span>
+                                </div>
+
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="free-cancellation" type="checkbox" value="" id="free-cancellation">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="free-cancellation">Partialy Refundable</label>
+                                    <span class="">7</span>
+                                </div>
+
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="instant-confirmation" type="checkbox" value="" id="instant-confirmation">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="instant-confirmation">Inflight Meal Available</label>
+                                    <span class="">21</span>
+                                </div>
+
+
+                                <span class="readmore" data-more="See More 13" data-less="See Less"></span>
+                            </div>
+                        </div>
+                        <hr class="my-2 mx-3 ">
+
+                        <!--  price range -->
+                        <div class="price-range mt-3 px-3" style="margin-bottom: 34px;">
+                            <h5 class="mb-2 ">Fare (USD)</h5>
+                            <div class="price-input-container mt-3 "> 
+                                <div class="price-input d-flex"> 
+                                    <div class="price-field me-3"> 
+                                        <label class="form-label">Min</label> 
+                                        <input type="number" class="min-input" value="10"> 
+                                    </div> 
+                                    <div class="price-field"> 
+                                        <label class="form-label">Max</label> 
+                                        <input type="number" class="max-input" value="8500"> 
+                                    </div> 
+                                </div> 
+                                <div class="slider-container mt-1 "> 
+                                    <div class="price-slider "> </div> 
+                                </div> 
+                            </div> 
+
+                            <!-- Slider -->
+                            <div class="range-input "> 
+                                <input type="range" class="min-range" min="0" max="10000" value="10" step="1"> 
+                                <input type="range" class="max-range" min="0" max="10000" value="8500" step="1"> 
+                            </div>
+                        </div> 
+                        <!-- <hr class="my-2 mx-3 mt-3"> -->
+
+                        <!-- flights type  -->
+                        <div class="filter-box mt-3 px-3">
+                            <h5 class="mb-2">Airlines</h5>
+                            <div class="filter-items">
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="pool" type="checkbox" value="" id="pool">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="pool">Biman Bangladesh Airline</label>
+                                    <span class="">10</span>
+                                </div>
+
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="Fitness" type="checkbox" value="" id="Fitness">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Fitness">US-Bangla</label>
+                                    <span class="">11</span>
+                                </div>
+
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="desk" type="checkbox" value="" id="desk">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="desk">Novo Air</label>
+                                    <span class="">16</span>
+                                </div>
+
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="security" type="checkbox" value="" id="security">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="security">World Flights</label>
+                                    <span class="">7</span>
+                                </div>
+
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="security" type="checkbox" value="" id="security">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="security">Qatar Airline</label>
+                                    <span class="">7</span>
+                                </div>
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="security" type="checkbox" value="" id="security">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="security">Qatar Airline</label>
+                                    <span class="">7</span>
+                                </div>
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="security" type="checkbox" value="" id="security">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="security">Qatar Airline</label>
+                                    <span class="">7</span>
+                                </div>
+
+                                <span class="readmore" data-more="See More 7" data-less="See Less"></span>
+                            </div>
+                        </div>
+                        <hr class="my-2 mx-3 ">
+
+                        <!-- Boarding Points  -->
+                        <div class="filter-box mt-3 px-3">
+                            <h5 class="mb-2">Airports</h5>
+                            <div class="filter-items">
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="flights" type="checkbox" value="" id="flights">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="flights">Dhaka Hazrat Sha Int.</label>
+                                    <span class="">10</span>
+                                </div>
+
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Coxs bazar</label>
+                                    <span class="">11</span>
+                                </div>
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Canada</label>
+                                    <span class="">11</span>
+                                </div>
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Canada</label>
+                                    <span class="">11</span>
+                                </div>
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Canada</label>
+                                    <span class="">11</span>
+                                </div>
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Canada</label>
+                                    <span class="">11</span>
+                                </div>
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Canada</label>
+                                    <span class="">11</span>
+                                </div>
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Canada</label>
+                                    <span class="">11</span>
+                                </div>
+
+
+                                <span class="readmore" data-more="See More 7" data-less="See Less"></span>
+                            </div>
+                        </div>
+                        <hr class="my-2 mx-3 ">
+
+                        <!-- Take-off Time  -->
+                        <div class="filter-box mt-3 px-3">
+                            <h5 class="mb-2">Take-off Time</h5>
+                            <div class="filter-items">
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="flights" type="checkbox" value="" id="flights">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="flights">Before 06:00 AM</label>
+                                    <span class="">10</span>
+                                </div>
+
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">06:00 AM - 12:00 PM</label>
+                                    <span class="">11</span>
+                                </div>
+
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="breakfast" type="checkbox" value="" id="breakfast">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="breakfast">12:00 PM - 06:00 PM</label>
+                                    <span class="">11</span>
+                                </div>
+
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="Catering" type="checkbox" value="" id="Catering">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Catering">After 06:00 PM</label>
+                                    <span class="">11</span>
+                                </div>
+
+                                <span class="readmore" data-more="See More 7" data-less="See Less"></span>
+                            </div>
+                        </div>
+                        <hr class="my-2 mx-3 ">
+
+                        <!-- Landing Time  -->
+                        <div class="filter-box mt-3 px-3">
+                            <h5 class="mb-2">Landing Time</h5>
+                            <div class="filter-items">
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="flights" type="checkbox" value="" id="flights">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="flights">Before 06:00 AM</label>
+                                    <span class="">10</span>
+                                </div>
+
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">06:00 AM - 12:00 PM</label>
+                                    <span class="">11</span>
+                                </div>
+
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="breakfast" type="checkbox" value="" id="breakfast">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="breakfast">12:00 PM - 06:00 PM</label>
+                                    <span class="">11</span>
+                                </div>
+
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="Catering" type="checkbox" value="" id="Catering">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Catering">After 06:00 PM</label>
+                                    <span class="">11</span>
+                                </div>
+
+                                <span class="readmore" data-more="See More 7" data-less="See Less"></span>
+                            </div>
+                        </div>
+                        <hr class="my-2 mx-3 ">
+
+                        <!-- flights Facilities  -->
+                        <div class="filter-box mt-3 px-3">
+                            <h5 class="mb-2"> Facilities</h5>
+                            <div class="filter-items">
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="flights" type="checkbox" value="" id="flights">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="flights">Water</label>
+                                    <span class="">10</span>
+                                </div>
+
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Drink</label>
+                                    <span class="">11</span>
+                                </div>
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Drink</label>
+                                    <span class="">11</span>
+                                </div>
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Snack</label>
+                                    <span class="">11</span>
+                                </div>
+
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="wifi" type="checkbox" value="" id="wifi">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="wifi">Free wifi</label>
+                                    <span class="">11</span>
+                                </div>
+
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="wifi" type="checkbox" value="" id="wifi">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="wifi">Free wifi</label>
+                                    <span class="">11</span>
+                                </div>
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="wifi" type="checkbox" value="" id="wifi">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="wifi">Free wifi</label>
+                                    <span class="">11</span>
+                                </div>
+
+                                <span class="readmore" data-more="See More 7" data-less="See Less"></span>
+                            </div>
+                        </div>
+                        <hr class="my-2 mx-3 ">
+
+                        <!--Stop-over cities  -->
+                        <div class="filter-box mt-3 px-3">
+                            <h5 class="mb-2">Stop-over Cities</h5>
+                            <div class="filter-items">
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="flights" type="checkbox" value="" id="flights">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="flights">Cox's bazar</label>
+                                    <span class="">10</span>
+                                </div>
+
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Cox's bazar sadar</label>
+                                    <span class="">11</span>
+                                </div>
+
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="breakfast" type="checkbox" value="" id="breakfast">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="breakfast">Jalia palong</label>
+                                    <span class="">11</span>
+                                </div>
+
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="Catering" type="checkbox" value="" id="Catering">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Catering">Kolatoli</label>
+                                    <span class="">11</span>
+                                </div>
+
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="wifi" type="checkbox" value="" id="wifi">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="wifi">Laboni point</label>
+                                    <span class="">11</span>
+                                </div>
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="wifi" type="checkbox" value="" id="wifi">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="wifi">ukhina</label>
+                                    <span class="">11</span>
+                                </div>
+
+                                <span class="readmore" data-more="See More 7" data-less="See Less"></span>
+                            </div>
+                        </div>
+                        <hr class="my-2 mx-3 ">
+        
+                        <!-- Aircrafts  -->
+                        <div class="filter-box mt-3 px-3">
+                            <h5 class="mb-2">Aircrafts</h5>
+                            <div class="filter-items">
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="flights" type="checkbox" value="" id="flights">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="flights">Large size aircraft</label>
+                                    <span class="">10</span>
+                                </div>
+
+                                <div class="form-check d-flex">
+                                    <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Mid-size aircrafts</label>
+                                    <span class="">11</span>
+                                </div>
+
+                                <span class="readmore" data-more="See More 7" data-less="See Less"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                </div>
+                <!-- filter left side col end  -->
+
+                <!-- listed flightss right side col start  -->
+                <div class="col-9 ">
+                    <div class="list-wrap">
+
+                        <!-- filter by & search qty  -->
+                        <div class="d-flex justify-content-between ">
+                            <h5 class="mt-2 pt-1"> 24 flightses Match! </h5>
+                            <select name="filter-by" class="filter-by py-2 px-3 rounded" id="" style="font-size: 14px; ">
+                                <option value="1" selected>Popularity</option>
+                                <option value="2">Top Rated</option>
+                                <option value="3"> Price Low</option>
+                                <option value="4"> Price High</option>
+                            </select>
+                        </div>
+
+                        <!-- flights list card start  -->
+                        <div class="flight-ticket-wrap mt-3 mt-md-4 shadow-sm rounded">
+                            <div class="ticket-body">
+
+                                <div class=" card border-0 " >
+                                    <div class="row g-0" style="height: 100%;">
+                                        <div class="col-md-1">
+                                            <img src="https://blog-content.ixigo.com/wp-content/uploads/2023/07/round-trip-flight.jpeg" class="object-fit-cover flight-logo" alt="">
+                                        </div>
+
+                                        <!-- card content  start-->
+                                        <div class="col-md-11" >
+                                            <div class="card-body d-md-flex" >
+                                                <div>
+                                                    <span class="price-tag">Lowest Price</span>
+
+                                                    <div class="row mt-2" >
+
+                                                        <div class="col-6" style="max-width: 316px;">
+                                                            <!--title max character 26 and then show......... and at hover show full name  -->
+                                                             <h5 class="card-title overflow-hidden pb-1 mt-1 ">Biman Bangladesh Airlines...</h5>
+                                                          <!--  <span><i class="fa-solid fa-utensils"></i></span>
+                                                            <span><i class="fa-solid fa-bolt-lightning"></i></span>
+                                                            <span><i class="fa-solid fa-wifi"></i></span> -->
+                                                            <span class="facility-btn"><i class="fa-solid fa-circle-info me-2"></i>Facilities</span>
+                                                            <span class="ms-3 included"> <i class="fa-solid fa-cart-flatbed-suitcase me-1"></i> <i class="fa-solid fa-suitcase-rolling me-2"></i> Included</span>
+                                                        </div>
+                                                        
+                                                        <div class="col-6">
+                                                            <div class="d-flex justify-content-between">
+                                                                <div>
+                                                                    <h4>11:3</h4>
+                                                                    <span class="text-uppercase">Dac D</span>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="text-center d-block mb-2">1h 15m</span>
+                                                                    <div class="runway mx-2 mx-md-3"><i class="fa-solid fa-plane-departure"></i></div>
+                                                                    <span class="text-center d-block">Nonstop</span>
+                                                                </div>
+                                                                <div>
+                                                                    <h4>12:45</h4>
+                                                                    <span class="text-uppercase">cxb</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+    
+                                                    </div>
+                                                </div>
+
+                                                <div class="ticket-price-info pb-2 text-end ms-auto">
+                                                    <h4 class="m-0">US$100</h4>
+                                                    <span class="text-decoration-line-through text-danger">US$116.00</span> 
+                                                    <span class="round">Round Trip</span> <br>
+
+                                                    <span class="rounded-1 d-block  seats-left"> left < 7</span>
+                                                </div>
+                                                
+
+                                            </div>
+                                        </div>
+                                        <!-- card content  end-->
+
+                                    </div>
+                                </div>
+
+                                <!-- <div style="height: 8px; background: red !important"></div> -->
+
+                                <!-- flights ticket plan  -->
+                                <div class="pb-3" style=" background: var(--light-color)">
+                                    <div class="row g-2  row-cols-1" >
+
+                                        <div class="col">
+                                            <form action="">
+
+                                                <div class="class-card  py-3 px-4 d-block d-md-flex justify-content-md-between">
+                                                    <div class="d-flex d-md-block">
+                                                        <h6>Class </h6>
+                                                        <h5 class="ms-3 ms-md-0">Economy </h5>
+                                                    </div>
+                                                    <div>
+                                                        <h6>Baggage</h6>
+                                                        
+                                                        <span class="d-block"><i class="fa-solid fa-suitcase-rolling me-2"></i>Carry-on Baggage: <strong>1 X 7 KG</strong></span>
+                                                        <span><i class="fa-solid fa-cart-flatbed-suitcase me-1"></i> Checked Baggage: <strong>1 X 20 KG</strong></span>
+                                                    </div>
+                                                    <div>
+                                                        <h6>Fare Rules</h6>
+                                                        <span class="d-block"><i class="fa-regular fa-circle-check me-2"></i>Change Fee: From <strong>US$16</strong></span>
+                                                        <span><i class="fa-regular fa-circle-check me-2"></i>Cancellation Fee: From <strong>US$16</strong></span>
+                                                    </div>
+                                                    <div class="text-end">
+                                                        <h4 class="m-0">US$100</h4>
+                                                        <span class="text-decoration-line-through text-danger">US$116.00</span> 
+                                                        <span class="round">Round Trip</span>
+                                                        
+                                                        <div class="mt-2">
+                                                            <span class="rounded-1 seats-left"> left &lt; 7</span>
+                                                            <button type="submit">Book Now</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+
+                                        </div>
+
+
+
+                                        <div class="col">
+                                            <form action="">
+
+                                                <div class="class-card  py-3 px-4 d-block d-md-flex justify-content-md-between">
+                                                    <div class="d-flex d-md-block">
+                                                        <h6>Class </h6>
+                                                        <h5 class="ms-3 ms-md-0">Business </h5>
+                                                    </div>
+                                                    <div>
+                                                        <h6>Baggage</h6>
+                                                        
+                                                        <span class="d-block"><i class="fa-solid fa-suitcase-rolling me-2"></i>Carry-on Baggage: <strong>2 X 7 KG</strong></span>
+                                                        <span><i class="fa-solid fa-cart-flatbed-suitcase me-1"></i> Checked Baggage: <strong>2 X 20 KG</strong></span>
+                                                    </div>
+                                                    <div>
+                                                        <h6>Fare Rules</h6>
+                                                        <span class="d-block"><i class="fa-regular fa-circle-check me-2"></i>Change Fee: From <strong>US$16</strong></span>
+                                                        <span><i class="fa-regular fa-circle-check me-2"></i>Cancellation Fee: From <strong>US$16</strong></span>
+                                                    </div>
+                                                    <div class="text-end">
+                                                        <h4 class="m-0">US$130</h4>
+                                                        <span class="text-decoration-line-through text-danger">US$146.00</span> 
+                                                        <span class="round">Round Trip</span>
+                                                        
+                                                        <div class="mt-2">
+                                                            <span class="rounded-1 seats-left"> left &lt; 5</span>
+                                                            <button type="submit">Book Now</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+
+                                        </div>
+
+
+
+
+
+
+
+                                    </div>
+
+                                    <span class="mt-2 px-4 d-block" title="Click for more info!"><i class="fa-solid fa-hotel" style="font-size: 18px;"></i><i class="fa-solid fa-plane-departure me-2"></i>Get up to <strong style="color: var(--primary-color);"> 25% off </strong> hotels when you book a flight, cancel your stay for free if your flight gets rescheduled <i class="fa-solid fa-circle-info ms-2" style="color: #7e3ff250;"></i></span>
+
+                                </div>
+
+                                <span class="see-ticket" data-more="Select" data-less="Close..."></span>
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                        <!-- flights list card start  -->
+                        <div class="flight-ticket-wrap mt-3 mt-md-4 shadow-sm rounded">
+                            <div class="ticket-body">
+
+                                <div class=" card border-0 " >
+                                    <div class="row g-0" style="height: 100%;">
+                                        <div class="col-md-1">
+                                            <img src="https://blog-content.ixigo.com/wp-content/uploads/2023/07/round-trip-flight.jpeg" class="object-fit-cover flight-logo" alt="">
+                                        </div>
+
+                                        <!-- card content  start-->
+                                        <div class="col-md-11" >
+                                            <div class="card-body d-md-flex" >
+                                                <div>
+                                                    <span class="price-tag">Lowest Price</span>
+
+                                                    <div class="row mt-2" >
+
+                                                        <div class="col-6" style="max-width: 316px;">
+                                                            <!--title max character 26 and then show......... and at hover show full name  -->
+                                                             <h5 class="card-title overflow-hidden pb-1 mt-1 ">Biman Bangladesh Airlines...</h5>
+                                                          <!--  <span><i class="fa-solid fa-utensils"></i></span>
+                                                            <span><i class="fa-solid fa-bolt-lightning"></i></span>
+                                                            <span><i class="fa-solid fa-wifi"></i></span> -->
+                                                            <span class="facility-btn"><i class="fa-solid fa-circle-info me-2"></i>Facilities</span>
+                                                            <span class="ms-3 included"> <i class="fa-solid fa-cart-flatbed-suitcase me-1"></i> <i class="fa-solid fa-suitcase-rolling me-2"></i> Included</span>
+                                                        </div>
+                                                        
+                                                        <div class="col-6">
+                                                            <div class="d-flex justify-content-between">
+                                                                <div>
+                                                                    <h4>11:3</h4>
+                                                                    <span class="text-uppercase">Dac D</span>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="text-center d-block mb-2">1h 15m</span>
+                                                                    <div class="runway mx-2 mx-md-3"><i class="fa-solid fa-plane-departure"></i></div>
+                                                                    <span class="text-center d-block">Nonstop</span>
+                                                                </div>
+                                                                <div>
+                                                                    <h4>12:45</h4>
+                                                                    <span class="text-uppercase">cxb</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+    
+                                                    </div>
+                                                </div>
+
+                                                <div class="ticket-price-info pb-2 text-end ms-auto">
+                                                    <h4 class="m-0">US$100</h4>
+                                                    <span class="text-decoration-line-through text-danger">US$116.00</span> 
+                                                    <span class="round">Round Trip</span> <br>
+
+                                                    <span class="rounded-1 d-block  seats-left"> left < 7</span>
+                                                </div>
+                                                
+
+                                            </div>
+                                        </div>
+                                        <!-- card content  end-->
+
+                                    </div>
+                                </div>
+
+                                <!-- <div style="height: 8px; background: red !important"></div> -->
+
+                                <!-- flights ticket plan  -->
+                                <div class="pb-3" style=" background: var(--light-color)">
+                                    <div class="row g-2  row-cols-1" >
+
+                                        <div class="col">
+                                            <form action="">
+
+                                                <div class="class-card  py-3 px-4 d-block d-md-flex justify-content-md-between">
+                                                    <div class="d-flex d-md-block">
+                                                        <h6>Class </h6>
+                                                        <h5 class="ms-3 ms-md-0">Economy </h5>
+                                                    </div>
+                                                    <div>
+                                                        <h6>Baggage</h6>
+                                                        
+                                                        <span class="d-block"><i class="fa-solid fa-suitcase-rolling me-2"></i>Carry-on Baggage: <strong>1 X 7 KG</strong></span>
+                                                        <span><i class="fa-solid fa-cart-flatbed-suitcase me-1"></i> Checked Baggage: <strong>1 X 20 KG</strong></span>
+                                                    </div>
+                                                    <div>
+                                                        <h6>Fare Rules</h6>
+                                                        <span class="d-block"><i class="fa-regular fa-circle-check me-2"></i>Change Fee: From <strong>US$16</strong></span>
+                                                        <span><i class="fa-regular fa-circle-check me-2"></i>Cancellation Fee: From <strong>US$16</strong></span>
+                                                    </div>
+                                                    <div class="text-end">
+                                                        <h4 class="m-0">US$100</h4>
+                                                        <span class="text-decoration-line-through text-danger">US$116.00</span> 
+                                                        <span class="round">Round Trip</span>
+                                                        
+                                                        <div class="mt-2">
+                                                            <span class="rounded-1 seats-left"> left &lt; 7</span>
+                                                            <button type="submit">Book Now</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+
+                                        </div>
+
+
+
+                                        <div class="col">
+                                            <form action="">
+
+                                                <div class="class-card  py-3 px-4 d-block d-md-flex justify-content-md-between">
+                                                    <div class="d-flex d-md-block">
+                                                        <h6>Class </h6>
+                                                        <h5 class="ms-3 ms-md-0">Business </h5>
+                                                    </div>
+                                                    <div>
+                                                        <h6>Baggage</h6>
+                                                        
+                                                        <span class="d-block"><i class="fa-solid fa-suitcase-rolling me-2"></i>Carry-on Baggage: <strong>2 X 7 KG</strong></span>
+                                                        <span><i class="fa-solid fa-cart-flatbed-suitcase me-1"></i> Checked Baggage: <strong>2 X 20 KG</strong></span>
+                                                    </div>
+                                                    <div>
+                                                        <h6>Fare Rules</h6>
+                                                        <span class="d-block"><i class="fa-regular fa-circle-check me-2"></i>Change Fee: From <strong>US$16</strong></span>
+                                                        <span><i class="fa-regular fa-circle-check me-2"></i>Cancellation Fee: From <strong>US$16</strong></span>
+                                                    </div>
+                                                    <div class="text-end">
+                                                        <h4 class="m-0">US$130</h4>
+                                                        <span class="text-decoration-line-through text-danger">US$146.00</span> 
+                                                        <span class="round">Round Trip</span>
+                                                        
+                                                        <div class="mt-2">
+                                                            <span class="rounded-1 seats-left"> left &lt; 5</span>
+                                                            <button type="submit">Book Now</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+
+                                        </div>
+
+
+
+
+
+
+
+                                    </div>
+
+                                    <span class="mt-2 px-4 d-block" title="Click for more info!"><i class="fa-solid fa-hotel" style="font-size: 18px;"></i><i class="fa-solid fa-plane-departure me-2"></i>Get up to <strong style="color: var(--primary-color);"> 25% off </strong> hotels when you book a flight, cancel your stay for free if your flight gets rescheduled <i class="fa-solid fa-circle-info ms-2" style="color: #7e3ff250;"></i></span>
+
+                                </div>
+
+                                <span class="see-ticket" data-more="Select" data-less="Close..."></span>
+                            </div>
+
+                        </div>
+                        <!-- flights list card start  -->
+                        <div class="flight-ticket-wrap mt-3 mt-md-4 shadow-sm rounded">
+                            <div class="ticket-body">
+
+                                <div class=" card border-0 " >
+                                    <div class="row g-0" style="height: 100%;">
+                                        <div class="col-md-1">
+                                            <img src="https://blog-content.ixigo.com/wp-content/uploads/2023/07/round-trip-flight.jpeg" class="object-fit-cover flight-logo" alt="">
+                                        </div>
+
+                                        <!-- card content  start-->
+                                        <div class="col-md-11" >
+                                            <div class="card-body d-md-flex" >
+                                                <div>
+                                                    <span class="price-tag">Lowest Price</span>
+
+                                                    <div class="row mt-2" >
+
+                                                        <div class="col-6" style="max-width: 316px;">
+                                                            <!--title max character 26 and then show......... and at hover show full name  -->
+                                                             <h5 class="card-title overflow-hidden pb-1 mt-1 ">Biman Bangladesh Airlines...</h5>
+                                                          <!--  <span><i class="fa-solid fa-utensils"></i></span>
+                                                            <span><i class="fa-solid fa-bolt-lightning"></i></span>
+                                                            <span><i class="fa-solid fa-wifi"></i></span> -->
+                                                            <span class="facility-btn"><i class="fa-solid fa-circle-info me-2"></i>Facilities</span>
+                                                            <span class="ms-3 included"> <i class="fa-solid fa-cart-flatbed-suitcase me-1"></i> <i class="fa-solid fa-suitcase-rolling me-2"></i> Included</span>
+                                                        </div>
+                                                        
+                                                        <div class="col-6">
+                                                            <div class="d-flex justify-content-between">
+                                                                <div>
+                                                                    <h4>11:3</h4>
+                                                                    <span class="text-uppercase">Dac D</span>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="text-center d-block mb-2">1h 15m</span>
+                                                                    <div class="runway mx-2 mx-md-3"><i class="fa-solid fa-plane-departure"></i></div>
+                                                                    <span class="text-center d-block">Nonstop</span>
+                                                                </div>
+                                                                <div>
+                                                                    <h4>12:45</h4>
+                                                                    <span class="text-uppercase">cxb</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+    
+                                                    </div>
+                                                </div>
+
+                                                <div class="ticket-price-info pb-2 text-end ms-auto">
+                                                    <h4 class="m-0">US$100</h4>
+                                                    <span class="text-decoration-line-through text-danger">US$116.00</span> 
+                                                    <span class="round">Round Trip</span> <br>
+
+                                                    <span class="rounded-1 d-block  seats-left"> left < 7</span>
+                                                </div>
+                                                
+
+                                            </div>
+                                        </div>
+                                        <!-- card content  end-->
+
+                                    </div>
+                                </div>
+
+                                <!-- <div style="height: 8px; background: red !important"></div> -->
+
+                                <!-- flights ticket plan  -->
+                                <div class="pb-3" style=" background: var(--light-color)">
+                                    <div class="row g-2  row-cols-1" >
+
+                                        <div class="col">
+                                            <form action="">
+
+                                                <div class="class-card  py-3 px-4 d-block d-md-flex justify-content-md-between">
+                                                    <div class="d-flex d-md-block">
+                                                        <h6>Class </h6>
+                                                        <h5 class="ms-3 ms-md-0">Economy </h5>
+                                                    </div>
+                                                    <div>
+                                                        <h6>Baggage</h6>
+                                                        
+                                                        <span class="d-block"><i class="fa-solid fa-suitcase-rolling me-2"></i>Carry-on Baggage: <strong>1 X 7 KG</strong></span>
+                                                        <span><i class="fa-solid fa-cart-flatbed-suitcase me-1"></i> Checked Baggage: <strong>1 X 20 KG</strong></span>
+                                                    </div>
+                                                    <div>
+                                                        <h6>Fare Rules</h6>
+                                                        <span class="d-block"><i class="fa-regular fa-circle-check me-2"></i>Change Fee: From <strong>US$16</strong></span>
+                                                        <span><i class="fa-regular fa-circle-check me-2"></i>Cancellation Fee: From <strong>US$16</strong></span>
+                                                    </div>
+                                                    <div class="text-end">
+                                                        <h4 class="m-0">US$100</h4>
+                                                        <span class="text-decoration-line-through text-danger">US$116.00</span> 
+                                                        <span class="round">Round Trip</span>
+                                                        
+                                                        <div class="mt-2">
+                                                            <span class="rounded-1 seats-left"> left &lt; 7</span>
+                                                            <button type="submit">Book Now</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+
+                                        </div>
+
+
+
+                                        <div class="col">
+                                            <form action="">
+
+                                                <div class="class-card  py-3 px-4 d-block d-md-flex justify-content-md-between">
+                                                    <div class="d-flex d-md-block">
+                                                        <h6>Class </h6>
+                                                        <h5 class="ms-3 ms-md-0">Business </h5>
+                                                    </div>
+                                                    <div>
+                                                        <h6>Baggage</h6>
+                                                        
+                                                        <span class="d-block"><i class="fa-solid fa-suitcase-rolling me-2"></i>Carry-on Baggage: <strong>2 X 7 KG</strong></span>
+                                                        <span><i class="fa-solid fa-cart-flatbed-suitcase me-1"></i> Checked Baggage: <strong>2 X 20 KG</strong></span>
+                                                    </div>
+                                                    <div>
+                                                        <h6>Fare Rules</h6>
+                                                        <span class="d-block"><i class="fa-regular fa-circle-check me-2"></i>Change Fee: From <strong>US$16</strong></span>
+                                                        <span><i class="fa-regular fa-circle-check me-2"></i>Cancellation Fee: From <strong>US$16</strong></span>
+                                                    </div>
+                                                    <div class="text-end">
+                                                        <h4 class="m-0">US$130</h4>
+                                                        <span class="text-decoration-line-through text-danger">US$146.00</span> 
+                                                        <span class="round">Round Trip</span>
+                                                        
+                                                        <div class="mt-2">
+                                                            <span class="rounded-1 seats-left"> left &lt; 5</span>
+                                                            <button type="submit">Book Now</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+
+                                        </div>
+
+
+
+
+
+
+
+                                    </div>
+
+                                    <span class="mt-2 px-4 d-block" title="Click for more info!"><i class="fa-solid fa-hotel" style="font-size: 18px;"></i><i class="fa-solid fa-plane-departure me-2"></i>Get up to <strong style="color: var(--primary-color);"> 25% off </strong> hotels when you book a flight, cancel your stay for free if your flight gets rescheduled <i class="fa-solid fa-circle-info ms-2" style="color: #7e3ff250;"></i></span>
+
+                                </div>
+
+                                <span class="see-ticket" data-more="Select" data-less="Close..."></span>
+                            </div>
+
+                        </div>
+                        <!-- flights list card start  -->
+                        <div class="flight-ticket-wrap mt-3 mt-md-4 shadow-sm rounded">
+                            <div class="ticket-body">
+
+                                <div class=" card border-0 " >
+                                    <div class="row g-0" style="height: 100%;">
+                                        <div class="col-md-1">
+                                            <img src="https://blog-content.ixigo.com/wp-content/uploads/2023/07/round-trip-flight.jpeg" class="object-fit-cover flight-logo" alt="">
+                                        </div>
+
+                                        <!-- card content  start-->
+                                        <div class="col-md-11" >
+                                            <div class="card-body d-md-flex" >
+                                                <div>
+                                                    <span class="price-tag">Lowest Price</span>
+
+                                                    <div class="row mt-2" >
+
+                                                        <div class="col-6" style="max-width: 316px;">
+                                                            <!--title max character 26 and then show......... and at hover show full name  -->
+                                                             <h5 class="card-title overflow-hidden pb-1 mt-1 ">Biman Bangladesh Airlines...</h5>
+                                                          <!--  <span><i class="fa-solid fa-utensils"></i></span>
+                                                            <span><i class="fa-solid fa-bolt-lightning"></i></span>
+                                                            <span><i class="fa-solid fa-wifi"></i></span> -->
+                                                            <span class="facility-btn"><i class="fa-solid fa-circle-info me-2"></i>Facilities</span>
+                                                            <span class="ms-3 included"> <i class="fa-solid fa-cart-flatbed-suitcase me-1"></i> <i class="fa-solid fa-suitcase-rolling me-2"></i> Included</span>
+                                                        </div>
+                                                        
+                                                        <div class="col-6">
+                                                            <div class="d-flex justify-content-between">
+                                                                <div>
+                                                                    <h4>11:3</h4>
+                                                                    <span class="text-uppercase">Dac D</span>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="text-center d-block mb-2">1h 15m</span>
+                                                                    <div class="runway mx-2 mx-md-3"><i class="fa-solid fa-plane-departure"></i></div>
+                                                                    <span class="text-center d-block">Nonstop</span>
+                                                                </div>
+                                                                <div>
+                                                                    <h4>12:45</h4>
+                                                                    <span class="text-uppercase">cxb</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+    
+                                                    </div>
+                                                </div>
+
+                                                <div class="ticket-price-info pb-2 text-end ms-auto">
+                                                    <h4 class="m-0">US$100</h4>
+                                                    <span class="text-decoration-line-through text-danger">US$116.00</span> 
+                                                    <span class="round">Round Trip</span> <br>
+
+                                                    <span class="rounded-1 d-block  seats-left"> left < 7</span>
+                                                </div>
+                                                
+
+                                            </div>
+                                        </div>
+                                        <!-- card content  end-->
+
+                                    </div>
+                                </div>
+
+                                <!-- <div style="height: 8px; background: red !important"></div> -->
+
+                                <!-- flights ticket plan  -->
+                                <div class="pb-3" style=" background: var(--light-color)">
+                                    <div class="row g-2  row-cols-1" >
+
+                                        <div class="col">
+                                            <form action="">
+
+                                                <div class="class-card  py-3 px-4 d-block d-md-flex justify-content-md-between">
+                                                    <div class="d-flex d-md-block">
+                                                        <h6>Class </h6>
+                                                        <h5 class="ms-3 ms-md-0">Economy </h5>
+                                                    </div>
+                                                    <div>
+                                                        <h6>Baggage</h6>
+                                                        
+                                                        <span class="d-block"><i class="fa-solid fa-suitcase-rolling me-2"></i>Carry-on Baggage: <strong>1 X 7 KG</strong></span>
+                                                        <span><i class="fa-solid fa-cart-flatbed-suitcase me-1"></i> Checked Baggage: <strong>1 X 20 KG</strong></span>
+                                                    </div>
+                                                    <div>
+                                                        <h6>Fare Rules</h6>
+                                                        <span class="d-block"><i class="fa-regular fa-circle-check me-2"></i>Change Fee: From <strong>US$16</strong></span>
+                                                        <span><i class="fa-regular fa-circle-check me-2"></i>Cancellation Fee: From <strong>US$16</strong></span>
+                                                    </div>
+                                                    <div class="text-end">
+                                                        <h4 class="m-0">US$100</h4>
+                                                        <span class="text-decoration-line-through text-danger">US$116.00</span> 
+                                                        <span class="round">Round Trip</span>
+                                                        
+                                                        <div class="mt-2">
+                                                            <span class="rounded-1 seats-left"> left &lt; 7</span>
+                                                            <button type="submit">Book Now</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+
+                                        </div>
+
+
+
+                                        <div class="col">
+                                            <form action="">
+
+                                                <div class="class-card  py-3 px-4 d-block d-md-flex justify-content-md-between">
+                                                    <div class="d-flex d-md-block">
+                                                        <h6>Class </h6>
+                                                        <h5 class="ms-3 ms-md-0">Business </h5>
+                                                    </div>
+                                                    <div>
+                                                        <h6>Baggage</h6>
+                                                        
+                                                        <span class="d-block"><i class="fa-solid fa-suitcase-rolling me-2"></i>Carry-on Baggage: <strong>2 X 7 KG</strong></span>
+                                                        <span><i class="fa-solid fa-cart-flatbed-suitcase me-1"></i> Checked Baggage: <strong>2 X 20 KG</strong></span>
+                                                    </div>
+                                                    <div>
+                                                        <h6>Fare Rules</h6>
+                                                        <span class="d-block"><i class="fa-regular fa-circle-check me-2"></i>Change Fee: From <strong>US$16</strong></span>
+                                                        <span><i class="fa-regular fa-circle-check me-2"></i>Cancellation Fee: From <strong>US$16</strong></span>
+                                                    </div>
+                                                    <div class="text-end">
+                                                        <h4 class="m-0">US$130</h4>
+                                                        <span class="text-decoration-line-through text-danger">US$146.00</span> 
+                                                        <span class="round">Round Trip</span>
+                                                        
+                                                        <div class="mt-2">
+                                                            <span class="rounded-1 seats-left"> left &lt; 5</span>
+                                                            <button type="submit">Book Now</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+
+                                        </div>
+
+
+
+
+
+
+
+                                    </div>
+
+                                    <span class="mt-2 px-4 d-block" title="Click for more info!"><i class="fa-solid fa-hotel" style="font-size: 18px;"></i><i class="fa-solid fa-plane-departure me-2"></i>Get up to <strong style="color: var(--primary-color);"> 25% off </strong> hotels when you book a flight, cancel your stay for free if your flight gets rescheduled <i class="fa-solid fa-circle-info ms-2" style="color: #7e3ff250;"></i></span>
+
+                                </div>
+
+                                <span class="see-ticket" data-more="Select" data-less="Close..."></span>
+                            </div>
+
+                        </div>
+
+                        <!-- flights list card start  -->
+                        <div class="flight-ticket-wrap mt-3 mt-md-4 shadow-sm rounded">
+                            <div class="ticket-body">
+
+                                <div class=" card border-0 " >
+                                    <div class="row g-0" style="height: 100%;">
+                                        <div class="col-md-1">
+                                            <img src="https://blog-content.ixigo.com/wp-content/uploads/2023/07/round-trip-flight.jpeg" class="object-fit-cover flight-logo" alt="">
+                                        </div>
+
+                                        <!-- card content  start-->
+                                        <div class="col-md-11" >
+                                            <div class="card-body d-md-flex" >
+                                                <div>
+                                                    <span class="price-tag">Lowest Price</span>
+
+                                                    <div class="row mt-2" >
+
+                                                        <div class="col-6" style="max-width: 316px;">
+                                                            <!--title max character 26 and then show......... and at hover show full name  -->
+                                                             <h5 class="card-title overflow-hidden pb-1 mt-1 ">Biman Bangladesh Airlines...</h5>
+                                                          <!--  <span><i class="fa-solid fa-utensils"></i></span>
+                                                            <span><i class="fa-solid fa-bolt-lightning"></i></span>
+                                                            <span><i class="fa-solid fa-wifi"></i></span> -->
+                                                            <span class="facility-btn"><i class="fa-solid fa-circle-info me-2"></i>Facilities</span>
+                                                            <span class="ms-3 included"> <i class="fa-solid fa-cart-flatbed-suitcase me-1"></i> <i class="fa-solid fa-suitcase-rolling me-2"></i> Included</span>
+                                                        </div>
+                                                        
+                                                        <div class="col-6">
+                                                            <div class="d-flex justify-content-between">
+                                                                <div>
+                                                                    <h4>11:3</h4>
+                                                                    <span class="text-uppercase">Dac D</span>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="text-center d-block mb-2">1h 15m</span>
+                                                                    <div class="runway mx-2 mx-md-3"><i class="fa-solid fa-plane-departure"></i></div>
+                                                                    <span class="text-center d-block">Nonstop</span>
+                                                                </div>
+                                                                <div>
+                                                                    <h4>12:45</h4>
+                                                                    <span class="text-uppercase">cxb</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+    
+                                                    </div>
+                                                </div>
+
+                                                <div class="ticket-price-info pb-2 text-end ms-auto">
+                                                    <h4 class="m-0">US$100</h4>
+                                                    <span class="text-decoration-line-through text-danger">US$116.00</span> 
+                                                    <span class="round">Round Trip</span> <br>
+
+                                                    <span class="rounded-1 d-block  seats-left"> left < 7</span>
+                                                </div>
+                                                
+
+                                            </div>
+                                        </div>
+                                        <!-- card content  end-->
+
+                                    </div>
+                                </div>
+
+                                <!-- <div style="height: 8px; background: red !important"></div> -->
+
+                                <!-- flights ticket plan  -->
+                                <div class="pb-3" style=" background: var(--light-color)">
+                                    <div class="row g-2  row-cols-1" >
+
+                                        <div class="col">
+                                            <form action="">
+
+                                                <div class="class-card  py-3 px-4 d-block d-md-flex justify-content-md-between">
+                                                    <div class="d-flex d-md-block">
+                                                        <h6>Class </h6>
+                                                        <h5 class="ms-3 ms-md-0">Economy </h5>
+                                                    </div>
+                                                    <div>
+                                                        <h6>Baggage</h6>
+                                                        
+                                                        <span class="d-block"><i class="fa-solid fa-suitcase-rolling me-2"></i>Carry-on Baggage: <strong>1 X 7 KG</strong></span>
+                                                        <span><i class="fa-solid fa-cart-flatbed-suitcase me-1"></i> Checked Baggage: <strong>1 X 20 KG</strong></span>
+                                                    </div>
+                                                    <div>
+                                                        <h6>Fare Rules</h6>
+                                                        <span class="d-block"><i class="fa-regular fa-circle-check me-2"></i>Change Fee: From <strong>US$16</strong></span>
+                                                        <span><i class="fa-regular fa-circle-check me-2"></i>Cancellation Fee: From <strong>US$16</strong></span>
+                                                    </div>
+                                                    <div class="text-end">
+                                                        <h4 class="m-0">US$100</h4>
+                                                        <span class="text-decoration-line-through text-danger">US$116.00</span> 
+                                                        <span class="round">Round Trip</span>
+                                                        
+                                                        <div class="mt-2">
+                                                            <span class="rounded-1 seats-left"> left < 7</span>
+                                                            <button type="submit">Book Now</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+
+                                        </div>
+
+
+
+                                        <div class="col">
+                                            <form action="">
+
+                                                <div class="class-card  py-3 px-4 d-block d-md-flex justify-content-md-between">
+                                                    <div class="d-flex d-md-block">
+                                                        <h6>Class </h6>
+                                                        <h5 class="ms-3 ms-md-0">Economy </h5>
+                                                    </div>
+                                                    <div>
+                                                        <h6>Baggage</h6>
+                                                        
+                                                        <span class="d-block"><i class="fa-solid fa-suitcase-rolling me-2"></i>Carry-on Baggage: <strong>1 X 7 KG</strong></span>
+                                                        <span><i class="fa-solid fa-cart-flatbed-suitcase me-1"></i> Checked Baggage: <strong>1 X 20 KG</strong></span>
+                                                    </div>
+                                                    <div>
+                                                        <h6>Fare Rules</h6>
+                                                        <span class="d-block"><i class="fa-regular fa-circle-check me-2"></i>Change Fee: From <strong>US$16</strong></span>
+                                                        <span><i class="fa-regular fa-circle-check me-2"></i>Cancellation Fee: From <strong>US$16</strong></span>
+                                                    </div>
+                                                    <div class="text-end">
+                                                        <h4 class="m-0">US$100</h4>
+                                                        <span class="text-decoration-line-through text-danger">US$116.00</span> 
+                                                        <span class="round">Round Trip</span>
+                                                        
+                                                        <div class="mt-2">
+                                                            <span class="rounded-1 seats-left"> left < 7</span>
+                                                            <button type="submit">Book Now</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+
+                                        </div>
+
+
+
+
+
+
+
+                                    </div>
+
+                                    <span class="mt-2 px-4 d-block" title="Click for more info!"><i class="fa-solid fa-hotel" style="font-size: 18px;"></i><i class="fa-solid fa-plane-departure me-2"></i>Get up to <strong style="color: var(--primary-color);"> 25% off </strong> hotels when you book a flight, cancel your stay for free if your flight gets rescheduled <i class="fa-solid fa-circle-info ms-2" style="color: #7e3ff250;"></i></span>
+
+                                </div>
+
+                                <span class="see-ticket" data-more="Select" data-less="Close..."></span>
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+                        <!-- flights list card end -->
+                    </div>
+                </div>
+                <!-- listed flightss right site col end  -->
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- flights list end -->
+
+
+
+
+<!-- popup start  -->
+<section>
+    <!--flights info popup  -->
+    <div id="flightsPopupWrap" class="flights-popup-wrap">
+        <div class="d-flex justify-content-between rounded p-4 flights-info-popup">
+
+            <div class="px-2">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="boarding-tab" data-bs-toggle="pill" data-bs-target="#boarding" type="button" role="tab" aria-controls="boarding" aria-selected="true">Boarding Points</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="dropping-tab" data-bs-toggle="pill" data-bs-target="#dropping" type="button" role="tab" aria-controls="dropping" aria-selected="false">Dropping Points</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="facilities-tab" data-bs-toggle="pill" data-bs-target="#facilities" type="button" role="tab" aria-controls="facilities" aria-selected="false">Facilities</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="policy-tab" data-bs-toggle="pill" data-bs-target="#policy" type="button" role="tab" aria-controls="policy" aria-selected="false" >Cancellation Policy</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+
+                    <div class="tab-pane fade show active" id="boarding" role="tabpanel" aria-labelledby="boarding-tab" tabindex="0">
+                        <ul class="row mt-4 row-cols-1 row-cols-lg-2">
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Gulistan</li>
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Saidabad</li>
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-pane fade" id="dropping" role="tabpanel" aria-labelledby="dropping-tab" tabindex="0">
+                        <ul class="row mt-4 row-cols-1 row-cols-lg-2">
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Cox's Bazar</li>
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Cox's Bazar</li>
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Chottagram</li>
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Chottagram</li>
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Kolatoli</li>
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Kolatoli</li>
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Kolatoli</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-pane fade" id="facilities" role="tabpanel" aria-labelledby="facilities-tab" tabindex="0">
+                        <ul class="row mt-4 row-cols-1 row-cols-lg-2">
+                            <li class="col item"><i class="fa-regular fa-square-check me-2"></i>Wifi</li>
+                            <li class="col item"><i class="fa-regular fa-square-check me-2"></i>Water</li>
+                            <li class="col item"><i class="fa-regular fa-square-check me-2"></i>Blanket</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-pane fade" id="policy" role="tabpanel" aria-labelledby="policy-tab" tabindex="0">
+                        <div class="overflow-y-auto mt-4 policy-body" >
+                            <span class="d-block policy-title">Cancellation Process:</span>
+                            <div class="policy-text mt-2">
+                                First, you have to go to the ticket history option. You need to add your phone number/PNR/transaction ID to search for your ticket.
+                                Click at the cancellation option. <br><br>
+                                Your request will be submitted to our team.
+                                Your money will be refunded with following our refund & cancellation policy.
+                            </div>
+
+                            <span class="d-block policy-title mt-3">Cancellation Policies</span>
+                            <div class="policy-text mt-2">
+                                Auto cancellation will happen if the customer fails to report at the reporting station 15 minutes before the flights arrives. <br>
+                                If the customer fails to pay the full amount that mentioned in the screen will not get the activated tickets. 
+
+                                <br><br>
+                                To be eligible for refund, customers need to cancel the ticket from ‘Ticket History’ a day before(Excluding 12:00 AM to 07:00 AM) the journey time. And must report the cancellation to the support center (i.e Call 89xxxxxxxx or email to info@boxiew.com).
+                                <br><br>
+                                Only during Eid time, customers are eligible for refund ONLY if the operator cancels the trip and cannot provide an alternative arrangement. (Note: Terms and conditions of refund policy might update or change from time to time without any notice)
+                                <br><br>
+                                For mobile payments, it is the responsibility of the customer to input transaction ID (if applicable), PIN, OTP properly within time to confirm his ticket by himself.
+                                <br><br>
+                                Boxiew.com sometimes does the verification for the customer as a courtesy, but it is not Boxiew’s responsibility or service promise.
+                                <br><br>
+                                For mobile payments, customers must complete payment and also verify transactions.
+                                During Eid sales month, Jatri.co will not do any verification on behalf of the customers.
+                                <br><br>
+                                If the customer faces any hassle at the counter after purchasing tickets from boxiew.com, then the user has to give the complaint to our customer service or give an email to info@boxiew.com within 3 days(72 hours) from the departure time.
+                            </div>
+                            <span class="d-block policy-title mt-3 text-center">~ Thank You! ~</span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <span onclick="closeflightsInfo()" role="button" style="font-size: 22px; color: var(--text-color); margin-top: -6px; display: block;"> &#10005; </span>
+            </div>
+
+        </div>
+        
+    </div>
+</section>
+<!-- popup end  -->
+
+    
+</main>
+
+
+
+<!-- @endsection -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+<!-- @section('script') -->
+
+    <!-- filter see more or less js  -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.readmore').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    var currentFilterBox = this.closest('.filter-box');
+                    document.querySelectorAll('.filter-box.show').forEach(function(fBox) {
+                        if (fBox !== currentFilterBox) {
+                            fBox.classList.remove('show');
+                        }
+                    });
+                    currentFilterBox.classList.toggle('show');
+                });
+            });
+        });
+    </script>
+
+    <!--filter pirce range js start  -->
+    <script>
+        const rangevalue = document.querySelector(".slider-container .price-slider"); 
+        const rangeInputvalue = document.querySelectorAll(".range-input input"); 
+
+        // Set the price gap 
+        let priceGap = 100; 
+
+        // Adding event listners to price input elements 
+        const priceInputvalue = document.querySelectorAll(".price-input input"); 
+        for (let i = 0; i < priceInputvalue.length; i++) { 
+            priceInputvalue[i].addEventListener("input", e => { 
+
+            // Parse min and max values of the range input 
+            let minp = parseInt(priceInputvalue[0].value); 
+            let maxp = parseInt(priceInputvalue[1].value); 
+            let diff = maxp - minp 
+
+            if (minp < 0) { 
+                alert("minimum price cannot be less than 0"); 
+                priceInputvalue[0].value = 0; 
+                minp = 0; 
+            } 
+
+            // Validate the input values 
+            if (maxp > 10000) { 
+                alert("maximum price cannot be greater than 10000"); 
+                priceInputvalue[1].value = 10000; 
+                maxp = 10000; 
+            } 
+
+            if (minp > maxp - priceGap) { 
+                priceInputvalue[0].value = maxp - priceGap; 
+                minp = maxp - priceGap; 
+
+                if (minp < 0) { 
+                    priceInputvalue[0].value = 0; 
+                    minp = 0; 
+                } 
+            } 
+
+            // Check if the price gap is met 
+            // and max price is within the range 
+            if (diff >= priceGap && maxp <= rangeInputvalue[1].max) { 
+                if (e.target.className === "min-input") { 
+                    rangeInputvalue[0].value = minp; 
+                    let value1 = rangeInputvalue[0].max; 
+                    rangevalue.style.left = `${(minp / value1) * 100}%`; 
+                } 
+                else { 
+                    rangeInputvalue[1].value = maxp; 
+                    let value2 = rangeInputvalue[1].max; 
+                    rangevalue.style.right = 
+                        `${100 - (maxp / value2) * 100}%`; 
+                    } 
+                } 
+            }); 
+
+            // Add event listeners to range input elements 
+            for (let i = 0; i < rangeInputvalue.length; i++) { 
+                rangeInputvalue[i].addEventListener("input", e => { 
+                    let minVal = 
+                        parseInt(rangeInputvalue[0].value); 
+                    let maxVal = 
+                        parseInt(rangeInputvalue[1].value); 
+
+                    let diff = maxVal - minVal 
+                    
+                    // Check if the price gap is exceeded 
+                    if (diff < priceGap) { 
+                    
+                        // Check if the input is the min range input 
+                        if (e.target.className === "min-range") { 
+                            rangeInputvalue[0].value = maxVal - priceGap; 
+                        } 
+                        else { 
+                            rangeInputvalue[1].value = minVal + priceGap; 
+                        } 
+                    } 
+                    else { 
+                    
+                        // Update price inputs and range progress 
+                        priceInputvalue[0].value = minVal; 
+                        priceInputvalue[1].value = maxVal; 
+                        rangevalue.style.left = 
+                            `${(minVal / rangeInputvalue[0].max) * 100}%`; 
+                        rangevalue.style.right = 
+                            `${100 - (maxVal / rangeInputvalue[1].max) * 100}%`; 
+                        } 
+                    }); 
+                } 
+            }
+
+    </script>
+    <!-- pirce range js end -->
+
+    <!-- ticket show js  -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.see-ticket').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    var currentWrapper = this.closest('.flight-ticket-wrap');
+                    document.querySelectorAll('.flight-ticket-wrap.ticket-show').forEach(function(wrapper) {
+                        if (wrapper !== currentWrapper) {
+                            wrapper.classList.remove('ticket-show');
+                        }
+                    });
+                    currentWrapper.classList.toggle('ticket-show');
+                });
+            });
+        });
+
+    </script>
+
+    
+
+    <!-- flights info popup js  -->
+    <script>
+        let flightsBody = document.querySelector("body"); 
+        let flightsPopupWrap = document.getElementById('flightsPopupWrap');
+
+        function showflightsInfo(){
+            flightsPopupWrap.classList.add('overlay')
+            flightsPopupWrap.delay('800')
+            flightsPopupWrap.fadeIn('500')
+            flightsBody.style.overflow = "hidden"
+        }
+
+        function closeflightsInfo(){
+            flightsPopupWrap.classList.remove('overlay')
+            flightsPopupWrap.delay('800')
+            flightsPopupWrap.fadeOut('500')
+            flightsBody.style.overflow = "auto"
+        }
+
+    </script>
+
+
+<!-- @endsection -->
+
+
+    
+</body>
+</html>

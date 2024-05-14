@@ -472,28 +472,25 @@ nav{
 
 // media query for responsive start
 @media (min-width: $viewport-xm) {
-    body{
-        h1,h2,h3  {
-            font-size: 100%;
-        }
+    // body{
+    //     h1,h2,h3  {
+    //         font-size: 100%;
+    //     }
         
-        h4,h5,h6{
-            font-size: 90%;
-        }
-        p{
-            font-size: 85% !important;
-        }
-        a{
-            font-size: 82% !important;
-        }
+    //     h4,h5,h6{
+    //         font-size: 90%;
+    //     }
+    //     p{
+    //         font-size: 85% ;
+    //     }
+    //     a{
+    //         font-size: 82% ;
+    //     }
 
-        .button .button-light{
-            padding: .2rem 1rem;
-        }
-
-        
-
-    }
+    //     .button .button-light{
+    //         padding: .2rem 1rem;
+    //     }
+    // }
 
     #top-cover{
         height: 25.5rem;
@@ -743,7 +740,7 @@ nav{
     }
     #footer{
         a{
-            font-size: 80% !important;
+            font-size: 80% ;
         }
     }
 
@@ -804,33 +801,33 @@ nav{
 
 
   @media (min-width: $viewport-sm){
-    h4,h5,h6{
-        font-size: 95%;
-    }
+    // h4,h5,h6{
+    //     font-size: 95%;
+    // }
     
   }
 
   @media (min-width: $viewport-md) {
-    body{
-        h1,h2,h3 {
-            font-size: 130%;
-        }
+    // body{
+    //     h1,h2,h3 {
+    //         font-size: 130%;
+    //     }
         
-        h4,h5,h6{
-            font-size: 100%;
-        }
-        p{
-            font-size: 95% !important;
-        }
-        a{
-            font-size: 90%;
-        }
+    //     h4,h5,h6{
+    //         font-size: 100%;
+    //     }
+    //     p{
+    //         font-size: 95%;
+    //     }
+    //     a{
+    //         font-size: 90%;
+    //     }
 
-        .button .button-light{
-            padding: .3rem 1.4rem;
-        }
+    //     .button .button-light{
+    //         padding: .3rem 1.4rem;
+    //     }
         
-    }
+    // }
 
     nav{
         .navbar-collapse{
@@ -850,7 +847,7 @@ nav{
         }
         
         select{
-            font-size: .95rem !important;
+            font-size: .95rem ;
         }
           
         
@@ -1043,25 +1040,22 @@ nav{
         }
     }
 
-    #footer{
-        
-    }
 
 }
 
   @media (min-width: $viewport-lg) {
-    body{
-        h1,h2 ,h3{
-            font-size: 150%;
-        }
-        p{
-            font-size: 100% !important;
-        }
-        a{
-            font-size: 92% !important;
-        }
+    // body{
+    //     h1,h2 ,h3{
+    //         font-size: 150%;
+    //     }
+    //     p{
+    //         font-size: 100% ;
+    //     }
+    //     a{
+    //         font-size: 92% ;
+    //     }
         
-    }
+    // }
 
     #top-cover{
         .search-title{
@@ -1259,22 +1253,22 @@ nav{
   }
 
   @media (min-width: $viewport-xl) {
-    body{
-        h1,h2,h3 {
-            font-size: 175%;
-        }
-        p{
-            // font-size: 115% !important;
-        }
-        a{
-            font-size: 100%;
-        }
+    // body{
+    //     h1,h2,h3 {
+    //         font-size: 175%;
+    //     }
+    //     p{
+    //         // font-size: 115% !important;
+    //     }
+    //     a{
+    //         font-size: 100%;
+    //     }
 
-        .button .button-light{
-            padding: .3rem 1.5rem;
-        }
+    //     .button .button-light{
+    //         padding: .3rem 1.5rem;
+    //     }
         
-    }
+    // }
 
     #top-cover{
         h4{
@@ -1391,22 +1385,12 @@ nav{
   }
 
   @media (min-width: $viewport-xxl) {
-    body{
-        h1, h2,h3 {
-            font-size: 200%;
-        }
-        p{
-            // font-size: 125% !important;
-        }
-        a{
-            // font-size: 100%;
-        }
-
-        .button .button-light{
-            // padding: .3rem 2rem;
-        }
+    // body{
+    //     h1, h2,h3 {
+    //         font-size: 200%;
+    //     }
         
-    }
+    // }
 
     #top-cover{
         height: 30.25rem;
@@ -1518,13 +1502,6 @@ nav{
     }
 
   }
-
-
-
-
-
-
-
 
 
 
