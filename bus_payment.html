@@ -128,188 +128,190 @@
 </head>
 <body>
 
-    <div class="bus-ticket-details-wrap py-5" style="background: var(--bg-color);">
-        <div class="container">
+    <main>
+        <div class="bus-ticket-details-wrap py-5" style="background: var(--bg-color);">
+            <div class="container">
 
-            <div class="d-flex reserve shadow bg-white py-3 px-4 rounded mt-4 justify-content-between">
-                <div>
-                    <span class="btn">Full Bus Reserve</span>
-                    <a href="tel:+880 1722 XXXXXX">+880 1722 XXXXXX</a>
-                    <a href="mailto:hello@boxiew.com">hello@boxiew.com</a>
+                <div class="d-flex reserve shadow bg-white py-3 px-4 rounded mt-4 justify-content-between">
+                    <div>
+                        <span class="btn">Full Bus Reserve</span>
+                        <a href="tel:+880 1722 XXXXXX">+880 1722 XXXXXX</a>
+                        <a href="mailto:hello@boxiew.com">hello@boxiew.com</a>
+                    </div>
+                    <div>
+                        <span class="btn">History</span>
+                    </div>
                 </div>
-                <div>
-                    <span class="btn">History</span>
-                </div>
+
+
+                <form action="">
+                    <div class="row">
+                        <div class="col ">
+                            
+                            <!-- ticket info  -->
+                            <div class="ticket-info-card shadow-sm mt-4 rounded bg-white">
+                                <div class="d-flex px-3 px-md-4 py-3 ">
+                                    <span class="card-icon"><i class="fa-solid fa-bus-simple"></i></span>
+                                    <div class="ps-3">
+                                        <h5 class="m-0 text-uppercase">DHAKa - COX'S BAZAR</h5>
+                                        <span>Shohagh Paribahan (Pvt) Ltd | AC Bus</span>
+                                    </div>
+                                </div>
+
+                                <hr class="m-0">
+
+                                <div class="px-3 px-md-4 py-3 ">
+                                    <div class="d-flex pb-2 justify-content-between">
+                                        <span>Departure Time </span>
+                                        <span>10:00 PM </span>
+                                    </div>
+                                    <hr class="dotted-hr m-0">
+                                    <div class="d-flex py-2 justify-content-between">
+                                        <span>Departure Date </span>
+                                        <span>Thu, 16 May 2024</span>
+                                    </div>
+                                    <hr class="dotted-hr m-0">
+                                    <div class="d-flex py-2 justify-content-between">
+                                        <span>Boarding Point </span>
+                                        <span>Malibagh</span>
+                                    </div>
+                                    <hr class="dotted-hr m-0">
+                                    <div class="d-flex py-2 justify-content-between">
+                                        <span>Passenger Name </span>
+                                        <span>Abdul Barik</span>
+                                    </div>
+                                    <hr class="dotted-hr m-0">
+                                    <div class="d-flex py-2 justify-content-between">
+                                        <span>Mobile Number </span>
+                                        <span>+880 1723 XXXXXX</span>
+                                    </div>
+                                    <hr class="dotted-hr m-0">
+                                    <div class="d-flex pt-2 justify-content-between">
+                                        <span>eMail Address </span>
+                                        <span>hello@boxiew.com</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- fare info  -->
+                            <div class="ticket-info-card shadow-sm mt-4 rounded bg-white">
+                                <div class="d-flex px-3 px-md-4 py-3 ">
+                                    <span class="card-icon"><i class="fa-solid fa-couch"></i></span>
+                                    <div class="ps-3">
+                                        <h5 class="m-0">Fare Info</h5>
+                                        <!-- <span>Apply Promo Code to Get Discount!</span> -->
+                                    </div>
+                                </div>
+
+                                <hr class="m-0">
+
+                                <div class="px-3 px-md-4 py-3 ">
+                                    <div class="d-flex pb-2 justify-content-between">
+                                        <span>Seats No </span>
+                                        <span>B2, B4, C4 </span>
+                                    </div>
+                                    <hr class="dotted-hr m-0">
+                                    <div class="d-flex py-2 justify-content-between">
+                                        <span>Ticket Fare </span>
+                                        <span>UD$640.00 </span>
+                                    </div>
+                                    <hr class="dotted-hr m-0">
+                                    <div class="d-flex py-2 justify-content-between">
+                                        <span>Processing Fee </span>
+                                        <span>US$2.00</span>
+                                    </div>
+                                    <hr class="dotted-hr m-0">
+                                    <div class="d-flex py-2 justify-content-between">
+                                        <span>Gateway Fee </span>
+                                        <span>US$0.82</span>
+                                    </div>
+                                    <hr class="dotted-hr m-0">
+                                    <div class="d-flex py-2 justify-content-between">
+                                        <span>Discount </span>
+                                        <span>US$1.90</span>
+                                    </div>
+                                    <hr class="dotted-hr m-0">
+                                    <div class="d-flex  py-2 justify-content-between">
+                                        <span class="total">Total (3 Seats) </span>
+                                        <span class="total">US$642.00</span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+            
+                        <div class="col">
+                            <div class="ticket-info-card mt-4 shadow-sm rounded bg-white">
+                                <div class="d-flex px-3 px-md-4 py-3 ">
+                                    <span class="card-icon"><i class="fa-brands fa-discourse"></i></span>
+                                    <div class="ps-3">
+                                        <h5 class="m-0">Promo Code</h5>
+                                    </div>
+                                </div>
+
+                                <hr class="m-0">
+
+                                <div class="px-3 px-md-4 py-3 ">
+                                    <div>
+                                        <input type="text" class="form-control mt-2 d-inline" placeholder="Enter Promo Code" style="width: 70%">
+                                        <button type="submit" class="rounded apply-btn"> Apply</button>
+                                    </div>
+                                    <h5 class="mt-4 promo-title">Available Promo</h5>
+                                    <div class="row g-2  mt-2 row-cols-3">
+                                        <div class="col">
+                                            <div class="bg-light rounded py-2 px-3">
+                                                <div>
+                                                    <input type="radio" name="promo" id="promo1">
+                                                    <label class="promo-code" for="promo1">SHOHAGH</label>
+                                                </div>
+                                                <small class="promo-detail">Save up to US$4 on purchashing shohag paribahon ticket!</small>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="bg-light rounded py-2 px-3">
+                                                <div>
+                                                    <input type="radio" name="promo" id="promo2">
+                                                    <label class="promo-code" for="promo2">BOXIEW30</label>
+                                                </div>
+                                                <small class="promo-detail">Save up to US$3 on purchashing any paribahon ticket!</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="ticket-info-card mt-4 shadow-sm rounded bg-white">
+                                <div class="d-flex px-3 px-md-4 py-3 ">
+                                    <span class="card-icon"><i class="fa-solid fa-credit-card"></i></span>
+                                    <div class="ps-3">
+                                        <h5 class="m-0">Payment</h5>
+                                    </div>
+                                </div>
+
+                                <hr class="m-0">
+
+                                <div class="px-3 px-md-4 py-3 ">
+                                    <div>
+                                        <input type="checkbox" id="agreeLink">
+                                        <label class="agree ms-1" for="agreeLink">Agree with our <a href="#" class="link">Terms and Conditions</a> and <a href="#" class="link">Cancellation Policy</a></label>
+                                    </div>
+
+                                    <button type="submit" class="btn mt-4 pay-btn">Pay Now</button>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </form>
+
             </div>
-
-
-            <form action="">
-                <div class="row">
-                    <div class="col ">
-                        
-                        <!-- ticket info  -->
-                        <div class="ticket-info-card shadow-sm mt-4 rounded bg-white">
-                            <div class="d-flex px-3 px-md-4 py-3 ">
-                                <span class="card-icon"><i class="fa-solid fa-bus-simple"></i></span>
-                                <div class="ps-3">
-                                    <h5 class="m-0 text-uppercase">DHAKa - COX'S BAZAR</h5>
-                                    <span>Shohagh Paribahan (Pvt) Ltd | AC Bus</span>
-                                </div>
-                            </div>
-
-                            <hr class="m-0">
-
-                            <div class="px-3 px-md-4 py-3 ">
-                                <div class="d-flex pb-2 justify-content-between">
-                                    <span>Departure Time </span>
-                                    <span>10:00 PM </span>
-                                </div>
-                                <hr class="dotted-hr m-0">
-                                <div class="d-flex py-2 justify-content-between">
-                                    <span>Departure Date </span>
-                                    <span>Thu, 16 May 2024</span>
-                                </div>
-                                <hr class="dotted-hr m-0">
-                                <div class="d-flex py-2 justify-content-between">
-                                    <span>Boarding Point </span>
-                                    <span>Malibagh</span>
-                                </div>
-                                <hr class="dotted-hr m-0">
-                                <div class="d-flex py-2 justify-content-between">
-                                    <span>Passenger Name </span>
-                                    <span>Abdul Barik</span>
-                                </div>
-                                <hr class="dotted-hr m-0">
-                                <div class="d-flex py-2 justify-content-between">
-                                    <span>Mobile Number </span>
-                                    <span>+880 1723 XXXXXX</span>
-                                </div>
-                                <hr class="dotted-hr m-0">
-                                <div class="d-flex pt-2 justify-content-between">
-                                    <span>eMail Address </span>
-                                    <span>hello@boxiew.com</span>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- fare info  -->
-                        <div class="ticket-info-card shadow-sm mt-4 rounded bg-white">
-                            <div class="d-flex px-3 px-md-4 py-3 ">
-                                <span class="card-icon"><i class="fa-solid fa-couch"></i></span>
-                                <div class="ps-3">
-                                    <h5 class="m-0">Fare Info</h5>
-                                    <!-- <span>Apply Promo Code to Get Discount!</span> -->
-                                </div>
-                            </div>
-
-                            <hr class="m-0">
-
-                            <div class="px-3 px-md-4 py-3 ">
-                                <div class="d-flex pb-2 justify-content-between">
-                                    <span>Seats No </span>
-                                    <span>B2, B4, C4 </span>
-                                </div>
-                                <hr class="dotted-hr m-0">
-                                <div class="d-flex py-2 justify-content-between">
-                                    <span>Ticket Fare </span>
-                                    <span>UD$640.00 </span>
-                                </div>
-                                <hr class="dotted-hr m-0">
-                                <div class="d-flex py-2 justify-content-between">
-                                    <span>Processing Fee </span>
-                                    <span>US$2.00</span>
-                                </div>
-                                <hr class="dotted-hr m-0">
-                                <div class="d-flex py-2 justify-content-between">
-                                    <span>Gateway Fee </span>
-                                    <span>US$0.82</span>
-                                </div>
-                                <hr class="dotted-hr m-0">
-                                <div class="d-flex py-2 justify-content-between">
-                                    <span>Discount </span>
-                                    <span>US$1.90</span>
-                                </div>
-                                <hr class="dotted-hr m-0">
-                                <div class="d-flex  py-2 justify-content-between">
-                                    <span class="total">Total (3 Seats) </span>
-                                    <span class="total">US$642.00</span>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-        
-                    <div class="col">
-                        <div class="ticket-info-card mt-4 shadow-sm rounded bg-white">
-                            <div class="d-flex px-3 px-md-4 py-3 ">
-                                <span class="card-icon"><i class="fa-brands fa-discourse"></i></span>
-                                <div class="ps-3">
-                                    <h5 class="m-0">Promo Code</h5>
-                                </div>
-                            </div>
-
-                            <hr class="m-0">
-
-                            <div class="px-3 px-md-4 py-3 ">
-                                <div>
-                                    <input type="text" class="form-control mt-2 d-inline" placeholder="Enter Promo Code" style="width: 70%">
-                                    <button type="submit" class="rounded apply-btn"> Apply</button>
-                                </div>
-                                <h5 class="mt-4 promo-title">Available Promo</h5>
-                                <div class="row g-2  mt-2 row-cols-3">
-                                    <div class="col">
-                                        <div class="bg-light rounded py-2 px-3">
-                                            <div>
-                                                <input type="radio" name="promo" id="promo1">
-                                                <label class="promo-code" for="promo1">SHOHAGH</label>
-                                            </div>
-                                            <small class="promo-detail">Save up to US$4 on purchashing shohag paribahon ticket!</small>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="bg-light rounded py-2 px-3">
-                                            <div>
-                                                <input type="radio" name="promo" id="promo2">
-                                                <label class="promo-code" for="promo2">BOXIEW30</label>
-                                            </div>
-                                            <small class="promo-detail">Save up to US$3 on purchashing any paribahon ticket!</small>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="ticket-info-card mt-4 shadow-sm rounded bg-white">
-                            <div class="d-flex px-3 px-md-4 py-3 ">
-                                <span class="card-icon"><i class="fa-solid fa-credit-card"></i></span>
-                                <div class="ps-3">
-                                    <h5 class="m-0">Payment</h5>
-                                </div>
-                            </div>
-
-                            <hr class="m-0">
-
-                            <div class="px-3 px-md-4 py-3 ">
-                                <div>
-                                    <input type="checkbox" id="agreeLink">
-                                    <label class="agree ms-1" for="agreeLink">Agree with our <a href="#" class="link">Terms and Conditions</a> and <a href="#" class="link">Cancellation Policy</a></label>
-                                </div>
-
-                                <button type="submit" class="btn mt-4 pay-btn">Pay Now</button>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </form>
-
         </div>
-    </div>
+    </main>
     
 
 

@@ -40,14 +40,8 @@
 
 
 
-    <!-- start here  -->
-<!-- @extends('frontend.layouts.master')
-@section('title')
-    <title>holidays</title>
-@endsection
-@section('css') -->
 
-<!--  filter css start  -->
+    <!-- filter css start  -->
     <style>
         
         .holidays-filter-bg{
@@ -360,17 +354,7 @@
     </style>
 
 
-
-
-
-
-
-
-
-
-
-
-<!-- no uses  -->
+    <!-- no uses  -->
 
 
     <!-- holidays info popup css  -->
@@ -441,9 +425,6 @@
         }
     </style>
 
-<!-- @endsection -->
-
-<!-- end here  -->
 
 
     
@@ -452,732 +433,726 @@
 
 
 
-<!-- @section('content') -->
-
 <main style="background: var(--bg-color);">
-<!-- holidays search form  -->
-<section class="holidays-form pt-5" style="margin-top: 5rem; ">
-    <div class="container">
-        <div class="holidays-form-wrap">
-            <h3>holidays Form</h3>
+    <!-- holidays search form  -->
+    <section class="holidays-form pt-5" style="margin-top: 5rem; ">
+        <div class="container">
+            <div class="holidays-form-wrap">
+                <h3>holidays Form</h3>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- holidays list start -->
-<section class="holidays-list">
-    <div class="container">
-        <div class="holidays-list-wrap">
-            <div class="row ">
-                <!-- holidays filter left side col start  -->
-                <div class="col-3 ">
-                    
-                    <div class="filter-wrap shadow-sm holidays-filter-bg rounded mb-5 pb-3">
-                        <div class="d-flex px-3 pt-3 pb-2 justify-content-between ">
-                            <h5 class="filter ">Filters</h5>
-                            <button type="reset" class="btn reset-btn  p-0">Clear</button>
-                        </div>
-                        <hr class="m-0 ">
-
-                        <!-- search Holidays -->
-                        <div class="search-property px-3 mt-3">
-                            <h5 class="mb-2">Search Holidays</h5>
-                            <form class="d-flex  " role="search">
-                                <input class="form-control " type="search" placeholder="Your Destination" aria-label="Search">
-                                <button class="btn " type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                            </form>
-                        </div>
-
-                        <!-- Package Types filtrs  -->
-                        <div class="filter-box mt-3 px-3">
-                            <h5 class="mb-2">Package Types</h5>
-                            <div class="filter-items">
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="swimming-pool" type="checkbox" value="" id="swimming-pool">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="swimming-pool">All Inclusive</label>
-                                    <span class="">10</span>
-                                </div>
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="swimming-pool" type="checkbox" value="" id="swimming-pool">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="swimming-pool">Honeymoon</label>
-                                    <span class="">10</span>
-                                </div>
-
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="breakfast-included" type="checkbox" value="" id="breakfast-included">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="breakfast-included">Advanture</label>
-                                    <span class="">14</span>
-                                </div>
-
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="air-onditioning" type="checkbox" value="" id="air-onditioning">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="air-onditioning">Villas & More</label>
-                                    <span class="">18</span>
-                                </div>
-
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="free-cancellation" type="checkbox" value="" id="free-cancellation">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="free-cancellation">Luxury</label>
-                                    <span class="">7</span>
-                                </div>
-
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="instant-confirmation" type="checkbox" value="" id="instant-confirmation">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="instant-confirmation">Trending</label>
-                                    <span class="">21</span>
-                                </div>
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="instant-confirmation" type="checkbox" value="" id="instant-confirmation">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="instant-confirmation">Group Tour</label>
-                                    <span class="">21</span>
-                                </div>
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="instant-confirmation" type="checkbox" value="" id="instant-confirmation">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="instant-confirmation">Multi Stays</label>
-                                    <span class="">21</span>
-                                </div>
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="instant-confirmation" type="checkbox" value="" id="instant-confirmation">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="instant-confirmation">Bus Package</label>
-                                    <span class="">21</span>
-                                </div>
-
-
-                                <span class="readmore" data-more="See More 13" data-less="See Less"></span>
+    <!-- holidays list start -->
+    <section class="holidays-list">
+        <div class="container">
+            <div class="holidays-list-wrap">
+                <div class="row ">
+                    <!-- holidays filter left side col start  -->
+                    <div class="col-3 ">
+                        
+                        <div class="filter-wrap shadow-sm holidays-filter-bg rounded mb-5 pb-3">
+                            <div class="d-flex px-3 pt-3 pb-2 justify-content-between ">
+                                <h5 class="filter ">Filters</h5>
+                                <button type="reset" class="btn reset-btn  p-0">Clear</button>
                             </div>
-                        </div>
-                        <hr class="my-2 mx-3 ">
+                            <hr class="m-0 ">
 
-                        <!--  price range -->
-                        <div class="price-range mt-3 px-3" style="margin-bottom: 34px;">
-                            <h5 class="mb-2 ">Fare (US$)</h5>
-                            <div class="price-input-container mt-3 "> 
-                                <div class="price-input d-flex"> 
-                                    <div class="price-field me-3"> 
-                                        <label class="form-label">Min</label> 
-                                        <input type="number" class="min-input" value="10"> 
+                            <!-- search Holidays -->
+                            <div class="search-property px-3 mt-3">
+                                <h5 class="mb-2">Search Holidays</h5>
+                                <form class="d-flex  " role="search">
+                                    <input class="form-control " type="search" placeholder="Your Destination" aria-label="Search">
+                                    <button class="btn " type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                </form>
+                            </div>
+
+                            <!-- Package Types filtrs  -->
+                            <div class="filter-box mt-3 px-3">
+                                <h5 class="mb-2">Package Types</h5>
+                                <div class="filter-items">
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="swimming-pool" type="checkbox" value="" id="swimming-pool">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="swimming-pool">All Inclusive</label>
+                                        <span class="">10</span>
+                                    </div>
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="swimming-pool" type="checkbox" value="" id="swimming-pool">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="swimming-pool">Honeymoon</label>
+                                        <span class="">10</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="breakfast-included" type="checkbox" value="" id="breakfast-included">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="breakfast-included">Advanture</label>
+                                        <span class="">14</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="air-onditioning" type="checkbox" value="" id="air-onditioning">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="air-onditioning">Villas & More</label>
+                                        <span class="">18</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="free-cancellation" type="checkbox" value="" id="free-cancellation">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="free-cancellation">Luxury</label>
+                                        <span class="">7</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="instant-confirmation" type="checkbox" value="" id="instant-confirmation">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="instant-confirmation">Trending</label>
+                                        <span class="">21</span>
+                                    </div>
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="instant-confirmation" type="checkbox" value="" id="instant-confirmation">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="instant-confirmation">Group Tour</label>
+                                        <span class="">21</span>
+                                    </div>
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="instant-confirmation" type="checkbox" value="" id="instant-confirmation">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="instant-confirmation">Multi Stays</label>
+                                        <span class="">21</span>
+                                    </div>
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="instant-confirmation" type="checkbox" value="" id="instant-confirmation">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="instant-confirmation">Bus Package</label>
+                                        <span class="">21</span>
+                                    </div>
+
+
+                                    <span class="readmore" data-more="See More 13" data-less="See Less"></span>
+                                </div>
+                            </div>
+                            <hr class="my-2 mx-3 ">
+
+                            <!--  price range -->
+                            <div class="price-range mt-3 px-3" style="margin-bottom: 34px;">
+                                <h5 class="mb-2 ">Fare (US$)</h5>
+                                <div class="price-input-container mt-3 "> 
+                                    <div class="price-input d-flex"> 
+                                        <div class="price-field me-3"> 
+                                            <label class="form-label">Min</label> 
+                                            <input type="number" class="min-input" value="10"> 
+                                        </div> 
+                                        <div class="price-field"> 
+                                            <label class="form-label">Max</label> 
+                                            <input type="number" class="max-input" value="8500"> 
+                                        </div> 
                                     </div> 
-                                    <div class="price-field"> 
-                                        <label class="form-label">Max</label> 
-                                        <input type="number" class="max-input" value="8500"> 
+                                    <div class="slider-container mt-1 "> 
+                                        <div class="price-slider "> </div> 
                                     </div> 
                                 </div> 
-                                <div class="slider-container mt-1 "> 
-                                    <div class="price-slider "> </div> 
-                                </div> 
+
+                                <!-- Slider -->
+                                <div class="range-input "> 
+                                    <input type="range" class="min-range" min="0" max="10000" value="10" step="1"> 
+                                    <input type="range" class="max-range" min="0" max="10000" value="8500" step="1"> 
+                                </div>
                             </div> 
+                            <!-- <hr class="my-2 mx-3 mt-3"> -->
 
-                            <!-- Slider -->
-                            <div class="range-input "> 
-                                <input type="range" class="min-range" min="0" max="10000" value="10" step="1"> 
-                                <input type="range" class="max-range" min="0" max="10000" value="8500" step="1"> 
+                            <!-- Duration   -->
+                            <div class="filter-box mt-3 px-3">
+                                <h5 class="mb-2">Duration</h5>
+                                <div class="filter-items">
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="pool" type="checkbox" value="" id="pool">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="pool">1 Night</label>
+                                        <span class="">10</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Fitness" type="checkbox" value="" id="Fitness">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Fitness">2 Nights</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="desk" type="checkbox" value="" id="desk">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="desk">3 Nights</label>
+                                        <span class="">16</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="security" type="checkbox" value="" id="security">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="security">3-7 Nights</label>
+                                        <span class="">7</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="security" type="checkbox" value="" id="security">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="security">7-10 Nights</label>
+                                        <span class="">7</span>
+                                    </div>
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="security" type="checkbox" value="" id="security">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="security">10-15 Nights</label>
+                                        <span class="">7</span>
+                                    </div>
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="security" type="checkbox" value="" id="security">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="security">> 15 Nights</label>
+                                        <span class="">7</span>
+                                    </div>
+
+                                    <span class="readmore" data-more="See More 7" data-less="See Less"></span>
+                                </div>
                             </div>
-                        </div> 
-                        <!-- <hr class="my-2 mx-3 mt-3"> -->
+                            <hr class="my-2 mx-3 ">
 
-                        <!-- Duration   -->
-                        <div class="filter-box mt-3 px-3">
-                            <h5 class="mb-2">Duration</h5>
-                            <div class="filter-items">
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="pool" type="checkbox" value="" id="pool">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="pool">1 Night</label>
-                                    <span class="">10</span>
-                                </div>
+                            <!-- Travell By  -->
+                            <div class="filter-box mt-3 px-3">
+                                <h5 class="mb-2">Travell By</h5>
+                                <div class="filter-items">
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays">By Air</label>
+                                        <span class="">10</span>
+                                    </div>
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">By Bus</label>
+                                        <span class="">11</span>
+                                    </div>
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">By Train</label>
+                                        <span class="">11</span>
+                                    </div>
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">By Launch</label>
+                                        <span class="">11</span>
+                                    </div>
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">No Transport</label>
+                                        <span class="">11</span>
+                                    </div>
 
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="Fitness" type="checkbox" value="" id="Fitness">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Fitness">2 Nights</label>
-                                    <span class="">11</span>
+                                    <span class="readmore" data-more="See More 7" data-less="See Less"></span>
                                 </div>
-
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="desk" type="checkbox" value="" id="desk">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="desk">3 Nights</label>
-                                    <span class="">16</span>
-                                </div>
-
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="security" type="checkbox" value="" id="security">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="security">3-7 Nights</label>
-                                    <span class="">7</span>
-                                </div>
-
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="security" type="checkbox" value="" id="security">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="security">7-10 Nights</label>
-                                    <span class="">7</span>
-                                </div>
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="security" type="checkbox" value="" id="security">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="security">10-15 Nights</label>
-                                    <span class="">7</span>
-                                </div>
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="security" type="checkbox" value="" id="security">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="security">> 15 Nights</label>
-                                    <span class="">7</span>
-                                </div>
-
-                                <span class="readmore" data-more="See More 7" data-less="See Less"></span>
                             </div>
+                            <hr class="my-2 mx-3 ">
+
+                            <!-- hotel Types  -->
+                            <div class="filter-box mt-3 px-3">
+                                <h5 class="mb-2">Hotel Rating</h5>
+                                <div class="filter-items">
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays"><i class="fa-solid fa-star me-2"></i> 1 Star</label>
+                                        <span class="">10</span>
+                                    </div>
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays"><i class="fa-solid fa-star me-2"></i> 2 Star</label>
+                                        <span class="">10</span>
+                                    </div>
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays"><i class="fa-solid fa-star me-2"></i> 3 Star</label>
+                                        <span class="">10</span>
+                                    </div>
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays"><i class="fa-solid fa-star me-2"></i> 4 Star</label>
+                                        <span class="">10</span>
+                                    </div>
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays"><i class="fa-solid fa-star me-2"></i> 5 Star</label>
+                                        <span class="">10</span>
+                                    </div>
+
+                                    <span class="readmore" data-more="See More 7" data-less="See Less"></span>
+                                </div>
+                            </div>
+                            <hr class="my-2 mx-3 ">
+
+                            <!-- Themes  -->
+                            <div class="filter-box mt-3 px-3">
+                                <h5 class="mb-2">Themes</h5>
+                                <div class="filter-items">
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays">Adventure</label>
+                                        <span class="">10</span>
+                                    </div>
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays">Wildlife</label>
+                                        <span class="">10</span>
+                                    </div>
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays">Culture</label>
+                                        <span class="">10</span>
+                                    </div>
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays">Wildlife</label>
+                                        <span class="">10</span>
+                                    </div>
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays">Honeymoon</label>
+                                        <span class="">10</span>
+                                    </div>
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays">Pilgremase</label>
+                                        <span class="">10</span>
+                                    </div>
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays">Ayurveda</label>
+                                        <span class="">10</span>
+                                    </div>
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays">Leisure</label>
+                                        <span class="">10</span>
+                                    </div>
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays">Offbeat</label>
+                                        <span class="">10</span>
+                                    </div>
+
+                                    <span class="readmore" data-more="See More 7" data-less="See Less"></span>
+                                </div>
+                            </div>
+                            <hr class="my-2 mx-3 ">
+
+                            <!-- Pkg. Included  -->
+                            <div class="filter-box mt-3 px-3">
+                                <h5 class="mb-2"> Pkg. Included</h5>
+                                <div class="filter-items">
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays">Round Flights</label>
+                                        <span class="">10</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Airport Transfers</label>
+                                        <span class="">11</span>
+                                    </div>
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Meals</label>
+                                        <span class="">11</span>
+                                    </div>
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Candle Light Dinner</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="wifi" type="checkbox" value="" id="wifi">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="wifi">Photography session</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="wifi" type="checkbox" value="" id="wifi">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="wifi">Night Tour</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <span class="readmore" data-more="See More 7" data-less="See Less"></span>
+                                </div>
+                            </div>
+                            <hr class="my-2 mx-3 ">
+
+
+                            <!-- Tour value  -->
+                            <div class="filter-box mt-3 px-3">
+                                <h5 class="mb-2"> Tour Types</h5>
+                                <div class="filter-items">
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays">Standard</label>
+                                        <span class="">10</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Classic</label>
+                                        <span class="">11</span>
+                                    </div>
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Premium</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <span class="readmore" data-more="See More 7" data-less="See Less"></span>
+                                </div>
+                            </div>
+
+
                         </div>
-                        <hr class="my-2 mx-3 ">
-
-                        <!-- Travell By  -->
-                        <div class="filter-box mt-3 px-3">
-                            <h5 class="mb-2">Travell By</h5>
-                            <div class="filter-items">
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays">By Air</label>
-                                    <span class="">10</span>
-                                </div>
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">By Bus</label>
-                                    <span class="">11</span>
-                                </div>
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">By Train</label>
-                                    <span class="">11</span>
-                                </div>
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">By Launch</label>
-                                    <span class="">11</span>
-                                </div>
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">No Transport</label>
-                                    <span class="">11</span>
-                                </div>
-
-                                <span class="readmore" data-more="See More 7" data-less="See Less"></span>
-                            </div>
-                        </div>
-                        <hr class="my-2 mx-3 ">
-
-                        <!-- hotel Types  -->
-                        <div class="filter-box mt-3 px-3">
-                            <h5 class="mb-2">Hotel Rating</h5>
-                            <div class="filter-items">
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays"><i class="fa-solid fa-star me-2"></i> 1 Star</label>
-                                    <span class="">10</span>
-                                </div>
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays"><i class="fa-solid fa-star me-2"></i> 2 Star</label>
-                                    <span class="">10</span>
-                                </div>
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays"><i class="fa-solid fa-star me-2"></i> 3 Star</label>
-                                    <span class="">10</span>
-                                </div>
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays"><i class="fa-solid fa-star me-2"></i> 4 Star</label>
-                                    <span class="">10</span>
-                                </div>
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays"><i class="fa-solid fa-star me-2"></i> 5 Star</label>
-                                    <span class="">10</span>
-                                </div>
-
-                                <span class="readmore" data-more="See More 7" data-less="See Less"></span>
-                            </div>
-                        </div>
-                        <hr class="my-2 mx-3 ">
-
-                        <!-- Themes  -->
-                        <div class="filter-box mt-3 px-3">
-                            <h5 class="mb-2">Themes</h5>
-                            <div class="filter-items">
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays">Adventure</label>
-                                    <span class="">10</span>
-                                </div>
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays">Wildlife</label>
-                                    <span class="">10</span>
-                                </div>
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays">Culture</label>
-                                    <span class="">10</span>
-                                </div>
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays">Wildlife</label>
-                                    <span class="">10</span>
-                                </div>
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays">Honeymoon</label>
-                                    <span class="">10</span>
-                                </div>
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays">Pilgremase</label>
-                                    <span class="">10</span>
-                                </div>
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays">Ayurveda</label>
-                                    <span class="">10</span>
-                                </div>
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays">Leisure</label>
-                                    <span class="">10</span>
-                                </div>
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays">Offbeat</label>
-                                    <span class="">10</span>
-                                </div>
-
-                                <span class="readmore" data-more="See More 7" data-less="See Less"></span>
-                            </div>
-                        </div>
-                        <hr class="my-2 mx-3 ">
-
-                        <!-- Pkg. Included  -->
-                        <div class="filter-box mt-3 px-3">
-                            <h5 class="mb-2"> Pkg. Included</h5>
-                            <div class="filter-items">
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays">Round Flights</label>
-                                    <span class="">10</span>
-                                </div>
-
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Airport Transfers</label>
-                                    <span class="">11</span>
-                                </div>
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Meals</label>
-                                    <span class="">11</span>
-                                </div>
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Candle Light Dinner</label>
-                                    <span class="">11</span>
-                                </div>
-
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="wifi" type="checkbox" value="" id="wifi">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="wifi">Photography session</label>
-                                    <span class="">11</span>
-                                </div>
-
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="wifi" type="checkbox" value="" id="wifi">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="wifi">Night Tour</label>
-                                    <span class="">11</span>
-                                </div>
-
-                                <span class="readmore" data-more="See More 7" data-less="See Less"></span>
-                            </div>
-                        </div>
-                        <hr class="my-2 mx-3 ">
-
-
-                        <!-- Tour value  -->
-                        <div class="filter-box mt-3 px-3">
-                            <h5 class="mb-2"> Tour Types</h5>
-                            <div class="filter-items">
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="holidays" type="checkbox" value="" id="holidays">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="holidays">Standard</label>
-                                    <span class="">10</span>
-                                </div>
-
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Classic</label>
-                                    <span class="">11</span>
-                                </div>
-                                <div class="form-check d-flex">
-                                    <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
-                                    <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Premium</label>
-                                    <span class="">11</span>
-                                </div>
-
-                                <span class="readmore" data-more="See More 7" data-less="See Less"></span>
-                            </div>
-                        </div>
-
-
+                        
                     </div>
-                    
-                </div>
-                <!--holidays filter left side col end  -->
+                    <!--holidays filter left side col end  -->
 
-                <!-- listed holidayss right side col start  -->
-                <div class="col-9 ">
-                    <div class="list-wrap">
+                    <!-- listed holidayss right side col start  -->
+                    <div class="col-9 ">
+                        <div class="list-wrap">
 
-                        <!-- filter by & search qty  -->
-                        <div class="d-flex justify-content-between ">
-                            <h5 class="mt-2 pt-1"> 24 holidayses Match! </h5>
-                            <select name="filter-by" class="filter-by py-2 px-3 rounded" id="" style="font-size: 14px; ">
-                                <option value="1" selected>Popularity</option>
-                                <option value="2">Top Rated</option>
-                                <option value="3"> Price Low</option>
-                                <option value="4"> Price High</option>
-                            </select>
-                        </div>
-
-                        <!-- holidays list card start  -->
-                        <div class="card-list-wrap mt-3">
-                            <div class="card-wrapper ">
-
-                                <div class="card border-0 shadow-sm position-relative">
-                                    <a href="#"><img src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/A.jpg" title="Click for More Details" class="card-img-top" alt="..."></a>
-                                    
-                                    <span class="tag-overlay package-type text-capitalize">Honeymoon</span>
-
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between">
-                                            <!-- max 26 charater then........ and show full name on hover -->
-                                            <a href="#"><h5 class="card-title m-0 text-capitalize" title="Honeymoon Luxaly Holiday for you!">Honeymoon Luxaly Holiday...</h5></a>
-                                            <div><span class="tags"> 4N/5D </span></div>
-                                        </div>
-                                        <span class="mt-2 d-block">1N Cox's Bazar | 2N Sajek | 1N Rangamati</span>
-                                        <hr >
-
-                                        <ul class="row row-cols-1 row-cols-md-2">
-                                            <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Round Trip flights</li>
-                                            <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Airport Transfers</li>
-                                            <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>3 Star Hotel </li>
-                                            <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>selected meals </li>
-                                            <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>4 Activities </li>
-                                        </ul>
-
-                                        <div>
-                                            <h6>Facilities</h6>
-                                            <ul class="row row-cols-1 row-cols-md-2">
-                                                <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Dolphin Trip</li>
-                                                <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Private Transfers</li>
-                                                <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Water Sports</li>
-                                                <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Photography session</li>
-                                                <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Free Dinner</li>
-                                            </ul>
-                                        </div>
-
-                                        <a href="#"><span class=" package-seller text-capitalize">Seller : <strong class="ms-1">MakeMyTrip</strong> <i class="fa-solid fa-arrow-right-long ms-1"></i> </span></a>
-                                        
-                                        <a href="#" class="p-3 mt-3 d-block rounded" style="background-color: var(--bg-color);">
-                                            <div class="row" title="Click for Booking!">
-                                                <span class="col">From <strong class="text-decoration-line-through text-danger">US$196.00</strong> Save <strong>US$24.00</strong> for packages with flight!</span>
-                                                <div class="col text-end">
-                                                    <h5 class="m-0">US$86.00</h5>
-                                                    <span>Total Price: US$172.00</span>
-                                                </div>
-                                            </div>
-                                        </a>
-
-                                    </div>
-                                </div>
-
-                                <div class="card border-0 shadow-sm position-relative">
-                                    <a href="#"><img src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/A.jpg" title="Click for More Details" class="card-img-top" alt="..."></a>
-                                    
-                                    <span class="tag-overlay package-type text-capitalize">Honeymoon</span>
-
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between">
-                                            <!-- max 26 charater then........ and show full name on hover -->
-                                            <a href="#"><h5 class="card-title m-0 text-capitalize" title="Honeymoon Luxaly Holiday for you!">Honeymoon Luxaly Holiday...</h5></a>
-                                            <div><span class="tags"> 4N/5D </span></div>
-                                        </div>
-                                        <span class="mt-2 d-block">1N Cox's Bazar | 2N Sajek | 1N Rangamati</span>
-                                        <hr >
-
-                                        <ul class="row row-cols-1 row-cols-md-2">
-                                            <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Round Trip flights</li>
-                                            <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Airport Transfers</li>
-                                            <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>3 Star Hotel </li>
-                                            <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>selected meals </li>
-                                            <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>4 Activities </li>
-                                        </ul>
-
-                                        <div>
-                                            <h6>Facilities</h6>
-                                            <ul class="row row-cols-1 row-cols-md-2">
-                                                <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Dolphin Trip</li>
-                                                <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Private Transfers</li>
-                                                <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Water Sports</li>
-                                                <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Photography session</li>
-                                                <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Free Dinner</li>
-                                            </ul>
-                                        </div>
-
-                                        <a href="#"><span class=" package-seller text-capitalize">Seller : <strong class="ms-1">MakeMyTrip</strong> <i class="fa-solid fa-arrow-right-long ms-1"></i> </span></a>
-                                        
-                                        <a href="#" class="p-3 mt-3 d-block rounded" style="background-color: var(--bg-color);">
-                                            <div class="row" title="Click for Booking!">
-                                                <span class="col">From <strong class="text-decoration-line-through text-danger">US$196.00</strong> Save <strong>US$24.00</strong> for packages with flight!</span>
-                                                <div class="col text-end">
-                                                    <h5 class="m-0">US$86.00</h5>
-                                                    <span>Total Price: US$172.00</span>
-                                                </div>
-                                            </div>
-                                        </a>
-
-                                    </div>
-                                </div>
-
-                                <div class="card border-0 shadow-sm position-relative">
-                                    <a href="#"><img src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/A.jpg" title="Click for More Details" class="card-img-top" alt="..."></a>
-                                    
-                                    <span class="tag-overlay package-type text-capitalize">Honeymoon</span>
-
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between">
-                                            <!-- max 26 charater then........ and show full name on hover -->
-                                            <a href="#"><h5 class="card-title m-0 text-capitalize" title="Honeymoon Luxaly Holiday for you!">Honeymoon Luxaly Holiday...</h5></a>
-                                            <div><span class="tags"> 4N/5D </span></div>
-                                        </div>
-                                        <span class="mt-2 d-block">1N Cox's Bazar | 2N Sajek | 1N Rangamati</span>
-                                        <hr >
-
-                                        <ul class="row row-cols-1 row-cols-md-2">
-                                            <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Round Trip flights</li>
-                                            <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Airport Transfers</li>
-                                            <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>3 Star Hotel </li>
-                                            <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>selected meals </li>
-                                            <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>4 Activities </li>
-                                        </ul>
-
-                                        <div>
-                                            <h6>Facilities</h6>
-                                            <ul class="row row-cols-1 row-cols-md-2">
-                                                <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Dolphin Trip</li>
-                                                <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Private Transfers</li>
-                                                <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Water Sports</li>
-                                                <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Photography session</li>
-                                                <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Free Dinner</li>
-                                            </ul>
-                                        </div>
-
-                                        <a href="#"><span class=" package-seller text-capitalize">Seller : <strong class="ms-1">MakeMyTrip</strong> <i class="fa-solid fa-arrow-right-long ms-1"></i> </span></a>
-                                        
-                                        <a href="#" class="p-3 mt-3 d-block rounded" style="background-color: var(--bg-color);">
-                                            <div class="row" title="Click for Booking!">
-                                                <span class="col">From <strong class="text-decoration-line-through text-danger">US$196.00</strong> Save <strong>US$24.00</strong> for packages with flight!</span>
-                                                <div class="col text-end">
-                                                    <h5 class="m-0">US$86.00</h5>
-                                                    <span>Total Price: US$172.00</span>
-                                                </div>
-                                            </div>
-                                        </a>
-
-                                    </div>
-                                </div>
-
-                                <div class="card border-0 shadow-sm position-relative">
-                                    <a href="#"><img src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/A.jpg" title="Click for More Details" class="card-img-top" alt="..."></a>
-                                    
-                                    <span class="tag-overlay package-type text-capitalize">Honeymoon</span>
-
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between">
-                                            <!-- max 26 charater then........ and show full name on hover -->
-                                            <a href="#"><h5 class="card-title m-0 text-capitalize" title="Honeymoon Luxaly Holiday for you!">Honeymoon Luxaly Holiday...</h5></a>
-                                            <div><span class="tags"> 4N/5D </span></div>
-                                        </div>
-                                        <span class="mt-2 d-block">1N Cox's Bazar | 2N Sajek | 1N Rangamati</span>
-                                        <hr >
-
-                                        <ul class="row row-cols-1 row-cols-md-2">
-                                            <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Round Trip flights</li>
-                                            <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Airport Transfers</li>
-                                            <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>3 Star Hotel </li>
-                                            <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>selected meals </li>
-                                            <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>4 Activities </li>
-                                        </ul>
-
-                                        <div>
-                                            <h6>Facilities</h6>
-                                            <ul class="row row-cols-1 row-cols-md-2">
-                                                <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Dolphin Trip</li>
-                                                <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Private Transfers</li>
-                                                <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Water Sports</li>
-                                                <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Photography session</li>
-                                                <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Free Dinner</li>
-                                            </ul>
-                                        </div>
-
-                                        <a href="#"><span class=" package-seller text-capitalize">Seller : <strong class="ms-1">MakeMyTrip</strong> <i class="fa-solid fa-arrow-right-long ms-1"></i> </span></a>
-                                        
-                                        <a href="#" class="p-3 mt-3 d-block rounded" style="background-color: var(--bg-color);">
-                                            <div class="row" title="Click for Booking!">
-                                                <span class="col">From <strong class="text-decoration-line-through text-danger">US$196.00</strong> Save <strong>US$24.00</strong> for packages with flight!</span>
-                                                <div class="col text-end">
-                                                    <h5 class="m-0">US$86.00</h5>
-                                                    <span>Total Price: US$172.00</span>
-                                                </div>
-                                            </div>
-                                        </a>
-
-                                    </div>
-                                </div>
-
-                              
+                            <!-- filter by & search qty  -->
+                            <div class="d-flex justify-content-between ">
+                                <h5 class="mt-2 pt-1"> 24 holidayses Match! </h5>
+                                <select name="filter-by" class="filter-by py-2 px-3 rounded" id="" style="font-size: 14px; ">
+                                    <option value="1" selected>Popularity</option>
+                                    <option value="2">Top Rated</option>
+                                    <option value="3"> Price Low</option>
+                                    <option value="4"> Price High</option>
+                                </select>
                             </div>
+
+                            <!-- holidays list card start  -->
+                            <div class="card-list-wrap mt-3">
+                                <div class="card-wrapper ">
+
+                                    <div class="card border-0 shadow-sm position-relative">
+                                        <a href="#"><img src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/A.jpg" title="Click for More Details" class="card-img-top" alt="..."></a>
+                                        
+                                        <span class="tag-overlay package-type text-capitalize">Honeymoon</span>
+
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between">
+                                                <!-- max 26 charater then........ and show full name on hover -->
+                                                <a href="#"><h5 class="card-title m-0 text-capitalize" title="Honeymoon Luxaly Holiday for you!">Honeymoon Luxaly Holiday...</h5></a>
+                                                <div><span class="tags"> 4N/5D </span></div>
+                                            </div>
+                                            <span class="mt-2 d-block">1N Cox's Bazar | 2N Sajek | 1N Rangamati</span>
+                                            <hr >
+
+                                            <ul class="row row-cols-1 row-cols-md-2">
+                                                <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Round Trip flights</li>
+                                                <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Airport Transfers</li>
+                                                <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>3 Star Hotel </li>
+                                                <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>selected meals </li>
+                                                <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>4 Activities </li>
+                                            </ul>
+
+                                            <div>
+                                                <h6>Facilities</h6>
+                                                <ul class="row row-cols-1 row-cols-md-2">
+                                                    <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Dolphin Trip</li>
+                                                    <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Private Transfers</li>
+                                                    <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Water Sports</li>
+                                                    <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Photography session</li>
+                                                    <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Free Dinner</li>
+                                                </ul>
+                                            </div>
+
+                                            <a href="#"><span class=" package-seller text-capitalize">Seller : <strong class="ms-1">MakeMyTrip</strong> <i class="fa-solid fa-arrow-right-long ms-1"></i> </span></a>
+                                            
+                                            <a href="#" class="p-3 mt-3 d-block rounded" style="background-color: var(--bg-color);">
+                                                <div class="row" title="Click for Booking!">
+                                                    <span class="col">From <strong class="text-decoration-line-through text-danger">US$196.00</strong> Save <strong>US$24.00</strong> for packages with flight!</span>
+                                                    <div class="col text-end">
+                                                        <h5 class="m-0">US$86.00</h5>
+                                                        <span>Total Price: US$172.00</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="card border-0 shadow-sm position-relative">
+                                        <a href="#"><img src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/A.jpg" title="Click for More Details" class="card-img-top" alt="..."></a>
+                                        
+                                        <span class="tag-overlay package-type text-capitalize">Honeymoon</span>
+
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between">
+                                                <!-- max 26 charater then........ and show full name on hover -->
+                                                <a href="#"><h5 class="card-title m-0 text-capitalize" title="Honeymoon Luxaly Holiday for you!">Honeymoon Luxaly Holiday...</h5></a>
+                                                <div><span class="tags"> 4N/5D </span></div>
+                                            </div>
+                                            <span class="mt-2 d-block">1N Cox's Bazar | 2N Sajek | 1N Rangamati</span>
+                                            <hr >
+
+                                            <ul class="row row-cols-1 row-cols-md-2">
+                                                <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Round Trip flights</li>
+                                                <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Airport Transfers</li>
+                                                <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>3 Star Hotel </li>
+                                                <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>selected meals </li>
+                                                <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>4 Activities </li>
+                                            </ul>
+
+                                            <div>
+                                                <h6>Facilities</h6>
+                                                <ul class="row row-cols-1 row-cols-md-2">
+                                                    <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Dolphin Trip</li>
+                                                    <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Private Transfers</li>
+                                                    <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Water Sports</li>
+                                                    <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Photography session</li>
+                                                    <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Free Dinner</li>
+                                                </ul>
+                                            </div>
+
+                                            <a href="#"><span class=" package-seller text-capitalize">Seller : <strong class="ms-1">MakeMyTrip</strong> <i class="fa-solid fa-arrow-right-long ms-1"></i> </span></a>
+                                            
+                                            <a href="#" class="p-3 mt-3 d-block rounded" style="background-color: var(--bg-color);">
+                                                <div class="row" title="Click for Booking!">
+                                                    <span class="col">From <strong class="text-decoration-line-through text-danger">US$196.00</strong> Save <strong>US$24.00</strong> for packages with flight!</span>
+                                                    <div class="col text-end">
+                                                        <h5 class="m-0">US$86.00</h5>
+                                                        <span>Total Price: US$172.00</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="card border-0 shadow-sm position-relative">
+                                        <a href="#"><img src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/A.jpg" title="Click for More Details" class="card-img-top" alt="..."></a>
+                                        
+                                        <span class="tag-overlay package-type text-capitalize">Honeymoon</span>
+
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between">
+                                                <!-- max 26 charater then........ and show full name on hover -->
+                                                <a href="#"><h5 class="card-title m-0 text-capitalize" title="Honeymoon Luxaly Holiday for you!">Honeymoon Luxaly Holiday...</h5></a>
+                                                <div><span class="tags"> 4N/5D </span></div>
+                                            </div>
+                                            <span class="mt-2 d-block">1N Cox's Bazar | 2N Sajek | 1N Rangamati</span>
+                                            <hr >
+
+                                            <ul class="row row-cols-1 row-cols-md-2">
+                                                <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Round Trip flights</li>
+                                                <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Airport Transfers</li>
+                                                <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>3 Star Hotel </li>
+                                                <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>selected meals </li>
+                                                <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>4 Activities </li>
+                                            </ul>
+
+                                            <div>
+                                                <h6>Facilities</h6>
+                                                <ul class="row row-cols-1 row-cols-md-2">
+                                                    <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Dolphin Trip</li>
+                                                    <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Private Transfers</li>
+                                                    <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Water Sports</li>
+                                                    <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Photography session</li>
+                                                    <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Free Dinner</li>
+                                                </ul>
+                                            </div>
+
+                                            <a href="#"><span class=" package-seller text-capitalize">Seller : <strong class="ms-1">MakeMyTrip</strong> <i class="fa-solid fa-arrow-right-long ms-1"></i> </span></a>
+                                            
+                                            <a href="#" class="p-3 mt-3 d-block rounded" style="background-color: var(--bg-color);">
+                                                <div class="row" title="Click for Booking!">
+                                                    <span class="col">From <strong class="text-decoration-line-through text-danger">US$196.00</strong> Save <strong>US$24.00</strong> for packages with flight!</span>
+                                                    <div class="col text-end">
+                                                        <h5 class="m-0">US$86.00</h5>
+                                                        <span>Total Price: US$172.00</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="card border-0 shadow-sm position-relative">
+                                        <a href="#"><img src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/A.jpg" title="Click for More Details" class="card-img-top" alt="..."></a>
+                                        
+                                        <span class="tag-overlay package-type text-capitalize">Honeymoon</span>
+
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between">
+                                                <!-- max 26 charater then........ and show full name on hover -->
+                                                <a href="#"><h5 class="card-title m-0 text-capitalize" title="Honeymoon Luxaly Holiday for you!">Honeymoon Luxaly Holiday...</h5></a>
+                                                <div><span class="tags"> 4N/5D </span></div>
+                                            </div>
+                                            <span class="mt-2 d-block">1N Cox's Bazar | 2N Sajek | 1N Rangamati</span>
+                                            <hr >
+
+                                            <ul class="row row-cols-1 row-cols-md-2">
+                                                <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Round Trip flights</li>
+                                                <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Airport Transfers</li>
+                                                <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>3 Star Hotel </li>
+                                                <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>selected meals </li>
+                                                <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>4 Activities </li>
+                                            </ul>
+
+                                            <div>
+                                                <h6>Facilities</h6>
+                                                <ul class="row row-cols-1 row-cols-md-2">
+                                                    <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Dolphin Trip</li>
+                                                    <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Private Transfers</li>
+                                                    <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Water Sports</li>
+                                                    <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Photography session</li>
+                                                    <li class="col text-capitalize"><i class="fa-solid fa-check me-2"></i>Free Dinner</li>
+                                                </ul>
+                                            </div>
+
+                                            <a href="#"><span class=" package-seller text-capitalize">Seller : <strong class="ms-1">MakeMyTrip</strong> <i class="fa-solid fa-arrow-right-long ms-1"></i> </span></a>
+                                            
+                                            <a href="#" class="p-3 mt-3 d-block rounded" style="background-color: var(--bg-color);">
+                                                <div class="row" title="Click for Booking!">
+                                                    <span class="col">From <strong class="text-decoration-line-through text-danger">US$196.00</strong> Save <strong>US$24.00</strong> for packages with flight!</span>
+                                                    <div class="col text-end">
+                                                        <h5 class="m-0">US$86.00</h5>
+                                                        <span>Total Price: US$172.00</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                        </div>
+                                    </div>
+
+                                
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <!-- holidays list card end -->
                         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        <!-- holidays list card end -->
                     </div>
-                </div>
-                <!-- listed holidayss right site col end  -->
+                    <!-- listed holidayss right site col end  -->
 
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- holidays list end -->
+    </section>
+    <!-- holidays list end -->
 
 
 
 
-<!-- popup start  -->
-<section>
-    <!--holidays info popup  -->
-    <div id="holidaysPopupWrap" class="holidays-popup-wrap">
-        <div class="d-flex justify-content-between rounded p-4 holidays-info-popup">
+    <!-- popup start  -->
+    <section>
+        <!--holidays info popup  -->
+        <div id="holidaysPopupWrap" class="holidays-popup-wrap">
+            <div class="d-flex justify-content-between rounded p-4 holidays-info-popup">
 
-            <div class="px-2">
-                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="boarding-tab" data-bs-toggle="pill" data-bs-target="#boarding" type="button" role="tab" aria-controls="boarding" aria-selected="true">Boarding Points</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="dropping-tab" data-bs-toggle="pill" data-bs-target="#dropping" type="button" role="tab" aria-controls="dropping" aria-selected="false">Dropping Points</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="facilities-tab" data-bs-toggle="pill" data-bs-target="#facilities" type="button" role="tab" aria-controls="facilities" aria-selected="false">Facilities</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="policy-tab" data-bs-toggle="pill" data-bs-target="#policy" type="button" role="tab" aria-controls="policy" aria-selected="false" >Cancellation Policy</button>
-                    </li>
-                </ul>
-                <div class="tab-content" id="pills-tabContent">
+                <div class="px-2">
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="boarding-tab" data-bs-toggle="pill" data-bs-target="#boarding" type="button" role="tab" aria-controls="boarding" aria-selected="true">Boarding Points</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="dropping-tab" data-bs-toggle="pill" data-bs-target="#dropping" type="button" role="tab" aria-controls="dropping" aria-selected="false">Dropping Points</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="facilities-tab" data-bs-toggle="pill" data-bs-target="#facilities" type="button" role="tab" aria-controls="facilities" aria-selected="false">Facilities</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="policy-tab" data-bs-toggle="pill" data-bs-target="#policy" type="button" role="tab" aria-controls="policy" aria-selected="false" >Cancellation Policy</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
 
-                    <div class="tab-pane fade show active" id="boarding" role="tabpanel" aria-labelledby="boarding-tab" tabindex="0">
-                        <ul class="row mt-4 row-cols-1 row-cols-lg-2">
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Gulistan</li>
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Saidabad</li>
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
-                        </ul>
-                    </div>
+                        <div class="tab-pane fade show active" id="boarding" role="tabpanel" aria-labelledby="boarding-tab" tabindex="0">
+                            <ul class="row mt-4 row-cols-1 row-cols-lg-2">
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Gulistan</li>
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Saidabad</li>
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
+                            </ul>
+                        </div>
 
-                    <div class="tab-pane fade" id="dropping" role="tabpanel" aria-labelledby="dropping-tab" tabindex="0">
-                        <ul class="row mt-4 row-cols-1 row-cols-lg-2">
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Cox's Bazar</li>
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Cox's Bazar</li>
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Chottagram</li>
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Chottagram</li>
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Kolatoli</li>
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Kolatoli</li>
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Kolatoli</li>
-                        </ul>
-                    </div>
+                        <div class="tab-pane fade" id="dropping" role="tabpanel" aria-labelledby="dropping-tab" tabindex="0">
+                            <ul class="row mt-4 row-cols-1 row-cols-lg-2">
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Cox's Bazar</li>
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Cox's Bazar</li>
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Chottagram</li>
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Chottagram</li>
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Kolatoli</li>
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Kolatoli</li>
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Kolatoli</li>
+                            </ul>
+                        </div>
 
-                    <div class="tab-pane fade" id="facilities" role="tabpanel" aria-labelledby="facilities-tab" tabindex="0">
-                        <ul class="row mt-4 row-cols-1 row-cols-lg-2">
-                            <li class="col item"><i class="fa-regular fa-square-check me-2"></i>Wifi</li>
-                            <li class="col item"><i class="fa-regular fa-square-check me-2"></i>Water</li>
-                            <li class="col item"><i class="fa-regular fa-square-check me-2"></i>Blanket</li>
-                        </ul>
-                    </div>
+                        <div class="tab-pane fade" id="facilities" role="tabpanel" aria-labelledby="facilities-tab" tabindex="0">
+                            <ul class="row mt-4 row-cols-1 row-cols-lg-2">
+                                <li class="col item"><i class="fa-regular fa-square-check me-2"></i>Wifi</li>
+                                <li class="col item"><i class="fa-regular fa-square-check me-2"></i>Water</li>
+                                <li class="col item"><i class="fa-regular fa-square-check me-2"></i>Blanket</li>
+                            </ul>
+                        </div>
 
-                    <div class="tab-pane fade" id="policy" role="tabpanel" aria-labelledby="policy-tab" tabindex="0">
-                        <div class="overflow-y-auto mt-4 policy-body" >
-                            <span class="d-block policy-title">Cancellation Process:</span>
-                            <div class="policy-text mt-2">
-                                First, you have to go to the ticket history option. You need to add your phone number/PNR/transaction ID to search for your ticket.
-                                Click at the cancellation option. <br><br>
-                                Your request will be submitted to our team.
-                                Your money will be refunded with following our refund & cancellation policy.
+                        <div class="tab-pane fade" id="policy" role="tabpanel" aria-labelledby="policy-tab" tabindex="0">
+                            <div class="overflow-y-auto mt-4 policy-body" >
+                                <span class="d-block policy-title">Cancellation Process:</span>
+                                <div class="policy-text mt-2">
+                                    First, you have to go to the ticket history option. You need to add your phone number/PNR/transaction ID to search for your ticket.
+                                    Click at the cancellation option. <br><br>
+                                    Your request will be submitted to our team.
+                                    Your money will be refunded with following our refund & cancellation policy.
+                                </div>
+
+                                <span class="d-block policy-title mt-3">Cancellation Policies</span>
+                                <div class="policy-text mt-2">
+                                    Auto cancellation will happen if the customer fails to report at the reporting station 15 minutes before the holidays arrives. <br>
+                                    If the customer fails to pay the full amount that mentioned in the screen will not get the activated tickets. 
+
+                                    <br><br>
+                                    To be eligible for refund, customers need to cancel the ticket from ‘Ticket History’ a day before(Excluding 12:00 AM to 07:00 AM) the journey time. And must report the cancellation to the support center (i.e Call 89xxxxxxxx or email to info@boxiew.com).
+                                    <br><br>
+                                    Only during Eid time, customers are eligible for refund ONLY if the operator cancels the trip and cannot provide an alternative arrangement. (Note: Terms and conditions of refund policy might update or change from time to time without any notice)
+                                    <br><br>
+                                    For mobile payments, it is the responsibility of the customer to input transaction ID (if applicable), PIN, OTP properly within time to confirm his ticket by himself.
+                                    <br><br>
+                                    Boxiew.com sometimes does the verification for the customer as a courtesy, but it is not Boxiew’s responsibility or service promise.
+                                    <br><br>
+                                    For mobile payments, customers must complete payment and also verify transactions.
+                                    During Eid sales month, Jatri.co will not do any verification on behalf of the customers.
+                                    <br><br>
+                                    If the customer faces any hassle at the counter after purchasing tickets from boxiew.com, then the user has to give the complaint to our customer service or give an email to info@boxiew.com within 3 days(72 hours) from the departure time.
+                                </div>
+                                <span class="d-block policy-title mt-3 text-center">~ Thank You! ~</span>
+
                             </div>
-
-                            <span class="d-block policy-title mt-3">Cancellation Policies</span>
-                            <div class="policy-text mt-2">
-                                Auto cancellation will happen if the customer fails to report at the reporting station 15 minutes before the holidays arrives. <br>
-                                If the customer fails to pay the full amount that mentioned in the screen will not get the activated tickets. 
-
-                                <br><br>
-                                To be eligible for refund, customers need to cancel the ticket from ‘Ticket History’ a day before(Excluding 12:00 AM to 07:00 AM) the journey time. And must report the cancellation to the support center (i.e Call 89xxxxxxxx or email to info@boxiew.com).
-                                <br><br>
-                                Only during Eid time, customers are eligible for refund ONLY if the operator cancels the trip and cannot provide an alternative arrangement. (Note: Terms and conditions of refund policy might update or change from time to time without any notice)
-                                <br><br>
-                                For mobile payments, it is the responsibility of the customer to input transaction ID (if applicable), PIN, OTP properly within time to confirm his ticket by himself.
-                                <br><br>
-                                Boxiew.com sometimes does the verification for the customer as a courtesy, but it is not Boxiew’s responsibility or service promise.
-                                <br><br>
-                                For mobile payments, customers must complete payment and also verify transactions.
-                                During Eid sales month, Jatri.co will not do any verification on behalf of the customers.
-                                <br><br>
-                                If the customer faces any hassle at the counter after purchasing tickets from boxiew.com, then the user has to give the complaint to our customer service or give an email to info@boxiew.com within 3 days(72 hours) from the departure time.
-                            </div>
-                            <span class="d-block policy-title mt-3 text-center">~ Thank You! ~</span>
-
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div>
-                <span onclick="closeholidaysInfo()" role="button" style="font-size: 22px; color: var(--text-color); margin-top: -6px; display: block;"> &#10005; </span>
-            </div>
+                <div>
+                    <span onclick="closeholidaysInfo()" role="button" style="font-size: 22px; color: var(--text-color); margin-top: -6px; display: block;"> &#10005; </span>
+                </div>
 
+            </div>
+            
         </div>
-        
-    </div>
-</section>
-<!-- popup end  -->
+    </section>
+    <!-- popup end  -->
 
     
 </main>
 
 
 
-<!-- @endsection -->
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-
-<!-- @section('script') -->
 
     <!-- filter see more or less js  -->
     <script>
@@ -1327,7 +1302,6 @@
     </script>
 
 
-<!-- @endsection -->
 
 
     
