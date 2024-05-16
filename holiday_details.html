@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Holidays Details</title>
+
+    <!-- root css  -->
+    <style>
+        :root {
+            --primary-color: #7e3ff2;
+            --primary-color-light: #efe5fd;
+            --secondary-color: #FDDB55;
+            --secondary-color-light: #ffe478;
+            --title-color: #1d1d1d;
+            --text-color: #757575;
+            --bg-color: #f6f7fa;
+            --bg-color-deep: #e6e5e5;
+            --light-color: white;
+
+            --box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+            }
+
+            input:focus{
+                outline: none !important;
+                box-shadow: none !important;
+            }
+            a {
+            text-decoration: none;
+            }
+            ul{
+                list-style: none;
+                padding-left: 0px;
+            }
+    </style>
+
+
+
+    <!-- start here  -->
+<!-- @extends('frontend.layouts.master')
+@section('title')
+    <title>holidays</title>
+@endsection
+@section('css') -->
+
+
+<style>
+    .holiday-details-photos .carousel-item img{
+        height: 380px;
+        width: 100%;
+        object-fit: cover;
+    }
+    .holiday-details-photos .img-thum{
+        height: 186px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .holiday-details-all .holiday-details .holiday-nav {
+        background: var(--light-color);
+    }
+    .holiday-details-all .holiday-details .holiday-nav .nav-link {
+        color: var(--title-color);
+        font-weight: 500;
+        padding: 16px;
+    }
+    .holiday-details-all .holiday-details .holiday-nav .nav-item .active{
+        background: none;
+        color: var(--primary-color);
+        border-radius: 0px;
+        border-bottom: 2px solid var(--primary-color);
+    }
+    .holiday-details-all .holiday-details .holiday-nav .share-btn{
+        background: none;
+        color: var(--title-color);
+        border: none;
+    }
+    .holiday-details-all .holiday-details .holiday-nav .share-btn i{
+        color: var(--primary-color);
+        font-size: 14px;
+    }
+
+    /* day plan css  */
+    .holiday-details .day-plan .runway{
+            min-width: 164px;
+            height: 2px;
+            background-color: #DADFE6;
+            position: relative;
+        }
+        .holiday-details .day-plan .runway i{
+            position: absolute;
+            color: #DADFE6;
+            left: 10%;
+            top: -14px;
+        }
+        .holiday-details .day-plan .runway::before{
+            content: " ";
+            width: 6px;
+            height: 6px;
+            position: absolute;
+            background-color: #DADFE6;
+            top: -2px;
+            left: 0;
+        }
+        .holiday-details .day-plan .runway::after{
+            content: " ";
+            width: 6px;
+            height: 6px;
+            position: absolute;
+            background-color: #DADFE6;
+            top: -2px;
+            right: 0;
+        }
+
+</style>
+
+
+
+
+<!-- no uses  -->
+<!--  filter css start  -->
+    <style>
+        
+        .holidays-filter-bg{
+            /* background: #f6f7fa; */
+            background: #fff;
+        }
+        .filter{
+            font-size: 18px;
+        }
+        
+        .reset-btn{
+            color: red;
+            font-size: 14px;
+        }
+        .reset-btn:hover{
+            color: red;
+        }
+        .filter-wrap hr{
+            opacity: 12% !important;
+        }
+        .filter-box {
+            height: 178px;
+            overflow: hidden;
+        }
+        .filter-box h5 {
+            font-size: 14px;
+        }
+        .filter-box label, span {
+            font-size: 13px;
+            margin-top: 3px;
+            color: #1d1d1d;
+            transition: .3s;
+        }
+        .filter-box label:hover {
+            color: var(--primary-color);
+        }
+
+        .filter-box.show {
+            height: auto;
+        }
+
+        .filter-items {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .readmore {
+            position: absolute;
+            width: 100%;
+            top: 130px;
+            left: 0;
+            background: #fff;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        .readmore::before {
+            content: attr(data-more)
+        }
+
+        .filter-box.show .readmore {
+            position: relative;
+            top: auto;
+            display: block;
+        }
+
+        .filter-box.show .readmore::before {
+            content: attr(data-less)
+        }
+
+        input:checked{
+        background-color: var(--primary-color) !important;
+        border:0;
+        }
+
+        /* price-range start*/
+        .price-range h5, .search-property h5{
+            font-size: 14px;
+        }
+        .search-property input{
+            font-size: 13px;
+            border-radius: 5px 0px 0px 5px;
+
+        }
+        .search-property input:focus{
+            border: 1px solid #b794f6;
+        }
+        .search-property .btn{
+            border: 1px solid #ddd;
+            border-radius: 0px 5px 5px 0px;
+            border-left: 0px;
+            transition: .3s;
+            color: #9965f4;
+        }
+        .search-property .btn:hover{
+            border: 1px solid #9965f4;
+        }
+        .price-input-container { 
+            width: 100%; 
+        } 
+
+        .price-input .price-field { 
+            display: flex; 
+            margin-bottom: 22px; 
+        } 
+
+        .price-field label { 
+            margin-right: 10px; 
+            margin-top: 6px; 
+            font-size: 13px;
+            color: #1d1d1d;
+        } 
+
+        .price-field input { 
+            flex: 1; 
+            font-size: 13px;
+            color: #1d1d1d;
+            border-radius: 4px;
+            text-align: center;  
+            border: 1px solid #ddd; 
+            width: 92px;
+            /* background: #e4e4e4;  */
+        } 
+        .price-field input:focus{
+            border: 1px solid #b794f6;
+            outline: none;
+
+        }
+
+        .price-input { 
+            width: 100%; 
+            font-size: 19px; 
+            color: var(--primary-color); 
+        } 
+
+        /* Remove Arrows/Spinners */
+        input::-webkit-outer-spin-button, 
+        input::-webkit-inner-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        } 
+
+        .slider-container { 
+            width: 100%; 
+        } 
+
+        .slider-container { 
+            height: 2px; 
+            position: relative; 
+            background: #e4e4e4; 
+            border-radius: 5px; 
+        } 
+
+        .slider-container .price-slider { 
+            height: 100%; 
+            left: 0%; 
+            right: 15%; 
+            position: absolute; 
+            border-radius: 5px; 
+            background: #9965f4; 
+        } 
+
+        .range-input { 
+            position: relative; 
+        } 
+
+        .range-input input { 
+            position: absolute; 
+            width: 100%; 
+            height: 4px; 
+            background: none; 
+            top: -4px; 
+            pointer-events: none; 
+            cursor: pointer; 
+            -webkit-appearance: none; 
+        } 
+
+        /* Styles for the range thumb in WebKit browsers */
+        input[type="range"]::-webkit-slider-thumb { 
+            height: 16px; 
+            width: 16px; 
+            border-radius: 70%; 
+            background: #f6f7fa; 
+            border: 2px  solid #9965f4;
+            pointer-events: auto; 
+            -webkit-appearance: none; 
+        } 
+        input[type="range"]::-webkit-slider-thumb:hover { 
+            height: 22px; 
+            width: 22px; 
+        } 
+
+        @media screen and (max-width: 768px) { 
+            .main { 
+                width: 80%; 
+                margin-right: 5px; 
+            } 
+
+            .custom-wrapper { 
+                width: 100%; 
+                left: 0; 
+                padding: 0 10px; 
+            } 
+
+            .projtitle { 
+                width: 100%; 
+                position: relative; 
+                right: 26px; 
+            } 
+
+            .price-input { 
+                flex-direction: column; 
+                align-items: center; 
+            } 
+
+            .price-field { 
+                margin-bottom: 10px; 
+            } 
+        }
+        /* price-range end*/
+    </style>
+
+    <!-- holidays list card css  -->
+    <style>
+        .holidays-list .card-wrapper {
+          display: grid;
+          flex-wrap: wrap;
+          align-items: stretch;
+          grid-row-gap: 24px;
+          grid-column-gap: 24px;
+          grid-template-columns: auto auto;
+        }
+
+        .holidays-list .card-wrapper .card{
+            flex: 1 0 auto;
+            transition: .3s;
+        }
+        .holidays-list .card-wrapper .card:hover{
+            box-shadow: var(--box-shadow) !important;
+        }
+        .holidays-list .card-wrapper .card img{
+            object-fit: cover;
+            width: 100%;
+            height: 240px;
+        }
+        .holidays-list .card-wrapper .card .tag-overlay{
+            top: 194px;
+            background-color: #ffffff95;
+            color: var(--title-color);
+            padding: 5px 16px 7px 16px;
+            border-radius: 4px;
+            position: absolute;
+        }
+        .holidays-list .card-wrapper .card .package-type{
+            left: 16px;
+        }
+
+        .holidays-list .card-wrapper .card .tags{
+            background-color: #7e3ff218;
+            padding: 1px 6px 3px 6px ;
+            border-radius: 3px;
+        }
+        .holidays-list .card-wrapper .card h5{
+            color: var(--title-color);
+            text-decoration: none;
+            transition: .3s;
+        }
+        .holidays-list .card-wrapper .card .card-title:hover{
+            text-decoration: underline;
+        }
+        .holidays-list .card-wrapper .card li, .card-wrapper .card h6{
+            font-size: 14px;
+        }
+        .holidays-list .card-wrapper .card li i{
+            color: var(--primary-color);
+        }
+        .holidays-list .card-wrapper .card .package-seller i{
+            color: #7e3ff275;
+        }
+        .holidays-list .card-wrapper .card strong{
+            font-weight: 600;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+        @media (max-width: 992px) {
+          .card-wrapper {
+          grid-template-columns: auto auto;
+        }
+        }
+        @media (max-width: 1200px) {
+        
+        }
+        @media (max-width: 576px) {
+          .card-wrapper {
+          grid-template-columns: auto;
+        }
+        }
+    </style>
+
+
+
+    <!-- holidays info popup css  -->
+    <style>
+        .holidays-popup-wrap{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+            visibility: hidden;
+            background: #1d1d1d70;
+        }
+        .overlay{
+            visibility: visible;
+        }
+        .holidays-info-popup{
+            width: 740px;
+            height: 640px;
+            background: var(--light-color);
+            color: var(--title-color);
+            top: 53%;
+            left: 50%;
+            transform: translate(-53%, -50%);
+            position: absolute;
+            cursor: pointer;
+            /* border: 1px solid var(--text-color); */
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+        }
+        .holidays-info-popup .nav-item {
+            border-bottom: 1px dotted #75757560;
+        }
+        .holidays-info-popup .nav-link {
+            color: var(--title-color);
+            font-weight: 500;
+        }
+        .holidays-info-popup .nav-item .active{
+            background: #fff;
+            border-bottom: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 0px;
+        }
+        .holidays-info-popup .tab-content .item{
+            font-size: 15px;
+            color: var(--title-color);
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .holidays-info-popup .tab-content .item i{
+            color: var(--primary-color);
+        }
+        .holidays-info-popup .tab-content .policy-body{
+            height: 520px;
+        }
+        .holidays-info-popup .tab-content .policy-title{
+            color: var(--title-color);
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .holidays-info-popup .tab-content .policy-text{
+            color: var(--title-color);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 24px;
+        }
+    </style>
+
+<!-- @endsection -->
+
+<!-- end here  -->
+    
+</head>
+<body>
+
+
+
+<!-- @section('content') -->
+
+<main style="background: var(--bg-color);">
+
+    <!-- holidays photo  -->
+    <section class="holiday-details-photos pt-5">
+        <div class="container">
+            <div class="row g-2">
+
+                <div class="col-7">
+                    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active" data-bs-interval="3000">
+                            <!-- images recomended size 746*380px  -->
+                            <img src="https://imgcld.yatra.com/ytimages/image/upload/t_holidays_responsivedetailslargeimg/v1578300574/Hotel/Leh/00177115/17303561_1_IVXjrOhUr8Y26uUZ4N4Fcw-1024x571_0LjOAb.jpg" class="d-block w-100 rounded" alt="...">
+                          </div>
+                          <div class="carousel-item" data-bs-interval="3000">
+                            <img src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/Vivanta-by-Taj-Goa-2.jpg?crop=225:145&downsize=225:145" class="d-block w-100 rounded" alt="...">
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                </div>
+
+                <div class="col-5">
+                    <div class="row g-2 row-cols-2">
+                        <div class="col"><img class="img-thum rounded" src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/Vivanta-by-Taj-Goa-2.jpg?crop=225:145&downsize=225:145" alt=""></div>
+                        <div class="col"><img class="img-thum rounded" src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/Taj-Exotica-Goa.jpg?crop=225:145&downsize=225:145" alt=""></div>
+                        <div class="col"><img class="img-thum rounded" src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/Taj-Exotica-Goa.jpg?crop=225:145&downsize=225:145" alt=""></div>
+                        <div class="col"><img class="img-thum rounded" src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/Taj-Exotica-Goa.jpg?crop=225:145&downsize=225:145" alt=""></div>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- holiday details all start -->
+    <section class="holiday-details-all">
+        <div class="container">
+            <div class="holiday-details-wrap">
+                <div class="row mt-4">
+
+                    <!-- left side details start  -->
+                    <div class="col-9">
+                        <div class="holiday-details">
+                            <ul class="nav holiday-nav  shadow-sm rounded nav-pills px-3 mb-3" id="pills-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                  <button class="nav-link active" id="pills-itinerary-tab" data-bs-toggle="pill" data-bs-target="#pills-itinerary" type="button" role="tab" aria-controls="pills-itinerary" aria-selected="true">Itinerary</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                  <button class="nav-link" id="pills-summary-tab" data-bs-toggle="pill" data-bs-target="#pills-summary" type="button" role="tab" aria-controls="pills-summary" aria-selected="false">Summary</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                  <button class="nav-link" id="pills-policy-tab" data-bs-toggle="pill" data-bs-target="#pills-policy" type="button" role="tab" aria-controls="pills-policy" aria-selected="false">Policy</button>
+                                </li>
+                                <li class="ms-auto pt-3 ">
+                                    <button class="share-btn "><i class="fa-solid fa-share me-2"></i>Share </button>
+                                </li>
+                              </ul>
+
+                              <div class="tab-content" id="pills-tabContent">
+                                <!-- Itinerary start  -->
+                                <div class="tab-pane fade show active" id="pills-itinerary" role="tabpanel" aria-labelledby="pills-itinerary-tab" tabindex="0">
+                                    <ul class="nav mt-4 details-nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                          <button class="nav-link active" id="pills-dayplan-tab" data-bs-toggle="pill" data-bs-target="#pills-dayplan" type="button" role="tab" aria-controls="pills-dayplan" aria-selected="true">4 Days Plan</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                          <button class="nav-link" id="pills-transport-tab" data-bs-toggle="pill" data-bs-target="#pills-transport" type="button" role="tab" aria-controls="pills-transport" aria-selected="false">2 Flights & 2 Transfer</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="pills-hotels-holiday-tab" data-bs-toggle="pill" data-bs-target="#pills-hotels-holiday" type="button" role="tab" aria-controls="pills-hotels-holiday" aria-selected="false">Hotel</button>
+                                          </li>
+                                    </ul>
+                                      <div class="tab-content" id="pills-tabContent">
+
+                                        <!-- days plan  -->
+                                        <div class="tab-pane fade day-plan  show active" id="pills-dayplan" role="tabpanel" aria-labelledby="pills-dayplan-tab" tabindex="0" >
+                                            <div class="d-flex justify-content-between">
+                                                <h6>Day 01 : Arrival in Cox's Bazar</h6>
+                                                <span class="text-capitalize">Included: 
+                                                    <i class="fa-solid fa-plane-departure mx-1"></i> Flights | 
+                                                    <i class="fa-solid fa-hotel mx-1"></i> Hotel | 
+                                                    <i class="fa-solid fa-car mx-1"></i> Transfer</span>
+                                            </div>
+
+                                            <div>
+                                                <div class="d-flex justify-content-between">
+                                                    <h6 class="text-capitalize "><i class="fa-solid fa-plane-departure me-2"></i>Biman Bangladesh Airline <span>E6-5599</span></h6>
+                                                    
+                                                    <div>
+                                                        <button class="btn" type="submit">Remove</button> | 
+                                                        <button class="btn" type="submit">Change</button>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <div class="d-flex justify-content-between">
+                                                            <div>
+                                                                <h4>11:30</h4>
+                                                                <span class="text-uppercase">18 Jun 2024</span> <br>
+                                                                <span class="text-capitalize">Dhaka</span>
+                                                            </div>
+                                                            <div>
+                                                                <span class="text-center d-block mb-2">1h 15m</span>
+                                                                <div class="runway mx-2 mx-md-3"><i class="fa-solid fa-plane-departure"></i></div>
+                                                                <span class="text-center d-block">Nonstop</span>
+                                                            </div>
+                                                            <div>
+                                                                <h4>12:45</h4>
+                                                                <span class="text-uppercase">18 Jun 2024</span> <br>
+                                                                <span class="text-capitalize">Cox's Bazar</span>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-6">
+                                                        <div>
+                                                            <h6>Baggage</h6>
+                                                            <span><i class="fa-solid fa-suitcase-rolling me-2"></i> Carry-on Baggage: <Strong>1 X 7 KG</Strong></span> <br>
+                                                            <span class=" "><i class="fa-solid fa-cart-flatbed-suitcase me-1"></i>Checked Baggage: <strong>1 X 20 KG</strong></span>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <div>
+                                                    <span>There are more ways to reach your destination     </span>
+                                                    <button class="btn">See Transport Option </button>
+                                                </div>
+                                            </div>
+
+                                            <hr>
+
+                                            <div>
+                                                <div class="d-flex justify-content-between">
+                                                    <h6 class="text-capitalize "><i class="fa-solid fa-car me-2"></i>Airport to Hotel in Cox's Bazar <span> 1 Hour</span></h6>
+                                                    <button class="btn" type="submit">Remove</button> 
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-4"><img src="https://toppng.com/uploads/preview/car-11549451816vveciq8qbi.png" class="img-fluid" alt=""></div>
+                                                    <div class="col-8">
+                                                        Travel comfortably in a private vehicle from <Strong>Cox's Bazar</Strong> Airport/Railway Station to your hotel in Cox's Bazar. 
+                                                        Note: The pick-up timing is subject to your flight/train arrival and shall be communicated to you by the local vendor. There will be non stop-overs allowed during this transfer.
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="d-flex justify-content-between">
+                                                    <h6 class="text-capitalize "><i class="fa-solid fa-hotel me-2"></i>Check-in to Hotel in Cox's Bazar <span> 02:00 PM</span></h6>
+                                                    <button class="btn" type="submit">Change</button> 
+                                                </div>
+
+                                                <div>
+                                                    <div class="card mb-3" >
+                                                        <div class="row g-0">
+                                                          <div class="col-md-4">
+                                                            <img src="https://etimg.etb2bimg.com/photo/96320653.cms" class="img-fluid rounded-start" alt="...">
+                                                          </div>
+                                                          <div class="col-md-8">
+                                                            <div class="card-body">
+                                                              <div class="d-flex justify-content-between">
+                                                                <h6 class="card-title text-capitalize m-0">Hotel relux Cox's Bazar</h6>
+                                                                <span><i class="fa-solid fa-star me-2"></i>4 Star</span>
+                                                              </div>
+                                                              <small>A luxurious hotel in Cox's Bazar</small>
+                                                              <span class="d-block">1.4 km distance from Cox's bazar sea beach</span>
+                                                              <small class="text-body-secondary"><i class="fa-regular fa-calendar-check me-2"></i> Tue, 18 Jun 2024 - Fri, 21 Jun 2024</small>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+
+                                                      <div style="background: var(--bg-color);">
+                                                        <div class="d-flex justify-content-between">
+                                                            <h6 class="text-capitalize p-0 m-0">Delux Room</h6>
+                                                            <button class="btn" type="submit">Change</button> 
+                                                        </div>
+                                                        <small>Meal Plan: Breakfast</small>
+
+                                                        <h6 class="">Room Inclusions</h6>
+
+                                                        <span class="d-block"><i class="fa-solid fa-check me-2"></i>Complimentary Breakfast is available.</span>
+                                                        <span class="d-block"><i class="fa-solid fa-check me-2"></i>Rate is inclusive of breakfast.</span>
+
+
+                                                      </div>
+                                                </div>
+
+
+
+                                            </div>
+
+                                        </div>
+
+                                        <!-- transports start  -->
+                                        <div class="tab-pane fade" id="pills-transport" role="tabpanel" aria-labelledby="pills-transport-tab" tabindex="0">...</div>
+
+                                        <!-- holiday hotels  -->
+                                        <div class="tab-pane fade" id="pills-hotels-holiday" role="tabpanel" aria-labelledby="pills-hotels-holiday-tab" tabindex="0">...</div>
+
+                                      </div>
+                                </div>
+
+                                <!-- summary start  -->
+                                <div class="tab-pane fade" id="pills-summary" role="tabpanel" aria-labelledby="pills-summary-tab" tabindex="0">summ</div>
+
+                                <!-- policy start  -->
+                                <div class="tab-pane fade" id="pills-policy" role="tabpanel" aria-labelledby="pills-policy-tab" tabindex="0">policy</div>
+
+                              </div>
+                        </div>
+
+                    </div>
+                    <!-- left side details end  -->
+
+                    <!-- right side price info start  -->
+                    <div class="col-3">
+
+                    </div>
+                    <!-- right side price info end -->
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- holiday details all end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- popup start  -->
+<section>
+    <!--holidays info popup  -->
+    <div id="holidaysPopupWrap" class="holidays-popup-wrap">
+        <div class="d-flex justify-content-between rounded p-4 holidays-info-popup">
+
+            <div class="px-2">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="boarding-tab" data-bs-toggle="pill" data-bs-target="#boarding" type="button" role="tab" aria-controls="boarding" aria-selected="true">Boarding Points</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="dropping-tab" data-bs-toggle="pill" data-bs-target="#dropping" type="button" role="tab" aria-controls="dropping" aria-selected="false">Dropping Points</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="facilities-tab" data-bs-toggle="pill" data-bs-target="#facilities" type="button" role="tab" aria-controls="facilities" aria-selected="false">Facilities</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="policy-tab" data-bs-toggle="pill" data-bs-target="#policy" type="button" role="tab" aria-controls="policy" aria-selected="false" >Cancellation Policy</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+
+                    <div class="tab-pane fade show active" id="boarding" role="tabpanel" aria-labelledby="boarding-tab" tabindex="0">
+                        <ul class="row mt-4 row-cols-1 row-cols-lg-2">
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Gulistan</li>
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Saidabad</li>
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-pane fade" id="dropping" role="tabpanel" aria-labelledby="dropping-tab" tabindex="0">
+                        <ul class="row mt-4 row-cols-1 row-cols-lg-2">
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Cox's Bazar</li>
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Cox's Bazar</li>
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Chottagram</li>
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Chottagram</li>
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Kolatoli</li>
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Kolatoli</li>
+                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Kolatoli</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-pane fade" id="facilities" role="tabpanel" aria-labelledby="facilities-tab" tabindex="0">
+                        <ul class="row mt-4 row-cols-1 row-cols-lg-2">
+                            <li class="col item"><i class="fa-regular fa-square-check me-2"></i>Wifi</li>
+                            <li class="col item"><i class="fa-regular fa-square-check me-2"></i>Water</li>
+                            <li class="col item"><i class="fa-regular fa-square-check me-2"></i>Blanket</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-pane fade" id="policy" role="tabpanel" aria-labelledby="policy-tab" tabindex="0">
+                        <div class="overflow-y-auto mt-4 policy-body" >
+                            <span class="d-block policy-title">Cancellation Process:</span>
+                            <div class="policy-text mt-2">
+                                First, you have to go to the ticket history option. You need to add your phone number/PNR/transaction ID to search for your ticket.
+                                Click at the cancellation option. <br><br>
+                                Your request will be submitted to our team.
+                                Your money will be refunded with following our refund & cancellation policy.
+                            </div>
+
+                            <span class="d-block policy-title mt-3">Cancellation Policies</span>
+                            <div class="policy-text mt-2">
+                                Auto cancellation will happen if the customer fails to report at the reporting station 15 minutes before the holidays arrives. <br>
+                                If the customer fails to pay the full amount that mentioned in the screen will not get the activated tickets. 
+
+                                <br><br>
+                                To be eligible for refund, customers need to cancel the ticket from ‘Ticket History’ a day before(Excluding 12:00 AM to 07:00 AM) the journey time. And must report the cancellation to the support center (i.e Call 89xxxxxxxx or email to info@boxiew.com).
+                                <br><br>
+                                Only during Eid time, customers are eligible for refund ONLY if the operator cancels the trip and cannot provide an alternative arrangement. (Note: Terms and conditions of refund policy might update or change from time to time without any notice)
+                                <br><br>
+                                For mobile payments, it is the responsibility of the customer to input transaction ID (if applicable), PIN, OTP properly within time to confirm his ticket by himself.
+                                <br><br>
+                                Boxiew.com sometimes does the verification for the customer as a courtesy, but it is not Boxiew’s responsibility or service promise.
+                                <br><br>
+                                For mobile payments, customers must complete payment and also verify transactions.
+                                During Eid sales month, Jatri.co will not do any verification on behalf of the customers.
+                                <br><br>
+                                If the customer faces any hassle at the counter after purchasing tickets from boxiew.com, then the user has to give the complaint to our customer service or give an email to info@boxiew.com within 3 days(72 hours) from the departure time.
+                            </div>
+                            <span class="d-block policy-title mt-3 text-center">~ Thank You! ~</span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <span onclick="closeholidaysInfo()" role="button" style="font-size: 22px; color: var(--text-color); margin-top: -6px; display: block;"> &#10005; </span>
+            </div>
+
+        </div>
+        
+    </div>
+</section>
+<!-- popup end  -->
+
+    
+</main>
+
+
+
+<!-- @endsection -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+<!-- @section('script') -->
+
+    <!-- filter see more or less js  -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.readmore').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    var currentFilterBox = this.closest('.filter-box');
+                    document.querySelectorAll('.filter-box.show').forEach(function(fBox) {
+                        if (fBox !== currentFilterBox) {
+                            fBox.classList.remove('show');
+                        }
+                    });
+                    currentFilterBox.classList.toggle('show');
+                });
+            });
+        });
+    </script>
+
+    <!--filter pirce range js start  -->
+    <script>
+        const rangevalue = document.querySelector(".slider-container .price-slider"); 
+        const rangeInputvalue = document.querySelectorAll(".range-input input"); 
+
+        // Set the price gap 
+        let priceGap = 100; 
+
+        // Adding event listners to price input elements 
+        const priceInputvalue = document.querySelectorAll(".price-input input"); 
+        for (let i = 0; i < priceInputvalue.length; i++) { 
+            priceInputvalue[i].addEventListener("input", e => { 
+
+            // Parse min and max values of the range input 
+            let minp = parseInt(priceInputvalue[0].value); 
+            let maxp = parseInt(priceInputvalue[1].value); 
+            let diff = maxp - minp 
+
+            if (minp < 0) { 
+                alert("minimum price cannot be less than 0"); 
+                priceInputvalue[0].value = 0; 
+                minp = 0; 
+            } 
+
+            // Validate the input values 
+            if (maxp > 10000) { 
+                alert("maximum price cannot be greater than 10000"); 
+                priceInputvalue[1].value = 10000; 
+                maxp = 10000; 
+            } 
+
+            if (minp > maxp - priceGap) { 
+                priceInputvalue[0].value = maxp - priceGap; 
+                minp = maxp - priceGap; 
+
+                if (minp < 0) { 
+                    priceInputvalue[0].value = 0; 
+                    minp = 0; 
+                } 
+            } 
+
+            // Check if the price gap is met 
+            // and max price is within the range 
+            if (diff >= priceGap && maxp <= rangeInputvalue[1].max) { 
+                if (e.target.className === "min-input") { 
+                    rangeInputvalue[0].value = minp; 
+                    let value1 = rangeInputvalue[0].max; 
+                    rangevalue.style.left = `${(minp / value1) * 100}%`; 
+                } 
+                else { 
+                    rangeInputvalue[1].value = maxp; 
+                    let value2 = rangeInputvalue[1].max; 
+                    rangevalue.style.right = 
+                        `${100 - (maxp / value2) * 100}%`; 
+                    } 
+                } 
+            }); 
+
+            // Add event listeners to range input elements 
+            for (let i = 0; i < rangeInputvalue.length; i++) { 
+                rangeInputvalue[i].addEventListener("input", e => { 
+                    let minVal = 
+                        parseInt(rangeInputvalue[0].value); 
+                    let maxVal = 
+                        parseInt(rangeInputvalue[1].value); 
+
+                    let diff = maxVal - minVal 
+                    
+                    // Check if the price gap is exceeded 
+                    if (diff < priceGap) { 
+                    
+                        // Check if the input is the min range input 
+                        if (e.target.className === "min-range") { 
+                            rangeInputvalue[0].value = maxVal - priceGap; 
+                        } 
+                        else { 
+                            rangeInputvalue[1].value = minVal + priceGap; 
+                        } 
+                    } 
+                    else { 
+                    
+                        // Update price inputs and range progress 
+                        priceInputvalue[0].value = minVal; 
+                        priceInputvalue[1].value = maxVal; 
+                        rangevalue.style.left = 
+                            `${(minVal / rangeInputvalue[0].max) * 100}%`; 
+                        rangevalue.style.right = 
+                            `${100 - (maxVal / rangeInputvalue[1].max) * 100}%`; 
+                        } 
+                    }); 
+                } 
+            }
+
+    </script>
+    <!-- pirce range js end -->
+
+
+
+
+
+
+
+
+
+
+
+    <!-- no uses  -->
+   
+
+    <!-- holidays info popup js  -->
+    <script>
+        let holidaysBody = document.querySelector("body"); 
+        let holidaysPopupWrap = document.getElementById('holidaysPopupWrap');
+
+        function showholidaysInfo(){
+            holidaysPopupWrap.classList.add('overlay')
+            holidaysPopupWrap.delay('800')
+            holidaysPopupWrap.fadeIn('500')
+            holidaysBody.style.overflow = "hidden"
+        }
+
+        function closeholidaysInfo(){
+            holidaysPopupWrap.classList.remove('overlay')
+            holidaysPopupWrap.delay('800')
+            holidaysPopupWrap.fadeOut('500')
+            holidaysBody.style.overflow = "auto"
+        }
+
+    </script>
+
+
+<!-- @endsection -->
+
+
+    
+</body>
+</html>
