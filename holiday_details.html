@@ -49,6 +49,12 @@
 
 
 <style>
+    .tags{
+        background: #7e3ff218;
+        margin: 0;
+        border-radius: 3px;
+        padding: 1px 6px 2px 6px;
+    }
     .holiday-details-photos .carousel-item img{
         height: 380px;
         width: 100%;
@@ -85,38 +91,226 @@
     }
 
     /* day plan css  */
+    .holiday-details .tab-pane{
+        background: var(--light-color);
+        padding: 8px;
+        border-radius: 6px;
+    }
+    .holiday-details .itinerary-tab .nav{
+        border-bottom: 1px solid #1d1d1d40;
+    }
+    .holiday-details .itinerary-tab .nav-item .nav-link{
+        color: var(--title-color);
+    }
+    .holiday-details .itinerary-tab .nav-item .active{
+        background: none;
+        color: var(--primary-color);
+        border-bottom: 2px solid var(--primary-color);
+        border-radius: 0px;
+    }
+
+    .holiday-details .day-plan .heading{
+        background: var(--bg-color);
+        padding: 0px;
+    }
+    .holiday-details .day-plan i{
+        color: var(--primary-color);
+    }
+    .holiday-details strong{
+        font-weight: 500;
+    }
+    .holiday-details .day-plan .heading h6{
+        background: #FDDB5570;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+    .holiday-details .day-plan .heading i, .day-plan button{
+        color: var(--primary-color);
+    }
+    .holiday-details .day-plan .btn{
+        padding: 0px 4px;
+    }
+    .holiday-details .day-plan .heading h6, .day-plan .heading span{
+        padding: 8px 16px 8px 16px;
+        margin: 0;
+    }
+
+
+
     .holiday-details .day-plan .runway{
-            min-width: 164px;
-            height: 2px;
-            background-color: #DADFE6;
-            position: relative;
-        }
-        .holiday-details .day-plan .runway i{
-            position: absolute;
-            color: #DADFE6;
-            left: 10%;
-            top: -14px;
-        }
-        .holiday-details .day-plan .runway::before{
-            content: " ";
-            width: 6px;
-            height: 6px;
-            position: absolute;
-            background-color: #DADFE6;
-            top: -2px;
-            left: 0;
-        }
-        .holiday-details .day-plan .runway::after{
-            content: " ";
-            width: 6px;
-            height: 6px;
-            position: absolute;
-            background-color: #DADFE6;
-            top: -2px;
-            right: 0;
-        }
+        min-width: 180px;
+        height: 2px;
+        background-color: #DADFE6;
+        position: relative;
+    }
+    .holiday-details .day-plan .runway i{
+        position: absolute;
+        color: #DADFE6;
+        left: 10%;
+        top: -14px;
+    }
+    .holiday-details .day-plan .runway::before{
+        content: " ";
+        width: 6px;
+        height: 6px;
+        position: absolute;
+        background-color: #DADFE6;
+        top: -2px;
+        left: 0;
+    }
+    .holiday-details .day-plan .runway::after{
+        content: " ";
+        width: 6px;
+        height: 6px;
+        position: absolute;
+        background-color: #DADFE6;
+        top: -2px;
+        right: 0;
+    }
+
+    .holiday-details .day-plan .transports{
+        background: #7e3ff210;
+        max-width: 440px;
+    }
+    .holiday-details .day-plan .transfer-car{
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+    }
+    .holiday-details .day-plan .transfer-txt{
+        font-size: 14px;
+    }
+    .holiday-details .day-plan .end-day{
+        background: #7e3ff210;
+        padding: 16px 8px 8px 8px;
+        text-align: center;
+        border-radius: 4px;
+    }
+    .holiday-details .day-plan .end-day .btn{
+        background: var(--secondary-color);
+        color: var(--title-color) !important;
+        padding: 4px 34px;
+        margin-bottom: -26px;
+        font-size: 15px;
+    }
+    .holiday-details .day-plan .end-day .btn:hover{
+        background: var(--secondary-color-light);
+    }
+    .holiday-details .day-plan .help{
+        background: var(--secondary-color);
+    }
+    .holiday-details .day-plan .help .btn{
+        color: var(--title-color);
+        font-weight: 600;
+    }
+    .holiday-details .day-plan .help:hover{
+        background: var(--secondary-color-light);
+    }
+    
 
 </style>
+
+<!-- holiday price info right side css -->
+<style>
+    .holiday-price-info .book-btn{
+        background: var(--secondary-color);
+        width: 100%;
+        padding: 4px 16px;
+    }
+    .holiday-price-info .book-btn:hover{
+        background: var(--secondary-color-light);
+    }
+    
+    .holiday-price-info .coupon-input{
+        border: 1px solid #75757550;
+        padding: 6px 8px 8px 8px ;
+        font-size: 14px;
+        border-radius: 4px;
+    }
+    .holiday-price-info .coupon-input{
+        border: 1px solid #75757550;
+        padding: 6px 8px 8px 8px ;
+        font-size: 14px;
+        border-radius: 4px;
+        width: calc(100% - 100px);
+    }
+    .holiday-price-info .coupon-input:focus{
+        border: 1px solid var(--primary-color);
+    }
+    .holiday-price-info .coupon-btn{
+        background: var(--secondary-color);
+        border: none;
+        padding: 7px 8px 8px 8px ;
+        width: 90px;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+    .holiday-price-info .coupon-btn:hover{
+        background: var(--secondary-color-light);
+    }
+    .holiday-price-info .coupon-label{
+        font-size: 14px;
+    }
+
+    .holiday-price-info .offer-box h6{
+        font-size: 14px ;
+        margin: 0px;
+    }
+    .holiday-price-info i{
+        color: var(--primary-color);
+    }
+    .holiday-price-info .offer-box .offer-txt{
+        font-size: 12px ;
+        color: var(--text-color);
+    }
+    .holiday-price-info .offer-box .offer-btn{
+        font-size: 13px ;
+        color: var(--primary-color);
+        font-weight: 500;
+        border: none;
+        background: none;
+    }
+    .holiday-price-info .offer-box.active{
+        border: 1px solid var(--primary-color) !important;
+        background: linear-gradient(135deg, #ffe47850 , #7e3ff230);
+    }
+</style>
+
+<!-- summery & policy tap css  -->
+<style>
+    .holiday-details .summary-tab i{
+        color: var(--primary-color)
+    }
+    .holiday-details .summary-tab .day{
+        min-width: 140px;
+    }
+    .holiday-details .summary-tab h6{
+        margin: 0px;
+    }
+    .holiday-details .summary-tab .d-flex{
+        margin-bottom: 16px;
+    }
+    .holiday-details .summary-tab li{
+        margin-bottom: 8px;
+    }
+    .holiday-details .summary-tab .all-days{
+        background: var(--bg-color);
+    }
+
+    /* policy tab  */
+    .holiday-details .policy-tab ul{
+        list-style-type: square ;
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+    .holiday-details .policy-tab ul li{
+        margin-bottom: 8px;
+    }
+
+    
+</style>
+
+
 
 
 
@@ -515,7 +709,7 @@
 
 <!-- @section('content') -->
 
-<main style="background: var(--bg-color);">
+<main class="pb-5" style="background: var(--bg-color);">
 
     <!-- holidays photo  -->
     <section class="holiday-details-photos pt-5">
@@ -527,10 +721,10 @@
                         <div class="carousel-inner">
                           <div class="carousel-item active" data-bs-interval="3000">
                             <!-- images recomended size 746*380px  -->
-                            <img src="https://imgcld.yatra.com/ytimages/image/upload/t_holidays_responsivedetailslargeimg/v1578300574/Hotel/Leh/00177115/17303561_1_IVXjrOhUr8Y26uUZ4N4Fcw-1024x571_0LjOAb.jpg" class="d-block w-100 rounded" alt="...">
+                            <img src="https://images.trvl-media.com/lodging/2000000/1340000/1332800/1332708/646713e8.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill" class="d-block w-100 rounded" alt="...">
                           </div>
                           <div class="carousel-item" data-bs-interval="3000">
-                            <img src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/Vivanta-by-Taj-Goa-2.jpg?crop=225:145&downsize=225:145" class="d-block w-100 rounded" alt="...">
+                            <img src="https://www.travelandleisure.com/thmb/hQypIH5Lfa2GRW-Vj_AJvPcXAg8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/best-india-resort-hotel-the-oberoi-udaivilas-udaipur-00-INRESHOTWB21-aa03123e4cc540af80b5c1287ee12e55.jpg" class="d-block w-100 rounded" alt="...">
                           </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -546,10 +740,10 @@
 
                 <div class="col-5">
                     <div class="row g-2 row-cols-2">
-                        <div class="col"><img class="img-thum rounded" src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/Vivanta-by-Taj-Goa-2.jpg?crop=225:145&downsize=225:145" alt=""></div>
+                        <div class="col"><img class="img-thum rounded" src="https://www.nerdwallet.com/assets/blog/wp-content/uploads/2020/10/GettyImages-104731717.jpg" alt=""></div>
+                        <div class="col"><img class="img-thum rounded" src="https://www.travelandleisure.com/thmb/hQypIH5Lfa2GRW-Vj_AJvPcXAg8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/best-india-resort-hotel-the-oberoi-udaivilas-udaipur-00-INRESHOTWB21-aa03123e4cc540af80b5c1287ee12e55.jpg" alt=""></div>
                         <div class="col"><img class="img-thum rounded" src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/Taj-Exotica-Goa.jpg?crop=225:145&downsize=225:145" alt=""></div>
-                        <div class="col"><img class="img-thum rounded" src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/Taj-Exotica-Goa.jpg?crop=225:145&downsize=225:145" alt=""></div>
-                        <div class="col"><img class="img-thum rounded" src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/Taj-Exotica-Goa.jpg?crop=225:145&downsize=225:145" alt=""></div>
+                        <div class="col"><img class="img-thum rounded" src="https://www.bgoperator.ru/pr_img/1240100354/20201208/26864531/08122020112744531.jpg" alt=""></div>
                     </div>
                     
                 </div>
@@ -565,7 +759,7 @@
                 <div class="row mt-4">
 
                     <!-- left side details start  -->
-                    <div class="col-9">
+                    <div class="col-8 col-xl-9">
                         <div class="holiday-details">
                             <ul class="nav holiday-nav  shadow-sm rounded nav-pills px-3 mb-3" id="pills-tab" role="tablist">
                                 <li class="nav-item" role="presentation">
@@ -584,8 +778,8 @@
 
                               <div class="tab-content" id="pills-tabContent">
                                 <!-- Itinerary start  -->
-                                <div class="tab-pane fade show active" id="pills-itinerary" role="tabpanel" aria-labelledby="pills-itinerary-tab" tabindex="0">
-                                    <ul class="nav mt-4 details-nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                <div class="tab-pane itinerary-tab fade show active" id="pills-itinerary" role="tabpanel" aria-labelledby="pills-itinerary-tab" tabindex="0">
+                                    <ul class="nav  details-nav nav-pills mb-3" id="pills-tab" role="tablist">
                                         <li class="nav-item" role="presentation">
                                           <button class="nav-link active" id="pills-dayplan-tab" data-bs-toggle="pill" data-bs-target="#pills-dayplan" type="button" role="tab" aria-controls="pills-dayplan" aria-selected="true">4 Days Plan</button>
                                         </li>
@@ -594,148 +788,592 @@
                                         </li>
                                         <li class="nav-item" role="presentation">
                                             <button class="nav-link" id="pills-hotels-holiday-tab" data-bs-toggle="pill" data-bs-target="#pills-hotels-holiday" type="button" role="tab" aria-controls="pills-hotels-holiday" aria-selected="false">Hotel</button>
-                                          </li>
+                                        </li>
                                     </ul>
+
                                       <div class="tab-content" id="pills-tabContent">
 
                                         <!-- days plan  -->
                                         <div class="tab-pane fade day-plan  show active" id="pills-dayplan" role="tabpanel" aria-labelledby="pills-dayplan-tab" tabindex="0" >
-                                            <div class="d-flex justify-content-between">
-                                                <h6>Day 01 : Arrival in Cox's Bazar</h6>
-                                                <span class="text-capitalize">Included: 
-                                                    <i class="fa-solid fa-plane-departure mx-1"></i> Flights | 
-                                                    <i class="fa-solid fa-hotel mx-1"></i> Hotel | 
-                                                    <i class="fa-solid fa-car mx-1"></i> Transfer</span>
-                                            </div>
-
-                                            <div>
-                                                <div class="d-flex justify-content-between">
-                                                    <h6 class="text-capitalize "><i class="fa-solid fa-plane-departure me-2"></i>Biman Bangladesh Airline <span>E6-5599</span></h6>
-                                                    
-                                                    <div>
-                                                        <button class="btn" type="submit">Remove</button> | 
-                                                        <button class="btn" type="submit">Change</button>
-                                                    </div>
+                                            
+                                            <!-- day 1 start  -->
+                                            <div class="day-one mb-4">
+                                                <div class="d-flex rounded heading justify-content-between">
+                                                    <h6 >Day 01 : Arrival in Cox's Bazar</h6>
+                                                    <span class="text-capitalize">Included: 
+                                                        <i class="fa-solid fa-plane-departure mx-1"></i>1 Flights | 
+                                                        <i class="fa-solid fa-hotel mx-1"></i>1 Hotel | 
+                                                        <i class="fa-solid fa-car mx-1"></i> 1 Transfer
+                                                    </span>
                                                 </div>
-
-                                                <div class="row">
-                                                    <div class="col-6">
-                                                        <div class="d-flex justify-content-between">
-                                                            <div>
-                                                                <h4>11:30</h4>
-                                                                <span class="text-uppercase">18 Jun 2024</span> <br>
-                                                                <span class="text-capitalize">Dhaka</span>
-                                                            </div>
-                                                            <div>
-                                                                <span class="text-center d-block mb-2">1h 15m</span>
-                                                                <div class="runway mx-2 mx-md-3"><i class="fa-solid fa-plane-departure"></i></div>
-                                                                <span class="text-center d-block">Nonstop</span>
-                                                            </div>
-                                                            <div>
-                                                                <h4>12:45</h4>
-                                                                <span class="text-uppercase">18 Jun 2024</span> <br>
-                                                                <span class="text-capitalize">Cox's Bazar</span>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-6">
+    
+                                                <!-- flights start -->
+                                                <div class="mt-4 px-3">
+                                                    <div class="d-flex justify-content-between">
+                                                        <h6 class="text-capitalize "><i class="fa-solid fa-plane-departure me-2"></i>Biman Bangladesh Airline <span class="tags ms-2">E6-5599</span></h6>
+                                                        
                                                         <div>
-                                                            <h6>Baggage</h6>
-                                                            <span><i class="fa-solid fa-suitcase-rolling me-2"></i> Carry-on Baggage: <Strong>1 X 7 KG</Strong></span> <br>
-                                                            <span class=" "><i class="fa-solid fa-cart-flatbed-suitcase me-1"></i>Checked Baggage: <strong>1 X 20 KG</strong></span>
-
+                                                            <button class="btn" type="submit">Remove</button> | 
+                                                            <button class="btn" type="submit">Change</button>
                                                         </div>
                                                     </div>
-
-                                                </div>
-
-                                                <div>
-                                                    <span>There are more ways to reach your destination     </span>
-                                                    <button class="btn">See Transport Option </button>
-                                                </div>
-                                            </div>
-
-                                            <hr>
-
-                                            <div>
-                                                <div class="d-flex justify-content-between">
-                                                    <h6 class="text-capitalize "><i class="fa-solid fa-car me-2"></i>Airport to Hotel in Cox's Bazar <span> 1 Hour</span></h6>
-                                                    <button class="btn" type="submit">Remove</button> 
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="col-4"><img src="https://toppng.com/uploads/preview/car-11549451816vveciq8qbi.png" class="img-fluid" alt=""></div>
-                                                    <div class="col-8">
-                                                        Travel comfortably in a private vehicle from <Strong>Cox's Bazar</Strong> Airport/Railway Station to your hotel in Cox's Bazar. 
-                                                        Note: The pick-up timing is subject to your flight/train arrival and shall be communicated to you by the local vendor. There will be non stop-overs allowed during this transfer.
+    
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <div class="d-flex justify-content-between">
+                                                                <div>
+                                                                    <h4 class="m-0">11:30</h4>
+                                                                    <span class="text-capitalize">Tue, 18 Jun 2024</span>
+                                                                    <span class="d-block text-capitalize" style="margin-top: -3px;">Dhaka</span>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="text-center d-block mb-2">1h 15m</span>
+                                                                    <div class="runway mx-2 mx-md-3"><i class="fa-solid fa-plane-departure"></i></div>
+                                                                    <span class="text-center d-block">Nonstop</span>
+                                                                </div>
+                                                                <div>
+                                                                    <h4 class="m-0">12:45</h4>
+                                                                    <span class=" text-capitalize">Tue, 18 Jun 2024</span>
+                                                                    <span class="d-block text-capitalize" style="margin-top: -3px;">Cox's Bazar</span>
+    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+    
+                                                        <div class="col-6">
+                                                            <div class="ms-md-5">
+                                                                <h6>Baggage</h6>
+                                                                <span><i class="fa-solid fa-suitcase-rolling me-2"></i> Carry-on Baggage: <Strong>1 X 7 KG</Strong></span> <br>
+                                                                <span class=" "><i class="fa-solid fa-cart-flatbed-suitcase me-1"></i>Checked Baggage: <strong>1 X 20 KG</strong></span>
+    
+                                                            </div>
+                                                        </div>
+    
+                                                    </div>
+    
+                                                    <div class="transports mt-3 rounded py-0 mx-aut text-center">
+                                                        <span>There are more ways to reach your destination     </span>
+                                                        <button class="btn"> Transport Options </button>
                                                     </div>
                                                 </div>
-                                            </div>
-
-                                            <div>
-                                                <div class="d-flex justify-content-between">
-                                                    <h6 class="text-capitalize "><i class="fa-solid fa-hotel me-2"></i>Check-in to Hotel in Cox's Bazar <span> 02:00 PM</span></h6>
-                                                    <button class="btn" type="submit">Change</button> 
+                                                <hr>
+    
+                                                <!-- transfer start -->
+                                                <div class="px-3">
+                                                    <div class="d-flex  justify-content-between">
+                                                        <h6 class="text-capitalize "><i class="fa-solid fa-car me-2"></i>Airport to Hotel in Cox's Bazar <span class=" ms-2 tags"> 1 Hour</span></h6>
+                                                        <button class="btn" type="submit">Remove</button> 
+                                                    </div>
+    
+                                                    <div class="row">
+                                                        <div class="col-4"><img src="https://i.ibb.co/7nnM6k9/tour-pkg.png" class="transfer-car" alt=""></div>
+                                                        <div class="col-8">
+                                                            <span class="mt-3 d-block">Travel comfortably in a private vehicle from <Strong>Cox's Bazar</Strong> Airport/Railway Station to your hotel in Cox's Bazar. 
+                                                                Note: The pick-up timing is subject to your flight/train arrival and shall be communicated to you by the local vendor. There will be non stop-overs allowed during this transfer.</span>
+                                                        </div>
+                                                    </div>
                                                 </div>
-
-                                                <div>
-                                                    <div class="card mb-3" >
-                                                        <div class="row g-0">
-                                                          <div class="col-md-4">
-                                                            <img src="https://etimg.etb2bimg.com/photo/96320653.cms" class="img-fluid rounded-start" alt="...">
-                                                          </div>
-                                                          <div class="col-md-8">
-                                                            <div class="card-body">
-                                                              <div class="d-flex justify-content-between">
-                                                                <h6 class="card-title text-capitalize m-0">Hotel relux Cox's Bazar</h6>
-                                                                <span><i class="fa-solid fa-star me-2"></i>4 Star</span>
+                                                <hr>
+    
+                                                <!-- check in hotel start  -->
+                                                <div class="px-3">
+                                                    <div class="d-flex justify-content-between">
+                                                        <h6 class="text-capitalize "><i class="fa-solid fa-hotel me-2"></i>Check-in to Hotel in Cox's Bazar <span class="ms-2 tags"> 02:00 PM</span></h6>
+                                                        <button class="btn" type="submit">Change</button> 
+                                                    </div>
+    
+                                                    <div >
+                                                        <div class="card border-0 mt-3 bg-light mb-3" >
+                                                            <div class="row g-0">
+                                                              <div class="col-md-4">
+                                                                <img src="https://etimg.etb2bimg.com/photo/96320653.cms" class="img-fluid rounded-start" alt="...">
                                                               </div>
-                                                              <small>A luxurious hotel in Cox's Bazar</small>
-                                                              <span class="d-block">1.4 km distance from Cox's bazar sea beach</span>
-                                                              <small class="text-body-secondary"><i class="fa-regular fa-calendar-check me-2"></i> Tue, 18 Jun 2024 - Fri, 21 Jun 2024</small>
+                                                              <div class="col-md-8">
+                                                                <div class="card-body">
+                                                                  <div class="d-flex justify-content-between">
+                                                                    <h6 class="card-title text-capitalize m-0">Hotel relux Cox's Bazar</h6>
+                                                                    <span><i class="fa-solid fa-star me-2"></i>4 Star</span>
+                                                                  </div>
+                                                                  <small>A luxurious hotel in Cox's Bazar</small>
+                                                                  <span class="d-block">1.4 km distance from Cox's bazar sea beach</span>
+                                                                  <small class="d-block mt-3"> Meal Plan : <strong>Breakfast</strong></small>
+    
+                                                                  <small class="text-body-secondary mt-4 d-block"><i class="fa-regular fa-calendar-check me-2"></i> Tue, 18 Jun 2024 - Fri, 21 Jun 2024</small>
+                                                                </div>
+                                                              </div>
                                                             </div>
                                                           </div>
-                                                        </div>
-                                                      </div>
+    
+                                                          <div class="p-3" style="background: var(--bg-color);">
+                                                            <div class="d-flex justify-content-between">
+                                                                <h6 class="text-capitalize p-0 m-0">Delux Room <span class="ms-2 tags">Inclusions</span></h6>
+                                                                <button class="btn" type="submit">Change Room</button> 
+                                                            </div>
+    
+                                                            <span class="d-block"><i class="fa-solid fa-check me-2"></i>Complimentary Breakfast is available.</span>
+                                                            <span class="d-block"><i class="fa-solid fa-check me-2"></i>Rate is inclusive of breakfast.</span>
+    
+    
+                                                          </div>
+    
+                                                          <div class="mt-3 end-day">
+                                                            <strong>End of Day ~</strong>
+                                                            <span> Spend time at Leisure or add an activity to your day!</span> <br>
+                                                            <button class="btn rounded-pill">Add Activity</button>
+                                                          </div>
+                                                    </div>
+    
+                                                </div>
+                                            </div>
 
-                                                      <div style="background: var(--bg-color);">
-                                                        <div class="d-flex justify-content-between">
-                                                            <h6 class="text-capitalize p-0 m-0">Delux Room</h6>
-                                                            <button class="btn" type="submit">Change</button> 
-                                                        </div>
-                                                        <small>Meal Plan: Breakfast</small>
-
-                                                        <h6 class="">Room Inclusions</h6>
-
-                                                        <span class="d-block"><i class="fa-solid fa-check me-2"></i>Complimentary Breakfast is available.</span>
-                                                        <span class="d-block"><i class="fa-solid fa-check me-2"></i>Rate is inclusive of breakfast.</span>
-
-
-                                                      </div>
+                                            <!-- day 2 start  -->
+                                            <div class="day-two mb-4">
+                                                <div class="d-flex rounded heading justify-content-between">
+                                                    <h6 >Day 02 : Cox's Bazar</h6>
                                                 </div>
 
+                                                <div class="px-3 mt-3">
+                                                    <div class="row">
+                                                        <div class="col-2">
+                                                            <h6><i class="fa-solid fa-utensils me-2"></i>Day Meals :</h6>
+                                                        </div>
+                                                        <div class="col-10">
+                                                            <span class="text-capitalize"><strong><i class="fa-regular fa-circle-check me-2"></i>Breakfast : </strong> Included at Hotel Relux Cox's Bazar,  Cox's Bazar</span>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="mt-3 end-day">
+                                                        <span> Spend time at Leisure or add an activity to your day!</span> <br>
+                                                        <button class="btn rounded-pill">Add Activity</button>
+                                                    </div>
+                                                </div>
 
+                                            </div>
 
+                                            <!-- day 3 start  -->
+                                            <div class="day-three mb-4">
+                                                <div class="d-flex rounded heading justify-content-between">
+                                                    <h6 >Day 03 : Cox's Bazar</h6>
+                                                </div>
+
+                                                <div class="px-3 mt-3">
+                                                    <div class="row">
+                                                        <div class="col-2">
+                                                            <h6><i class="fa-solid fa-utensils me-2"></i>Day Meals :</h6>
+                                                        </div>
+                                                        <div class="col-10">
+                                                            <span class="text-capitalize"><strong><i class="fa-regular fa-circle-check me-2"></i>Breakfast : </strong> Included at Hotel Relux Cox's Bazar,  Cox's Bazar</span>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="mt-3 end-day">
+                                                        <span> Spend time at Leisure or add an activity to your day!</span> <br>
+                                                        <button class="btn rounded-pill">Add Activity</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <!-- day 4 start  -->
+                                            <div class="day-four mb-4">
+                                                <div class="d-flex rounded heading justify-content-between">
+                                                    <h6 >Day 04 : Departure From Cox's Bazar</h6>
+                                                    <span class="text-capitalize">Included: 
+                                                        <i class="fa-solid fa-plane-departure mx-1"></i> 1 Flights |
+                                                        <i class="fa-solid fa-car mx-1"></i> 1 Transfer
+                                                    </span>
+                                                </div>
+
+                                                <div class="px-3 mt-3">
+                                                    <div class="row">
+                                                        <div class="col-2">
+                                                            <h6><i class="fa-solid fa-utensils me-2"></i>Day Meals :</h6>
+                                                        </div>
+                                                        <div class="col-10">
+                                                            <span class="text-capitalize"><strong><i class="fa-regular fa-circle-check me-2"></i>Breakfast : </strong> Included at Hotel Relux Cox's Bazar,  Cox's Bazar</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <span><i class="fa-solid fa-hotel me-2"></i><strong>Check-out : </strong> from the Hotel Relux Cox's Bazar, Cox's Bazar</span>
+                                                    <hr>
+
+                                                    <!-- transfer start -->
+                                                    <div class="mt-3">
+                                                        <div class="d-flex  justify-content-between">
+                                                            <h6 class="text-capitalize "><i class="fa-solid fa-car me-2"></i> Hotel to Airport  in Cox's Bazar <span class=" ms-2 tags"> 1 Hour</span></h6>
+                                                            <button class="btn" type="submit">Remove</button> 
+                                                        </div>
+        
+                                                        <div class="row">
+                                                            <div class="col-4"><img src="https://i.ibb.co/7nnM6k9/tour-pkg.png" class="transfer-car" alt=""></div>
+                                                            <div class="col-8">
+                                                                <span class="mt-3 d-block">Travel comfortably in a private vehicle from <Strong>Cox's Bazar</Strong> Airport/Railway Station to your hotel in Cox's Bazar. 
+                                                                    Note: The pick-up timing is subject to your flight/train arrival and shall be communicated to you by the local vendor. There will be non stop-overs allowed during this transfer.</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+
+                                                    <!-- flights start -->
+                                                    <div class="mt-3 ">
+                                                        <div class="d-flex justify-content-between">
+                                                            <h6 class="text-capitalize "><i class="fa-solid fa-plane-departure me-2"></i>Biman Bangladesh Airline <span class="tags ms-2">E6-5599</span></h6>
+                                                            
+                                                            <div>
+                                                                <button class="btn" type="submit">Remove</button> | 
+                                                                <button class="btn" type="submit">Change</button>
+                                                            </div>
+                                                        </div>
+        
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <div class="d-flex justify-content-between">
+                                                                    <div>
+                                                                        <h4 class="m-0">11:30</h4>
+                                                                        <span class="text-capitalize">Fri, 21 Jun 2024</span>
+                                                                        <span class="d-block text-capitalize" style="margin-top: -3px;">Cox's Bazar</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <span class="text-center d-block mb-2">1h 15m</span>
+                                                                        <div class="runway mx-2 mx-md-3"><i class="fa-solid fa-plane-departure"></i></div>
+                                                                        <span class="text-center d-block">Nonstop</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <h4 class="m-0">12:45</h4>
+                                                                        <span class=" text-capitalize">Fri, 21 Jun 2024</span>
+                                                                        <span class="d-block text-capitalize" style="margin-top: -3px;">Dhaka</span>
+        
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+        
+                                                            <div class="col-6">
+                                                                <div class="ms-md-5">
+                                                                    <h6>Baggage</h6>
+                                                                    <span><i class="fa-solid fa-suitcase-rolling me-2"></i> Carry-on Baggage: <Strong>1 X 7 KG</Strong></span> <br>
+                                                                    <span class=" "><i class="fa-solid fa-cart-flatbed-suitcase me-1"></i>Checked Baggage: <strong>1 X 20 KG</strong></span>
+        
+                                                                </div>
+                                                            </div>
+        
+                                                        </div>
+        
+                                                    </div>
+
+                                                    <div class="text-center help  rounded-pill mt-5">
+                                                        <button class="btn py-2" style="width: 100%;">Need Help</button>
+                                                    </div>
+
+                                                </div>
                                             </div>
 
                                         </div>
 
                                         <!-- transports start  -->
-                                        <div class="tab-pane fade" id="pills-transport" role="tabpanel" aria-labelledby="pills-transport-tab" tabindex="0">...</div>
+                                        <div class="tab-pane day-plan fade" id="pills-transport" role="tabpanel" aria-labelledby="pills-transport-tab" tabindex="0">
+                                            <!-- day 1 start  -->
+                                            <div class="day-one mb-4">
+                                                <div class="d-flex rounded heading justify-content-between">
+                                                    <h6 >Day 01 : Arrival in Cox's Bazar</h6>
+                                                    <span class="text-capitalize">Included: 
+                                                        <i class="fa-solid fa-plane-departure mx-1"></i>1 Flights |
+                                                        <i class="fa-solid fa-car mx-1"></i> 1 Transfer
+                                                    </span>
+                                                </div>
+    
+                                                <!-- flights start -->
+                                                <div class="mt-4 px-3">
+                                                    <div class="d-flex justify-content-between">
+                                                        <h6 class="text-capitalize "><i class="fa-solid fa-plane-departure me-2"></i>Biman Bangladesh Airline <span class="tags ms-2">E6-5599</span></h6>
+                                                        
+                                                        <div>
+                                                            <button class="btn" type="submit">Remove</button> | 
+                                                            <button class="btn" type="submit">Change</button>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <div class="d-flex justify-content-between">
+                                                                <div>
+                                                                    <h4 class="m-0">11:30</h4>
+                                                                    <span class="text-capitalize">Tue, 18 Jun 2024</span>
+                                                                    <span class="d-block text-capitalize" style="margin-top: -3px;">Dhaka</span>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="text-center d-block mb-2">1h 15m</span>
+                                                                    <div class="runway mx-2 mx-md-3"><i class="fa-solid fa-plane-departure"></i></div>
+                                                                    <span class="text-center d-block">Nonstop</span>
+                                                                </div>
+                                                                <div>
+                                                                    <h4 class="m-0">12:45</h4>
+                                                                    <span class=" text-capitalize">Tue, 18 Jun 2024</span>
+                                                                    <span class="d-block text-capitalize" style="margin-top: -3px;">Cox's Bazar</span>
+    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+    
+                                                        <div class="col-6">
+                                                            <div class="ms-md-5">
+                                                                <h6>Baggage</h6>
+                                                                <span><i class="fa-solid fa-suitcase-rolling me-2"></i> Carry-on Baggage: <Strong>1 X 7 KG</Strong></span> <br>
+                                                                <span class=" "><i class="fa-solid fa-cart-flatbed-suitcase me-1"></i>Checked Baggage: <strong>1 X 20 KG</strong></span>
+    
+                                                            </div>
+                                                        </div>
+    
+                                                    </div>
+    
+                                                    <div class="transports mt-3 rounded py-0 mx-aut text-center">
+                                                        <span>There are more ways to reach your destination     </span>
+                                                        <button class="btn"> Transport Options </button>
+                                                    </div>
+                                                </div>
+                                                <hr>
+    
+                                                <!-- transfer start -->
+                                                <div class="px-3">
+                                                    <div class="d-flex  justify-content-between">
+                                                        <h6 class="text-capitalize "><i class="fa-solid fa-car me-2"></i>Airport to Hotel in Cox's Bazar <span class=" ms-2 tags"> 1 Hour</span></h6>
+                                                        <button class="btn" type="submit">Remove</button> 
+                                                    </div>
+    
+                                                    <div class="row">
+                                                        <div class="col-4"><img src="https://i.ibb.co/7nnM6k9/tour-pkg.png" class="transfer-car" alt=""></div>
+                                                        <div class="col-8">
+                                                            <span class="mt-3 d-block">Travel comfortably in a private vehicle from <Strong>Cox's Bazar</Strong> Airport/Railway Station to your hotel in Cox's Bazar. 
+                                                                Note: The pick-up timing is subject to your flight/train arrival and shall be communicated to you by the local vendor. There will be non stop-overs allowed during this transfer.</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+    
+                                                
+                                            </div>
+
+                                            <!-- day 4 start  -->
+                                            <div class="day-four mb-4">
+                                                <div class="d-flex rounded heading justify-content-between">
+                                                    <h6 >Day 04 : Departure From Cox's Bazar</h6>
+                                                    <span class="text-capitalize">Included: 
+                                                        <i class="fa-solid fa-plane-departure mx-1"></i> 1 Flights |
+                                                        <i class="fa-solid fa-car mx-1"></i> 1 Transfer
+                                                    </span>
+                                                </div>
+
+                                                <div class="px-3 mt-3">
+
+                                                    <!-- transfer start -->
+                                                    <div class="mt-3">
+                                                        <div class="d-flex  justify-content-between">
+                                                            <h6 class="text-capitalize "><i class="fa-solid fa-car me-2"></i> Hotel to Airport  in Cox's Bazar <span class=" ms-2 tags"> 1 Hour</span></h6>
+                                                            <button class="btn" type="submit">Remove</button> 
+                                                        </div>
+        
+                                                        <div class="row">
+                                                            <div class="col-4"><img src="https://i.ibb.co/7nnM6k9/tour-pkg.png" class="transfer-car" alt=""></div>
+                                                            <div class="col-8">
+                                                                <span class="mt-3 d-block">Travel comfortably in a private vehicle from <Strong>Cox's Bazar</Strong> Airport/Railway Station to your hotel in Cox's Bazar. 
+                                                                    Note: The pick-up timing is subject to your flight/train arrival and shall be communicated to you by the local vendor. There will be non stop-overs allowed during this transfer.</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+
+                                                    <!-- flights start -->
+                                                    <div class="mt-3 ">
+                                                        <div class="d-flex justify-content-between">
+                                                            <h6 class="text-capitalize "><i class="fa-solid fa-plane-departure me-2"></i>Biman Bangladesh Airline <span class="tags ms-2">E6-5599</span></h6>
+                                                            
+                                                            <div>
+                                                                <button class="btn" type="submit">Remove</button> | 
+                                                                <button class="btn" type="submit">Change</button>
+                                                            </div>
+                                                        </div>
+        
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <div class="d-flex justify-content-between">
+                                                                    <div>
+                                                                        <h4 class="m-0">11:30</h4>
+                                                                        <span class="text-capitalize">Fri, 21 Jun 2024</span>
+                                                                        <span class="d-block text-capitalize" style="margin-top: -3px;">Cox's Bazar</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <span class="text-center d-block mb-2">1h 15m</span>
+                                                                        <div class="runway mx-2 mx-md-3"><i class="fa-solid fa-plane-departure"></i></div>
+                                                                        <span class="text-center d-block">Nonstop</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <h4 class="m-0">12:45</h4>
+                                                                        <span class=" text-capitalize">Fri, 21 Jun 2024</span>
+                                                                        <span class="d-block text-capitalize" style="margin-top: -3px;">Dhaka</span>
+        
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+        
+                                                            <div class="col-6">
+                                                                <div class="ms-md-5">
+                                                                    <h6>Baggage</h6>
+                                                                    <span><i class="fa-solid fa-suitcase-rolling me-2"></i> Carry-on Baggage: <Strong>1 X 7 KG</Strong></span> <br>
+                                                                    <span class=" "><i class="fa-solid fa-cart-flatbed-suitcase me-1"></i>Checked Baggage: <strong>1 X 20 KG</strong></span>
+        
+                                                                </div>
+                                                            </div>
+        
+                                                        </div>
+        
+                                                    </div>
+
+                                                    <div class="text-center help  rounded-pill mt-5">
+                                                        <button class="btn py-2" style="width: 100%;">Need Help</button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
 
                                         <!-- holiday hotels  -->
-                                        <div class="tab-pane fade" id="pills-hotels-holiday" role="tabpanel" aria-labelledby="pills-hotels-holiday-tab" tabindex="0">...</div>
+                                        <div class="tab-pane day-plan fade" id="pills-hotels-holiday" role="tabpanel" aria-labelledby="pills-hotels-holiday-tab" tabindex="0">
+                                            <!-- day 1 start  -->
+                                            <div class="day-one mb-4">
+                                                <div class="d-flex rounded heading justify-content-between">
+                                                    <h6 >Day 01 : Arrival in Cox's Bazar</h6>
+                                                    <span class="text-capitalize">Included:
+                                                        <i class="fa-solid fa-hotel mx-1"></i>1 Hotel 
+                                                    </span>
+                                                </div>
+    
+                                                <!-- check in hotel start  -->
+                                                <div class="px-3 mt-3">
+                                                    <div class="d-flex justify-content-between">
+                                                        <h6 class="text-capitalize "><i class="fa-solid fa-hotel me-2"></i>Check-in to Hotel in Cox's Bazar <span class="ms-2 tags"> 02:00 PM</span></h6>
+                                                        <button class="btn" type="submit">Change</button> 
+                                                    </div>
+    
+                                                    <div class="">
+                                                        <div class="card  border-0 mt-3 bg-light mb-3" >
+                                                            <div class="row g-0">
+                                                              <div class="col-md-4">
+                                                                <img src="https://etimg.etb2bimg.com/photo/96320653.cms" class="img-fluid rounded-start" alt="...">
+                                                              </div>
+                                                              <div class="col-md-8">
+                                                                <div class="card-body">
+                                                                  <div class="d-flex justify-content-between">
+                                                                    <h6 class="card-title text-capitalize m-0">Hotel relux Cox's Bazar</h6>
+                                                                    <span><i class="fa-solid fa-star me-2"></i>4 Star</span>
+                                                                  </div>
+                                                                  <small>A luxurious hotel in Cox's Bazar</small>
+                                                                  <span class="d-block">1.4 km distance from Cox's bazar sea beach</span>
+                                                                  <small class="d-block mt-3"> Meal Plan : <strong>Breakfast</strong></small>
+    
+                                                                  <small class="text-body-secondary mt-4 d-block"><i class="fa-regular fa-calendar-check me-2"></i> Tue, 18 Jun 2024 - Fri, 21 Jun 2024</small>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+    
+                                                          <div class="p-3" style="background: var(--bg-color);">
+                                                            <div class="d-flex justify-content-between">
+                                                                <h6 class="text-capitalize p-0 m-0">Delux Room <span class="ms-2 tags">Inclusions</span></h6>
+                                                                <button class="btn" type="submit">Change Room</button> 
+                                                            </div>
+    
+                                                            <span class="d-block"><i class="fa-solid fa-check me-2"></i>Complimentary Breakfast is available.</span>
+                                                            <span class="d-block"><i class="fa-solid fa-check me-2"></i>Rate is inclusive of breakfast.</span>
+    
+    
+                                                          </div>
+    
+                                                    </div>
+    
+                                                </div>
+                                            </div>
+                                        </div>
 
                                       </div>
                                 </div>
 
                                 <!-- summary start  -->
-                                <div class="tab-pane fade" id="pills-summary" role="tabpanel" aria-labelledby="pills-summary-tab" tabindex="0">summ</div>
+                                <div class="tab-pane summary-tab shadow-sm fade" id="pills-summary" role="tabpanel" aria-labelledby="pills-summary-tab" tabindex="0">
+                                    <ul class="p-3">
+                                        <li><span><i class="fa-solid fa-plane-departure me-2"></i>Arrival in Cox's Bazar by Biman Bangladesh Airline Flight 6E-2413 | Departing on 18 Jun, 11:00 AM | Arriving on 18 Jun, 12:14 PM | Includes Check In Baggage</span></li>
+                                        <li><span><i class="fa-solid fa-car me-2"></i>Airport to hotel in Cox's Bazar</span></li>
+
+                                        <li class="all-days rounded pb-2 mt-3">
+                                            <h5 class="text-capitalize rounded mb-3 p-3" style="background: #75757513;">Cox's Bazar - 3 Nights Stay</h5>
+                                            <div class="d-flex px-3">
+                                                <div class="day">
+                                                    <h6>Day 01</h6>
+                                                    <span>Tue, 18 Jun 2024</span>
+                                                </div>
+                                                <span class="text-capitalize "><i class="fa-solid fa-hotel me-2"></i> Check in to <strong>Hotel Relux Cox's bazar</strong>, Cox's Bazar, 4 Star</span>
+                                            </div>
+                                            <div class="d-flex px-3">
+                                                <div class="day">
+                                                    <h6>Day 02</h6>
+                                                    <span>Wed, 19 Jun 2024</span>
+                                                </div>
+                                                <span class="text-capitalize"><i class="fa-solid fa-utensils me-2"></i> Day Meals: <strong>Breakfast :</strong> Included at Hotel Relux Cox's Bazar,  Cox's bazar </span>
+                                            </div>
+                                            <div class="d-flex px-3">
+                                                <div class="day">
+                                                    <h6>Day 03</h6>
+                                                    <span>Thu, 20 Jun 2024</span>
+                                                </div>
+                                                <span class="text-capitalize"><i class="fa-solid fa-utensils me-2"></i> Day Meals: <strong>Breakfast :</strong> Included at Hotel Relux Cox's Bazar,  Cox's bazar </span>
+                                            </div>
+                                            <div class="d-flex px-3">
+                                                <div class="day">
+                                                    <h6>Day 04</h6>
+                                                    <span>Fri, 21 Jun 2024</span>
+                                                </div>
+                                                <div>
+                                                    <span class="text-capitalize"><i class="fa-solid fa-utensils me-2"></i> Day Meals: <strong>Breakfast :</strong> Included at Hotel Relux Cox's Bazar,  Cox's bazar </span>
+                                                    <span class="text-capitalize  ms-3"><i class="fa-solid fa-hotel me-2"></i> <strong>Check Out :</strong> from the Hotel Relux Cox's Bazar</span>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li><span><i class="fa-solid fa-car me-2"></i> Hotel to Airport in Cox's Bazar</span></li>
+                                        <li><span><i class="fa-solid fa-plane-departure me-2"></i>Departure from Cox's Bazar - Cox's Bazar Airport by Biman Bangladesh Flight 6E-2052 | Departing on 21 Jun, 02:00 PM | Arriving on 21 Jun, 03:15 PM | Includes Check In Baggage</span></li>
+                                    </ul>
+                                </div>
 
                                 <!-- policy start  -->
-                                <div class="tab-pane fade" id="pills-policy" role="tabpanel" aria-labelledby="pills-policy-tab" tabindex="0">policy</div>
+                                <div class="tab-pane shadow-sm policy-tab fade" id="pills-policy" role="tabpanel" aria-labelledby="pills-policy-tab" tabindex="0">
+                                    <div class=" p-3">
+                                        <div class="policy">
+                                            <h5>Cancellation</h5>
+                                            <p>Cancellation not possible after booking</p>
+                                        </div>
+                                        <div class="policy">
+                                            <h5>Package Change Policy</h5>
+                                            <p>Package not possible after booking</p>
+                                        </div>
+                                        <div class="policy">
+                                            <h5>Date Change Policy</h5>
+                                            <p>Package Date not possible after booking</p>
+                                        </div>
+
+
+                                        <div ></div>
+                                        <div class="policy mt-3">
+                                            <h5 class="p-3 mb-3 rounded" style=" background: var(--bg-color);">Terms & Conditions</h5>
+                                            <ul>
+                                                <li>Standard check-in time at the hotel is normally 2:00 pm and check-out is 11:00 am. An early check-in, or a late check-out is solely based on the discretion of the hotel.</li>
+                                                <li>A maximum of 3 adults are allowed in one room. The third occupant shall be provided a mattress/rollaway bed.</li>
+                                                <li>The itinerary is fixed and cannot be modified. Transportation shall be provided as per the itinerary and will not be at disposal. For any paid activity which is non-operational due to any unforeseen reason, we will process refund & same should reach the guest within 30 days of processing the refund. </li>
+                                                <!-- more li  -->
+                                            </ul>
+                                        </div>
+
+
+                                    </div>
+                                </div>
 
                               </div>
                         </div>
@@ -744,8 +1382,78 @@
                     <!-- left side details end  -->
 
                     <!-- right side price info start  -->
-                    <div class="col-3">
+                    <div class="col-4 col-xl-3">
+                        <div class="holiday-price-info">
+                            <form action="">
+                                <div class="rounded shadow-sm p-3" style="background: var(--light-color);">
+                                    <span class=" text-decoration-line-through" style="color: var(--text-color)">US$100.00</span>
+                                    <span class="text-danger ms-2">14% OFF</span> <br>
+                                    <h4 class="d-inline">US$86.00</h4>/Adult 
+                                    <small class="d-block">Included Taxes & Fees</small>
+                                    <button class="btn book-btn mt-3" type="submit">Book Now</button>
+                                </div>
+    
+                                <div class="rounded shadow-sm p-3 mt-3" style="background: var(--light-color);">
+                                    <h5 style="font-size: 18px;">Offers & Coupons</h5>
+                                    <div class="coupon-code">
+                                        <label for="holiday-coupon" class="mb-2 coupon-label">Have a Coupon Code?</label>
+                                        <input type="text" id="holiday-coupon" class="coupon-input" placeholder="Enter the code" >
+                                        <button class=" coupon-btn" type="submit" >Apply</button>
+                                    </div>
 
+                                    <div class="holiday-offer-list">
+                                        <div class="offer-box active border mt-3 rounded p-3">
+                                            <div class="row g-1">
+                                                <div class="col-8">
+                                                    <h6 class="text-uppercase"><i class="fa-solid fa-circle-minus me-2"></i>airdrop</h6>
+                                                    <p class="offer-txt mt-2 mb-0 lh-sm">Hurry Offer Valid only for flight inclusive deal.!!</p>
+                                                </div>
+                                                <div class="col-4 text-end">
+                                                    <h6>-US$5.00</h6>
+                                                    <button type="button" class=" offer-btn text-uppercase" data-apply="apply" data-remove="remove">remove</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="offer-box border mt-3 rounded p-3">
+                                            <div class="row g-1">
+                                                <div class="col-8">
+                                                    <h6 class="text-uppercase"><i class="fa-solid fa-circle-minus me-2"></i>GrandOffer</h6>
+                                                    <p class="offer-txt mt-2 mb-0 lh-sm">Online Only Offer - Use This Coupon and Get Upto 25% Off!!</p>
+                                                </div>
+                                                <div class="col-4 text-end">
+                                                    <h6>-US$5.00</h6>
+                                                    <button type="button" class="offer-btn  text-uppercase" data-apply="apply" data-remove="remove">apply</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="offer-box border mt-3 rounded p-3">
+                                            <div class="row g-1">
+                                                <div class="col-8">
+                                                    <h6 class="text-uppercase"><i class="fa-solid fa-circle-minus me-2"></i>Summeroff</h6>
+                                                    <p class="offer-txt mt-2 mb-0 lh-sm">Online Only Offer - Use This Coupon and Get Upto 25% Off!!</p>
+                                                </div>
+                                                <div class="col-4 text-end">
+                                                    <h6>-US$5.00</h6>
+                                                    <button type="button" class="offer-btn  text-uppercase" data-apply="apply" data-remove="remove">apply</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </form>
+
+                            <div class="need-help rounded shadow-sm mt-3 p-3" style="background: var(--light-color);">
+                                <div class="d-flex justify-content-between">
+                                    <h6>Need Help? </h6>
+                                    <h6><i class="fa-solid fa-headset"></i></h6>
+                                </div>
+                                <span class="d-block"><i class="fa-solid fa-phone me-2"></i>+880 1722 XXXXXXX</span>
+                                <span class="d-block"><i class="fa-solid fa-envelope me-2"></i>hello@boxiew.com</span>
+                            </div>
+                        </div>
                     </div>
                     <!-- right side price info end -->
 
@@ -771,118 +1479,148 @@
 
 
 
-<!-- popup start  -->
-<section>
-    <!--holidays info popup  -->
-    <div id="holidaysPopupWrap" class="holidays-popup-wrap">
-        <div class="d-flex justify-content-between rounded p-4 holidays-info-popup">
+    <!-- popup start  -->
+    <section>
+        <!--holidays info popup  -->
+        <div id="holidaysPopupWrap" class="holidays-popup-wrap">
+            <div class="d-flex justify-content-between rounded p-4 holidays-info-popup">
 
-            <div class="px-2">
-                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="boarding-tab" data-bs-toggle="pill" data-bs-target="#boarding" type="button" role="tab" aria-controls="boarding" aria-selected="true">Boarding Points</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="dropping-tab" data-bs-toggle="pill" data-bs-target="#dropping" type="button" role="tab" aria-controls="dropping" aria-selected="false">Dropping Points</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="facilities-tab" data-bs-toggle="pill" data-bs-target="#facilities" type="button" role="tab" aria-controls="facilities" aria-selected="false">Facilities</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="policy-tab" data-bs-toggle="pill" data-bs-target="#policy" type="button" role="tab" aria-controls="policy" aria-selected="false" >Cancellation Policy</button>
-                    </li>
-                </ul>
-                <div class="tab-content" id="pills-tabContent">
+                <div class="px-2">
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="boarding-tab" data-bs-toggle="pill" data-bs-target="#boarding" type="button" role="tab" aria-controls="boarding" aria-selected="true">Boarding Points</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="dropping-tab" data-bs-toggle="pill" data-bs-target="#dropping" type="button" role="tab" aria-controls="dropping" aria-selected="false">Dropping Points</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="facilities-tab" data-bs-toggle="pill" data-bs-target="#facilities" type="button" role="tab" aria-controls="facilities" aria-selected="false">Facilities</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="policy-tab" data-bs-toggle="pill" data-bs-target="#policy" type="button" role="tab" aria-controls="policy" aria-selected="false" >Cancellation Policy</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
 
-                    <div class="tab-pane fade show active" id="boarding" role="tabpanel" aria-labelledby="boarding-tab" tabindex="0">
-                        <ul class="row mt-4 row-cols-1 row-cols-lg-2">
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Gulistan</li>
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Saidabad</li>
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
-                        </ul>
-                    </div>
+                        <div class="tab-pane fade show active" id="boarding" role="tabpanel" aria-labelledby="boarding-tab" tabindex="0">
+                            <ul class="row mt-4 row-cols-1 row-cols-lg-2">
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Gulistan</li>
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Saidabad</li>
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Mohakhali</li>
+                            </ul>
+                        </div>
 
-                    <div class="tab-pane fade" id="dropping" role="tabpanel" aria-labelledby="dropping-tab" tabindex="0">
-                        <ul class="row mt-4 row-cols-1 row-cols-lg-2">
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Cox's Bazar</li>
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Cox's Bazar</li>
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Chottagram</li>
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Chottagram</li>
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Kolatoli</li>
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Kolatoli</li>
-                            <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Kolatoli</li>
-                        </ul>
-                    </div>
+                        <div class="tab-pane fade" id="dropping" role="tabpanel" aria-labelledby="dropping-tab" tabindex="0">
+                            <ul class="row mt-4 row-cols-1 row-cols-lg-2">
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Cox's Bazar</li>
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Cox's Bazar</li>
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Chottagram</li>
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Chottagram</li>
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Kolatoli</li>
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Kolatoli</li>
+                                <li class="col item"><i class="fa-solid fa-diamond-turn-right me-2"></i>Kolatoli</li>
+                            </ul>
+                        </div>
 
-                    <div class="tab-pane fade" id="facilities" role="tabpanel" aria-labelledby="facilities-tab" tabindex="0">
-                        <ul class="row mt-4 row-cols-1 row-cols-lg-2">
-                            <li class="col item"><i class="fa-regular fa-square-check me-2"></i>Wifi</li>
-                            <li class="col item"><i class="fa-regular fa-square-check me-2"></i>Water</li>
-                            <li class="col item"><i class="fa-regular fa-square-check me-2"></i>Blanket</li>
-                        </ul>
-                    </div>
+                        <div class="tab-pane fade" id="facilities" role="tabpanel" aria-labelledby="facilities-tab" tabindex="0">
+                            <ul class="row mt-4 row-cols-1 row-cols-lg-2">
+                                <li class="col item"><i class="fa-regular fa-square-check me-2"></i>Wifi</li>
+                                <li class="col item"><i class="fa-regular fa-square-check me-2"></i>Water</li>
+                                <li class="col item"><i class="fa-regular fa-square-check me-2"></i>Blanket</li>
+                            </ul>
+                        </div>
 
-                    <div class="tab-pane fade" id="policy" role="tabpanel" aria-labelledby="policy-tab" tabindex="0">
-                        <div class="overflow-y-auto mt-4 policy-body" >
-                            <span class="d-block policy-title">Cancellation Process:</span>
-                            <div class="policy-text mt-2">
-                                First, you have to go to the ticket history option. You need to add your phone number/PNR/transaction ID to search for your ticket.
-                                Click at the cancellation option. <br><br>
-                                Your request will be submitted to our team.
-                                Your money will be refunded with following our refund & cancellation policy.
+                        <div class="tab-pane fade" id="policy" role="tabpanel" aria-labelledby="policy-tab" tabindex="0">
+                            <div class="overflow-y-auto mt-4 policy-body" >
+                                <span class="d-block policy-title">Cancellation Process:</span>
+                                <div class="policy-text mt-2">
+                                    First, you have to go to the ticket history option. You need to add your phone number/PNR/transaction ID to search for your ticket.
+                                    Click at the cancellation option. <br><br>
+                                    Your request will be submitted to our team.
+                                    Your money will be refunded with following our refund & cancellation policy.
+                                </div>
+
+                                <span class="d-block policy-title mt-3">Cancellation Policies</span>
+                                <div class="policy-text mt-2">
+                                    Auto cancellation will happen if the customer fails to report at the reporting station 15 minutes before the holidays arrives. <br>
+                                    If the customer fails to pay the full amount that mentioned in the screen will not get the activated tickets. 
+
+                                    <br><br>
+                                    To be eligible for refund, customers need to cancel the ticket from ‘Ticket History’ a day before(Excluding 12:00 AM to 07:00 AM) the journey time. And must report the cancellation to the support center (i.e Call 89xxxxxxxx or email to info@boxiew.com).
+                                    <br><br>
+                                    Only during Eid time, customers are eligible for refund ONLY if the operator cancels the trip and cannot provide an alternative arrangement. (Note: Terms and conditions of refund policy might update or change from time to time without any notice)
+                                    <br><br>
+                                    For mobile payments, it is the responsibility of the customer to input transaction ID (if applicable), PIN, OTP properly within time to confirm his ticket by himself.
+                                    <br><br>
+                                    Boxiew.com sometimes does the verification for the customer as a courtesy, but it is not Boxiew’s responsibility or service promise.
+                                    <br><br>
+                                    For mobile payments, customers must complete payment and also verify transactions.
+                                    During Eid sales month, Jatri.co will not do any verification on behalf of the customers.
+                                    <br><br>
+                                    If the customer faces any hassle at the counter after purchasing tickets from boxiew.com, then the user has to give the complaint to our customer service or give an email to info@boxiew.com within 3 days(72 hours) from the departure time.
+                                </div>
+                                <span class="d-block policy-title mt-3 text-center">~ Thank You! ~</span>
+
                             </div>
-
-                            <span class="d-block policy-title mt-3">Cancellation Policies</span>
-                            <div class="policy-text mt-2">
-                                Auto cancellation will happen if the customer fails to report at the reporting station 15 minutes before the holidays arrives. <br>
-                                If the customer fails to pay the full amount that mentioned in the screen will not get the activated tickets. 
-
-                                <br><br>
-                                To be eligible for refund, customers need to cancel the ticket from ‘Ticket History’ a day before(Excluding 12:00 AM to 07:00 AM) the journey time. And must report the cancellation to the support center (i.e Call 89xxxxxxxx or email to info@boxiew.com).
-                                <br><br>
-                                Only during Eid time, customers are eligible for refund ONLY if the operator cancels the trip and cannot provide an alternative arrangement. (Note: Terms and conditions of refund policy might update or change from time to time without any notice)
-                                <br><br>
-                                For mobile payments, it is the responsibility of the customer to input transaction ID (if applicable), PIN, OTP properly within time to confirm his ticket by himself.
-                                <br><br>
-                                Boxiew.com sometimes does the verification for the customer as a courtesy, but it is not Boxiew’s responsibility or service promise.
-                                <br><br>
-                                For mobile payments, customers must complete payment and also verify transactions.
-                                During Eid sales month, Jatri.co will not do any verification on behalf of the customers.
-                                <br><br>
-                                If the customer faces any hassle at the counter after purchasing tickets from boxiew.com, then the user has to give the complaint to our customer service or give an email to info@boxiew.com within 3 days(72 hours) from the departure time.
-                            </div>
-                            <span class="d-block policy-title mt-3 text-center">~ Thank You! ~</span>
-
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div>
-                <span onclick="closeholidaysInfo()" role="button" style="font-size: 22px; color: var(--text-color); margin-top: -6px; display: block;"> &#10005; </span>
-            </div>
+                <div>
+                    <span onclick="closeholidaysInfo()" role="button" style="font-size: 22px; color: var(--text-color); margin-top: -6px; display: block;"> &#10005; </span>
+                </div>
 
+            </div>
+            
         </div>
-        
-    </div>
-</section>
-<!-- popup end  -->
+    </section>
+    <!-- popup end  -->
 
     
 </main>
 
 
-
-<!-- @endsection -->
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 
-<!-- @section('script') -->
+    <!-- offer-box active and inactive js  -->
+    <script>
+        document.querySelector('.holiday-offer-list').addEventListener('click', function(event) {
+            if (event.target.classList.contains('offer-btn')) {
+                const button = event.target;
+                const offerBox = button.closest('.offer-box');
+                const isActive = offerBox.classList.contains('active');
+    
+                // Remove active class from all offer-box elements
+                document.querySelectorAll('.offer-box').forEach(box => {
+                    box.classList.remove('active');
+                    box.querySelector('.offer-btn').textContent = box.querySelector('.offer-btn').getAttribute('data-apply');
+                });
+    
+                // Toggle active class on the clicked offer-box
+                if (!isActive) {
+                    offerBox.classList.add('active');
+                    button.textContent = button.getAttribute('data-remove');
+                } else {
+                    offerBox.classList.remove('active');
+                    button.textContent = button.getAttribute('data-apply');
+                }
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+    <!-- no uses  -->
 
     <!-- filter see more or less js  -->
     <script>
@@ -998,17 +1736,6 @@
     <!-- pirce range js end -->
 
 
-
-
-
-
-
-
-
-
-
-    <!-- no uses  -->
-   
 
     <!-- holidays info popup js  -->
     <script>
