@@ -4,21 +4,17 @@
 
 
 .heading-title{
-    // padding-top: $padding-section-title;
     color: $heading-color;
     font-weight: $font-medium !important;
 }
 
 .heading-sub-title{
     color: $title-sub-color;
-    // padding-top: $padding-normal;
-    // padding-bottom: $padding-normal;
 }
 .heading-u-line{
     width: 4.5rem;
     height: 0.188rem;
     background-color: $primary-color;
-    // margin-top: $margin-normal;
 }
 
 .see-more{
@@ -32,7 +28,6 @@
 
 .title-style{
     color: $title-color;
-    // font-size: $title-font-size;
 }
 
 .title-sub-style{
@@ -41,26 +36,12 @@
 .text-style{
     color: $text-color;
     font-size: $text-font-size;
-    // text-align: justify;
-    // text-align-last: left;
 }
 
 .box-shadow{
     box-shadow: 1px 1px 5px #c9c7c7;
 }
 
-// .Favorite{
-//     color: $primary-color;
-//     background-color: $bg-primary-light;
-//     padding: $padding-min-extra;
-//     width: 1.875rem;
-//     height: 1.875rem;
-//     // position: absolute;
-//     top: 1rem;
-//     left: 1rem;
-//     // visibility: hidden;
-    
-// }
 
 .product-fav{
     top: .5rem;
@@ -80,7 +61,6 @@
 .reviews{
     color: $text-color;
     color: $primary-color;
-    // font-size: $text-extra-small
     }
 
 .contact-link{

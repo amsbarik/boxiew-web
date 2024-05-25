@@ -1,0 +1,1889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap link-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- custom css link-->
+    <link href="css/style.min.css" rel="stylesheet">
+    <!--font-awesome lik-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!--slick css link-->
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/slick.css">
+
+    <title>Hotels | Boxiew</title>
+
+    <!-- root css  -->
+    <style>
+        :root {
+            --primary-color: #7e3ff2;
+            --primary-color-light: #efe5fd;
+            --secondary-color: #FDDB55;
+            --secondary-color-light: #ffe478;
+            --title-color: #1d1d1d;
+            --text-color: #757575;
+            --bg-color: #f6f7fa;
+            --bg-color-deep: #e6e5e5;
+            --light-color: white;
+
+            --box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+            }
+
+            input:focus{
+                outline: none !important;
+                box-shadow: none !important;
+            }
+            a {
+            text-decoration: none;
+            }
+            ul{
+                list-style: none;
+                padding-left: 0px;
+            }
+    </style>
+
+    <style>
+        .hotel-list .list-wrap .filter-by:focus {
+            outline: none;
+            box-shadow: none;
+        }
+        .hotel-list .list-wrap .card {
+            background: #f6f7fa;
+            height: 243px;
+            transition: .3s;
+            cursor: pointer;
+        }
+        .hotel-list .list-wrap .card:hover {
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+        }
+        .hotel-list .list-wrap .card .thum-img-view {
+            /* width: 400px;
+            height: 370px; */
+            position: absolute;
+            object-fit:cover;
+            bottom: 43px;
+            left: 0;
+            z-index: 1000;
+        }
+        .hotel-list .list-wrap .card .card-title{
+            font-size: 18px;
+            font-weight: 600;
+            color: #1d1d1d;
+            transition: .3s;
+        }
+        .hotel-list .list-wrap .card .card-title:hover{
+            /* color: #7e3ff2; */
+            text-decoration: underline;
+        }
+        .hotel-list .list-wrap .card .property-i{
+            color: #7e3ff2;
+            font-size: 16px;
+        } 
+        .hotel-list .list-wrap .card .property-partner{
+            color: #1d1d1d;
+            position: absolute;
+            width: 290px;
+            height: 94px;
+            background: #ffe478;
+            padding: 10px;
+            font-size: 12px;
+            font-weight: 300;
+            top: -109px;
+            right: -180px;
+            border: 1px solid #fed63b;
+            display: none;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+        } 
+        .hotel-list .list-wrap .card .property-i:hover + .property-partner{
+            display: inline;
+        } 
+        .hotel-list .list-wrap .card .property-partner .down-arrow{
+            width: 0;  
+            height: 0;  
+            border-left:16px solid transparent; 
+            border-right: 16px solid transparent; 
+            bottom: -14px;
+            left: 86px;
+            border-top: 16px solid #ffe478; 
+            position: absolute;
+        } 
+        .hotel-list .list-wrap .card .reviews {
+            color: #1d1d1d;
+            font-weight: 500;
+        }
+        .hotel-list .list-wrap .card .reviews small{
+            font-weight: 400;
+            margin-left: 10px
+        }
+        .hotel-list .list-wrap .card .reviews .btn{
+            font-weight: 500 !important;
+            background: #9965f4 ;
+            color: white;
+            border-radius: 16px 16px 16px 0px;
+            padding:  0px 12px !important;
+            margin-right: 4px;
+        } 
+        .hotel-list .list-wrap .card .location{
+            font-weight: 400 ;
+            color: #1d1d1d;
+        } 
+        .hotel-list .list-wrap .card .location .map:hover{
+            /* text-decoration: underline; */
+            color: #7e3ff2;
+        } 
+        .hotel-list .list-wrap .card .location i{
+            color: #7e3ff2;
+        } 
+        .hotel-list .list-wrap .card .location .location-frame{
+            
+        } 
+        .hotel-list .list-wrap .card .location iframe{
+            width: 960px;
+            height: 680px;
+        } 
+        .hotel-list .list-wrap .card .room-qty{
+            color: #7e3ff2;
+            margin-top: 30px;
+            font-weight: 500;
+        } 
+        .hotel-list .list-wrap .card .room-qty:hover{
+            text-decoration: underline;
+        } 
+        .hotel-list .list-wrap .card .facilities i{
+            color: #7e3ff2; 
+        } 
+        .hotel-list .list-wrap .card .facilities {
+            color:  #757575;
+            font-weight: 300;
+            font-size: 13px;
+        } 
+        .hotel-list .list-wrap .card .star-rate {
+            color:  #7e3ff2;
+            font-weight: 500;
+            border: 1px solid #7e3ff2;
+            padding: 4px 10px;
+            font-size: 14px;
+        } 
+        .hotel-list .list-wrap .card .price-info-card {
+            color: #1d1d1d;
+            font-weight: 300;
+            font-size: 13px;
+            width: 360px;
+            /* height: 182px; */
+            background: #ffe478;
+            border: 1px solid #fed63b;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+            display:none;
+            transition: .4s;
+            top: 26px;
+            left: -100px;
+            z-index: 1000;
+        } 
+        .hotel-list .list-wrap .card .price-info-btn:hover + .price-info-card {
+            display: block;
+        } 
+
+
+
+
+        /* filter css start  */
+        .filter-bg{
+            background: #f6f7fa;
+        }
+        .filter{
+            font-size: 18px;
+        }
+        
+        .reset-btn{
+            color: red;
+            font-size: 14px;
+        }
+        .reset-btn:hover{
+            color: red;
+        }
+        .filter-wrap hr{
+            opacity: 12% !important;
+        }
+        .filter-box {
+            height: 178px;
+            overflow: hidden;
+        }
+        .filter-box h5 {
+            font-size: 14px;
+        }
+        .filter-box label, span {
+            font-size: 13px;
+            margin-top: 3px;
+            color: #1d1d1d;
+            transition: .3s;
+        }
+        .filter-box label:hover {
+            color: #7e3ff2;
+        }
+
+        .filter-box.show {
+            height: auto;
+        }
+
+        .filter-items {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .readmore {
+            position: absolute;
+            width: 100%;
+            top: 130px;
+            left: 0;
+            background: #f6f7fa;
+            color: #7e3ff2;
+            cursor: pointer;
+        }
+
+        .readmore::before {
+            content: attr(data-more)
+        }
+
+        .filter-box.show .readmore {
+            position: relative;
+            top: auto;
+            display: block;
+        }
+
+        .filter-box.show .readmore::before {
+            content: attr(data-less)
+        }
+
+        input:checked{
+        background-color: #7e3ff2 !important;
+        border:0;
+        }
+
+        /* price-range start*/
+        .price-range, .search-property h5{
+            font-size: 14px;
+        }
+        .search-property input{
+            font-size: 13px;
+            border-radius: 5px 0px 0px 5px;
+
+        }
+        .search-property input:focus{
+            border: 1px solid #b794f6;
+        }
+        .search-property .btn{
+            border: 1px solid #ddd;
+            border-radius: 0px 5px 5px 0px;
+            border-left: 0px;
+            transition: .3s;
+            color: #9965f4;
+        }
+        .search-property .btn:hover{
+            border: 1px solid #9965f4;
+        }
+        .price-input-container { 
+            width: 100%; 
+        } 
+
+        .price-input .price-field { 
+            display: flex; 
+            margin-bottom: 22px; 
+        } 
+
+        .price-field label { 
+            margin-right: 10px; 
+            margin-top: 6px; 
+            font-size: 13px;
+            color: #1d1d1d;
+        } 
+
+        .price-field input { 
+            flex: 1; 
+            font-size: 13px;
+            color: #1d1d1d;
+            border-radius: 4px;
+            text-align: center;  
+            border: 1px solid #ddd; 
+            width: 92px;
+            /* background: #e4e4e4;  */
+        } 
+        .price-field input:focus{
+            border: 1px solid #b794f6;
+            outline: none;
+
+        }
+
+        .price-input { 
+            width: 100%; 
+            font-size: 19px; 
+            color: #7e3ff2; 
+        } 
+
+        /* Remove Arrows/Spinners */
+        input::-webkit-outer-spin-button, 
+        input::-webkit-inner-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        } 
+
+        .slider-container { 
+            width: 100%; 
+        } 
+
+        .slider-container { 
+            height: 2px; 
+            position: relative; 
+            background: #e4e4e4; 
+            border-radius: 5px; 
+        } 
+
+        .slider-container .price-slider { 
+            height: 100%; 
+            left: 0%; 
+            right: 15%; 
+            position: absolute; 
+            border-radius: 5px; 
+            background: #9965f4; 
+        } 
+
+        .range-input { 
+            position: relative; 
+        } 
+
+        .range-input input { 
+            position: absolute; 
+            width: 100%; 
+            height: 4px; 
+            background: none; 
+            top: -4px; 
+            pointer-events: none; 
+            cursor: pointer; 
+            -webkit-appearance: none; 
+        } 
+
+        /* Styles for the range thumb in WebKit browsers */
+        input[type="range"]::-webkit-slider-thumb { 
+            height: 16px; 
+            width: 16px; 
+            border-radius: 70%; 
+            background: #f6f7fa; 
+            border: 2px  solid #9965f4;
+            pointer-events: auto; 
+            -webkit-appearance: none; 
+        } 
+        input[type="range"]::-webkit-slider-thumb:hover { 
+            height: 22px; 
+            width: 22px; 
+        } 
+
+        @media screen and (max-width: 768px) { 
+            .main { 
+                width: 80%; 
+                margin-right: 5px; 
+            } 
+
+            .custom-wrapper { 
+                width: 100%; 
+                left: 0; 
+                padding: 0 10px; 
+            } 
+
+            .projtitle { 
+                width: 100%; 
+                position: relative; 
+                right: 26px; 
+            } 
+
+            .price-input { 
+                flex-direction: column; 
+                align-items: center; 
+            } 
+
+            .price-field { 
+                margin-bottom: 10px; 
+            } 
+        }
+        /* price-range end*/
+
+
+        /* filter css end  */
+
+    </style>
+</head>
+<body>
+  <!--Main Navigation-->
+  <header>
+    <!-- Navbar top start-->
+    <nav class="navbar bg-body-tertiary navbar-expand-md shadow-sm fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html" ><img src="image/logo.png" width="100" class="object-fit-cover"  alt="logo"></a>
+        <button  class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <!-- <div class="search ">
+              <form action="" role="search">
+                <div class="input-group ">
+                  <input type="search" placeholder="Search" aria-label="Search" class="form-control"  aria-describedby="search-btn">
+                  <button class="btn btn-outline-secondary" type="button" id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+              </form>
+            </div> -->
+            <ul class="navbar-nav  ms-auto ">
+              <li class="nav-item mx-auto"><a href="listing.html" class="nav-link"> Listing</a></li>
+              <li class="nav-item mx-auto"><a href="shopping.html" class="nav-link">Shopping</a></li>
+              <li class="nav-item mx-auto"><a href="wishlist.html" class="nav-link">Wishlist</a></li>
+              <li class="nav-item mx-auto"><a href="myCart.html" class="nav-link">Cart</a></li>
+              <li class="nav-item  mx-auto" ><a href="userProfile.html"  class="nav-link"><i class="fa-solid fa-arrow-right-to-bracket pe-2"></i>Sign In</a></li>
+              <li class="nav-item  mx-auto"><div class="add-listing button-outline rounded-pill p-0"><a href="#" class="nav-link px-4">Add Listing<i class="fa-solid fa-plus ms-2 border rounded-circle "></i></a></div></li>
+        
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar top end-->
+
+    <!-- nav bottom start  -->
+    <nav id="nav-bottom" class="fixed-bottom nav-bottom">
+      
+      <div class="container">
+        
+        <div >
+          <ul class="d-flex justify-content-between" >
+            <li class="nav-item text-center">
+              <a class="nav-link nav-link-sm  active" aria-current="page" href="index.html"><i class="fa-solid fa-house"></i></a>
+            </li>
+            <li class="nav-item text-center">
+              <a class="nav-link nav-link-sm" href="listing.html"><i class="fa-solid fa-chart-simple"></i></a>
+            </li>
+            <li class="nav-item text-center">
+              <a class="nav-link nav-link-sm" href="shopping.html"><i class="fa-solid fa-basket-shopping"></i></a>
+            </li>
+            <li class="nav-item text-center">
+              <a class="nav-link nav-link-sm" href="myCart.html"><i class="fa-solid fa-cart-plus"></i></a>
+            </li>
+            <li class="nav-item text-center">
+              <a class="nav-link nav-link-sm "  href="userProfile.html"><i class="fa-solid fa-user"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- nav bottom end  -->
+
+   
+  </header>
+  <!--Main Navigation-->
+
+  <!--start main-->
+  <main> 
+    <!-- hotel search form  -->
+    <section class="hotel-form pt-5" style="margin-top: 5rem; ">
+        <div class="container">
+            <div class="hotel-form-wrap">
+                <h3>Hotel Form</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- hotel list start -->
+    <section class="hotel-list">
+        <div class="container">
+            <div class="hotel-list-wrap">
+                <div class="row ">
+                    <!-- filter left side col start  -->
+                    <div class="col-3 ">
+                        
+                        <div class="filter-wrap filter-bg rounded mb-5 pb-3">
+                            <div class="d-flex px-3 pt-3 pb-2 justify-content-between ">
+                                <h5 class="filter ">Filters</h5>
+                                <button type="reset" class="btn reset-btn  p-0">Clear</button>
+                            </div>
+                            <hr class="m-0 ">
+
+                            <!-- search property -->
+                            <div class="search-property px-3 mt-3">
+                                <h5 class="mb-2">Search Property</h5>
+                                <form class="d-flex  " role="search">
+                                    <input class="form-control " type="search" placeholder="Property Name" aria-label="Search">
+                                    <button class="btn " type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                </form>
+                            </div>
+
+                            <!-- popular filtrs  -->
+                            <div class="filter-box mt-3 px-3">
+                                <h5 class="mb-2">Popular Filters</h5>
+                                <div class="filter-items">
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="swimming-pool" type="checkbox" value="" id="swimming-pool">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="swimming-pool">Swimming Pool</label>
+                                        <span class="">10</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="breakfast-included" type="checkbox" value="" id="breakfast-included">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="breakfast-included">Breakfast included</label>
+                                        <span class="">14</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="air-onditioning" type="checkbox" value="" id="air-onditioning">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="air-onditioning">Air Conditioning</label>
+                                        <span class="">18</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="free-cancellation" type="checkbox" value="" id="free-cancellation">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="free-cancellation">Free Cancellation</label>
+                                        <span class="">7</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="instant-confirmation" type="checkbox" value="" id="instant-confirmation">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="instant-confirmation">Instant Confirmation</label>
+                                        <span class="">21</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="star3" type="checkbox" value="" id="star3">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="star3">3 Star</label>
+                                        <span class="">5</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="star4" type="checkbox" value="" id="star4">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="star4">4 Star</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="hotels" type="checkbox" value="" id="hotels">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="hotels">Hotels </label>
+                                        <span class="">7</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="twin-beds" type="checkbox" value="" id="twin-beds">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="twin-beds">Twin beds</label>
+                                        <span class="">7</span>
+                                    </div> 
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="two-beds" type="checkbox" value="" id="two-beds">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="two-beds">Two Beds</label>
+                                        <span class="">7</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="free-wifi" type="checkbox" value="" id="free-wifi">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="free-wifi">Free WiFi</label>
+                                        <span class="">7</span>
+                                    </div> 
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="front-desk" type="checkbox" value="" id="front-desk">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="front-desk">24 hour front desk</label>
+                                        <span class="">7</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="bathroom" type="checkbox" value="" id="bathroom">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="bathroom">Private bathroom</label>
+                                        <span class="">7</span>
+                                    </div>
+
+                                    <span class="readmore" data-more="See More 13" data-less="See Less"></span>
+                                </div>
+                            </div>
+                            <hr class="my-2 mx-3 ">
+
+                            <!--  price range -->
+                            <div class="price-range mt-3 px-3" style="margin-bottom: 34px;">
+                                <h5 class="mb-2 ">Price (USD)</h5>
+                                <div class="price-input-container mt-3 "> 
+                                    <div class="price-input d-flex"> 
+                                        <div class="price-field me-3"> 
+                                            <label class="form-label">Min</label> 
+                                            <input type="number" class="min-input" value="10"> 
+                                        </div> 
+                                        <div class="price-field"> 
+                                            <label class="form-label">Max</label> 
+                                            <input type="number" class="max-input" value="8500"> 
+                                        </div> 
+                                    </div> 
+                                    <div class="slider-container mt-1 "> 
+                                        <div class="price-slider "> </div> 
+                                    </div> 
+                                </div> 
+
+                                <!-- Slider -->
+                                <div class="range-input "> 
+                                    <input type="range" class="min-range" min="0" max="10000" value="10" step="1"> 
+                                    <input type="range" class="max-range" min="0" max="10000" value="8500" step="1"> 
+                                </div>
+                            </div> 
+                            <!-- <hr class="my-2 mx-3 mt-3"> -->
+
+                            <!-- Property Facilities  -->
+                            <div class="filter-box mt-3 px-3">
+                                <h5 class="mb-2">Property Facilities</h5>
+                                <div class="filter-items">
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="pool" type="checkbox" value="" id="pool">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="pool">Swimming Pool</label>
+                                        <span class="">10</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Fitness" type="checkbox" value="" id="Fitness">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Fitness">Fitness Center</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="breakfast" type="checkbox" value="" id="breakfast">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="breakfast">Breakfast included</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Catering" type="checkbox" value="" id="Catering">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Catering">Self Catering</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="wifi" type="checkbox" value="" id="wifi">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="wifi">Free wifi</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="desk" type="checkbox" value="" id="desk">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="desk">24 hour front desk</label>
+                                        <span class="">16</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="security" type="checkbox" value="" id="security">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="security">24 jour security</label>
+                                        <span class="">7</span>
+                                    </div>
+
+                                    <span class="readmore" data-more="See More 7" data-less="See Less"></span>
+                                </div>
+                            </div>
+                            <hr class="my-2 mx-3 ">
+
+                            <!-- Property Types  -->
+                            <div class="filter-box mt-3 px-3">
+                                <h5 class="mb-2">Property Types</h5>
+                                <div class="filter-items">
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Hotel" type="checkbox" value="" id="Hotel">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Hotel">Hotel</label>
+                                        <span class="">10</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Resort</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="breakfast" type="checkbox" value="" id="breakfast">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="breakfast">Hotel & resort</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Catering" type="checkbox" value="" id="Catering">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Catering">Self Catering</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="wifi" type="checkbox" value="" id="wifi">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="wifi">Free wifi</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="desk" type="checkbox" value="" id="desk">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="desk">24 hour front desk</label>
+                                        <span class="">16</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="security" type="checkbox" value="" id="security">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="security">24 jour security</label>
+                                        <span class="">7</span>
+                                    </div>
+
+                                    <span class="readmore" data-more="See More 7" data-less="See Less"></span>
+                                </div>
+                            </div>
+                            <hr class="my-2 mx-3 ">
+
+                            <!-- Room features  -->
+                            <div class="filter-box mt-3 px-3">
+                                <h5 class="mb-2">Room Features</h5>
+                                <div class="filter-items">
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Hotel" type="checkbox" value="" id="Hotel">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Hotel">Family Rooms</label>
+                                        <span class="">10</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Couple Rooms</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="breakfast" type="checkbox" value="" id="breakfast">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="breakfast">Hotel & resort</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Catering" type="checkbox" value="" id="Catering">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Catering">Self Catering</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="wifi" type="checkbox" value="" id="wifi">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="wifi">Free wifi</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="desk" type="checkbox" value="" id="desk">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="desk">24 hour front desk</label>
+                                        <span class="">16</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="security" type="checkbox" value="" id="security">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="security">24 jour security</label>
+                                        <span class="">7</span>
+                                    </div>
+
+                                    <span class="readmore" data-more="See More 7" data-less="See Less"></span>
+                                </div>
+                            </div>
+                            <hr class="my-2 mx-3 ">
+
+                            <!-- Room Facilities  -->
+                            <div class="filter-box mt-3 px-3">
+                                <h5 class="mb-2">Room Facilities</h5>
+                                <div class="filter-items">
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Hotel" type="checkbox" value="" id="Hotel">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Hotel">Extra Beds</label>
+                                        <span class="">10</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Kitchen</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="breakfast" type="checkbox" value="" id="breakfast">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="breakfast">Air condition</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Catering" type="checkbox" value="" id="Catering">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Catering">Self Catering</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="wifi" type="checkbox" value="" id="wifi">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="wifi">Free wifi</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="desk" type="checkbox" value="" id="desk">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="desk">24 hour front desk</label>
+                                        <span class="">16</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="security" type="checkbox" value="" id="security">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="security">24 jour security</label>
+                                        <span class="">7</span>
+                                    </div>
+
+                                    <span class="readmore" data-more="See More 7" data-less="See Less"></span>
+                                </div>
+                            </div>
+                            <hr class="my-2 mx-3 ">
+
+                            <!-- Bed Type  -->
+                            <div class="filter-box mt-3 px-3">
+                                <h5 class="mb-2">Bed Types</h5>
+                                <div class="filter-items">
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Hotel" type="checkbox" value="" id="Hotel">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Hotel">Twin Beds</label>
+                                        <span class="">10</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">2 Beds</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="breakfast" type="checkbox" value="" id="breakfast">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="breakfast">Air condition</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Catering" type="checkbox" value="" id="Catering">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Catering">Self Catering</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="wifi" type="checkbox" value="" id="wifi">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="wifi">Free wifi</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="desk" type="checkbox" value="" id="desk">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="desk">24 hour front desk</label>
+                                        <span class="">16</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="security" type="checkbox" value="" id="security">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="security">24 jour security</label>
+                                        <span class="">7</span>
+                                    </div>
+
+                                    <span class="readmore" data-more="See More 7" data-less="See Less"></span>
+                                </div>
+                            </div>
+                            <hr class="my-2 mx-3 ">
+
+                            <!-- Meals  -->
+                            <div class="filter-box mt-3 px-3">
+                                <h5 class="mb-2">Meals</h5>
+                                <div class="filter-items">
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Hotel" type="checkbox" value="" id="Hotel">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Hotel">Self Catering</label>
+                                        <span class="">10</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">All Meals Included</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="breakfast" type="checkbox" value="" id="breakfast">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="breakfast">Night club</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Catering" type="checkbox" value="" id="Catering">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Catering">Self Catering</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="wifi" type="checkbox" value="" id="wifi">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="wifi">Free wifi</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="desk" type="checkbox" value="" id="desk">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="desk">24 hour front desk</label>
+                                        <span class="">16</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="security" type="checkbox" value="" id="security">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="security">24 jour security</label>
+                                        <span class="">7</span>
+                                    </div>
+
+                                    <span class="readmore" data-more="See More 7" data-less="See Less"></span>
+                                </div>
+                            </div>
+                            <hr class="my-2 mx-3 ">
+
+                            <!-- Fun Facilities  -->
+                            <div class="filter-box mt-3 px-3">
+                                <h5 class="mb-2">Fun Facilities</h5>
+                                <div class="filter-items">
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Hotel" type="checkbox" value="" id="Hotel">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Hotel">Playground</label>
+                                        <span class="">10</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">game rooms</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="breakfast" type="checkbox" value="" id="breakfast">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="breakfast">Night club</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Catering" type="checkbox" value="" id="Catering">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Catering">Self Catering</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="wifi" type="checkbox" value="" id="wifi">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="wifi">Free wifi</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="desk" type="checkbox" value="" id="desk">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="desk">24 hour front desk</label>
+                                        <span class="">16</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="security" type="checkbox" value="" id="security">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="security">24 jour security</label>
+                                        <span class="">7</span>
+                                    </div>
+
+                                    <span class="readmore" data-more="See More 7" data-less="See Less"></span>
+                                </div>
+                            </div>
+                            <hr class="my-2 mx-3 ">
+
+                            <!-- star rating  -->
+                            <div class="filter-box mt-3 px-3">
+                                <h5 class="mb-2">Star Rating</h5>
+                                <div class="filter-items">
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Hotel" type="checkbox" value="" id="Hotel">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Hotel"><i class="fa-regular fa-star me-2"></i>1 Star</label>
+                                        <span class="">10</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort"><i class="fa-regular fa-star me-2"></i>2 star</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="breakfast" type="checkbox" value="" id="breakfast">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="breakfast"><i class="fa-regular fa-star me-2"></i>3 star</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Catering" type="checkbox" value="" id="Catering">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Catering"><i class="fa-regular fa-star me-2"></i>4 star</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="wifi" type="checkbox" value="" id="wifi">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="wifi"><i class="fa-regular fa-star me-2"></i>5 star</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <span class="readmore" data-more="See More 7" data-less="See Less"></span>
+                                </div>
+                            </div>
+                            <hr class="my-2 mx-3 ">
+
+                            <!-- Guest rating  -->
+                            <div class="filter-box mt-3 px-3">
+                                <h5 class="mb-2">Guest Rating</h5>
+                                <div class="filter-items">
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Hotel" type="checkbox" value="" id="Hotel">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Hotel"><i class="fa-regular fa-star me-2"></i>1 Poor</label>
+                                        <span class="">10</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort"><i class="fa-regular fa-star me-2"></i>2 Regular</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="breakfast" type="checkbox" value="" id="breakfast">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="breakfast"><i class="fa-regular fa-star me-2"></i>3 Good</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Catering" type="checkbox" value="" id="Catering">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Catering"><i class="fa-regular fa-star me-2"></i>3.5 Very Good</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="wifi" type="checkbox" value="" id="wifi">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="wifi"><i class="fa-regular fa-star me-2"></i>4 Great</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="wifi" type="checkbox" value="" id="wifi">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="wifi"><i class="fa-regular fa-star me-2"></i>4.5 Super</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="wifi" type="checkbox" value="" id="wifi">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="wifi"><i class="fa-regular fa-star me-2"></i>5 Excellent</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <span class="readmore" data-more="See More 7" data-less="See Less"></span>
+                                </div>
+                            </div>
+                            <hr class="my-2 mx-3 ">
+
+                            <!-- discount  -->
+                            <div class="filter-box mt-3 px-3">
+                                <h5 class="mb-2">Discount</h5>
+                                <div class="filter-items">
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Hotel" type="checkbox" value="" id="Hotel">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Hotel">Upto 10%</label>
+                                        <span class="">10</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Upto 20%</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="breakfast" type="checkbox" value="" id="breakfast">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="breakfast">Upto 30%</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Catering" type="checkbox" value="" id="Catering">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Catering">Upto 40%</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="wifi" type="checkbox" value="" id="wifi">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="wifi">Upto 60%</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="desk" type="checkbox" value="" id="desk">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="desk">Upto 70%</label>
+                                        <span class="">16</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="security" type="checkbox" value="" id="security">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="security">> Upto 90%</label>
+                                        <span class="">7</span>
+                                    </div>
+
+                                    <span class="readmore" data-more="See More 7" data-less="See Less"></span>
+                                </div>
+                            </div>
+                            <hr class="my-2 mx-3 ">
+
+                            <!-- payment & reservation  -->
+                            <div class="filter-box mt-3 px-3">
+                                <h5 class="mb-2">Payment & Reservation</h5>
+                                <div class="filter-items">
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Hotel" type="checkbox" value="" id="Hotel">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Hotel">Prepay Online</label>
+                                        <span class="">10</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">pay at hotel</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="breakfast" type="checkbox" value="" id="breakfast">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="breakfast">free cancellation</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Catering" type="checkbox" value="" id="Catering">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Catering">instance confirmation</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <span class="readmore" data-more="See More 7" data-less="See Less"></span>
+                                </div>
+                            </div>
+                            <hr class="my-2 mx-3 ">
+
+                            <!-- distance  -->
+                            <div class="filter-box mt-3 px-3">
+                                <h5 class="mb-2">Distance from Cox's Bazar</h5>
+                                <div class="filter-items">
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Hotel" type="checkbox" value="" id="Hotel">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Hotel">Less than 3km</label>
+                                        <span class="">10</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Less than 5km</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="breakfast" type="checkbox" value="" id="breakfast">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="breakfast">Less than 7km</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Catering" type="checkbox" value="" id="Catering">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Catering">Less than 10km</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="wifi" type="checkbox" value="" id="wifi">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="wifi">More than 10km</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <span class="readmore" data-more="See More 7" data-less="See Less"></span>
+                                </div>
+                            </div>
+                            <hr class="my-2 mx-3 ">
+
+                            <!-- Neighbourhood  -->
+                            <div class="filter-box mt-3 px-3">
+                                <h5 class="mb-2">Neighbourhood</h5>
+                                <div class="filter-items">
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Hotel" type="checkbox" value="" id="Hotel">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Hotel">Cox's bazar</label>
+                                        <span class="">10</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">Cox's bazar sadar</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="breakfast" type="checkbox" value="" id="breakfast">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="breakfast">Jalia palong</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Catering" type="checkbox" value="" id="Catering">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Catering">Kolatoli</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="wifi" type="checkbox" value="" id="wifi">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="wifi">Laboni point</label>
+                                        <span class="">11</span>
+                                    </div>
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="wifi" type="checkbox" value="" id="wifi">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="wifi">ukhina</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <span class="readmore" data-more="See More 7" data-less="See Less"></span>
+                                </div>
+                            </div>
+                            <hr class="my-2 mx-3 ">
+
+                            <!-- Brand Property -->
+                            <div class="filter-box mt-3 px-3">
+                                <h5 class="mb-2">Brand Property</h5>
+                                <div class="filter-items">
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Hotel" type="checkbox" value="" id="Hotel">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Hotel">Radisson Blue</label>
+                                        <span class="">10</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Resort" type="checkbox" value="" id="Resort">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Resort">The park</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="breakfast" type="checkbox" value="" id="breakfast">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="breakfast">Ovolo Hotels</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Catering" type="checkbox" value="" id="Catering">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Catering">Kerry Hotels</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Catering" type="checkbox" value="" id="Catering">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Catering">Kerry Hotels</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <div class="form-check d-flex">
+                                        <input class="form-check-input" name="Catering" type="checkbox" value="" id="Catering">
+                                        <label class="form-check-label text-capitalize ms-2 flex-grow-1" for="Catering">Kerry Hotels</label>
+                                        <span class="">11</span>
+                                    </div>
+
+                                    <span class="readmore" data-more="See More 7" data-less="See Less"></span>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                    <!-- filter left side col end  -->
+
+                    <!-- listed hotels right side col start  -->
+                    <div class="col-9 ">
+                        <div class="list-wrap">
+
+                            <!-- filter by & search qty  -->
+                            <div class="d-flex justify-content-between mb-3">
+                                <h5 class="mt-2 pt-1"> 24 Properties Match! </h5>
+                                <select name="filter-by" class="filter-by py-2 px-3 rounded" id="" style="font-size: 14px; ">
+                                    <option value="1" selected>Popularity</option>
+                                    <option value="2"> Price Low</option>
+                                    <option value="3"> Price High</option>
+                                </select>
+                            </div>
+
+                            <!-- hotel list card start  -->
+                            <div class="card border-0 position-relative mb-3">
+                                <div class="row g-0">
+                                    <!-- card images 1100*734px recomended -->
+                                    <div class="col-md-3">
+                                        <a href="#" target="blank">
+                                            <img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/325/325466/man-walking-dog.jpg" class=" " alt="..." style="height: 200px; width: 100%; object-fit: cover; border-top-left-radius: 5px;">
+                                            <img src="" class="thum-img-view rounded" alt="">
+                                            <div class="row  g-1" style="margin-top: 0px;">
+                                                <div class="col"><img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/325/325466/man-walking-dog.jpg"  class="img-fluid card-thum-img" alt="thum-img" style="border-bottom-left-radius: 5px;"> </div>
+                                                <div class="col"><img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/325/325466/man-walking-dog.jpg"  class="img-fluid card-thum-img" alt="thum-img"> </div>
+                                                <div class="col"><img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/325/325466/man-walking-dog.jpg"  class="img-fluid card-thum-img" alt="thum-img"> </div>
+                                                <div class="col"><img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/325/325466/man-walking-dog.jpg"  class="img-fluid card-thum-img" alt="thum-img"> </div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <!-- card content  start-->
+                                    <div class="col-md-9">
+                                        <div class="card-body ">
+                                            <div class="row ">
+
+                                                <!-- left title & details  -->
+                                                <div class="col-8">
+                                                    <a href="#" target="blank">
+                                                        <h5 class="card-title d-inline-block">Hotel The Cox Today   </h5>
+                                                        <div class="position-relative d-inline">
+                                                            <i class="fa-solid fa-bell property-i ms-2"></i>
+                                                            <small class="property-partner  rounded-1 lh-base   z-1 ">Verified and Highly Recommended Property that is committed to providing prominent service, excellent value, and an attractive price!
+                                                                <span class="down-arrow"></span>
+                                                            </small>
+                                                        </div>
+                                                    </a>
+                                                    <a href="#" target="blank" class="reviews mb-2 d-block">
+                                                        <span class="btn ">4.2<span style="color: #fff; opacity: 86%">/5</span></span>Very Good <small>624 Reviews</small>
+                                                    </a>
+                                                    <small class="mt-2 location ">
+                                                        <i class="fa-solid fa-location-dot me-2"></i>City, State, Country. 
+                                                        <span class="ms-3 map"><i class="fa-solid fa-earth-americas me-2"></i>See Map</span>
+                                                        
+                                                    <!-- <div class="position-absolute location-frame">
+                                                            <iframe  src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=52.70967533219885, -8.020019531250002&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" 
+                                                            frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                                                            </iframe>
+                                                        </div> -->
+
+                                                    </small>
+
+                                                    <a href="#" class="room-qty mb-1 d-block"><i class="fa-solid fa-up-right-from-square me-3"></i>7 Rooms Available <i class="fa-solid fa-award ms-3 me-2"></i>Top Sell</a>
+                                                    
+                                                    <!--facilities-max 3 and max-character is 50  -->
+                                                    <small class="d-block facilities">
+                                                        <i class="fa-regular fa-square-check me-2"></i>Free cancellation & No Need Prepayment <br>
+                                                        <i class="fa-regular fa-square-check me-2"></i>Air Conditioning & 24/7 Hours Home Services <br>
+                                                        <i class="fa-regular fa-square-check me-2"></i>Children stay for free up to 10 years <br>
+                                                    </small>
+                                                
+                                                </div>
+
+                                                <!-- right star & price  -->
+                                                <div class="col-4 ">
+                                                    <div class="d-flex align-content-between  flex-wrap" style="height: 100%;">
+                                                        <div class="ms-auto  star-rate rounded"><i class="fa-solid fa-star me-1"></i>5 Star</div>
+                                                        <div class="text-end ms-auto" >
+                                                            <span class="btn border-0 btn-warning py-1 " style="margin-right: -18px; padding-right:24px; padding-left:80px;  border-radius: 5px 0px 0px 5px; background: #FDDB55">70% off</span>
+                                                            <div class="position-relative price-info mt-1">
+                                                                <span class="text-capitalize" style="font-size:13px; color:#7e3ff2; ">Limited Time offer</span>
+                                                                <i class="fa-solid fa-circle-info ms-2 opacity-75 price-info-btn" style="font-size:13px; color:#7e3ff2; "></i>
+
+                                                                <!-- price info show on hover  -->
+                                                                <div class="price-info-card p-2 rounded position-absolute">
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <div class="">USD 94.78 × 2 Nights</div>
+                                                                        <div>USD 189.56</div>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <div class="text-capitalize">Limited Time Offer</div>
+                                                                        <div>- USD 19.36</div>
+                                                                    </div>
+                                                                    <hr class="my-2">
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <h5>Total</h5>
+                                                                        <h5>USD 170.20</h5>
+                                                                    </div>
+                                                                    <small class="text-start" ><i class="fa-solid fa-quote-left me-1 mt-3" style="color: #7e3ff2;"></i>You're getting a discount because, for a limited time, this property is offering reduced rates on some rooms that match your search.</small>
+
+                                                                </div>
+
+                                                            </div>
+                                                            <span class="text-danger text-decoration-line-through me-1" style="font-size: 16px;">$ 120</span>
+                                                            <h3 class="d-inline" style="color: #7e3ff2;">$98</h3>
+                                                            <small class=d-block><span>4</span> Nights <span>2</span> Rooms <br> Incl. Taxes & Charges</small>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- card content  end-->
+
+                                </div>
+
+                                <!-- positon absolute elements start -->
+                                <div class="position-absolute px-2 py-1 rounded-end " style="top: 20px; left: 0; background : rgba(255, 255, 255, .65); font-size: 14px;">
+                                    <i class="fa-solid fa-trophy me-2" style="color:#7e3ff2;"></i>Popular
+                                </div>
+                                <!-- positon absolute elements end -->
+                            </div>
+
+                            <div class="card border-0 position-relative mb-3">
+                                <div class="row g-0">
+                                    <!-- card images 1100*734px recomended -->
+                                    <div class="col-md-3">
+                                        <a href="#" target="blank">
+                                            <img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/325/325466/man-walking-dog.jpg" class=" " alt="..." style="height: 200px; width: 100%; object-fit: cover; border-top-left-radius: 5px;">
+                                            <img src="" class="thum-img-view rounded" alt="">
+                                            <div class="row  g-1" style="margin-top: 0px;">
+                                                <div class="col"><img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/325/325466/man-walking-dog.jpg"  class="img-fluid card-thum-img" alt="thum-img" style="border-bottom-left-radius: 5px;"> </div>
+                                                <div class="col"><img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/325/325466/man-walking-dog.jpg"  class="img-fluid card-thum-img" alt="thum-img"> </div>
+                                                <div class="col"><img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/325/325466/man-walking-dog.jpg"  class="img-fluid card-thum-img" alt="thum-img"> </div>
+                                                <div class="col"><img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/325/325466/man-walking-dog.jpg"  class="img-fluid card-thum-img" alt="thum-img"> </div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <!-- card content  start-->
+                                    <div class="col-md-9">
+                                        <div class="card-body ">
+                                            <div class="row ">
+
+                                                <!-- left title & details  -->
+                                                <div class="col-8">
+                                                    <a href="#" target="blank">
+                                                        <h5 class="card-title d-inline-block">Hotel The Cox Today   </h5>
+                                                        <div class="position-relative d-inline">
+                                                            <i class="fa-solid fa-bell property-i ms-2"></i>
+                                                            <small class="property-partner  rounded-1 lh-base   z-1 ">Verified and Highly Recommended Property that is committed to providing prominent service, excellent value, and an attractive price!
+                                                                <span class="down-arrow"></span>
+                                                            </small>
+                                                        </div>
+                                                    </a>
+                                                    <a href="#" target="blank" class="reviews mb-2 d-block">
+                                                        <span class="btn ">4.2<span style="color: #fff; opacity: 86%">/5</span></span>Very Good <small>624 Reviews</small>
+                                                    </a>
+                                                    <small class="mt-2 location ">
+                                                        <i class="fa-solid fa-location-dot me-2"></i>City, State, Country. 
+                                                        <span class="ms-3 map"><i class="fa-solid fa-earth-americas me-2"></i>See Map</span>
+                                                        
+                                                    <!-- <div class="position-absolute location-frame">
+                                                            <iframe  src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=52.70967533219885, -8.020019531250002&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" 
+                                                            frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                                                            </iframe>
+                                                        </div> -->
+
+                                                    </small>
+
+                                                    <a href="#" class="room-qty mb-1 d-block"><i class="fa-solid fa-up-right-from-square me-3"></i>7 Rooms Available <i class="fa-solid fa-award ms-3 me-2"></i>Top Sell</a>
+                                                    
+                                                    <!--facilities-max 3 and max-character is 50  -->
+                                                    <small class="d-block facilities">
+                                                        <i class="fa-regular fa-square-check me-2"></i>Free cancellation & No Need Prepayment <br>
+                                                        <i class="fa-regular fa-square-check me-2"></i>Air Conditioning & 24/7 Hours Home Services <br>
+                                                        <i class="fa-regular fa-square-check me-2"></i>Children stay for free up to 10 years <br>
+                                                    </small>
+                                                
+                                                </div>
+
+                                                <!-- right star & price  -->
+                                                <div class="col-4 ">
+                                                    <div class="d-flex align-content-between  flex-wrap" style="height: 100%;">
+                                                        <div class="ms-auto  star-rate rounded"><i class="fa-solid fa-star me-1"></i>5 Star</div>
+                                                        <div class="text-end ms-auto" >
+                                                            <span class="btn border-0 btn-warning py-1 " style="margin-right: -18px; padding-right:24px; padding-left:80px;  border-radius: 5px 0px 0px 5px; background: #FDDB55">70% off</span>
+                                                            <div class="position-relative price-info mt-1">
+                                                                <span class="text-capitalize" style="font-size:13px; color:#7e3ff2; ">Getaway Offer</span>
+                                                                <i class="fa-solid fa-circle-info ms-2 opacity-75 price-info-btn" style="font-size:13px; color:#7e3ff2; "></i>
+
+                                                                <!-- price info show on hover  -->
+                                                                <div class="price-info-card p-2 rounded position-absolute">
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <div class="">USD 94.78 × 2 Nights</div>
+                                                                        <div>USD 189.56</div>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <div class="text-capitalize">Getaway Offer</div>
+                                                                        <div>- USD 19.36</div>
+                                                                    </div>
+                                                                    <hr class="my-2">
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <h5>Total</h5>
+                                                                        <h5>USD 170.20</h5>
+                                                                    </div>
+                                                                    <small class="text-start" ><i class="fa-solid fa-quote-left me-1 mt-3" style="color: #7e3ff2;"></i>This property is offering a discount on stays between 29 March–30 September 2024.</small>
+
+                                                                </div>
+
+                                                            </div>
+                                                            <span class="text-danger text-decoration-line-through me-1" style="font-size: 16px;">$ 120</span>
+                                                            <h3 class="d-inline" style="color: #7e3ff2;">$98</h3>
+                                                            <small class=d-block><span>4</span> Nights <span>2</span> Rooms <br> Incl. Taxes & Charges</small>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- card content  end-->
+
+                                </div>
+
+                                <!-- positon absolute elements start -->
+                                <div class="position-absolute px-2 py-1 rounded-end " style="top: 20px; left: 0; background : rgba(255, 255, 255, .65); font-size: 14px;">
+                                    <i class="fa-solid fa-trophy me-2" style="color:#7e3ff2;"></i>Popular
+                                </div>
+                                <!-- positon absolute elements end -->
+                            </div>
+
+                            <div class="card border-0 position-relative mb-3">
+                                <div class="row g-0">
+                                    <!-- card images 1100*734px recomended -->
+                                    <div class="col-md-3">
+                                        <a href="#" target="blank">
+                                            <img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/325/325466/man-walking-dog.jpg" class=" " alt="..." style="height: 200px; width: 100%; object-fit: cover; border-top-left-radius: 5px;">
+                                            <img src="" class="thum-img-view rounded" alt="">
+                                            <div class="row  g-1" style="margin-top: 0px;">
+                                                <div class="col"><img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/325/325466/man-walking-dog.jpg" class="img-fluid card-thum-img" alt="thum-img" style="border-bottom-left-radius: 5px;"> </div>
+                                                <div class="col"><img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/325/325466/man-walking-dog.jpg" class="img-fluid card-thum-img" alt="thum-img"> </div>
+                                                <div class="col"><img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/325/325466/man-walking-dog.jpg" class="img-fluid card-thum-img" alt="thum-img"> </div>
+                                                <div class="col"><img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/325/325466/man-walking-dog.jpg" class="img-fluid card-thum-img" alt="thum-img"> </div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <!-- card content  start-->
+                                    <div class="col-md-9">
+                                        <div class="card-body ">
+                                            <div class="row ">
+
+                                                <!-- left title & details  -->
+                                                <div class="col-8">
+                                                    <a href="#" target="blank">
+                                                        <h5 class="card-title d-inline-block">Hotel The Cox Today   </h5>
+                                                        <div class="position-relative d-inline">
+                                                            <i class="fa-solid fa-bell property-i ms-2"></i>
+                                                            <small class="property-partner  rounded-1 lh-base   z-1 ">Verified and Highly Recommended Property that is committed to providing prominent service, excellent value, and an attractive price!
+                                                                <span class="down-arrow"></span>
+                                                            </small>
+                                                        </div>
+                                                    </a>
+                                                    <a href="#" target="blank" class="reviews mb-2 d-block">
+                                                        <span class="btn ">4.2<span style="color: #fff; opacity: 86%">/5</span></span>Very Good <small>624 Reviews</small>
+                                                    </a>
+                                                    <small class="mt-2 location ">
+                                                        <i class="fa-solid fa-location-dot me-2"></i>City, State, Country. 
+                                                        <span class="ms-3 map"><i class="fa-solid fa-earth-americas me-2"></i>See Map</span>
+                                                        
+                                                    <!-- <div class="position-absolute location-frame">
+                                                            <iframe  src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=52.70967533219885, -8.020019531250002&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" 
+                                                            frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                                                            </iframe>
+                                                        </div> -->
+
+                                                    </small>
+
+                                                    <a href="#" class="room-qty mb-1 d-block"><i class="fa-solid fa-up-right-from-square me-3"></i>7 Rooms Available <i class="fa-solid fa-award ms-3 me-2"></i>Top Sell</a>
+                                                    
+                                                    <!--facilities-max 3 and max-character is 50  -->
+                                                    <small class="d-block facilities">
+                                                        <i class="fa-regular fa-square-check me-2"></i>Free cancellation & No Need Prepayment <br>
+                                                        <i class="fa-regular fa-square-check me-2"></i>Air Conditioning & 24/7 Hours Home Services <br>
+                                                        <i class="fa-regular fa-square-check me-2"></i>Children stay for free up to 10 years <br>
+                                                    </small>
+                                                
+                                                </div>
+
+                                                <!-- right star & price  -->
+                                                <div class="col-4 ">
+                                                    <div class="d-flex align-content-between  flex-wrap" style="height: 100%;">
+                                                        <div class="ms-auto  star-rate rounded"><i class="fa-solid fa-star me-1"></i>5 Star</div>
+                                                        <div class="text-end ms-auto" >
+                                                            <span class="btn border-0 btn-warning py-1 " style="margin-right: -18px; padding-right:24px; padding-left:80px;  border-radius: 5px 0px 0px 5px; background: #FDDB55">70% off</span>
+                                                            <div class="position-relative price-info mt-1">
+                                                                <span class="text-capitalize" style="font-size:13px; color:#7e3ff2; ">Limited Time offer</span>
+                                                                <i class="fa-solid fa-circle-info ms-2 opacity-75 price-info-btn" style="font-size:13px; color:#7e3ff2; "></i>
+
+                                                                <!-- price info show on hover  -->
+                                                                <div class="price-info-card p-2 rounded position-absolute">
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <div class="">USD 94.78 × 2 Nights</div>
+                                                                        <div>USD 189.56</div>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <div class="text-capitalize">Limited Time Offer</div>
+                                                                        <div>- USD 19.36</div>
+                                                                    </div>
+                                                                    <hr class="my-2">
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <h5>Total</h5>
+                                                                        <h5>USD 170.20</h5>
+                                                                    </div>
+                                                                    <small class="text-start" ><i class="fa-solid fa-quote-left me-1 mt-3" style="color: #7e3ff2;"></i>You're getting a discount because, for a limited time, this property is offering reduced rates on some rooms that match your search.</small>
+
+                                                                </div>
+
+                                                            </div>
+                                                            <span class="text-danger text-decoration-line-through me-1" style="font-size: 16px;">$ 120</span>
+                                                            <h3 class="d-inline" style="color: #7e3ff2;">$98</h3>
+                                                            <small class=d-block><span>4</span> Nights <span>2</span> Rooms <br> Incl. Taxes & Charges</small>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- card content  end-->
+
+                                </div>
+
+                                <!-- positon absolute elements start -->
+                                <div class="position-absolute px-2 py-1 rounded-end " style="top: 20px; left: 0; background : rgba(255, 255, 255, .65); font-size: 14px;">
+                                    <i class="fa-solid fa-trophy me-2" style="color:#7e3ff2;"></i>Popular
+                                </div>
+                                <!-- positon absolute elements end -->
+                            </div>
+                            <!-- hotel list card end -->
+                        </div>
+                    </div>
+                    <!-- listed hotels right site col end  -->
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- hotel list end -->
+
+
+
+
+  </main>
+  <!--end main-->
+
+  <!--footer start-->
+  <section id="footer">
+    <div class="container">
+      <div class="footer-wrapping ">
+          <div class="row row-cols-2 row-cols-md-4 row-cols-lg-4 gy-4 ">
+
+              <div class="boxiew col">
+                  <div class="logo">
+                    <img src="image/logo-light.png" alt="Boxiew logo">
+                  </div>
+      
+                  <div class="contact-info">
+                    
+                    <div class="mb-2"><a href="Tel: 123-456-7890"><i class="fa-solid fa-phone"></i>+88 01721-XXXXXX</a></div>
+                    <div class="mb-2"><a href="Tel: 123-456-7890"><i class="fa-solid fa-phone"></i>+88 01721-XXXXXX</a></div>
+                    <div class="mb-2"><a href="mailto:hello@boxiew.com"><i class="fa-solid fa-envelope"></i>hello@boxiew.com</a></div>
+                    <!-- <div class="mb-2"><a href="mailto:hello@boxiew.com"><i class="fa-solid fa-envelope"></i>hello@boxiew.com</a></div> -->
+                    <!-- <div><a href="#"><i class="pt-1 fa-sharp fa-solid fa-location-dot"></i>Feroza Tower, 8th Floor, DIT Road, Malibagh Chowdhurypara, Dhaka.</a> </div> -->
+                    
+                  </div>
+              </div>
+      
+              <div class="suppliers-info col">
+                  <div><h5>Suppliers Info</h5></div>
+                  <div class="info-link">
+                    <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                    <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                    <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                    <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                    <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                    <!-- <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div> -->
+                  </div>
+              </div>
+      
+              <div class="buyers-info col">
+                  <div><h5>Buyers Info</h5></div>
+                  <div class="info-link">
+                    <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                    <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                    <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                    <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                    <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From </a></div>
+                    <!-- <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From </a></div> -->
+                  </div>
+              </div>
+      
+              <div class="boxiew-link col">
+                  <div><h5>Quick Links</h5></div>
+                  <div class="info-link">
+                    <div><a href="affiliate.html"><i class="fa-solid fa-arrow-right-long"></i>Carier</a></div>
+                    <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>About Us</a></div>
+                    <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Privacy Policy</a></div>
+                    <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Terms & Conditions</a></div>
+                  </div>
+      
+                  <div class="follow-us ">
+                    <div><h5>Follow Us</h5></div>
+                    <div class="social-link">
+                      <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                      <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+                    </div>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+      <hr>
+      <div class="copy-right d-flex justify-content-center pb-3"> <small>Copyright © 2023 Boxiew Ltd || All right reserved</small></div>
+    </div>
+
+  </section>
+  <!--footer end-->
+
+
+    <!--Bootstrap cdn link-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  
+    <!-- filter see more or less js  -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.readmore').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    var currentFilterBox = this.closest('.filter-box');
+                    document.querySelectorAll('.filter-box.show').forEach(function(fBox) {
+                        if (fBox !== currentFilterBox) {
+                            fBox.classList.remove('show');
+                        }
+                    });
+                    currentFilterBox.classList.toggle('show');
+                });
+            });
+        });
+    </script>
+
+    <!-- pirce range js start  -->
+    <script>
+        const rangevalue = document.querySelector(".slider-container .price-slider"); 
+        const rangeInputvalue = document.querySelectorAll(".range-input input"); 
+
+        // Set the price gap 
+        let priceGap = 100; 
+
+        // Adding event listners to price input elements 
+        const priceInputvalue = document.querySelectorAll(".price-input input"); 
+        for (let i = 0; i < priceInputvalue.length; i++) { 
+            priceInputvalue[i].addEventListener("input", e => { 
+
+            // Parse min and max values of the range input 
+            let minp = parseInt(priceInputvalue[0].value); 
+            let maxp = parseInt(priceInputvalue[1].value); 
+            let diff = maxp - minp 
+
+            if (minp < 0) { 
+                alert("minimum price cannot be less than 0"); 
+                priceInputvalue[0].value = 0; 
+                minp = 0; 
+            } 
+
+            // Validate the input values 
+            if (maxp > 10000) { 
+                alert("maximum price cannot be greater than 10000"); 
+                priceInputvalue[1].value = 10000; 
+                maxp = 10000; 
+            } 
+
+            if (minp > maxp - priceGap) { 
+                priceInputvalue[0].value = maxp - priceGap; 
+                minp = maxp - priceGap; 
+
+                if (minp < 0) { 
+                    priceInputvalue[0].value = 0; 
+                    minp = 0; 
+                } 
+            } 
+
+            // Check if the price gap is met 
+            // and max price is within the range 
+            if (diff >= priceGap && maxp <= rangeInputvalue[1].max) { 
+                if (e.target.className === "min-input") { 
+                    rangeInputvalue[0].value = minp; 
+                    let value1 = rangeInputvalue[0].max; 
+                    rangevalue.style.left = `${(minp / value1) * 100}%`; 
+                } 
+                else { 
+                    rangeInputvalue[1].value = maxp; 
+                    let value2 = rangeInputvalue[1].max; 
+                    rangevalue.style.right = 
+                        `${100 - (maxp / value2) * 100}%`; 
+                    } 
+                } 
+            }); 
+
+            // Add event listeners to range input elements 
+            for (let i = 0; i < rangeInputvalue.length; i++) { 
+                rangeInputvalue[i].addEventListener("input", e => { 
+                    let minVal = 
+                        parseInt(rangeInputvalue[0].value); 
+                    let maxVal = 
+                        parseInt(rangeInputvalue[1].value); 
+
+                    let diff = maxVal - minVal 
+                    
+                    // Check if the price gap is exceeded 
+                    if (diff < priceGap) { 
+                    
+                        // Check if the input is the min range input 
+                        if (e.target.className === "min-range") { 
+                            rangeInputvalue[0].value = maxVal - priceGap; 
+                        } 
+                        else { 
+                            rangeInputvalue[1].value = minVal + priceGap; 
+                        } 
+                    } 
+                    else { 
+                    
+                        // Update price inputs and range progress 
+                        priceInputvalue[0].value = minVal; 
+                        priceInputvalue[1].value = maxVal; 
+                        rangevalue.style.left = 
+                            `${(minVal / rangeInputvalue[0].max) * 100}%`; 
+                        rangevalue.style.right = 
+                            `${100 - (maxVal / rangeInputvalue[1].max) * 100}%`; 
+                        } 
+                    }); 
+                } 
+            }
+
+    </script>
+    <!-- pirce range js end -->
+
+    <!-- card thum img view js -->
+    <script>
+        // its work on multiple card 
+        // Get all card elements
+        let cards = document.getElementsByClassName("card");
+
+        // Loop through each card
+        for (let i = 0; i < cards.length; i++) {
+            let card = cards[i];
+            let thum_img_view = card.querySelector(".thum-img-view");
+            let card_thum_imgs = card.querySelectorAll(".card-thum-img");
+
+            // Add mouseover and mouseout event listeners to each card thumbnail within the current card
+            card_thum_imgs.forEach(card_thum_img => {
+                card_thum_img.addEventListener('mouseover', () => {
+                    thum_img_view.src = card_thum_img.src;
+                    thum_img_view.style.width = "360px";
+                    thum_img_view.style.height = "240px";
+                });
+
+                card_thum_img.addEventListener('mouseout', () => {
+                    thum_img_view.removeAttribute('src');
+                    thum_img_view.style.width = "0";
+                    thum_img_view.style.height = "0";
+                });
+            });
+        }
+
+
+    </script>
+
+
+</body>
+</html>

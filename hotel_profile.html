@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap link-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- custom css link-->
+    <link href="css/style.min.css" rel="stylesheet">
+    <!--font-awesome lik-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!--slick css link-->
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/slick.css">
+
+    <title>Hotel Profile</title>
+
+    <!-- root css  -->
+    <style>
+        :root {
+            --primary-color: #7e3ff2;
+            --primary-color-light: #efe5fd;
+            --secondary-color: #FDDB55;
+            --secondary-color-light: #ffe478;
+            --title-color: #1d1d1d;
+            --text-color: #757575;
+            --bg-color: #f6f7fa;
+            --bg-color-deep: #e6e5e5;
+            --light-color: white;
+
+            --box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+            }
+
+            input:focus{
+                outline: none !important;
+                box-shadow: none !important;
+            }
+            a {
+            text-decoration: none;
+            }
+            ul{
+                list-style: none;
+                padding-left: 0px;
+            }
+    </style>
+
+    <!-- profile top css  -->
+    <style>
+        .hotel-profile .profile-wrap .hotel-profile-top {
+            background: var(--bg-color);
+        }
+        /* profile top start */
+        .hotel-profile .profile-wrap .hotel-profile-top .hotel-profile-imgs .view-img {
+            width: 100%;
+            height: 342px;
+        }
+        .hotel-profile .profile-wrap .hotel-profile-top .hotel-profile-imgs .thum-img {
+            width: 100%;
+            height: 100%;
+        }
+        .hotel-list .list-wrap .filter-by:focus {
+            outline: none;
+            box-shadow: none;
+        }
+        .hotel-profile-info {
+            transition: .3s;
+            cursor: pointer;
+        }
+
+        .hotel-profile-info .thum-img-view {
+            position: absolute;
+            object-fit:cover;
+            bottom: 43px;
+            left: 0;
+            z-index: 1000;
+        }
+        .hotel-profile-info .card-title{
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--title-color);
+            transition: .3s;
+        }
+        .hotel-profile-info .card-title:hover{
+            text-decoration: underline;
+        }
+        .hotel-profile-info .property-i{
+            color: var(--primary-color);
+            font-size: 16px;
+        }
+        .hotel-profile-info .property-partner{
+            color: var(--title-color);
+            position: absolute;
+            width: 290px;
+            height: 94px;
+            background: var(--secondary-color-light);
+            padding: 10px;
+            font-size: 12px;
+            font-weight: 300;
+            top: -109px;
+            right: -180px;
+            border: 1px solid #fed63b;
+            display: none;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+        }
+        .hotel-profile-info .property-i:hover + .property-partner{
+            display: inline;
+        }
+        .hotel-profile-info .property-partner .down-arrow{
+            width: 0;
+            height: 0;
+            border-left:16px solid transparent;
+            border-right: 16px solid transparent;
+            bottom: -14px;
+            left: 86px;
+            border-top: 16px solid var(--secondary-color-light);
+            position: absolute;
+        }
+        .hotel-profile-info .reviews {
+            color: var(--title-color);
+            font-weight: 500;
+        }
+        .hotel-profile-info .reviews small{
+            font-weight: 400;
+            margin-left: 10px
+        }
+        .hotel-profile-info .reviews .btn{
+            font-weight: 500 !important;
+            background: #9965f4 ;
+            color: var(--light-color);
+            border-radius: 16px 16px 16px 0px;
+            padding:  0px 12px !important;
+            margin-right: 4px;
+        }
+        .hotel-profile-info .location{
+            font-weight: 400 ;
+            color: var(--title-color);
+        }
+        .hotel-profile-info .location .map:hover{
+            /* text-decoration: underline; */
+            color: var(--primary-color);
+        }
+        .hotel-profile-info .location i{
+            color: var(--primary-color);
+        }
+        .hotel-profile-info .location .location-frame{
+
+        }
+        .hotel-profile-info .location iframe{
+            width: 960px;
+            height: 680px;
+        }
+        .hotel-profile-info .room-qty{
+            color: var(--primary-color);
+            margin-top: 30px;
+            font-weight: 500;
+        }
+        .hotel-profile-info .room-qty:hover{
+            text-decoration: underline;
+        }
+        .hotel-profile-info .facilities i{
+            color: var(--primary-color);
+        }
+        .hotel-profile-info .facilities {
+            color:  var(--text-color);
+            font-weight: 300;
+            font-size: 13px;
+            margin-top: 14px;
+        }
+        .hotel-profile-info .facilities h5 {
+            color:  var(--title-color);
+            text-decoration: underline;
+        }
+        .hotel-profile-info .star-rate {
+            color:  var(--primary-color);
+            font-weight: 500;
+            border: 1px solid var(--primary-color);
+            padding: 4px 10px;
+            font-size: 14px;
+        }
+        .hotel-profile-info .price-info-card {
+            color: var(--title-color);
+            font-weight: 300;
+            font-size: 13px;
+            width: 360px;
+            /* height: 182px; */
+            background: var(--secondary-color-light);
+            border: 1px solid #fed63b;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+            display:none;
+            transition: .4s;
+            top: 26px;
+            left: -100px;
+            z-index: 1000;
+        }
+        .hotel-profile-info .price-info:hover .price-info-card {
+            display: block;
+        }
+        .hotel-profile-info .reserve-info {
+            position: absolute;
+            bottom: 18px;
+            right: 18px;
+            font-size: 16px ;
+        }
+        .hotel-profile-info .reserve-info i {
+            color: var(--primary-color) !important;
+
+        }
+        .hotel-profile-info .reserve-info .price-match {
+            color: var(--title-color);
+            font-size: 15px;
+        }
+        .hotel-profile-info .price-match-info{
+            color: var(--title-color);
+            width: 290px;
+            height: 77px;
+            background: var(--secondary-color-light);
+            padding: 10px;
+            font-size: 12px;
+            font-weight: 300;
+            top: -88px;
+            right: -36px;
+            border: 1px solid #fed63b;
+            display: none;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+        }
+        .hotel-profile-info .price-match:hover  .price-match-info{
+            display: inline;
+        }
+        .hotel-profile-info .price-match-info .down-arrow{
+            width: 0;
+            height: 0;
+            border-left:16px solid transparent;
+            border-right: 16px solid transparent;
+            bottom: -12px;
+            left: 98px;
+            border-top: 16px solid var(--secondary-color-light);
+            position: absolute;
+        }
+        .hotel-profile-info .reserve-btn {
+            width: 100%;
+            background: var(--primary-color);
+            color: var(--light-color);
+
+        }
+
+
+
+    </style>
+
+    <!-- profile tab's room css  -->
+    <style>
+        .btn{
+            background: var(--primary-color);
+            color: var(--light-color);
+            transition: .3s;
+        }
+        .btn:focus{
+            border: none;
+        }
+        .btn:hover{
+            background: #6002EE;
+            color: var(--light-color);
+        }
+        .profile-tabs .nav .nav-item .active{
+            border-bottom: 2px solid var(--primary-color);
+            background: none;
+            /* color: var(--primary-color) !important; */
+            border-radius: 0 !important;
+
+        }
+        .profile-tabs .nav-item .nav-link {
+            padding-top: 16px;
+            padding-bottom: 16px;
+            color: var(--title-color);
+            font-weight: 400;
+            /* font-size: 16px !important; */
+        }
+
+        .profile-tabs .room-body{
+            cursor: pointer;
+        }
+        .profile-tabs .room-body .room-details .view-img {
+            width: 100%;
+            height: 199px;
+        }
+        .profile-tabs .room-body .room-details .thum-img {
+            width: 100%;
+            height: 100%;
+        }
+        .profile-tabs .room-body .room-title{
+            color: var(--title-color);
+            font-size: 22px;
+            font-weight: 600;
+            transition: .3s;
+        }
+        .profile-tabs .room-body .room-title:hover{
+            text-decoration: underline;
+        }
+        .profile-tabs .room-body .room-sub-title{
+            color: var(--title-color);
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .profile-tabs .room-body .room-sub-title i{
+            color: var(--primary-color);
+        }
+        .profile-tabs .room-body .room-details ul li{
+            font-size: 14px;
+            color: var(--text-color);
+        }
+        .profile-tabs .room-body .room-details ul li i{
+            color: var(--primary-color);
+        }
+        .profile-tabs .room-body .room-details .btn{
+            font-size: 14px;
+            color: var(--primary-color);
+            background: none;
+            font-weight: 500;
+        }
+        .profile-tabs .room-body .room-details .btn:hover{
+            text-decoration: underline;
+        }
+
+        /* room-prices table css  */
+        .profile-tabs .room-body .room-prices .table .room-feature li:nth-child(3){
+            color: var(--primary-color);
+        }
+        .profile-tabs .room-body .room-prices .table .room-feature li i{
+            color: var(--primary-color);
+        }
+        .profile-tabs .room-body .room-prices .table thead th{
+            background: var(--bg-color-deep) ;
+            font-weight: 500;
+            color: var(--title-color);
+            font-size: 16px;
+        }
+        .profile-tabs .room-body .room-prices .table tbody td{
+            background: var(--bg-color) ;
+            color: var(--text-color);
+            font-size: 14px;
+        }
+        .profile-tabs .room-body .room-prices .table tbody td .table-title{
+            color: var(--title-color);
+            font-weight: 500;
+        }
+        .profile-tabs .room-body .room-prices .table tbody td .table-title i{
+            color: var(--text-color);
+        }
+        .profile-tabs .room-body .room-prices .table .table-row{
+            height: 178px;
+        }
+
+        .profile-tabs .room-body .room-prices .table .table-row .price-modal{
+            width: 480px;
+            background: var(--secondary-color-light);
+            border: 1px solid #fed63b;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+            top: -188px;
+            left: 0;
+            display: none;
+        }
+        .profile-tabs .room-body .room-prices .table .table-row .price-modal span{
+            color: var(--title-color);
+            font-weight: 400;
+            font-size: 13px;
+        }
+        .profile-tabs .room-body .room-prices .table .table-row .price-modal-wrap:hover .price-modal{
+            display: block;
+        }
+        .profile-tabs .room-body .room-prices .table .table-row .price-modal .down-arrow{
+            width: 0;
+            height: 0;
+            border-left:16px solid transparent;
+            border-right: 16px solid transparent;
+            bottom: -14px;
+            left: 82px;
+            border-top: 16px solid var(--secondary-color-light);
+            position: absolute;
+        }
+
+        /* room filters  */
+        .profile-tabs .room-filters{
+            background: var(--bg-color);
+            /* font-size: 14px;
+            color: var(--title-color); */
+        }
+        .profile-tabs .room-filters .filter-items{
+            background: #fff;
+            font-size: 13px;
+            color: var(--title-color);
+            border: 1px dotted var(--primary-color);
+            cursor: pointer;
+        }
+        .profile-tabs .filter-items.active {
+            background-color: var(--primary-color);
+            color: #fff;
+            cursor: pointer;
+        }
+
+
+    </style>
+
+
+    <!-- room body show more less css  -->
+    <style>
+        .room-body-wrap {
+            height: 570px;
+            background: var(--bg-color);
+            overflow: hidden;
+        }
+        .room-body-wrap.show {
+            height: auto;
+        }
+
+        .room-body {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .readmore {
+            position: absolute;
+            width: 100%;
+            font-size: 14px;
+            top: 513px;
+            left: 0;
+            padding-left: 46%;
+            padding-top: 10px;
+            padding-bottom: 11px;
+            background: var(--bg-color);
+            color: var(--primary-color);
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .readmore::before {
+            content: attr(data-more)
+        }
+        .room-body-wrap.show .readmore {
+            position: relative;
+            top: auto;
+            display: block;
+        }
+        .room-body-wrap.show .readmore::before {
+            content: attr(data-less)
+        }
+    </style>
+    <!-- room info popup css start  -->
+
+    <!-- room info popup css  -->
+    <style>
+        .popup-wrap{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+            visibility: hidden;
+            background: #1d1d1d70;
+        }
+        .overlay{
+            visibility: visible;
+        }
+        .room-info-popup{
+            width: 680px;
+            background: var(--secondary-color-light);
+            color: var(--title-color);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            cursor: pointer;
+            border: 1px solid #fed63b;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+        }
+        .room-info-popup small {
+            font-size: 13px;
+            font-weight: 300;
+        }
+        .room-info-popup span {
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+  <!--Main Navigation-->
+  <header>
+    <!-- Navbar top start-->
+    <nav class="navbar bg-body-tertiary navbar-expand-md shadow-sm fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html" ><img src="image/logo.png" width="100" class="object-fit-cover"  alt="logo"></a>
+        <button  class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <!-- <div class="search ">
+              <form action="" role="search">
+                <div class="input-group ">
+                  <input type="search" placeholder="Search" aria-label="Search" class="form-control"  aria-describedby="search-btn">
+                  <button class="btn btn-outline-secondary" type="button" id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+              </form>
+            </div> -->
+            <ul class="navbar-nav  ms-auto ">
+              <li class="nav-item mx-auto"><a href="listing.html" class="nav-link"> Listing</a></li>
+              <li class="nav-item mx-auto"><a href="shopping.html" class="nav-link">Shopping</a></li>
+              <li class="nav-item mx-auto"><a href="wishlist.html" class="nav-link">Wishlist</a></li>
+              <li class="nav-item mx-auto"><a href="myCart.html" class="nav-link">Cart</a></li>
+              <li class="nav-item  mx-auto" ><a href="userProfile.html"  class="nav-link"><i class="fa-solid fa-arrow-right-to-bracket pe-2"></i>Sign In</a></li>
+              <li class="nav-item  mx-auto"><div class="add-listing button-outline rounded-pill p-0"><a href="#" class="nav-link px-4">Add Listing<i class="fa-solid fa-plus ms-2 border rounded-circle "></i></a></div></li>
+        
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar top end-->
+
+    <!-- nav bottom start  -->
+    <nav id="nav-bottom" class="fixed-bottom nav-bottom">
+      
+      <div class="container">
+        
+        <div >
+          <ul class="d-flex justify-content-between" >
+            <li class="nav-item text-center">
+              <a class="nav-link nav-link-sm  active" aria-current="page" href="index.html"><i class="fa-solid fa-house"></i></a>
+            </li>
+            <li class="nav-item text-center">
+              <a class="nav-link nav-link-sm" href="listing.html"><i class="fa-solid fa-chart-simple"></i></a>
+            </li>
+            <li class="nav-item text-center">
+              <a class="nav-link nav-link-sm" href="shopping.html"><i class="fa-solid fa-basket-shopping"></i></a>
+            </li>
+            <li class="nav-item text-center">
+              <a class="nav-link nav-link-sm" href="myCart.html"><i class="fa-solid fa-cart-plus"></i></a>
+            </li>
+            <li class="nav-item text-center">
+              <a class="nav-link nav-link-sm "  href="userProfile.html"><i class="fa-solid fa-user"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- nav bottom end  -->
+
+   
+  </header>
+  <!--Main Navigation-->
+
+  <!--start main-->
+  <main> 
+
+    
+    <!-- hotel search form  -->
+    <section class="hotel-form" style="margin-top: 5rem;">
+        <div class="container ">
+            hotel form
+
+        </div>
+    </section>
+
+    <!-- hotel profile start -->
+    <section class="hotel-profile mt-5">
+        <div class="container ">
+            <div class="profile-wrap">
+
+                <!-- hotel ptofile top start  -->
+                <div class="hotel-profile-top p-3 position-relative rounded-3">
+                    <div class="row">
+                        <!-- top left hotel img  -->
+                        <div class="col-5">
+                            <div class="hotel-profile-imgs position-relative">
+                                <img src="https://www.checkatrade.com/blog/wp-content/uploads/2021/04/Feature-cost-to-build-a-hotel.jpg" width="100%" class="view-img object-fit-cover rounded" alt="">
+                                <div class="row  g-2" style="margin-top:2px;">
+                                    <div class="col"><img src="https://promos.makemytrip.com/AltAcco/images/hotel.png" alt="" height="100%" width="100%" class="thum-img rounded object-fit-cover"></div>
+                                    <div class="col"><img src="https://ik.imagekit.io/tvlk/blog/2022/06/Hotel-di-Jakarta-dengan-Balkon-Somerset-Sudirman-Jakarta-2-1024x683.jpeg?tr=dpr-2,w-675" height="100%" width="100%" alt="" class="thum-img rounded object-fit-cover"></div>
+                                    <div class="col"><img src="https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/900/450/75/dam/wdpro-assets/dlr/places-to-stay/disneyland-hotel/resort-overview/disneyland-hotel-06.jpg?1711985603030" alt="" height="100%" width="100%" class="thum-img rounded object-fit-cover"></div>
+                                    <div class="col"><img src="https://www.hotelscombined.com/himg/9c/72/27/expediav2-16231-974f5a-282122.jpg" height="100%" width="100%" alt="" class="thum-img rounded object-fit-cover"></div>
+                                </div>
+                                <!-- positon absolute elements start -->
+                                <div class="position-absolute px-2 py-1 rounded-end " style="top: 20px; left: 0; background : rgba(255, 255, 255, .65); font-size: 14px;">
+                                    <i class="fa-solid fa-trophy me-2" style="color:var(--primary-color);"></i>Popular
+                                </div>
+                                <!-- positon absolute elements end -->
+                            </div>
+
+                        </div>
+
+                        <!-- top right hotel info  -->
+                        <div class="col-7">
+                            <div class="hotel-profile-info ">
+                                <div class="row ">
+
+                                    <!-- left title & details  -->
+                                    <div class="col-8">
+
+                                            <h5 class="card-title d-inline-block" title="Click to Copy!">Hotel The Cox Today   </h5>
+                                            <div class="position-relative d-inline">
+                                                <i class="fa-solid fa-bell property-i ms-2"></i>
+                                                <small class="property-partner  rounded-1 lh-base   z-1 ">Verified and Highly Recommended Property that is committed to providing prominent service, excellent value, and an attractive price!
+                                                    <span class="down-arrow"></span>
+                                                </small>
+                                            </div>
+
+                                        <a href="#" target="blank" class="reviews mb-2 mt-2 d-block">
+                                            <span class="btn ">4.2<span style="color: #fff; opacity: 86%">/5</span></span>Very Good <small>624 Reviews</small>
+                                        </a>
+                                        <small class="mt-2 location ">
+                                            <i class="fa-solid fa-location-dot me-2"></i>City, State, Country.
+                                            <span class="ms-3 map"><i class="fa-solid fa-earth-americas me-2"></i>See Map</span>
+
+                                        <!-- <div class="position-absolute location-frame">
+                                                <iframe  src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=52.70967533219885, -8.020019531250002&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
+                                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                                                </iframe>
+                                            </div> -->
+
+                                        </small>
+
+                                        <a href="#" class="room-qty mb-1 d-block"><i class="fa-solid fa-up-right-from-square me-3"></i>7 Rooms Available <i class="fa-solid fa-award ms-3 me-2"></i>Top Sell</a>
+
+                                        <!--facilities-max 3 and max-character is 50  -->
+                                        <small class="d-block  facilities">
+                                            <h5>Top Facilities</h5>
+                                            <i class="fa-regular fa-square-check me-2"></i>Free cancellation & No Need Prepayment <br>
+                                            <i class="fa-regular fa-square-check me-2"></i>Air Conditioning & 24/7 Hours Home Services <br>
+                                            <i class="fa-regular fa-square-check me-2"></i>Children stay for free up to 10 years <br>
+                                            <button class="border-0 ps-0" style="color: var(--primary-color);background: var(--bg-color);">See More</button>
+                                        </small>
+                                        <!--facilities-max 3 and max-character is 50  -->
+                                        <small class="d-block  facilities">
+                                            <h5>What's Nearby</h5>
+                                            <i class="fa-solid fa-diamond-turn-right me-2"></i>16.5 km from Himchori Waterfall <br>
+                                            <i class="fa-solid fa-diamond-turn-right me-2"></i>3.2 km from Cox's Bazar Airport <br>
+                                            <i class="fa-solid fa-diamond-turn-right me-2"></i> 0.25 km from Navy Jetty, from where Saint Martin bound ship sails <br>
+                                            <button class="border-0 ps-0" style="color: var(--primary-color);background: var(--bg-color);">See More</button>
+                                        </small>
+
+                                        <small class="d-block  facilities">
+                                            About the property. Lorem ipsum, dolor sit amet sit ametsit amet
+                                            <button class="border-0 ps-0 " style="color: var(--primary-color);background: var(--bg-color);">Read More</button>
+                                        </small>
+
+                                    </div>
+
+                                    <!-- right star & price  -->
+                                    <div class="col-4 ">
+                                        <div class="" >
+                                            <div class="float-end  star-rate  rounded" style="margin-bottom: 38px;"><i class="fa-solid fa-star me-1"></i>5 Star</div>
+
+                                            <div class="text-end  ms-auto" >
+                                                <span class="btn border-0 btn-warning py-1 " style="margin-right: -16px; padding-right:24px; color: var(--title-color); padding-left:80px;  border-radius: 5px 0px 0px 5px; background: var(--secondary-color)">70% off</span>
+                                                <div class="position-relative price-info mt-1">
+                                                    <span class="text-capitalize" style="font-size:13px; color:var(--primary-color); ">Limited Time offer</span>
+                                                    <i class="fa-solid fa-circle-info ms-2 opacity-75 price-info-btn" style="font-size:13px; color:var(--primary-color); "></i>
+
+                                                    <!-- price info show on hover  -->
+                                                    <div class="price-info-card p-2 rounded position-absolute">
+                                                        <div class="d-flex justify-content-between">
+                                                            <div class="">USD 94.78 × 2 Nights</div>
+                                                            <div>USD 189.56</div>
+                                                        </div>
+                                                        <div class="d-flex justify-content-between">
+                                                            <div class="text-capitalize">Limited Time Offer</div>
+                                                            <div>- USD 19.36</div>
+                                                        </div>
+                                                        <hr class="my-2">
+                                                        <div class="d-flex justify-content-between">
+                                                            <h5>Total</h5>
+                                                            <h5>USD 170.20</h5>
+                                                        </div>
+                                                        <small class="text-start" ><i class="fa-solid fa-quote-left me-1 mt-3" style="color: var(--primary-color);"></i>You're getting a discount because, for a limited time, this property is offering reduced rates on some rooms that match your search.</small>
+
+                                                    </div>
+
+                                                </div>
+                                                <span class="text-danger text-decoration-line-through me-1" style="font-size: 16px;">$ 120</span>
+                                                <h3 class="d-inline" style="color: var(--primary-color);">$98</h3>
+                                                <small class=d-block><span>4</span> Nights <span>2</span> Rooms <br> Incl. Taxes & Charges</small>
+
+                                            </div>
+
+                                            <div class="text-end mt-5 reserve-info">
+                                                <span class="me-3" > <i class="fa-solid fa-share-nodes"></i></span>
+                                                <span class="bt" ><i class="fa-regular fa-heart"></i></span>
+                                                <span class="mt-3 d-block price-match position-relative">
+                                                    <i class="fa-solid fa-bullhorn me-2" style="rotate: -30deg"></i>We Price Match!
+                                                    <small class="price-match-info position-absolute rounded-1 lh-base text-start  z-1 ">We aim to provide the best possible prices for our users. If you find a cheaper price elsewhere, we'll refund the difference!
+                                                        <span class="down-arrow"></span>
+                                                    </small>
+                                                </span>
+                                                <button class="btn reserve-btn mt-4">Reserve Now</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- hotel ptofile top end -->
+
+                <!-- tabs start  -->
+                <div class="profile-tabs mt-4">
+                    <ul class="nav nav-pills rounded-3 mb-3 ps-3" id="pills-tab" role="tablist" style="background: var(--bg-color);">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="pills-rooms-tab" data-bs-toggle="pill" data-bs-target="#pills-rooms" type="button" role="tab" aria-controls="pills-rooms" aria-selected="true">Rooms</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Facilities & Services</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Policies</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Reviews</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">What's Nearby</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">FAQs</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                        <!-- rooms start  -->
+                        <div class="tab-pane fade show active" id="pills-rooms" role="tabpanel" aria-labelledby="pills-rooms-tab" tabindex="0">
+                            <!-- Filter buttons -->
+                            <div class="room-filters p-3 d-flex rounded">
+                                <div class="filter-items rounded mx-1 p-2" data-filter="breakfast">Breakfast Included<span class="ms-1">(11)</span></div>
+                                <div class="filter-items rounded mx-1 p-2" data-filter="instant">Instant Confirmation<span class="ms-1">(16)</span></div>
+                                <div class="filter-items rounded mx-1 p-2" data-filter="prepay">Prepay Online<span class="ms-1">(19)</span></div>
+                                <div class="filter-items rounded mx-1 p-2" data-filter="payathotel">Pay at Hotel<span class="ms-1">(14)</span></div>
+                                <div class="filter-items rounded mx-1 p-2" data-filter="refundable">Refundable<span class="ms-1">(14)</span></div>
+                                <div class="filter-items rounded mx-1 p-2" data-filter="beds">2 Beds<span class="ms-1">(14)</span></div>
+                            </div>
+
+                            <div class="room-body-wrap mt-3 p-3 hotel-room rounded"  data-breakfast="true" data-instant="true" data-prepay="true" data-payathotel="true" data-refundable="true" data-beds="2">
+
+                                <div class="room-body">
+                                    <h3 class="room-title mb-3 d-inline-block" title="Click for More Details!">Superior Twin Room</h3>
+                                    <div class="row">
+                                        <!-- room details  -->
+                                        <div class="col-3">
+                                            <div class="room-details ">
+                                                <!-- room's images  -->
+                                                <img class="view-img rounded object-fit-cover" src="https://promos.makemytrip.com/AltAcco/images/hotel.png"  alt="">
+                                                <div class="row g-1" style="margin-top: .5px;">
+                                                    <div class="col">
+                                                        <img class="thum-img rounded object-fit-cover" src="https://cdn.mos.cms.futurecdn.net/JUcbVxWtm6MkiNaif3eviF.jpg" alt="">
+                                                    </div>
+                                                    <div class="col">
+                                                        <img class="thum-img rounded  object-fit-cover" src="https://media-cdn.tripadvisor.com/media/photo-s/16/1a/ea/54/hotel-presidente-4s.jpg" alt="">
+                                                    </div>
+                                                    <div class="col">
+                                                        <img class="thum-img rounded  object-fit-cover" src="https://www.shutterstock.com/image-photo/stylish-interior-living-room-night-600nw-1566382885.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                                <!-- room's details  -->
+                                                <h5 class="text-capitalize room-sub-title mt-3"><i class="fa-solid fa-bed me-2"></i>2 single beds</h5>
+                                                <ul class="p-0 mt-3 mb-2">
+                                                    <li class="text-capitalize"><i class="fa-regular fa-square-check me-2"></i>City View</li>
+                                                    <li class="text-capitalize"><i class="fa-regular fa-square-check me-2"></i>non smooking</li>
+                                                    <li class="text-capitalize"><i class="fa-regular fa-square-check me-2"></i>28m<sup>2</sup> | Floor: 10-22</li>
+                                                    <li class="text-capitalize"><i class="fa-regular fa-square-check me-2"></i>Air conditioning</li>
+                                                    <li class="text-capitalize"><i class="fa-regular fa-square-check me-2"></i>free wifi</li>
+                                                    <li class="text-capitalize"><i class="fa-regular fa-square-check me-2"></i>Private Bath</li>
+                                                </ul>
+                                                <button class="btn details-btn m-0 p-0"><i class="fa-solid fa-arrow-turn-up me-2"></i>More Details</button>
+                                            </div>
+                                        </div>
+
+                                        <!-- room prices  -->
+                                        <div class="col-9">
+                                            <div class="room-prices">
+
+                                                <table class="table table-rounded table-bordered ">
+                                                    <thead class="table-light rounded fw-light">
+                                                        <tr >
+                                                            <th class="px-3">Package Included</th>
+                                                            <th class="text-center">Sleeps</th>
+                                                            <th class="px-3">Today's Price</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody class="">
+                                                        <tr class="table-row  ">
+                                                            <form action="">
+                                                                <td class="p-3">
+                                                                    <ul class="p-0 room-feature">
+                                                                        <li class="text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Breakfast for US$14.32 (optional)</li>
+                                                                        <li class="text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Non-refundable</li>
+                                                                        <li class="text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Instant Confirmation</li>
+                                                                        <li class="text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Child Allowed</li>
+                                                                    </ul>
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <span class="table-title mb-2 d-block">Payment Type</span>
+                                                                        <span onclick="showRoomInfo()" class="table-title mb-2 d-block"><i class="fa-regular fa-circle-question"></i></span>
+
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="prepay" id="prepay" checked>
+                                                                        <label class="form-check-label" for="prepay">
+                                                                            Prepay Online
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="prepay" id="pay-hotel" >
+                                                                        <label class="form-check-label" for="pay-hotel">
+                                                                            Pay at Hotel
+                                                                        </label>
+                                                                    </div>
+                                                                </td>
+
+                                                                <td class="text-center p-3"><i class="fa-solid fa-user"></i> <i class="fa-solid fa-user"></i></td>
+
+                                                                <!-- price col  -->
+                                                                <td class="p-3 " >
+                                                                    <div class="row table-row" >
+                                                                        <div class=" col price-modal-wrap position-relative text-end align-self-end">
+                                                                            <small class="d-block mb-2 fw-medium" style="color: var(--primary-color);">Eid Special Offer<span class="ms-1  py-1 rounded-1 px-2" style="background: var(--secondary-color); color: var(--title-color);">11% Off</span></small>
+                                                                            <span class="me-1 text-decoration-line-through" >US$107</span> <span class="fs-3 table-title">US$93</span>
+                                                                            <small style="margin-top: -6px; display: block;">Total Price: US$329 <br> 1 Room &#10005; 3 Nights Incl. Taxes</small>
+
+                                                                            <!-- room price details modal  -->
+                                                                            <div class="price-modal position-absolute rounded p-4">
+                                                                                <h5 class="text-start mb-3 text-decoration-underline" style="color: var(--title-color); font-weight: 600;">Price Details</h5>
+                                                                                <div class="d-flex justify-content-between">
+                                                                                    <span>1 Room x 3 Nights</span>
+                                                                                    <span>US$319.55</span>
+                                                                                </div>
+                                                                                <div class="d-flex justify-content-between">
+                                                                                    <span>Taxes & Fees</span>
+                                                                                    <span>US$49.41</span>
+                                                                                </div>
+                                                                                <div class="d-flex justify-content-between">
+                                                                                    <span>Eid Special Offer <span class="text-danger">(11% Off)</span></span>
+                                                                                    <span class="text-danger">-US$40.42</span>
+                                                                                </div>
+                                                                                <hr class="my-2">
+                                                                                <div class="d-flex justify-content-between" >
+                                                                                    <span style="color: var(--title-color) ; font-weight: 600 ;">Prepay Online</span>
+                                                                                    <span style="color: var(--title-color); font-weight: 600 ;">US$328.54</span>
+                                                                                </div>
+
+                                                                                <span class="down-arrow"></span>
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="col align-self-end">
+                                                                            <small >Only 2 Rooms Left</small>
+                                                                            <button tyle="submit" class="btn d-block mt-2 px-5">Reserve</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </form>
+                                                        </tr>
+
+                                                        <tr class="table-row  ">
+                                                            <form action="">
+                                                                <td class="p-3">
+                                                                    <ul class="p-0 room-feature">
+                                                                        <li class="text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Breakfast for US$14.32 (optional)</li>
+                                                                        <li class="text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Non-refundable</li>
+                                                                        <li class="text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Instant Confirmation</li>
+                                                                        <li class="text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Child Allowed</li>
+                                                                    </ul>
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <span class="table-title mb-2 d-block">Payment Type</span>
+                                                                        <span onclick="showRoomInfo()" class="table-title mb-2 d-block"><i class="fa-regular fa-circle-question"></i></span>
+
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="prepay" id="prepay" checked>
+                                                                        <label class="form-check-label" for="prepay">
+                                                                            Prepay Online
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="prepay" id="pay-hotel" >
+                                                                        <label class="form-check-label" for="pay-hotel">
+                                                                            Pay at Hotel
+                                                                        </label>
+                                                                    </div>
+                                                                </td>
+
+                                                                <td class="text-center p-3"><i class="fa-solid fa-user"></i> <i class="fa-solid fa-user"></i></td>
+
+                                                                <!-- price col  -->
+                                                                <td class="p-3 " >
+                                                                    <div class="row table-row" >
+                                                                        <div class=" col price-modal-wrap position-relative text-end align-self-end">
+                                                                            <small class="d-block mb-2 fw-medium" style="color: var(--primary-color);">Eid Special Offer<span class="ms-1  py-1 rounded-1 px-2" style="background: var(--secondary-color); color: var(--title-color);">11% Off</span></small>
+                                                                            <span class="me-1 text-decoration-line-through" >US$107</span> <span class="fs-3 table-title">US$93</span>
+                                                                            <small style="margin-top: -6px; display: block;">Total Price: US$329 <br> 1 Room &#10005; 3 Nights Incl. Taxes</small>
+
+                                                                            <!-- room price details modal  -->
+                                                                            <div class="price-modal position-absolute rounded p-4">
+                                                                                <h5 class="text-start mb-3 text-decoration-underline" style="color: var(--title-color); font-weight: 600;">Price Details</h5>
+                                                                                <div class="d-flex justify-content-between">
+                                                                                    <span>1 Room x 3 Nights</span>
+                                                                                    <span>US$319.55</span>
+                                                                                </div>
+                                                                                <div class="d-flex justify-content-between">
+                                                                                    <span>Taxes & Fees</span>
+                                                                                    <span>US$49.41</span>
+                                                                                </div>
+                                                                                <div class="d-flex justify-content-between">
+                                                                                    <span>Eid Special Offer <span class="text-danger">(11% Off)</span></span>
+                                                                                    <span class="text-danger">-US$40.42</span>
+                                                                                </div>
+                                                                                <hr class="my-2">
+                                                                                <div class="d-flex justify-content-between" >
+                                                                                    <span style="color: var(--title-color) ; font-weight: 600 ;">Prepay Online</span>
+                                                                                    <span style="color: var(--title-color); font-weight: 600 ;">US$328.54</span>
+                                                                                </div>
+
+                                                                                <span class="down-arrow"></span>
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="col align-self-end">
+                                                                            <small >Only 2 Rooms Left</small>
+                                                                            <button tyle="submit" class="btn d-block mt-2 px-5">Reserve</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </form>
+                                                        </tr>
+
+                                                        <tr class="table-row  ">
+                                                            <form action="">
+                                                                <td class="p-3">
+                                                                    <ul class="p-0 room-feature">
+                                                                        <li class="text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Breakfast for US$14.32 (optional)</li>
+                                                                        <li class="text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Non-refundable</li>
+                                                                        <li class="text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Instant Confirmation</li>
+                                                                        <li class="text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Child Allowed</li>
+                                                                    </ul>
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <span class="table-title mb-2 d-block">Payment Type</span>
+                                                                        <span onclick="showRoomInfo()" class="table-title mb-2 d-block"><i class="fa-regular fa-circle-question"></i></span>
+
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="prepay" id="prepay" checked>
+                                                                        <label class="form-check-label" for="prepay">
+                                                                            Prepay Online
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="prepay" id="pay-hotel" >
+                                                                        <label class="form-check-label" for="pay-hotel">
+                                                                            Pay at Hotel
+                                                                        </label>
+                                                                    </div>
+                                                                </td>
+
+                                                                <td class="text-center p-3"><i class="fa-solid fa-user"></i> <i class="fa-solid fa-user"></i></td>
+
+                                                                <!-- price col  -->
+                                                                <td class="p-3 " >
+                                                                    <div class="row table-row" >
+                                                                        <div class=" col price-modal-wrap position-relative text-end align-self-end">
+                                                                            <small class="d-block mb-2 fw-medium" style="color: var(--primary-color);">Eid Special Offer<span class="ms-1  py-1 rounded-1 px-2" style="background: var(--secondary-color); color: var(--title-color);">11% Off</span></small>
+                                                                            <span class="me-1 text-decoration-line-through" >US$107</span> <span class="fs-3 table-title">US$93</span>
+                                                                            <small style="margin-top: -6px; display: block;">Total Price: US$329 <br> 1 Room &#10005; 3 Nights Incl. Taxes</small>
+
+                                                                            <!-- room price details modal  -->
+                                                                            <div class="price-modal position-absolute rounded p-4">
+                                                                                <h5 class="text-start mb-3 text-decoration-underline" style="color: var(--title-color); font-weight: 600;">Price Details</h5>
+                                                                                <div class="d-flex justify-content-between">
+                                                                                    <span>1 Room x 3 Nights</span>
+                                                                                    <span>US$319.55</span>
+                                                                                </div>
+                                                                                <div class="d-flex justify-content-between">
+                                                                                    <span>Taxes & Fees</span>
+                                                                                    <span>US$49.41</span>
+                                                                                </div>
+                                                                                <div class="d-flex justify-content-between">
+                                                                                    <span>Eid Special Offer <span class="text-danger">(11% Off)</span></span>
+                                                                                    <span class="text-danger">-US$40.42</span>
+                                                                                </div>
+                                                                                <hr class="my-2">
+                                                                                <div class="d-flex justify-content-between" >
+                                                                                    <span style="color: var(--title-color) ; font-weight: 600 ;">Prepay Online</span>
+                                                                                    <span style="color: var(--title-color); font-weight: 600 ;">US$328.54</span>
+                                                                                </div>
+
+                                                                                <span class="down-arrow"></span>
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="col align-self-end">
+                                                                            <small >Only 2 Rooms Left</small>
+                                                                            <button tyle="submit" class="btn d-block mt-2 px-5">Reserve</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </form>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <span class="readmore d-block" data-more="See 7 More Room's Packages Rate &#11167" data-less="See less &#11165 "></span>
+                                </div>
+
+                            </div>
+
+                            <!-- room 2  -->
+                            <div class="room-body-wrap mt-3 p-3 hotel-room rounded"  data-breakfast="true" data-instant="true" data-prepay="true" data-payathotel="true" data-refundable="true" data-beds="1">
+
+                                <div class="room-body">
+                                    <h3 class="room-title mb-3 d-inline-block" title="Click for More Details!">Delux Room</h3>
+                                    <div class="row">
+                                        <!-- room details  -->
+                                        <div class="col-3">
+                                            <div class="room-details ">
+                                                <!-- room's images  -->
+                                                <img class="view-img rounded object-fit-cover" src="https://promos.makemytrip.com/AltAcco/images/hotel.png"  alt="">
+                                                <div class="row g-1" style="margin-top: .5px;">
+                                                    <div class="col">
+                                                        <img class="thum-img rounded object-fit-cover" src="https://cdn.mos.cms.futurecdn.net/JUcbVxWtm6MkiNaif3eviF.jpg" alt="">
+                                                    </div>
+                                                    <div class="col">
+                                                        <img class="thum-img rounded  object-fit-cover" src="https://media-cdn.tripadvisor.com/media/photo-s/16/1a/ea/54/hotel-presidente-4s.jpg" alt="">
+                                                    </div>
+                                                    <div class="col">
+                                                        <img class="thum-img rounded  object-fit-cover" src="https://www.shutterstock.com/image-photo/stylish-interior-living-room-night-600nw-1566382885.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                                <!-- room's details  -->
+                                                <h5 class="text-capitalize room-sub-title mt-3"><i class="fa-solid fa-bed me-2"></i>2 single beds</h5>
+                                                <ul class="p-0 mt-3 mb-2">
+                                                    <li class="text-capitalize"><i class="fa-regular fa-square-check me-2"></i>City View</li>
+                                                    <li class="text-capitalize"><i class="fa-regular fa-square-check me-2"></i>non smooking</li>
+                                                    <li class="text-capitalize"><i class="fa-regular fa-square-check me-2"></i>28m<sup>2</sup> | Floor: 10-22</li>
+                                                    <li class="text-capitalize"><i class="fa-regular fa-square-check me-2"></i>Air conditioning</li>
+                                                    <li class="text-capitalize"><i class="fa-regular fa-square-check me-2"></i>free wifi</li>
+                                                    <li class="text-capitalize"><i class="fa-regular fa-square-check me-2"></i>Private Bath</li>
+                                                </ul>
+                                                <button class="btn details-btn m-0 p-0"><i class="fa-solid fa-arrow-turn-up me-2"></i>More Details</button>
+                                            </div>
+                                        </div>
+
+                                        <!-- room prices  -->
+                                        <div class="col-9">
+                                            <div class="room-prices">
+
+                                                <table class="table table-rounded table-bordered ">
+                                                    <thead class="table-light rounded fw-light">
+                                                        <tr >
+                                                            <th class="px-3">Package Included</th>
+                                                            <th class="text-center">Sleeps</th>
+                                                            <th class="px-3">Today's Price</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody class="">
+                                                        <tr class="table-row  ">
+                                                            <form action="">
+                                                                <td class="p-3">
+                                                                    <ul class="p-0 room-feature">
+                                                                        <li class="text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Breakfast for US$14.32 (optional)</li>
+                                                                        <li class="text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Non-refundable</li>
+                                                                        <li class="text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Instant Confirmation</li>
+                                                                        <li class="text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Child Allowed</li>
+                                                                    </ul>
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <span class="table-title mb-2 d-block">Payment Type</span>
+                                                                        <span onclick="showRoomInfo()" class="table-title mb-2 d-block"><i class="fa-regular fa-circle-question"></i></span>
+
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="prepay" id="prepay" checked>
+                                                                        <label class="form-check-label" for="prepay">
+                                                                            Prepay Online
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="prepay" id="pay-hotel" >
+                                                                        <label class="form-check-label" for="pay-hotel">
+                                                                            Pay at Hotel
+                                                                        </label>
+                                                                    </div>
+                                                                </td>
+
+                                                                <td class="text-center p-3"><i class="fa-solid fa-user"></i> <i class="fa-solid fa-user"></i></td>
+
+                                                                <!-- price col  -->
+                                                                <td class="p-3 " >
+                                                                    <div class="row table-row" >
+                                                                        <div class=" col price-modal-wrap position-relative text-end align-self-end">
+                                                                            <small class="d-block mb-2 fw-medium" style="color: var(--primary-color);">Eid Special Offer<span class="ms-1  py-1 rounded-1 px-2" style="background: var(--secondary-color); color: var(--title-color);">11% Off</span></small>
+                                                                            <span class="me-1 text-decoration-line-through" >US$107</span> <span class="fs-3 table-title">US$93</span>
+                                                                            <small style="margin-top: -6px; display: block;">Total Price: US$329 <br> 1 Room &#10005; 3 Nights Incl. Taxes</small>
+
+                                                                            <!-- room price details modal  -->
+                                                                            <div class="price-modal position-absolute rounded p-4">
+                                                                                <h5 class="text-start mb-3 text-decoration-underline" style="color: var(--title-color); font-weight: 600;">Price Details</h5>
+                                                                                <div class="d-flex justify-content-between">
+                                                                                    <span>1 Room x 3 Nights</span>
+                                                                                    <span>US$319.55</span>
+                                                                                </div>
+                                                                                <div class="d-flex justify-content-between">
+                                                                                    <span>Taxes & Fees</span>
+                                                                                    <span>US$49.41</span>
+                                                                                </div>
+                                                                                <div class="d-flex justify-content-between">
+                                                                                    <span>Eid Special Offer <span class="text-danger">(11% Off)</span></span>
+                                                                                    <span class="text-danger">-US$40.42</span>
+                                                                                </div>
+                                                                                <hr class="my-2">
+                                                                                <div class="d-flex justify-content-between" >
+                                                                                    <span style="color: var(--title-color) ; font-weight: 600 ;">Prepay Online</span>
+                                                                                    <span style="color: var(--title-color); font-weight: 600 ;">US$328.54</span>
+                                                                                </div>
+
+                                                                                <span class="down-arrow"></span>
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="col align-self-end">
+                                                                            <small >Only 2 Rooms Left</small>
+                                                                            <button tyle="submit" class="btn d-block mt-2 px-5">Reserve</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </form>
+                                                        </tr>
+
+                                                        <tr class="table-row  ">
+                                                            <form action="">
+                                                                <td class="p-3">
+                                                                    <ul class="p-0 room-feature">
+                                                                        <li class="text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Breakfast for US$14.32 (optional)</li>
+                                                                        <li class="text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Non-refundable</li>
+                                                                        <li class="text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Instant Confirmation</li>
+                                                                        <li class="text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Child Allowed</li>
+                                                                    </ul>
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <span class="table-title mb-2 d-block">Payment Type</span>
+                                                                        <span onclick="showRoomInfo()" class="table-title mb-2 d-block"><i class="fa-regular fa-circle-question"></i></span>
+
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="prepay" id="prepay" checked>
+                                                                        <label class="form-check-label" for="prepay">
+                                                                            Prepay Online
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="prepay" id="pay-hotel" >
+                                                                        <label class="form-check-label" for="pay-hotel">
+                                                                            Pay at Hotel
+                                                                        </label>
+                                                                    </div>
+                                                                </td>
+
+                                                                <td class="text-center p-3"><i class="fa-solid fa-user"></i> <i class="fa-solid fa-user"></i></td>
+
+                                                                <!-- price col  -->
+                                                                <td class="p-3 " >
+                                                                    <div class="row table-row" >
+                                                                        <div class=" col price-modal-wrap position-relative text-end align-self-end">
+                                                                            <small class="d-block mb-2 fw-medium" style="color: var(--primary-color);">Eid Special Offer<span class="ms-1  py-1 rounded-1 px-2" style="background: var(--secondary-color); color: var(--title-color);">11% Off</span></small>
+                                                                            <span class="me-1 text-decoration-line-through" >US$107</span> <span class="fs-3 table-title">US$93</span>
+                                                                            <small style="margin-top: -6px; display: block;">Total Price: US$329 <br> 1 Room &#10005; 3 Nights Incl. Taxes</small>
+
+                                                                            <!-- room price details modal  -->
+                                                                            <div class="price-modal position-absolute rounded p-4">
+                                                                                <h5 class="text-start mb-3 text-decoration-underline" style="color: var(--title-color); font-weight: 600;">Price Details</h5>
+                                                                                <div class="d-flex justify-content-between">
+                                                                                    <span>1 Room x 3 Nights</span>
+                                                                                    <span>US$319.55</span>
+                                                                                </div>
+                                                                                <div class="d-flex justify-content-between">
+                                                                                    <span>Taxes & Fees</span>
+                                                                                    <span>US$49.41</span>
+                                                                                </div>
+                                                                                <div class="d-flex justify-content-between">
+                                                                                    <span>Eid Special Offer <span class="text-danger">(11% Off)</span></span>
+                                                                                    <span class="text-danger">-US$40.42</span>
+                                                                                </div>
+                                                                                <hr class="my-2">
+                                                                                <div class="d-flex justify-content-between" >
+                                                                                    <span style="color: var(--title-color) ; font-weight: 600 ;">Prepay Online</span>
+                                                                                    <span style="color: var(--title-color); font-weight: 600 ;">US$328.54</span>
+                                                                                </div>
+
+                                                                                <span class="down-arrow"></span>
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="col align-self-end">
+                                                                            <small >Only 2 Rooms Left</small>
+                                                                            <button tyle="submit" class="btn d-block mt-2 px-5">Reserve</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </form>
+                                                        </tr>
+
+                                                        <tr class="table-row  ">
+                                                            <form action="">
+                                                                <td class="p-3">
+                                                                    <ul class="p-0 room-feature">
+                                                                        <li class="text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Breakfast for US$14.32 (optional)</li>
+                                                                        <li class="text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Non-refundable</li>
+                                                                        <li class="text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Instant Confirmation</li>
+                                                                        <li class="text-capitalize"><i class="fa-regular fa-circle-check me-2"></i>Child Allowed</li>
+                                                                    </ul>
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <span class="table-title mb-2 d-block">Payment Type</span>
+                                                                        <span onclick="showRoomInfo()" class="table-title mb-2 d-block"><i class="fa-regular fa-circle-question"></i></span>
+
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="prepay" id="prepay" checked>
+                                                                        <label class="form-check-label" for="prepay">
+                                                                            Prepay Online
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="prepay" id="pay-hotel" >
+                                                                        <label class="form-check-label" for="pay-hotel">
+                                                                            Pay at Hotel
+                                                                        </label>
+                                                                    </div>
+                                                                </td>
+
+                                                                <td class="text-center p-3"><i class="fa-solid fa-user"></i> <i class="fa-solid fa-user"></i></td>
+
+                                                                <!-- price col  -->
+                                                                <td class="p-3 " >
+                                                                    <div class="row table-row" >
+                                                                        <div class=" col price-modal-wrap position-relative text-end align-self-end">
+                                                                            <small class="d-block mb-2 fw-medium" style="color: var(--primary-color);">Eid Special Offer<span class="ms-1  py-1 rounded-1 px-2" style="background: var(--secondary-color); color: var(--title-color);">11% Off</span></small>
+                                                                            <span class="me-1 text-decoration-line-through" >US$107</span> <span class="fs-3 table-title">US$93</span>
+                                                                            <small style="margin-top: -6px; display: block;">Total Price: US$329 <br> 1 Room &#10005; 3 Nights Incl. Taxes</small>
+
+                                                                            <!-- room price details modal  -->
+                                                                            <div class="price-modal position-absolute rounded p-4">
+                                                                                <h5 class="text-start mb-3 text-decoration-underline" style="color: var(--title-color); font-weight: 600;">Price Details</h5>
+                                                                                <div class="d-flex justify-content-between">
+                                                                                    <span>1 Room x 3 Nights</span>
+                                                                                    <span>US$319.55</span>
+                                                                                </div>
+                                                                                <div class="d-flex justify-content-between">
+                                                                                    <span>Taxes & Fees</span>
+                                                                                    <span>US$49.41</span>
+                                                                                </div>
+                                                                                <div class="d-flex justify-content-between">
+                                                                                    <span>Eid Special Offer <span class="text-danger">(11% Off)</span></span>
+                                                                                    <span class="text-danger">-US$40.42</span>
+                                                                                </div>
+                                                                                <hr class="my-2">
+                                                                                <div class="d-flex justify-content-between" >
+                                                                                    <span style="color: var(--title-color) ; font-weight: 600 ;">Prepay Online</span>
+                                                                                    <span style="color: var(--title-color); font-weight: 600 ;">US$328.54</span>
+                                                                                </div>
+
+                                                                                <span class="down-arrow"></span>
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="col align-self-end">
+                                                                            <small >Only 2 Rooms Left</small>
+                                                                            <button tyle="submit" class="btn d-block mt-2 px-5">Reserve</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </form>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <span class="readmore d-block" data-more="See 7 More Room's Packages Rate &#11167" data-less="See less &#11165 "></span>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                        <!-- rooms end   -->
+
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+
+                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">...</div>
+                        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">...</div>
+                        <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">...</div>
+                    </div>
+                </div>
+                <!-- tabs end  -->
+
+
+            </div>
+
+        </div>
+    </section>
+    <!-- hotel profile end -->
+
+    <!-- popup start  -->
+    <section>
+        <!--room more info popup  -->
+        <div id="popupWrap" class="popup-wrap">
+            <div class="d-flex justify-content-between rounded p-4 room-info-popup">
+                <div class="px-2">
+                    <span class="info-label d-block">Meals</span>
+                    <small class="d-block">&#10020; Meals not included</small>
+                    <small class="d-block">&#10020; For extra breakfasts, the charges are as follows THB 530.00 (approx. US$14.30) per person</small>
+
+                    <span class="info-label mt-2 d-block">Confirmation</span>
+                    <small class="d-block">Bookings will be confirmed instantly.</small>
+
+                    <span class="info-label mt-2 d-block">Cancellation</span>
+                    <small class="d-block">This booking cannot be modified, and no refund will be given if you cancel it.</small>
+
+                    <span class="info-label mt-2 d-block">Payment</span>
+                    <small class="d-block">Prepay the room rate online</small>
+                </div>
+
+                <div>
+                    <span onclick="closeRoomInfo()" role="button" style="font-size: 22px; color: var(--text-color); margin-top: -6px; display: block;"> &#10005; </span>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- popup end  -->
+
+    
+
+    
+  </main>
+  <!--end main-->
+
+  <!--footer start-->
+  <section id="footer">
+    <div class="container">
+      <div class="footer-wrapping ">
+          <div class="row row-cols-2 row-cols-md-4 row-cols-lg-4 gy-4 ">
+
+              <div class="boxiew col">
+                  <div class="logo">
+                    <img src="image/logo-light.png" alt="Boxiew logo">
+                  </div>
+      
+                  <div class="contact-info">
+                    
+                    <div class="mb-2"><a href="Tel: 123-456-7890"><i class="fa-solid fa-phone"></i>+88 01721-XXXXXX</a></div>
+                    <div class="mb-2"><a href="Tel: 123-456-7890"><i class="fa-solid fa-phone"></i>+88 01721-XXXXXX</a></div>
+                    <div class="mb-2"><a href="mailto:hello@boxiew.com"><i class="fa-solid fa-envelope"></i>hello@boxiew.com</a></div>
+                    <!-- <div class="mb-2"><a href="mailto:hello@boxiew.com"><i class="fa-solid fa-envelope"></i>hello@boxiew.com</a></div> -->
+                    <!-- <div><a href="#"><i class="pt-1 fa-sharp fa-solid fa-location-dot"></i>Feroza Tower, 8th Floor, DIT Road, Malibagh Chowdhurypara, Dhaka.</a> </div> -->
+                    
+                  </div>
+              </div>
+      
+              <div class="suppliers-info col">
+                  <div><h5>Suppliers Info</h5></div>
+                  <div class="info-link">
+                    <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                    <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                    <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                    <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                    <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div>
+                    <!-- <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Sell on us</a></div> -->
+                  </div>
+              </div>
+      
+              <div class="buyers-info col">
+                  <div><h5>Buyers Info</h5></div>
+                  <div class="info-link">
+                    <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                    <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                    <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                    <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From us</a></div>
+                    <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From </a></div>
+                    <!-- <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Buy From </a></div> -->
+                  </div>
+              </div>
+      
+              <div class="boxiew-link col">
+                  <div><h5>Quick Links</h5></div>
+                  <div class="info-link">
+                    <div><a href="affiliate.html"><i class="fa-solid fa-arrow-right-long"></i>Carier</a></div>
+                    <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>About Us</a></div>
+                    <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Privacy Policy</a></div>
+                    <div><a href="#"><i class="fa-solid fa-arrow-right-long"></i>Terms & Conditions</a></div>
+                  </div>
+      
+                  <div class="follow-us ">
+                    <div><h5>Follow Us</h5></div>
+                    <div class="social-link">
+                      <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                      <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+                    </div>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+      <hr>
+      <div class="copy-right d-flex justify-content-center pb-3"> <small>Copyright © 2023 Boxiew Ltd || All right reserved</small></div>
+    </div>
+
+  </section>
+  <!--footer end-->
+
+
+    <!--Bootstrap cdn link-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  
+
+
+    <!-- room info popup js  -->
+    <script>
+        let body = document.querySelector("body");
+        let popupWrap = document.getElementById('popupWrap')
+
+        function showRoomInfo(){
+            popupWrap.classList.add('overlay')
+            popupWrap.delay('800')
+            popupWrap.fadeIn('500')
+            body.style.overflow = "hidden"
+        }
+
+        function closeRoomInfo(){
+            popupWrap.classList.remove('overlay')
+            popupWrap.delay('800')
+            popupWrap.fadeOut('500')
+            body.style.overflow = "auto"
+        }
+    </script>
+
+    <!-- room body show more less js  -->
+    <script>
+        document.querySelectorAll('.readmore').forEach( function(link) {
+        link.addEventListener('click', function() {
+
+            this.closest('.room-body-wrap').classList.toggle('show');
+            });
+        });
+    </script>
+
+    <!-- room filters js  -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        // Get all filter items
+        const filterItems = document.querySelectorAll('.filter-items');
+
+        // Attach click event listener to each filter item
+        filterItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                const filterType = item.getAttribute('data-filter'); // Get the filter type
+
+                // Toggle active class for clicked filter item
+                item.classList.toggle('active');
+
+                // Get all hotel room elements
+                const hotelRooms = document.querySelectorAll('.hotel-room');
+
+                // Show/hide hotel rooms based on the selected filter
+                hotelRooms.forEach(function(room) {
+                    const shouldShow = room.getAttribute(`data-${filterType}`) === "true"; // Check if room matches the filter
+
+                    // Toggle visibility of hotel room based on the filter condition
+                    room.style.display = shouldShow ? 'block' : 'none';
+                    });
+                });
+            });
+        });
+
+    </script>
+    
+</body>
+</html>
