@@ -23,6 +23,7 @@
     <style>
         :root {
             --primary-color: #7e3ff2;
+            --primary-color-deep: #772ffc;
             --primary-color-light: #efe5fd;
             --secondary-color: #FDDB55;
             --secondary-color-light: #ffe478;
@@ -257,6 +258,7 @@
         .hotel-book .guest-info .book-room .form-control , .guest-mail .form-control{
             padding-top: 16px;
             margin-top: -20px;
+            font-size: 15px;
         }
         .hotel-book .guest-info .book-room .form-control:focus , .guest-mail .form-control:focus{
             border: 1px solid var(--primary-color);
@@ -279,17 +281,92 @@
             color: #f5abab;
         }
 
+        .hotel-book .guest-info .guest-phone .form-label{
+            font-size: 13px;
+            left: 8px;
+            top: -8px;
+            background: var(--bg-color);
+            padding: 0px 6px 0px 6px;
+            border-radius: 3px;
+            z-index: 1000;
 
-        /* phone input  */
-        /* .hotel-book .guest-info .btn{
-            position: absolute;
         }
-        .hotel-book .guest-info .phone-input{
-            color: #f5abab;
+        .hotel-book .guest-info .guest-phone .btn{
+            width: 100px;
+            border: 1px solid #75757550;
+            padding-top: 16px;
+            color: var(--text-color);
+            font-size: 15px;
+
+        }
+        .hotel-book .guest-info .guest-phone .btn:hover{
+            background: none;
+            color: var(--text-color);
+        }
+        .hotel-book .guest-info .guest-phone .form-control{
+            padding-top: 16px;
+            border-top-right-radius: 5px !important;
+            border-bottom-right-radius: 5px !important;
+            font-size: 15px;
+        }
+        .hotel-book .guest-info .guest-phone .form-control:focus{
+            border: 1px solid var(--primary-color);
+        }
+
+        .hotel-book .add-request .form-control{
+            font-size: 14px;
+        }
+        .hotel-book .add-request .form-control:focus{
+            border: 1px solid var(--primary-color);
+            box-shadow: none;
+            outline: none;
+        }
+
+        /* submitting  */
+        .hotel-book .submitting .form-check-label, .form-check-input{
+            font-size: 14px;
+            color: var(--text-color);
+        }
+        .hotel-book .submitting .form-check-input:checked{
+            background-color: var(--primary-color);
+            border: none;
+        }
+        .hotel-book .submitting a{
+            color: var(--primary-color);
+        }
+        .hotel-book .submitting a:hover , .hotel-link:hover{
+            text-decoration: underline;
+        }
+        .hotel-book .submitting button{
             width: 100%;
-            padding-left: 140px;
-            border-radius: 6px !important;
-        } */
+            padding: 10px;
+            border: none;
+            background: var(--primary-color);
+            transition: .3s;
+            margin-top: 24px;
+            font-weight: 500;
+            font-size: 18px;
+            color: white;
+        }
+        .hotel-book .submitting button:hover{
+            background: var(--primary-color-deep);
+        }
+        .hotel-book .hotel-link{
+            color: var(--title-color); font-size: 14px;
+        }
+        .hotel-book .price-lock{
+            color: var(--title-color); 
+            font-size: 14px;
+            font-weight: 500;
+            padding: 0 24px;
+        }
+        .hotel-book .pass-mgs span{
+            font-size: 14px;
+        }
+        .hotel-book .pass-mgs small{
+            font-size: 13px;
+        }
+
         
          
 
@@ -484,11 +561,12 @@
                             <p class="m-0"><i class="fa-regular fa-credit-card me-2"></i> Your room will be held all night, even if you check in late.</p>
                         </div>
 
-                        <!-- guest info  -->
+                        
                         <form action="">
-                            <div class="guest-info p-3 rounded mt-4">
+                            <!-- guest info  -->
+                            <div class="guest-info shadow-sm p-3 rounded mt-4">
                                 <h5>Guest Information</h5>
-                                <span class="notice"> <i class="fa-solid fa-triangle-exclamation me-2"></i>Guest Names must match the valid ID which will be used at check-in.</span>
+                                <span class="notice"> <i class="fa-regular fa-note-sticky me-2"></i>Guest Names must match the valid ID which will be used at check-in.</span>
 
                                 <!-- room inpu qty will be create conditionaly == room number  -->
                                 <div class="book-room mt-3 rounded p-3">
@@ -501,11 +579,11 @@
                                         <div class="row ">
                                             <div class=" col">
                                                 <label for="r1gfn" class="form-label">First Name</label>
-                                                <input type="email" class="form-control" id="r1gfn" placeholder="Enter first name" required>
+                                                <input type="text" class="form-control" id="r1gfn" placeholder="Enter first name" required>
                                             </div>
                                             <div class=" col">
                                                 <label for="r1gln" class="form-label">Last Name</label>
-                                                <input type="email" class="form-control" id="r1gln" placeholder="Enter last name">
+                                                <input type="text" class="form-control" id="r1gln" placeholder="Enter last name">
                                             </div>
                                         </div>
                                         <span role="button" class="remove"><i class="fa-solid fa-circle-minus"></i></span>
@@ -523,11 +601,11 @@
                                         <div class="row ">
                                             <div class=" col">
                                                 <label for="r2gfn" class="form-label">First Name</label>
-                                                <input type="email" class="form-control" id="r2gfn" placeholder="Enter first name" required>
+                                                <input type="text" class="form-control" id="r2gfn" placeholder="Enter first name" required>
                                             </div>
                                             <div class=" col">
                                                 <label for="r2gln" class="form-label">Last Name</label>
-                                                <input type="email" class="form-control" id="r2gln" placeholder="Enter last name">
+                                                <input type="text" class="form-control" id="r2gln" placeholder="Enter last name">
                                             </div>
                                         </div>
                                         <span role="button" class="remove"><i class="fa-solid fa-circle-minus"></i></span>
@@ -537,11 +615,11 @@
                                         <div class="row ">
                                             <div class=" col">
                                                 <label for="r2gfn" class="form-label">First Name</label>
-                                                <input type="email" class="form-control" id="r2gfn" placeholder="Enter first name" required>
+                                                <input type="text" class="form-control" id="r2gfn" placeholder="Enter first name" required>
                                             </div>
                                             <div class=" col">
                                                 <label for="r2gln" class="form-label">Last Name</label>
-                                                <input type="email" class="form-control" id="r2gln" placeholder="Enter last name">
+                                                <input type="text" class="form-control" id="r2gln" placeholder="Enter last name">
                                             </div>
                                         </div>
                                         <span role="button" class="remove"><i class="fa-solid fa-circle-minus"></i></span>
@@ -549,14 +627,12 @@
 
                                 </div>
 
-                                <label for="gphone" class="phone-label">Mobile</label>
+                                <!-- guest phone & mail  -->
+                                <div class="row mt-3 ">
 
-
-                                <div class="row mt-3">
-
-                                    <div class="col">
-                                        <div class="input-group ">
-                                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
+                                    <div class="col guest-phone">
+                                        <div class="input-group position-relative" style="margin-top: 10px;">
+                                            <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">+880</button>
                                             <ul class="dropdown-menu">
                                               <li><a class="dropdown-item" href="#">Action</a></li>
                                               <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -564,31 +640,70 @@
                                               <li><hr class="dropdown-divider"></li>
                                               <li><a class="dropdown-item" href="#">Separated link</a></li>
                                             </ul>
-                                            <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                                            <input type="text" class="form-control " placeholder="Mobile Number" aria-label="Text input with dropdown button" required>
+                                            <label for="gphone" class="form-label position-absolute">Mobile</label>
                                         </div>
                                     </div>
 
                                     <div class="col guest-mail">
                                         <label for="gmail" class="form-label">Email Address</label>
-                                        <input type="email" class="form-control" id="gmail" placeholder="Enter email">
+                                        <input type="email" class="form-control" id="gmail" placeholder="Enter email" required>
                                     </div>
                                 </div>
 
+                                <!--show it, password and sign up if user not registered  -->
+                                <div class="row mt-3 ">
 
-                                
+                                    <div class="col pass-mgs">
+                                        <div class="px-2 mt-2 pb-1 rounded" style="background: #7e3ff210">
+                                            <small class="">You can manage your booking easily! </small>
+                                            <span class="d-block text-uppercase">By Providing Your Password for Sign Up</span>
+                                        </div>
+                                    </div>
 
-
-
-
-
-                                
-                                <!-- <div class="mb-3">
-                                    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                </div> -->
+                                    <div class="col guest-mail">
+                                        <label for="gPassword" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="gPassword" placeholder="Enter password" required>
+                                    </div>
+                                </div>
 
                             </div>
+
+                            <!-- Additional request -->
+                            <div class="add-request shadow-sm mt-4 p-3 rounded"  style="background: white;">
+                                <label for="guest-request" class="form-label">
+                                    <h5 class="d-inline-block">Additional Request</h5> <span class="notice" style="color: var(--text-color);">(optional)</span>
+                                    <span class="notice d-block"> <i class="fa-regular fa-note-sticky me-2"></i>The property will do its best, but cannot guarantee to fulfill all requests.</span>
+                                </label>
+                                <textarea class="form-control" placeholder="Please, enter your qeruests here " id="guest-request" rows="3"></textarea>
+                            </div>
+                                    
+                            <!-- submitting btn  -->
+                            <div class="mt-4 p-3 shadow-sm submitting rounded" style="background: white;">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="offer-check" checked>
+                                    <label class="form-check-label" for="offer-check">
+                                        Send me special Boxiew.com deals and travel reminders
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="booking-check" >
+                                    <label class="form-check-label" for="booking-check">
+                                        By submitting this booking, I acknowledge that I have read and agree to Boxiew.com's <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.
+                                    </label>
+                                </div>
+
+                                <button type="submit" class="rounded">Continue to Final Step</button>
+
+                                <div class="d-flex mt-4 mb-2 justify-content-center">
+                                    <div class="price-lock"> <i class="fa-solid fa-tag me-2"></i> We Price Mactch</div>
+                                    <div class="price-lock"><i class="fa-solid fa-lock me-2"></i>Secure Payment</div>
+                                </div>
+                                
+                            </div>
                         </form>
+
+                        <a href="#" class="d-inline-block hotel-link mt-4" title="Go to this property"><i class="fa-solid fa-arrow-left-long me-2"></i>Hotel The Cox Today</a>
 
                     </div>
 
