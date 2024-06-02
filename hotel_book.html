@@ -371,6 +371,87 @@
          
 
     </style>
+
+    <!-- right side price info css  -->
+    <style>
+        .hotel-book .price-details .prices span{
+            font-size: 14px;
+        }
+        .hotel-book .price-details .total h6{
+            font-size: 15px;
+        }
+        .hotel-book .price-details .tax-info{
+            background: var(--bg-color);
+        }
+        .hotel-book .price-details .tax-info span{
+            font-size: 13px;
+        }
+
+        .hotel-book .promo-code .form-control{
+            width: 64% ;
+            font-size: 15px;
+        }
+        .hotel-book .promo-code button{
+            width: 34%;
+            border: 0;
+            background: var(--secondary-color);
+            transition: .3s;
+            padding: 6px;
+            margin: 0;
+            font-size: 15px;
+        }
+        .hotel-book .promo-code button:hover{
+            background: var(--secondary-color-light);
+        }
+
+        .hotel-book .city-notes p{
+            font-size: 14px;
+            color: var(--text-color);
+        }
+
+    </style>
+
+
+
+<style>
+    .tax-wrap {
+      height: 21px;
+      overflow: hidden;
+    }
+    .tax-wrap.show {
+      height: auto;
+    }
+
+    .tax-content {
+      position: relative;
+      overflow: hidden;
+    }
+
+  .tax-detail-read {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    left: 100px;
+    /* background: white; */
+    color: var(--primary-color);
+    cursor: pointer;
+  }
+  .tax-detail-read::before {
+    content: attr(data-more)
+  }
+  .tax-wrap.show .tax-detail-read {
+    position: absolute;
+    top: -25px ;
+    display: block;
+  }
+  .tax-wrap.show .tax-detail-read::before {
+    content: attr(data-less)
+  }
+</style>
+
+
+
+
 </head>
 <body>
   <!--Main Navigation-->
@@ -449,120 +530,121 @@
     <section class="hotel-book py-5 " style="background: var(--bg-color);">
         <div class="container">
             <div class="hotel-book-wrap">
-                <div class="row">
+                <form action=""></form>
+                    <div class="row">
 
-                    <div class="col-9">
-                        <div class="card border-0 shadow-sm" >
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="https://www.checkatrade.com/blog/wp-content/uploads/2021/04/Feature-cost-to-build-a-hotel.jpg" class=" rounded-start" alt="...">
+                        <div class="col-8">
+                            <div class="card border-0 shadow-sm" >
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="https://www.checkatrade.com/blog/wp-content/uploads/2021/04/Feature-cost-to-build-a-hotel.jpg" class=" rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body m-0" style="border-bottom: 1px dotted #75757550;">
+                                            <div class="d-flex justify-content-between">
+                                                <h5 class="hotel-title">Hotel The Cox Today</h5>
+                                                <span class="hotel-star"><i class="fa-solid fa-star me-1"></i> 5 Star</span>
+                                            </div>
+                                            
+                                            <h6 class="room-title mt-3">Superior Twin Room</h6>
+                                            <ul class="mb-0 mt-2 row">
+                                                <li class=" col-auto"><i class="fa-solid fa-user me-2"></i>2 Adults</li>
+                                                <li class=" col-auto"> <i class="fa-solid fa-child me-2"></i>1 child </li>
+                                                <li class=" col-auto" > <i class="fa-solid fa-bed me-2"></i>2 single Beds</li>
+                                            </ul>
+
+                                            <ul class="room-feature pt-2 mb-0 row" style="background: var(--bg-color);">
+                                                <li class="feature-item col-auto"><i class="fa-regular fa-square-check me-2"></i>City View</li>
+                                                <li class="feature-item col-auto"><i class="fa-regular fa-square-check me-2"></i>Non Smooking</li>
+                                                <li class="feature-item col-auto"><i class="fa-regular fa-square-check me-2"></i>28m<sup>2</sup> | Floor: 10-22</li>
+                                                <li class="feature-item col-auto"><i class="fa-regular fa-square-check me-2"></i>Air Conditioning</li>
+                                                <li class="feature-item col-auto"><i class="fa-regular fa-square-check me-2"></i>Free Wifi</li>
+                                                <li class="feature-item col-auto"><i class="fa-regular fa-square-check me-2"></i>Private Bath</li>
+                                            </ul>
+
+                                            <div class="mt-2 d-inline-block cancel position-relative" >
+                                                <i class="fa-regular fa-circle-check me-2"></i>
+                                                <span style="color: var(--primary-color);">Free Cancellation</span> before: <strong class="ms-2">23:59, 24 Jul 2024</strong>
+
+                                                <div class="modal  rounded-1 lh-base  ">
+                                                    <div class="d-flex">
+                                                        <div>
+                                                            <i class="fa-solid fa-clock"></i>
+                                                            <div class="space-line"></div>
+                                                            <div class="bullet"></div>
+                                                        </div>
+                                                        <div class="ms-2">
+                                                            <h6>Free Cancellation</h6> 
+                                                            <span>Before: 23:59, 24 Jul 2024</span>
+
+                                                            <h6 class="mt-3">Non-refundable</h6> 
+                                                            <span>After: 23:59, 24 Jul 2024</span>
+                                                        </div>
+
+                                                    </div>
+                                                    <hr class="my-2 ">
+                                                    <p class="mt-0">All times are in the hotel's local time</p>
+                                                    <span class="modal-arrow"></span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
                                 </div>
-                                <div class="col-md-8">
-                                    <div class="card-body m-0" style="border-bottom: 1px dotted #75757550;">
-                                        <div class="d-flex justify-content-between">
-                                            <h5 class="hotel-title">Hotel The Cox Today</h5>
-                                            <span class="hotel-star"><i class="fa-solid fa-star me-1"></i> 5 Star</span>
+
+                                </div>
+
+                                <!-- date range and room qty  -->
+                                <div class="date-room p-3">
+                                    <form action="">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="d-flex justify-content-between" id="changedatePickerBtn">
+                                                    <div>
+                                                        <span class="d-block">Check In - 14:00</span>
+                                                        <strong id="changeStartDayName">Tue</strong>,
+                                                        <strong id="changeStartDate">30 Jul 2024</strong>
+                                                    </div>
+                                                    <div>
+                                                        <strong class=" d-block text-center"><span id="changeTotalNights">4</span> Nights</strong>
+                                                        <span class="tags z-3">Change</span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="d-block">Check Out - 11:00</span>
+                                                        <strong id="changeEndDayName">Mon</strong>,
+                                                        <strong id="changeEndDate"> 6 Aug 2024</strong>
+                                                    </div>
+                                                </div>
+
+                                                <!-- date range calender  -->
+                                                <input type="text" id="changeDateRange" class="z-0" name="changeDateRange" readonly>
+                                            </div>
+        
+                                            <div class="col">
+                                                <select class="hotel-room mx-4 px-5" namae="" id="" class="" aria-label="hotel room">
+                                                    <option value="1" >1 Room</option>
+                                                    <option value="2" selected>2 Room</option>
+                                                    <option  value="3">3 Room</option>
+                                                    <option value="3">4 Room</option>
+                                                    <option value="3">5 Room</option>
+                                                </select>
+                                            </div>
                                         </div>
                                         
-                                        <h6 class="room-title mt-3">Superior Twin Room</h6>
-                                        <ul class="mb-0 mt-2 row">
-                                            <li class=" col-auto"><i class="fa-solid fa-user me-2"></i>2 Adults</li>
-                                            <li class=" col-auto"> <i class="fa-solid fa-child me-2"></i>1 child </li>
-                                            <li class=" col-auto" > <i class="fa-solid fa-bed me-2"></i>2 single Beds</li>
-                                        </ul>
+                                    </form>
 
-                                        <ul class="room-feature pt-2 mb-0 row" style="background: var(--bg-color);">
-                                            <li class="feature-item col-auto"><i class="fa-regular fa-square-check me-2"></i>City View</li>
-                                            <li class="feature-item col-auto"><i class="fa-regular fa-square-check me-2"></i>Non Smooking</li>
-                                            <li class="feature-item col-auto"><i class="fa-regular fa-square-check me-2"></i>28m<sup>2</sup> | Floor: 10-22</li>
-                                            <li class="feature-item col-auto"><i class="fa-regular fa-square-check me-2"></i>Air Conditioning</li>
-                                            <li class="feature-item col-auto"><i class="fa-regular fa-square-check me-2"></i>Free Wifi</li>
-                                            <li class="feature-item col-auto"><i class="fa-regular fa-square-check me-2"></i>Private Bath</li>
-                                        </ul>
-
-                                        <div class="mt-2 d-inline-block cancel position-relative" >
-                                            <i class="fa-regular fa-circle-check me-2"></i>
-                                            <span style="color: var(--primary-color);">Free Cancellation</span> before: <strong class="ms-2">23:59, 24 Jul 2024</strong>
-
-                                            <div class="modal  rounded-1 lh-base  ">
-                                                <div class="d-flex">
-                                                    <div>
-                                                        <i class="fa-solid fa-clock"></i>
-                                                        <div class="space-line"></div>
-                                                        <div class="bullet"></div>
-                                                    </div>
-                                                    <div class="ms-2">
-                                                        <h6>Free Cancellation</h6> 
-                                                        <span>Before: 23:59, 24 Jul 2024</span>
-
-                                                        <h6 class="mt-3">Non-refundable</h6> 
-                                                        <span>After: 23:59, 24 Jul 2024</span>
-                                                    </div>
-
-                                                </div>
-                                                <hr class="my-2 ">
-                                                <p class="mt-0">All times are in the hotel's local time</p>
-                                                <span class="modal-arrow"></span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                              </div>
+                                </div>
 
                             </div>
 
-                            <!-- date range and room qty  -->
-                            <div class="date-room p-3">
-                                <form action="">
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="d-flex justify-content-between" id="changedatePickerBtn">
-                                                <div>
-                                                    <span class="d-block">Check In - 14:00</span>
-                                                    <strong id="changeStartDayName">Tue</strong>,
-                                                    <strong id="changeStartDate">30 Jul 2024</strong>
-                                                </div>
-                                                <div>
-                                                    <strong class=" d-block text-center"><span id="changeTotalNights">4</span> Nights</strong>
-                                                    <span class="tags z-3">Change</span>
-                                                </div>
-                                                <div>
-                                                    <span class="d-block">Check Out - 11:00</span>
-                                                    <strong id="changeEndDayName">Mon</strong>,
-                                                    <strong id="changeEndDate"> 6 Aug 2024</strong>
-                                                </div>
-                                            </div>
-
-                                            <!-- date range calender  -->
-                                            <input type="text" id="changeDateRange" class="z-0" name="changeDateRange" readonly>
-                                        </div>
-    
-                                        <div class="col">
-                                            <select class="hotel-room mx-4 px-5" namae="" id="" class="" aria-label="hotel room">
-                                                <option value="1" >1 Room</option>
-                                                <option value="2" selected>2 Room</option>
-                                                <option  value="3">3 Room</option>
-                                                <option value="3">4 Room</option>
-                                                <option value="3">5 Room</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    
-                                </form>
-
+                            <!-- messages  -->
+                            <div class="message p-3 mt-4 rounded">
+                                <p class="m-0"><i class="fa-solid fa-bolt-lightning  ms-1" style="margin-right: 14px;"></i>Instant Confirmation</p>
+                                <p class="m-0"><i class="fa-regular fa-credit-card me-2"></i> Your room will be held all night, even if you check in late.</p>
                             </div>
 
-                        </div>
-
-                        <!-- messages  -->
-                        <div class="message p-3 mt-4 rounded">
-                            <p class="m-0"><i class="fa-solid fa-bolt-lightning  ms-1" style="margin-right: 14px;"></i>Instant Confirmation</p>
-                            <p class="m-0"><i class="fa-regular fa-credit-card me-2"></i> Your room will be held all night, even if you check in late.</p>
-                        </div>
-
+                            
                         
-                        <form action="">
                             <!-- guest info  -->
                             <div class="guest-info shadow-sm p-3 rounded mt-4">
                                 <h5>Guest Information</h5>
@@ -634,11 +716,11 @@
                                         <div class="input-group position-relative" style="margin-top: 10px;">
                                             <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">+880</button>
                                             <ul class="dropdown-menu">
-                                              <li><a class="dropdown-item" href="#">Action</a></li>
-                                              <li><a class="dropdown-item" href="#">Another action</a></li>
-                                              <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                              <li><hr class="dropdown-divider"></li>
-                                              <li><a class="dropdown-item" href="#">Separated link</a></li>
+                                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                                <li><hr class="dropdown-divider"></li>
+                                                <li><a class="dropdown-item" href="#">Separated link</a></li>
                                             </ul>
                                             <input type="text" class="form-control " placeholder="Mobile Number" aria-label="Text input with dropdown button" required>
                                             <label for="gphone" class="form-label position-absolute">Mobile</label>
@@ -701,20 +783,92 @@
                                 </div>
                                 
                             </div>
-                        </form>
+                        
 
-                        <a href="#" class="d-inline-block hotel-link mt-4" title="Go to this property"><i class="fa-solid fa-arrow-left-long me-2"></i>Hotel The Cox Today</a>
+                            <a href="#" class="d-inline-block hotel-link mt-4" title="Go to this property"><i class="fa-solid fa-arrow-left-long me-2"></i>Hotel The Cox Today</a>
+
+                        </div>
+
+                        <!-- right sides price info  -->
+                        <div class="col-4">
+
+
+
+                            <div class="price-info-card mb-4 price-details shadow-sm rounded bg-white">
+                                <div class="d-flex px-3 px-md-4 pt-3 ">
+                                    <span><i class="fa-solid fa-tag"></i></span>
+                                    <h6 class="m-0 ps-2">Price Details</h6>
+                                </div>
+                                <div class="p-3 p-md-4 price-info ">
+
+                                    <div class="d-flex prices justify-content-between">
+                                        <span>2 room &#215; 1 nights</span>
+                                        <span>US$143.12</span>
+                                    </div>
+
+                                    <div class="tax-wrap">
+                                        <div class="tax-content">
+                                            <div class="d-flex prices justify-content-between">
+                                                <span>Taxes & Fees</span>
+                                                <span>US$30.34</span>
+                                            </div>
+                                            <div class="py-2 px-3 tax-info rounded">
+                                                <div class="d-flex prices justify-content-between">
+                                                    <span>Vat</span>
+                                                    <span>US$20.34</span>
+                                                </div>
+                                                <div class="d-flex prices justify-content-between">
+                                                    <span>Fees</span>
+                                                    <span>US$10.00</span>
+                                                </div>
+                                            </div>
+                                
+                                            <span class="tax-detail-read" data-more="&#129171" data-less="&#129169" style="font-size: 30px;"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex prices justify-content-between">
+                                        <span>Special Offer</span>
+                                        <span class="text-danger" > - US$8.36</span>
+                                    </div>
+
+                                    <hr style="border: 1px dashed var(--text-color)">
+                                    <div class="d-flex total justify-content-between">
+                                        <h6 class="m-0">Prepay Online</h6>
+                                        <h6 class="m-0">US$165.10</h6>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="price-info-card mb-4 promo-code shadow-sm rounded bg-white">
+                                <div class="d-flex px-3 px-md-4 pt-3 ">
+                                    <span><i class="fa-brands fa-discourse"></i></span>
+                                    <h6 class="m-0 ps-2">Promo Code</h6>
+
+                                </div>
+                                <div class="px-3 px-md-4 py-3 ">
+                                    <input type="text" class="form-control mt-2 d-inline" placeholder="Enter Promo Code" >
+                                    <button type="submit" class="rounded apply-btn"> Apply</button>
+                                </div>
+                            </div>
+
+                            <div class="price-info-card mb-4 city-notes shadow-sm rounded bg-white">
+                                <div class="d-flex px-3 px-md-4 pt-3 ">
+                                    <span><i class="fa-regular fa-note-sticky"></i></span>
+                                    <h6 class="m-0 ps-2">City Notes</h6>
+                                </div>
+                                <p class="p-3 p-md-4 lh-base ">
+                                    When staying at the hotel, a local Tourism <span style="color: var(--title-color); font-weight: 500;">BDT</span> is charged per room per night. The amount charged may vary depending on different situations (stay period and room type etc.) . Please contact the hotel front desk for more information.
+                                </p>
+                            </div>
+
+                        </div>
 
                     </div>
 
-                    <!-- right sides info  -->
-                    <div class="col-3">
+                </form>
 
-
-
-                    </div>
-
-                </div>
             </div>
         </div>
     </section>
@@ -892,6 +1046,16 @@
             });
         });
 
+    </script>
+
+    <!-- taxs detials js  -->
+    <script>
+        document.querySelectorAll('.tax-detail-read').forEach( function(link) {
+        link.addEventListener('click', function() {
+
+            this.closest('.tax-wrap').classList.toggle('show');
+            });
+        });
     </script>
 
     
