@@ -482,6 +482,97 @@
         .room-info-popup span {
             font-weight: 500;
         }
+
+        /* room details popup css */
+        .details-popup-wrap{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+            visibility: hidden;
+            background: #1d1d1d70;
+        }
+        .details-overlay{
+            visibility: visible;
+        }
+        .room-details-popup{
+            width: 1296px;
+            height: 720px;
+            background: white;
+            color: var(--title-color);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            cursor: pointer;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+        }
+        .details-popup-wrap .room-imgs {
+            /* width: 600px; */
+            height: 650px;
+            overflow: auto;
+        }
+        .details-popup-wrap .room-imgs .row {
+            width: 100%;
+        }
+        .details-popup-wrap .room-imgs img {
+            width: 100%;
+            height: 272px;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+        .details-popup-wrap .room-txt {
+            height: 600px;
+            overflow: auto;
+        }
+
+        .details-popup-wrap .room-imgs::-webkit-scrollbar {
+            display: none;
+        }
+        .details-popup-wrap .room-txt::-webkit-scrollbar {
+            width: 4px;
+        }
+        .details-popup-wrap .room-txt::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+        .details-popup-wrap .room-txt::-webkit-scrollbar-thumb {
+            background: #75757540;
+        }
+        .details-popup-wrap .room-txt::-webkit-scrollbar-button {
+            display: none;
+        }
+
+        .details-popup-wrap .details-box {
+            width: 370px;
+            padding-left: 2px;
+        }
+        .details-popup-wrap .details-box p,
+        .details-box li, .details-box td{
+            font-size: 13px;
+        }
+        .details-popup-wrap .details-box .top i{
+            color: var(--primary-color);
+        }
+        .details-popup-wrap .details-box li{
+            margin-bottom: 5px;
+        }
+        .details-popup-wrap .selectroomBtn{
+            width: 100%;
+            border: none;
+            background: var(--primary-color);
+            transition: .3s;
+            color: white;
+            border-radius: 6px;
+            padding: 6px;
+        }
+        .details-popup-wrap .selectroomBtn:hover{
+            background: #7328ff;
+        }
+        
     </style>
 </head>
 <body>
@@ -752,22 +843,24 @@
                             <div class="room-body-wrap mt-3 p-3 hotel-room rounded"  data-breakfast="true" data-instant="true" data-prepay="true" data-payathotel="true" data-refundable="true" data-beds="2">
 
                                 <div class="room-body">
-                                    <h3 class="room-title mb-3 d-inline-block" title="Click for More Details!">Superior Twin Room</h3>
+                                    <h3 class="room-title mb-3 d-inline-block" title="Click for More Details!" onclick="showRoomDetails()">Superior Twin Room</h3>
                                     <div class="row">
                                         <!-- room details  -->
                                         <div class="col-3">
                                             <div class="room-details ">
                                                 <!-- room's images  -->
-                                                <img class="view-img rounded object-fit-cover" src="https://promos.makemytrip.com/AltAcco/images/hotel.png"  alt="">
-                                                <div class="row g-1" style="margin-top: .5px;">
-                                                    <div class="col">
-                                                        <img class="thum-img rounded object-fit-cover" src="https://cdn.mos.cms.futurecdn.net/JUcbVxWtm6MkiNaif3eviF.jpg" alt="">
-                                                    </div>
-                                                    <div class="col">
-                                                        <img class="thum-img rounded  object-fit-cover" src="https://media-cdn.tripadvisor.com/media/photo-s/16/1a/ea/54/hotel-presidente-4s.jpg" alt="">
-                                                    </div>
-                                                    <div class="col">
-                                                        <img class="thum-img rounded  object-fit-cover" src="https://www.shutterstock.com/image-photo/stylish-interior-living-room-night-600nw-1566382885.jpg" alt="">
+                                                <div  onclick="showRoomDetails()">
+                                                    <img class="view-img rounded object-fit-cover" src="https://promos.makemytrip.com/AltAcco/images/hotel.png"  alt="">
+                                                    <div class="row g-1" style="margin-top: .5px;">
+                                                        <div class="col">
+                                                            <img class="thum-img rounded object-fit-cover" src="https://cdn.mos.cms.futurecdn.net/JUcbVxWtm6MkiNaif3eviF.jpg" alt="">
+                                                        </div>
+                                                        <div class="col">
+                                                            <img class="thum-img rounded  object-fit-cover" src="https://media-cdn.tripadvisor.com/media/photo-s/16/1a/ea/54/hotel-presidente-4s.jpg" alt="">
+                                                        </div>
+                                                        <div class="col">
+                                                            <img class="thum-img rounded  object-fit-cover" src="https://www.shutterstock.com/image-photo/stylish-interior-living-room-night-600nw-1566382885.jpg" alt="">
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <!-- room's details  -->
@@ -780,7 +873,7 @@
                                                     <li class="text-capitalize"><i class="fa-regular fa-square-check me-2"></i>free wifi</li>
                                                     <li class="text-capitalize"><i class="fa-regular fa-square-check me-2"></i>Private Bath</li>
                                                 </ul>
-                                                <button class="btn details-btn m-0 p-0"><i class="fa-solid fa-arrow-turn-up me-2"></i>More Details</button>
+                                                <button class="btn details-btn m-0 p-0"  onclick="showRoomDetails()"><i class="fa-solid fa-arrow-turn-up me-2"></i>More Details</button>
                                             </div>
                                         </div>
 
@@ -1028,25 +1121,27 @@
                             </div>
 
                             <!-- room 2  -->
-                            <div class="room-body-wrap mt-3 p-3 hotel-room rounded"  data-breakfast="true" data-instant="true" data-prepay="true" data-payathotel="true" data-refundable="true" data-beds="1">
+                            <div class="room-body-wrap mt-3 p-3 hotel-room rounded"  data-breakfast="true" data-instant="true" data-prepay="true" data-payathotel="true" data-refundable="true" data-beds="2">
 
                                 <div class="room-body">
-                                    <h3 class="room-title mb-3 d-inline-block" title="Click for More Details!">Delux Room</h3>
+                                    <h3 class="room-title mb-3 d-inline-block" title="Click for More Details!" onclick="showRoomDetails()">Delux Room</h3>
                                     <div class="row">
                                         <!-- room details  -->
                                         <div class="col-3">
                                             <div class="room-details ">
                                                 <!-- room's images  -->
-                                                <img class="view-img rounded object-fit-cover" src="https://promos.makemytrip.com/AltAcco/images/hotel.png"  alt="">
-                                                <div class="row g-1" style="margin-top: .5px;">
-                                                    <div class="col">
-                                                        <img class="thum-img rounded object-fit-cover" src="https://cdn.mos.cms.futurecdn.net/JUcbVxWtm6MkiNaif3eviF.jpg" alt="">
-                                                    </div>
-                                                    <div class="col">
-                                                        <img class="thum-img rounded  object-fit-cover" src="https://media-cdn.tripadvisor.com/media/photo-s/16/1a/ea/54/hotel-presidente-4s.jpg" alt="">
-                                                    </div>
-                                                    <div class="col">
-                                                        <img class="thum-img rounded  object-fit-cover" src="https://www.shutterstock.com/image-photo/stylish-interior-living-room-night-600nw-1566382885.jpg" alt="">
+                                                <div  onclick="showRoomDetails()">
+                                                    <img class="view-img rounded object-fit-cover" src="https://www.acaciahotelsmanila.com/wp-content/uploads/2023/05/Rooms-and-Suites-AHM-1.jpg"  alt="">
+                                                    <div class="row g-1" style="margin-top: .5px;">
+                                                        <div class="col">
+                                                            <img class="thum-img rounded object-fit-cover" src="https://cdn.mos.cms.futurecdn.net/JUcbVxWtm6MkiNaif3eviF.jpg" alt="">
+                                                        </div>
+                                                        <div class="col">
+                                                            <img class="thum-img rounded  object-fit-cover" src="https://media-cdn.tripadvisor.com/media/photo-s/16/1a/ea/54/hotel-presidente-4s.jpg" alt="">
+                                                        </div>
+                                                        <div class="col">
+                                                            <img class="thum-img rounded  object-fit-cover" src="https://www.shutterstock.com/image-photo/stylish-interior-living-room-night-600nw-1566382885.jpg" alt="">
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <!-- room's details  -->
@@ -1059,7 +1154,7 @@
                                                     <li class="text-capitalize"><i class="fa-regular fa-square-check me-2"></i>free wifi</li>
                                                     <li class="text-capitalize"><i class="fa-regular fa-square-check me-2"></i>Private Bath</li>
                                                 </ul>
-                                                <button class="btn details-btn m-0 p-0"><i class="fa-solid fa-arrow-turn-up me-2"></i>More Details</button>
+                                                <button class="btn details-btn m-0 p-0"  onclick="showRoomDetails()"><i class="fa-solid fa-arrow-turn-up me-2"></i>More Details</button>
                                             </div>
                                         </div>
 
@@ -1305,6 +1400,7 @@
                                 </div>
 
                             </div>
+                            
 
 
                         </div>
@@ -1353,6 +1449,193 @@
                     <span onclick="closeRoomInfo()" role="button" style="font-size: 22px; color: var(--text-color); margin-top: -6px; display: block;"> &#10005; </span>
                 </div>
 
+            </div>
+
+        </div>
+
+        <!-- room details popup  -->
+        <div id="detailPopupWrap" class="details-popup-wrap">
+            <div class="rounded px-4 py-3 room-details-popup">
+                <div class="text-end" style="margin-top: -4px;"> <span onclick="closeRoomDetails()" role="button" style="font-size: 22px; color: var(--text-color);"> &#10005; </span></div>
+
+                <div class="row ">
+                    <div class="col-8">
+                        <div class=" room-imgs">
+                            <div class="row g-2 row-cols-2">
+                                <div class="col">
+                                    <img src="https://promos.makemytrip.com/AltAcco/images/hotel.png" alt="">
+                                </div>
+                                <div class="col">
+                                    <img src="https://cdn.mos.cms.futurecdn.net/JUcbVxWtm6MkiNaif3eviF.jpg" alt="">
+                                </div>
+                                <div class="col">
+                                    <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/1a/ea/54/hotel-presidente-4s.jpg" alt="">
+                                </div>
+                                <div class="col">
+                                    <img src="https://www.shutterstock.com/image-photo/stylish-interior-living-room-night-600nw-1566382885.jpg" alt="">
+                                </div>
+                                <div class="col">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Hotel-suite-living-room.jpg/640px-Hotel-suite-living-room.jpg" alt="">
+                                </div>
+                                <div class="col">
+                                    <img src="https://www.acaciahotelsmanila.com/wp-content/uploads/2023/05/Rooms-and-Suites-AHM-1.jpg" alt="">
+                                </div>
+                                <div class="col">
+                                    <img src="https://www.acaciahotelsmanila.com/wp-content/uploads/2023/05/Rooms-and-Suites-AHM-1.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class=" room-txt">
+                            <h5>Superior Twin Room </h5>
+
+                            <div class="details-box">
+                                <h6 class="mt-3"><i class="fa-solid fa-bed me-2"></i> 2 single bed (0.9m wide)</h6>
+
+                                <ul class="row row-cols-auto top mt-3">
+                                    <li class="col text-capitalize"><i class="fa-regular fa-square-check me-2"></i>City View</li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-square-check me-2"></i>non smooking</li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-square-check me-2"></i>28m<sup>2</sup> | Floor: 10-22</li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-square-check me-2"></i>Air conditioning</li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-square-check me-2"></i>free wifi</li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-square-check me-2"></i>Private Bath</li>
+                                </ul>
+
+                            </div>
+
+                            <div class="details-box">
+                                <h6>Cribs and Extra Beds</h6>
+                                <p>Cribs and extra beds can be added for this room type</p>
+
+                                <table class="table table-bordered ">
+                                    <tr>
+                                        <th style="font-weight: 500; font-size: 14px;">Age</th>
+                                        <th style="font-weight: 500; font-size: 14px;">Fee</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Children 2 years old and under</td>
+                                        <td> Adding crib: <span style="color: var(--primary-color);">Free</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Children 3 years old</td>
+                                        <td> AED 180.00 (approx. US$49.01) per person per night Adding Crib: <span style="color: var(--primary-color);">Free</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Children 4 years old and over (including adults)</td>
+                                        <td>AED 180.00 (approx. US$49.01) per person per night</td>
+                                    </tr>
+                                </table>
+                                
+                            </div>
+
+                            <div class="details-box">
+                                <h6>Accessibility</h6>
+                                <ul class="row row-cols-auto">
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Stair-Free Property Entrance</li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Accessible Shower</li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Lower Washstand</li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Shower Railings</li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Bathroom with Emergency Button</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-box">
+                                <h6>Room Amenities</h6>
+                                <ul class="row row-cols-auto">
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Air Conditioning  </li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Shade Curtain</li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Bedding: Duvet</li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Bedding: Blanket Or Quilt</li>
+                                </ul>
+                            </div>
+
+                            <div class="details-box">
+                                <h6>Media/Technology</h6>
+                                <ul class="row row-cols-auto">
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> TV </li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Satellite Channels </li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Movie </li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Smart Door Lock </li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Video Streaming Services </li>
+                                </ul>
+                            </div>
+
+                            <div class="details-box">
+                                <h6>Food & Drinks</h6>
+                                <ul class="row row-cols-auto">
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Coffee Machine </li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Coffee/Tea Pot </li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Bottled Water </li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Electric Kettle </li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Minibar </li>
+                                </ul>
+                            </div>
+
+                            <div class="details-box">
+                                <h6>Bathroom facilities</h6>
+                                <ul class="row row-cols-auto">
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i>Private Bath </li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Hair Dryer</li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Bathrobe </li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Towel </li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Slippers </li>
+                                </ul>
+                            </div>
+
+                            <div class="details-box">
+                                <h6>Toiletries</h6>
+                                <ul class="row row-cols-auto">
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Toothpaste</li>
+                                </ul>
+                            </div>
+
+                            <div class="details-box">
+                                <h6>Room Layout and Furnishings</h6>
+                                <ul class="row row-cols-auto">
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Wardrobe</li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Desk</li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Connecting Room</li>
+                                </ul>
+                            </div>
+
+                            <div class="details-box">
+                                <h6>Internet and Communication Devices</h6>
+                                <ul class="row row-cols-auto">
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> Telephone</li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i> In-room Wi-Fi</li>
+                                </ul>
+                            </div>
+
+                            <div class="details-box">
+                                <h6>Cleaning Services</h6>
+                                <ul class="row row-cols-auto">
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i>  Ironing Equipment</li>
+                                </ul>
+                            </div>
+
+                            <div class="details-box">
+                                <h6>Amenities</h6>
+                                <ul class="row row-cols-auto">
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i>  In-Room Safe</li>
+                                    <li class="col text-capitalize"><i class="fa-regular fa-circle-check me-1"></i>  Turn Down Service</li>
+                                </ul>
+                            </div>
+
+                            <div class="details-box">
+                                <h6>Child Policies</h6> 
+                                <p class=" mb-2" style="color: var(--primary-color);"> <i class="fa-solid fa-child me-1"></i> Children of all ages are welcome at this property</p>
+                                <p>Please add the exact number of children and their age to the search criteria, and we will provide you with a suitable room type.</p>
+                            </div>
+
+                        </div>
+
+                        <button onclick="closeRoomDetails()" class="mt-3 selectroomBtn">Select Room</button>
+
+                    </div>
+
+                </div>
             </div>
 
         </div>
@@ -1448,7 +1731,8 @@
 
     <!-- room info popup js  -->
     <script>
-        let body = document.querySelector("body");
+        // let body = document.querySelector("body");
+        let body = document.body;
         let popupWrap = document.getElementById('popupWrap')
 
         function showRoomInfo(){
@@ -1462,6 +1746,23 @@
             popupWrap.classList.remove('overlay')
             popupWrap.delay('800')
             popupWrap.fadeOut('500')
+            body.style.overflow = "auto"
+        }
+
+        // room details popup 
+        let detailPopupWrap = document.getElementById('detailPopupWrap')
+
+        function showRoomDetails(){
+            detailPopupWrap.classList.add('details-overlay')
+            detailPopupWrap.delay('800')
+            detailPopupWrap.fadeIn('500')
+            body.style.overflow = "hidden"
+        }
+
+        function closeRoomDetails(){
+            detailPopupWrap.classList.remove('details-overlay')
+            detailPopupWrap.delay('800')
+            detailPopupWrap.fadeOut('500')
             body.style.overflow = "auto"
         }
     </script>
