@@ -401,6 +401,54 @@
 
     </style>
 
+    <!-- facilities tab css  -->
+    <style>
+        .profile-tabs .facility-box {
+            margin-bottom: 34px;
+        }
+        .profile-tabs .facility-box h5 i{
+            color: var(--primary-color);
+        }
+        .profile-tabs .facility-box li{
+            font-size: 14px;
+            margin-bottom: 6px;
+            text-transform: capitalize;
+        }
+        .profile-tabs .facility-box .tag{
+            padding: 1px 6px 2px 6px;
+            margin: 0px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        .profile-tabs .facility-box .extra{
+            background: var(--primary-color-light);
+        }
+        .profile-tabs .facility-box .free{
+            background: #FDDB5575
+        }
+    </style>
+
+    <!-- policy tab css  -->
+    <style>
+        .profile-tabs .policy-wrap p, .policy-wrap th, .policy-wrap td{
+            font-size: 14px;
+        }
+        .profile-tabs .policy-wrap p{
+            margin-bottom: 6px;
+        }
+        .profile-tabs .policy-wrap strong, .policy-wrap th{
+            font-weight: 600;
+        }
+
+        .profile-tabs .policy-wrap .pay-method img{
+            width: 90px;
+            height: 54px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+    </style>
+
 
     <!-- room body show more less css  -->
     <style>
@@ -444,7 +492,7 @@
             content: attr(data-less)
         }
     </style>
-    <!-- room info popup css start  -->
+    
 
     <!-- room info popup css  -->
     <style>
@@ -725,7 +773,7 @@
                                             <i class="fa-regular fa-square-check me-2"></i>Free cancellation & No Need Prepayment <br>
                                             <i class="fa-regular fa-square-check me-2"></i>Air Conditioning & 24/7 Hours Home Services <br>
                                             <i class="fa-regular fa-square-check me-2"></i>Children stay for free up to 10 years <br>
-                                            <button class="border-0 ps-0" style="color: var(--primary-color);background: var(--bg-color);">See More</button>
+                                            <button class="border-0 ps-0" id="facilityBtn"  data-bs-target="#facility" aria-controls="facility" style="color: var(--primary-color);background: var(--bg-color);">See More</button>
                                         </small>
                                         <!--facilities-max 3 and max-character is 50  -->
                                         <small class="d-block  facilities">
@@ -733,7 +781,7 @@
                                             <i class="fa-solid fa-diamond-turn-right me-2"></i>16.5 km from Himchori Waterfall <br>
                                             <i class="fa-solid fa-diamond-turn-right me-2"></i>3.2 km from Cox's Bazar Airport <br>
                                             <i class="fa-solid fa-diamond-turn-right me-2"></i> 0.25 km from Navy Jetty, from where Saint Martin bound ship sails <br>
-                                            <button class="border-0 ps-0" style="color: var(--primary-color);background: var(--bg-color);">See More</button>
+                                            <button class="border-0 ps-0"  id="nearbyBtn"   data-bs-target="#nearby" aria-controls="nearby" style="color: var(--primary-color);background: var(--bg-color);">See More</button>
                                         </small>
 
                                         <small class="d-block  facilities">
@@ -812,19 +860,19 @@
                             <button class="nav-link active" id="pills-rooms-tab" data-bs-toggle="pill" data-bs-target="#pills-rooms" type="button" role="tab" aria-controls="pills-rooms" aria-selected="true">Rooms</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Facilities & Services</button>
+                            <button class="nav-link" id="facility-tab" data-bs-toggle="pill" data-bs-target="#facility" type="button" role="tab" aria-controls="facility" aria-selected="false">Facilities & Services</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Policies</button>
+                            <button class="nav-link" id="pills-policy-tab" data-bs-toggle="pill" data-bs-target="#pills-policy" type="button" role="tab" aria-controls="pills-policy" aria-selected="false">Policies</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Reviews</button>
+                            <button class="nav-link" id="pills-reviews-tab" data-bs-toggle="pill" data-bs-target="#pills-reviews" type="button" role="tab" aria-controls="pills-reviews" aria-selected="false">Reviews</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">What's Nearby</button>
+                            <button class="nav-link" id="nearby-tab" data-bs-toggle="pill" data-bs-target="#nearby" type="button" role="tab" aria-controls="nearby" aria-selected="false">What's Nearby</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">FAQs</button>
+                            <button class="nav-link" id="pills-faqs-tab" data-bs-toggle="pill" data-bs-target="#pills-faqs" type="button" role="tab" aria-controls="pills-faqs" aria-selected="false">FAQs</button>
                         </li>
                     </ul>
                     <div class="tab-content" id="pills-tabContent">
@@ -1406,14 +1454,346 @@
                         </div>
                         <!-- rooms end   -->
 
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                        <!-- facilities & services start  -->
+                        <div class="tab-pane fade" id="facility" role="tabpanel" aria-labelledby="facility-tab" tabindex="0">
+                            <div class="facility-wrap p-4 rounded" style="background: var(--bg-color);">
+                                <div class="facility-box">
+                                    <h5 class="text-capitalize"><i class="fa-solid fa-people-group me-2"></i>Most popular facilities</h5>
+                                    <ul class="row row-cols-3 mt-3">
+                                        <li class="col"><i class="fa-regular fa-square-check me-1"></i> Children's Meals Available</li>
+                                        <li class="col"><i class="fa-regular fa-square-check me-1"></i> Children's Pool</li>
+                                        <li class="col"><i class="fa-regular fa-square-check me-1"></i> Sauna</li>
+                                        <li class="col"><i class="fa-regular fa-square-check me-1"></i> Fitness Room</li>
+                                        <li class="col"><i class="fa-regular fa-square-check me-1"></i> Babysitting Services <span class="extra tag">Extra Charge</span></li>
+                                        <li class="col"><i class="fa-regular fa-square-check me-1"></i> Outdoor Swimming Pool</li>
+                                        <li class="col"><i class="fa-regular fa-square-check me-1"></i> Hot Spring</li>
+                                        <li class="col"><i class="fa-regular fa-square-check me-1"></i> Bar</li>
+                                        <li class="col"><i class="fa-regular fa-square-check me-1"></i> Restaurant</li>
+                                        <li class="col"><i class="fa-regular fa-square-check me-1"></i> 24-Hour Front Desk</li>
+                                        <li class="col"><i class="fa-regular fa-square-check me-1"></i> Spa <span class="extra tag">Extra Charge</span></li>
+                                        <li class="col"><i class="fa-regular fa-square-check me-1"></i> Private Parking <span class="free tag">Free</span></li>
+                                        <li class="col"><i class="fa-regular fa-square-check me-1"></i> Nightclub</li>
+                                        <li class="col"><i class="fa-regular fa-square-check me-1"></i> Meeting Room</li>
+                                        <li class="col"><i class="fa-regular fa-square-check me-1"></i> Wi-Fi in Public Areas <span class="free tag">Free</span></li>
+                                        <li class="col"><i class="fa-regular fa-square-check me-1"></i> Children's Playground</li>
+                                        <li class="col"><i class="fa-regular fa-square-check me-1"></i> Hot Spring</li>
+                                        <li class="col"><i class="fa-regular fa-square-check me-1"></i> Massage Room</li>
+                                        <li class="col"><i class="fa-regular fa-square-check me-1"></i> Airport Shuttle Service</li>
+                                        <li class="col"><i class="fa-regular fa-square-check me-1"></i> Multi-function Room</li>
+                                        <li class="col"><i class="fa-regular fa-square-check me-1"></i> Tennis Court</li>
+                                    </ul>
+                                </div>
 
-                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">...</div>
-                        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">...</div>
-                        <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">...</div>
+
+
+
+
+                                <div class="facility-box">
+                                    <h5 class="text-capitalize"><i class="fa-solid fa-child-reaching me-2"></i> Children's Facilities</h5>
+                                    <ul class="row row-cols-3 mt-3">
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Children's Meals Available</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Children's Pool</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Children's Playground</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Babysitting Services <span class="extra tag">Extra Charge</span></li>
+                                    </ul>
+                                </div>
+                                <div class="facility-box">
+                                    <h5 class="text-capitalize"><i class="fa-solid fa-water-ladder me-2"></i> Outdoor Swimming Pool</h5>
+                                    <ul class="row row-cols-3 mt-3">
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Rooftop Pool</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Opening times</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i>  Pool with View</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i>Pool Bar </li>
+                                    </ul>
+                                </div>
+                                <div class="facility-box">
+                                    <h5 class="text-capitalize"><i class="fa-solid fa-square-parking me-2"></i> Parking</h5>
+                                    <ul class="row row-cols-3 mt-3">
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Private Parking <span class="free tag">Free</span></li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Valet Parking</li>
+                                    </ul>
+                                </div>
+                                <div class="facility-box">
+                                    <h5 class="text-capitalize"><i class="fa-solid fa-wifi me-2"></i> Internet</h5>
+                                    <ul class="row row-cols-3 mt-3">
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Wi-Fi in Public Areas <span class="free tag">Free</span></li>
+                                    </ul>
+                                </div>
+                                <div class="facility-box">
+                                    <h5 class="text-capitalize"><i class="fa-solid fa-utensils me-2"></i> Restaurant</h5>
+                                    <ul class="row row-cols-3 mt-3">
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Bengoli</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Chinise</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i>japanise</li>
+                                    </ul>
+                                </div>
+                                <div class="facility-box">
+                                    <h5 class="text-capitalize"><i class="fa-solid fa-car me-2"></i> Transportation</h5>
+                                    <ul class="row row-cols-3 mt-3">
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Airport Shuttle Service</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Car Rental</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i>  Station Pick-Up Service</li>
+                                    </ul>
+                                </div>
+                                <div class="facility-box">
+                                    <h5 class="text-capitalize"><i class="fa-brands fa-centercode me-2"></i>  Front Desk Services</h5>
+                                    <ul class="row row-cols-3 mt-3">
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Concierge Service</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Express Check-In and Check-Out</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Luggage Storage</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Tour/Ticket Service</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> VIP Check-In Service</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Front Desk Safe</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Porter/Bellhop</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Wake-up Call</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Currency Exchange</li>
+                                    </ul>
+                                </div>
+                                <div class="facility-box">
+                                    <h5 class="text-capitalize"> <i class="fa-solid fa-bowl-food me-2"></i> Food & Drink</h5>
+                                    <ul class="row row-cols-3 mt-3">
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Bar</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Lobby Bar</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i>  Room Service</li>
+                                    </ul>
+                                </div>
+                                <div class="facility-box">
+                                    <h5 class="text-capitalize">  <i class="fa-solid fa-dumbbell me-2"></i>  Health & Wellness</h5>
+                                    <ul class="row row-cols-3 mt-3">
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Personal Trainer</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Fitness Room</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Spa <span class="extra tag">Extra Charge</span></li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Hair Removal Service</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Tennis Court</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Massage Room</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Manicure</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i>   Body Contouring</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Hairdressing and Beauty Center</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Sauna</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i>  Hair Coloring</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Hot Spring</li>
+                                    </ul>
+                                </div>
+                                <div class="facility-box">
+                                    <h5 class="text-capitalize"> <i class="fa-solid fa-person-walking me-2"></i> Activities</h5>
+                                    <ul class="row row-cols-3 mt-3">
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Nightclub </li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i>KTV </li>
+                                    </ul>
+                                </div>
+                                <div class="facility-box">
+                                    <h5 class="text-capitalize"><i class="fa-solid fa-shirt me-2"></i>  Cleaning Services</h5>
+                                    <ul class="row row-cols-3 mt-3">
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Laundry Service (Off-Site)</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Ironing Service <span class="extra tag">Extra Charge</span></li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i>    Guest Laundry</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Laundry Service (On-Site) <span class="extra tag">Extra Charge</span></li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i>  Dry Cleaning <span class="extra tag">Extra Charge</span></li>
+                                    </ul>
+                                </div>
+                                <div class="facility-box">
+                                    <h5 class="text-capitalize"> <i class="fa-solid fa-table me-2"></i> Business Services</h5>
+                                    <ul class="row row-cols-3 mt-3">
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Multi-function Room</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Postal Service</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Secretarial Services</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i>  Meeting Room </li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i>  Wedding Service</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i>Fax/Copying Service </li>
+                                    </ul>
+                                </div>
+                                <div class="facility-box">
+                                    <h5 class="text-capitalize"> <i class="fa-brands fa-accessible-icon me-2"></i>  Accessibility </h5>
+                                    <ul class="row row-cols-3 mt-3">
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i>Pool Ramp Available </li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i>   Wheelchairs Available On-Site</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i>  Accessible Rooms Available</li>
+                                    </ul>
+                                </div>
+                                <div class="facility-box">
+                                    <h5 class="text-capitalize"> <i class="fa-solid fa-shield-halved me-2"></i> Safety & Security </h5>
+                                    <ul class="row row-cols-3 mt-3">
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i>CCTV In Public Areas </li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Security Alarm</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i>  Fire Extinguisher </li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i>  Security Personnel</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i>  Smoke Detector </li>
+                                    </ul>
+                                </div>
+                                <div class="facility-box">
+                                    <h5 class="text-capitalize"><i class="fa-solid fa-book-atlas me-2"></i>    Languages Spoken</h5>
+                                    <ul class="row row-cols-3 mt-3">
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Bengoli</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Hindi</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> English</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Chaines</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> Italian</li>
+                                        <li class="col"><i class="fa-regular fa-circle-check me-1"></i> japanes</li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- facilities & services end  -->
+
+                        <!-- policy start  -->
+                        <div class="tab-pane fade" id="pills-policy" role="tabpanel" aria-labelledby="policy-tab" tabindex="0">
+                            <div class="policy-wrap rounded p-4" style="background: var(--bg-color);">
+                                
+                                <!-- check in out  -->
+                                <div class="row">
+                                    <div class="col-3">
+                                        <h6>Check-in & <br> Check-out Times</h6>
+                                    </div>
+                                    <div class="col-4">
+                                        <p >Check-in : <strong class="ms-3">After 14:00</strong></p>
+                                        <p >Check-out : <strong class="ms-3">Before 12:00</strong></p>
+                                    </div>
+                                    <div class="col-4">
+                                        <p >Front Desk : <strong class="ms-3">24/7 hours</strong></p>
+                                    </div>
+                                </div>
+
+                                <!-- Breakfast  -->
+                                <div class="row mt-4">
+                                    <div class="col-3">
+                                        <h6>Breakfast</h6>
+                                    </div>
+                                    <div class="col-9">
+                                        <p >Type : <strong class="ms-3">Western</strong></p>
+                                        <p >Style : <strong class="ms-3">Buffet</strong></p>
+                                        <p >Open Hours : <strong class="ms-3">[Mon - Sun] 07:00-11:00 Open</strong></p>
+                                        <table class="table mt-3 table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Age</th>
+                                                    <th>Fee</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Children 5 years old and under</td>
+                                                    <td>Free</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Children 6–11 years old</td>
+                                                    <td>AED 65.00 (approx. US$17.70) per person</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Adult</td>
+                                                    <td>AED 130.00 (approx. US$35.40) per person</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p >Additional breakfast fees are not included in the total and need to be paid at the property.</p>
+
+
+                                    </div>
+                                </div>
+
+                                <!-- Child Policies  -->
+                                <div class="row mt-4">
+                                    <div class="col-3">
+                                        <h6>Child Policies</h6>
+                                    </div>
+                                    <div class="col-9">
+                                        <p >Children of all ages are welcome at this property.</p>
+                                        <p >We have recommended room types in which children can stay for free. Please ensure that the number and age of children in the search terms are correct.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Cribs and Extra Beds -->
+                                <div class="row mt-4">
+                                    <div class="col-3">
+                                        <h6>Cribs and Extra Beds</h6>
+                                    </div>
+                                    <div class="col-9">
+                                        <p >For all room types, cribs and extra beds can be added.</p>
+                                        <p >Fees for extra beds and cribs are not included in the total and must be paid at the hotel.</p>
+
+                                        <table class="table mt-3 table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Age</th>
+                                                    <th>Fee</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Children 2 years old and under</td>
+                                                    <td>Adding Crib: Free</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Children 3 years old</td>
+                                                    <td>AED 180.00 (approx. US$49.01) per person per night <br>
+                                                        Adding Crib: Free</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Children 4 years old and over</td>
+                                                    <td>AED 180.00 (approx. US$49.01) per person per night</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <!-- Pets  -->
+                                <div class="row mt-4">
+                                    <div class="col-3">
+                                        <h6>Pets </h6>
+                                    </div>
+                                    <div class="col-9">
+                                        <p>Pets are not allowed</p>
+                                    </div>
+                                </div>
+
+                                <!-- Age Requirements -->
+                                <div class="row mt-4">
+                                    <div class="col-3">
+                                        <h6>Age Requirements </h6>
+                                    </div>
+                                    <div class="col-9">
+                                        <p>The main guest checking in must be at least 18 years old.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Paying at the Hotel  -->
+                                <div class="row mt-4">
+                                    <div class="col-3">
+                                        <h6>Paying at the Hotel </h6>
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="row g-2 row-cols-auto pay-method">
+                                            <div class="col"><img  src="https://ak-d.tripcdn.com/images/1p11q12000bwovxei16BB.png" alt=""></div>
+                                            <div class="col"><img  src="https://ak-d.tripcdn.com/images/1p10q12000bwovk0y2B27.png" alt="..."></div>
+                                            <div class="col"><img  src="https://tds-images.thedailystar.net/sites/default/files/styles/very_big_201/public/images/2023/07/31/bkash.jpg" alt=""></div>
+                                            <div class="col"><img  src="https://mir-s3-cdn-cf.behance.net/projects/404/71de1a123637063.Y3JvcCwxMzgyLDEwODEsMzA0LDA.jpg" alt=""></div>
+                                            <div class="col"><img  src="https://seeklogo.com/images/D/dutch-bangla-rocket-logo-B4D1CC458D-seeklogo.com.png" alt=""></div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- policy end  -->
+                        <!-- reviews start  -->
+                        <div class="tab-pane fade" id="pills-reviews" role="tabpanel" aria-labelledby="reviews-tab" tabindex="0">
+                            reviews...............
+                        </div>
+                        <!-- reviews end  -->
+
+                        <!-- nearby start  -->
+                        <div class="tab-pane fade" id="nearby" role="tabpanel" aria-labelledby="nearby-tab" tabindex="0">nearby...............
+
+                        </div>
+                        <!-- nearby end  -->
+
+                        <!-- FAQs start  -->
+                        <div class="tab-pane fade" id="pills-faqs" role="tabpanel" aria-labelledby="pills-faqs-tab" tabindex="0">
+                            FAQs...
+                        </div>
+                        <!-- FAQs end  -->
                     </div>
                 </div>
                 <!-- tabs end  -->
@@ -1805,6 +2185,43 @@
             });
         });
 
+    </script>
+
+    <!-- show top facility & nearby btn js  -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event listeners to the buttons
+            document.getElementById('facilityBtn').addEventListener('click', function() {
+                // Show the 'facility' tab and hide others
+                showTabs('facility', 'facility-tab');
+            });
+
+            document.getElementById('nearbyBtn').addEventListener('click', function() {
+                // Show the 'nearby' tab and hide others
+                showTabs('nearby', 'nearby-tab');
+            });
+
+            // Function to show the specified tab and hide others
+            function showTabs(tabId, tabBtnId) {
+
+                // deactive all tab btn content
+                document.querySelectorAll('.nav-link').forEach(function(tabBtn) {
+                    tabBtn.classList.remove('active');
+                });
+
+                // Show the specified tab Btn
+                document.getElementById(tabBtnId).classList.add('active');
+
+                // Hide all tab content
+                document.querySelectorAll('.tab-pane').forEach(function(tab) {
+                    tab.classList.remove('show', 'active');
+                });
+
+                // Show the specified tab
+                document.getElementById(tabId).classList.add('show', 'active');
+            }
+
+        });
     </script>
     
 </body>
