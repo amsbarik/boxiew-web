@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
     <link rel="stylesheet" type="text/css" href="css/slick.css">
 
+
     <title>Hotel Profile</title>
 
     <!-- root css  -->
@@ -449,6 +450,117 @@
 
     </style>
 
+    <!-- review tab css  -->
+    <style>
+        .profile-tabs .review .rev-badge{
+            background: var(--primary-color);
+            padding: 4px 20px;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+            width: 120px;
+            height: 40px;
+            color: white;
+        }
+        .profile-tabs .review .user-reviews .rev-badge{
+            background: var(--primary-color);
+            padding: 4px 20px;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+            width: 80px;
+            height: 30px;
+            color: white;
+        }
+        .profile-tabs .review .review-filter .form-select, .review-filter p {
+            font-size: 14px;
+        }
+        .profile-tabs .review .review-filter .form-select:focus{
+            outline: none;
+            box-shadow: none;
+            border: 1px solid var(--primary-color);
+        }
+        .profile-tabs .review .review-filter .form-select option:hover{
+            background-color: red !important;
+        }
+        .profile-tabs .review .rev-badge span{
+            opacity: 50%;
+        }
+        .profile-tabs .review .ratting{
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        .profile-tabs .review .user-reviews .user-photo{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #7e3ff280;
+        }
+        .profile-tabs .review .user-reviews .user-imgs img{
+            width: 120px;
+            height: 120px;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+        .profile-tabs .review .user-reviews .user-text, .user-reviews .post-date, .user-stay span{
+            font-size: 14px;
+        }
+        .profile-tabs .review i{
+            color: var(--primary-color)
+        }
+        .profile-tabs .review .pagination .active .page-link{
+            background: var(--primary-color) !important;
+            border: 1px solid var(--primary-color);
+            color: white;
+        }
+        .profile-tabs .review .pagination .page-link:focus{
+            box-shadow: none;
+        }
+        .profile-tabs .review .pagination .page-link{
+            color: var(--title-color);
+            font-size: 14px;
+        }
+
+        /* user text wrapper css  */
+        .user-txt-wrap {
+            height: 80px;
+            overflow: hidden;
+        }
+
+        .user-txt-wrap.show {
+            height: auto;
+        }
+
+        .user-text {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .usertxt-readmore {
+            position: absolute;
+            width: 100%;
+            top: 63px;
+            left: 0;
+            background: var(--bg-color);
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        .usertxt-readmore::before {
+            content: attr(data-more)
+        }
+
+        .user-txt-wrap.show .usertxt-readmore {
+            position: relative;
+            top: auto;
+            display: block;
+        }
+
+        .user-txt-wrap.show .usertxt-readmore::before {
+            content: attr(data-less)
+        }
+    </style>
 
     <!-- room body show more less css  -->
     <style>
@@ -877,7 +989,7 @@
                     </ul>
                     <div class="tab-content" id="pills-tabContent">
                         <!-- rooms start  -->
-                        <div class="tab-pane fade show active" id="pills-rooms" role="tabpanel" aria-labelledby="pills-rooms-tab" tabindex="0">
+                        <div class="tab-pane room mb-3 mb-lg-5 fade show active" id="pills-rooms" role="tabpanel" aria-labelledby="pills-rooms-tab" tabindex="0">
                             <!-- Filter buttons -->
                             <div class="room-filters p-3 d-flex rounded">
                                 <div class="filter-items rounded mx-1 p-2" data-filter="breakfast">Breakfast Included<span class="ms-1">(11)</span></div>
@@ -1455,7 +1567,7 @@
                         <!-- rooms end   -->
 
                         <!-- facilities & services start  -->
-                        <div class="tab-pane fade" id="facility" role="tabpanel" aria-labelledby="facility-tab" tabindex="0">
+                        <div class="tab-pane facility mb-3 mb-lg-5 fade" id="facility" role="tabpanel" aria-labelledby="facility-tab" tabindex="0">
                             <div class="facility-wrap p-4 rounded" style="background: var(--bg-color);">
                                 <div class="facility-box">
                                     <h5 class="text-capitalize"><i class="fa-solid fa-people-group me-2"></i>Most popular facilities</h5>
@@ -1637,7 +1749,7 @@
                         <!-- facilities & services end  -->
 
                         <!-- policy start  -->
-                        <div class="tab-pane fade" id="pills-policy" role="tabpanel" aria-labelledby="policy-tab" tabindex="0">
+                        <div class="tab-pane policy mb-3 mb-lg-5 fade" id="pills-policy" role="tabpanel" aria-labelledby="policy-tab" tabindex="0">
                             <div class="policy-wrap rounded p-4" style="background: var(--bg-color);">
                                 
                                 <!-- check in out  -->
@@ -1777,20 +1889,220 @@
                             </div>
                         </div>
                         <!-- policy end  -->
+
                         <!-- reviews start  -->
-                        <div class="tab-pane fade" id="pills-reviews" role="tabpanel" aria-labelledby="reviews-tab" tabindex="0">
-                            reviews...............
+                        <div class="tab-pane  review mb-3 mb-lg-5 fade" id="pills-reviews" role="tabpanel" aria-labelledby="reviews-tab" tabindex="0">
+                            <div class="review-wrap rounded p-4" style="background: var(--bg-color);">
+                                <form action="">
+                                    <div class="row review-filter">
+                                    
+                                        <div class="col-3">
+                                            <h5 class="mb-3 mt-2" style="font-weight: 600;"><span class="rev-badge d-inline me-2 ">4.6<span>/5</span></span> Great</h5>
+                                            <div ><strong><span style="color: var(--primary-color);"> Box</span>iew</strong> <small style="font-size: 13px;">Verified Reviews</small></div>
+
+                                        </div>
+                                        <div class="col-6">
+                                            
+                                            <p class="mb-2">Filter By </p>
+                                            <div class="row ">
+                                                <div class="col">
+                                                    <select class="form-select" aria-label="All rooms">
+                                                        <option selected>All Rooms Type</option>
+                                                        <option value="1">King Room </option>
+                                                        <option value="2">Twin Room</option>
+                                                        <option value="3">Delux Room</option>
+                                                        <option value="3">Couples Room</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col">
+                                                    <select class="form-select" aria-label="">
+                                                        <option selected>All Travelers</option>
+                                                        <option value="1">Business Travelers</option>
+                                                        <option value="2">Family Travelers</option>
+                                                        <option value="3">Couples Travelers</option>
+                                                        <option value="3">Friends Travelers</option>
+                                                        <option value="3">Solo Travelers</option>
+                                                        <option value="3">Other Travelers</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                        <div class="col-3">
+                                            <p class="mb-2">Sort By </p>
+                                            <select class="form-select" aria-label="">
+                                                <option selected>Most Relevent</option>
+                                                <option value="1">Most Recent</option>
+                                                <option value="2">Rating High</option>
+                                                <option value="3">Rating Low</option>
+                                            </select>
+                                        </div>
+                                    
+                                    </div>
+
+                                </form>
+
+                                <!-- user reviews start  -->
+                                <div class=" user-reviews">
+                                    <hr style="margin: 34px 0px;">
+
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <img class="user-photo" src="https://i2.wp.com/zubnylekarpodolsky.sk/wp-content/uploads/2013/06/blank_profile.png" alt="">
+                                            <h6 class="mt-2">Azmeel Mazlee Anuar</h6>
+                                            <div class="d-flex user-stay">
+                                                <div>
+                                                    <span class="d-block text-center"><i class="fa-solid fa-bed me-2"></i></span>
+                                                    <span class="d-block text-center"><i class="fa-regular fa-calendar me-2"></i></span>
+                                                    <span class="d-block text-center"><i class="fa-solid fa-person-walking-luggage me-2"></i></span>
+                                                </div>
+                                                <div class="ms-1">
+                                                    <span class="d-block">King Room</span>
+                                                    <span class="d-block">Stayed in April 2024</span>
+                                                    <span class="d-block">Business Travelers</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-9">
+                                            <div class="d-flex justify-content-between">
+                                                <h6 class="mb-3 ratting"><span class="rev-badge d-inline me-2 ">5<span>/5</span></span>Outstanding</h6>
+                                                <p class="post-date m-0">21 April 2024</p>
+                                            </div>
+
+                                            <div class="user-txt-wrap mt-2">
+                                                <div class="user-text">
+                                                    <p class="lh-base m-0" style="color: var(--text-color);">Initially, I was in doubt to book this hotel as their location is slightly far from city centre. But I never regret it after staying in this plush hotel. Took an Uber taxi from terminal 2 airport. Took me around 15 minutes to arrived. It was a huge complex hotel next to the sea/beach. Large check in/waiting area and well organized. Smooth check in especially booked from trips.com. The check in lady was very nice and explained me in details what facilities were available for the hotel. They have 4 lifts and the speed of the lift was fast. Got a large room. I like when they have a separate working table from the mirror. The best part was the toilet with luxurious feeling. They have bath tub and round bath space. Quality of amenities was excellent except they do not provide oral care equipment. Restaurant during breakfast was acceptable. In my opinion not many choices of food available and it appears to be influenced by Indian based chef where majority of food is Indian based food.</p>
+                                            
+                                                    <span class="usertxt-readmore" data-more="read more..." data-less="read less"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="row mt-3 g-2 row-cols-auto user-imgs">
+                                                <div class="col"><img  src="https://static.leonardo-hotels.com/image/leonardohotelbucharestcitycenter_room_comfortdouble2_2022_4000x2600_7e18f254bc75491965d36cc312e8111f_1200x780_mobile_3.jpeg" alt=""></div>
+                                                <div class="col"><img src="https://www.chuwab.com/images/hotel/5/20/48220/bimg_20220101172008.jpg" alt=""></div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class=" user-reviews">
+                                    <hr style="margin: 34px 0px;">
+
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <img class="user-photo" src="https://i2.wp.com/zubnylekarpodolsky.sk/wp-content/uploads/2013/06/blank_profile.png" alt="">
+                                            <h6 class="mt-2">Azmeel Mazlee Anuar</h6>
+                                            <div class="d-flex user-stay">
+                                                <div>
+                                                    <span class="d-block text-center"><i class="fa-solid fa-bed me-2"></i></span>
+                                                    <span class="d-block text-center"><i class="fa-regular fa-calendar me-2"></i></span>
+                                                    <span class="d-block text-center"><i class="fa-solid fa-person-walking-luggage me-2"></i></span>
+                                                </div>
+                                                <div class="ms-1">
+                                                    <span class="d-block">King Room</span>
+                                                    <span class="d-block">Stayed in April 2024</span>
+                                                    <span class="d-block">Business Travelers</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-9">
+                                            <div class="d-flex justify-content-between">
+                                                <h6 class="mb-3 ratting"><span class="rev-badge d-inline me-2 ">5<span>/5</span></span>Outstanding</h6>
+                                                <p class="post-date m-0">21 April 2024</p>
+                                            </div>
+
+                                            <div class="user-txt-wrap mt-2">
+                                                <div class="user-text">
+                                                    <p class="lh-base m-0" style="color: var(--text-color);">Initially, I was in doubt to book this hotel as their location is slightly far from city centre. But I never regret it after staying in this plush hotel. Took an Uber taxi from terminal 2 airport. Took me around 15 minutes to arrived. It was a huge complex hotel next to the sea/beach. Large check in/waiting area and well organized. Smooth check in especially booked from trips.com. The check in lady was very nice and explained me in details what facilities were available for the hotel. They have 4 lifts and the speed of the lift was fast. Got a large room. I like when they have a separate working table from the mirror. The best part was the toilet with luxurious feeling. They have bath tub and round bath space. Quality of amenities was excellent except they do not provide oral care equipment. Restaurant during breakfast was acceptable. In my opinion not many choices of food available and it appears to be influenced by Indian based chef where majority of food is Indian based food.</p>
+                                            
+                                                    <span class="usertxt-readmore" data-more="read more..." data-less="read less"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="row mt-3 g-2 row-cols-auto user-imgs">
+                                                <div class="col"><img  src="https://static.leonardo-hotels.com/image/leonardohotelbucharestcitycenter_room_comfortdouble2_2022_4000x2600_7e18f254bc75491965d36cc312e8111f_1200x780_mobile_3.jpeg" alt=""></div>
+                                                <div class="col"><img src="https://www.chuwab.com/images/hotel/5/20/48220/bimg_20220101172008.jpg" alt=""></div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class=" user-reviews">
+                                    <hr style="margin: 34px 0px;">
+
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <img class="user-photo" src="https://i2.wp.com/zubnylekarpodolsky.sk/wp-content/uploads/2013/06/blank_profile.png" alt="">
+                                            <h6 class="mt-2">Azmeel Mazlee Anuar</h6>
+                                            <div class="d-flex user-stay">
+                                                <div>
+                                                    <span class="d-block text-center"><i class="fa-solid fa-bed me-2"></i></span>
+                                                    <span class="d-block text-center"><i class="fa-regular fa-calendar me-2"></i></span>
+                                                    <span class="d-block text-center"><i class="fa-solid fa-person-walking-luggage me-2"></i></span>
+                                                </div>
+                                                <div class="ms-1">
+                                                    <span class="d-block">King Room</span>
+                                                    <span class="d-block">Stayed in April 2024</span>
+                                                    <span class="d-block">Business Travelers</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-9">
+                                            <div class="d-flex justify-content-between">
+                                                <h6 class="mb-3 ratting"><span class="rev-badge d-inline me-2 ">5<span>/5</span></span>Outstanding</h6>
+                                                <p class="post-date m-0">21 April 2024</p>
+                                            </div>
+
+                                            <div class="user-txt-wrap mt-2">
+                                                <div class="user-text">
+                                                    <p class="lh-base m-0" style="color: var(--text-color);">Initially, I was in doubt to book this hotel as their location is slightly far from city centre. But I never regret it after staying in this plush hotel. Took an Uber taxi from terminal 2 airport. Took me around 15 minutes to arrived. It was a huge complex hotel next to the sea/beach. Large check in/waiting area and well organized. Smooth check in especially booked from trips.com. The check in lady was very nice and explained me in details what facilities were available for the hotel. They have 4 lifts and the speed of the lift was fast. Got a large room. I like when they have a separate working table from the mirror. The best part was the toilet with luxurious feeling. They have bath tub and round bath space. Quality of amenities was excellent except they do not provide oral care equipment. Restaurant during breakfast was acceptable. In my opinion not many choices of food available and it appears to be influenced by Indian based chef where majority of food is Indian based food.</p>
+                                            
+                                                    <span class="usertxt-readmore" data-more="read more..." data-less="read less"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="row mt-3 g-2 row-cols-auto user-imgs">
+                                                <div class="col"><img  src="https://static.leonardo-hotels.com/image/leonardohotelbucharestcitycenter_room_comfortdouble2_2022_4000x2600_7e18f254bc75491965d36cc312e8111f_1200x780_mobile_3.jpeg" alt=""></div>
+                                                <div class="col"><img src="https://www.chuwab.com/images/hotel/5/20/48220/bimg_20220101172008.jpg" alt=""></div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- user reviews end  -->
+
+                                <!-- review pagination  -->
+                                <div aria-label="review pagination ">
+                                    <ul class="pagination mt-5 mb-0 justify-content-center">
+                                      <li class="page-item disabled"><a href="" class="page-link">Previous</a></li>
+                                      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                      <li class="page-item " aria-current="page"><a href="#" class="page-link">2</a></li>
+                                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                    </ul>
+                                  </div>
+
+                            </div>
                         </div>
                         <!-- reviews end  -->
 
                         <!-- nearby start  -->
-                        <div class="tab-pane fade" id="nearby" role="tabpanel" aria-labelledby="nearby-tab" tabindex="0">nearby...............
+                        <div class="tab-pane nearby mb-3 mb-lg-5 fade" id="nearby" role="tabpanel" aria-labelledby="nearby-tab" tabindex="0">nearby...............
 
                         </div>
                         <!-- nearby end  -->
 
                         <!-- FAQs start  -->
-                        <div class="tab-pane fade" id="pills-faqs" role="tabpanel" aria-labelledby="pills-faqs-tab" tabindex="0">
+                        <div class="tab-pane faqs mb-3 mb-lg-5 fade" id="pills-faqs" role="tabpanel" aria-labelledby="pills-faqs-tab" tabindex="0">
                             FAQs...
                         </div>
                         <!-- FAQs end  -->
@@ -2223,6 +2535,31 @@
 
         });
     </script>
+
+    <!-- user review txt wrapper js  -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.usertxt-readmore').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    var currentWrapper = this.closest('.user-txt-wrap');
+                    document.querySelectorAll('.user-txt-wrap.show').forEach(function(wrapper) {
+                        if (wrapper !== currentWrapper) {
+                            wrapper.classList.remove('show');
+                        }
+                    });
+                    currentWrapper.classList.toggle('show');
+                });
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
     
 </body>
 </html>
