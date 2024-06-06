@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>about-popup Example</title>
+  <style>
+    /* Basic styles for the about-popup */
+    .about-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .about-popup.visible {
+      display: block;
+    }
+    /* Style for dimming background when about-popup is visible */
+    .dimmed-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+    }
+    .dimmed-background.visible {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <button id="openAboutPopupBtn">Open Popup</button>
+  <div id="dimmedBackground" class="dimmed-background"></div>
+  <div id="about-popup" class="about-popup">
+    <p>This is a about-popup!</p>
+    <button id="closeAboutPopupBtn">Close about-popup</button>
+  </div>
+  <script>
+    // JavaScript to handle the about-popup visibility and body overflow
+
+    // Get references to the elements
+    const openAboutPopupBtn = document.getElementById('openAboutPopupBtn');
+    const closeAboutPopupBtn = document.getElementById('closeAboutPopupBtn');
+    const aboutPopup = document.getElementById('about-popup');
+    const dimmedBackground = document.getElementById('dimmedBackground');
+
+    // Function to open the about-popup
+    function openPopup() {
+      aboutPopup.classList.add('visible');
+      dimmedBackground.classList.add('visible');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Function to close the about-popup
+    function closePopup() {
+      aboutPopup.classList.remove('visible');
+      dimmedBackground.classList.remove('visible');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Attach event listeners
+    openAboutPopupBtn.addEventListener('click', openPopup);
+    closeAboutPopupBtn.addEventListener('click', closePopup);
+  </script>
+</body>
+</html>
